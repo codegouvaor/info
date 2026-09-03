@@ -82,6 +82,9 @@ export const legalPaths = {
 
 export const searchPath = "/search";
 
+/** Press area of the portal (dedicated page being published). */
+export const pressPath = "/presse";
+
 /** DOM ids used as skip-link targets. */
 export const pageAnchors = {
   content: "main-content",

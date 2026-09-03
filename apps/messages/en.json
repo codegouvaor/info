@@ -7,7 +7,8 @@
   "header": {
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "The official portal of the Government of the Republic of Astoria",
-    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria"
+    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
+    "pressLink": "Press area"
   },
   "nav": {
     "main": "Main navigation",
@@ -110,7 +111,11 @@
   "common": {
     "skipToContent": "Skip to content",
     "skipToNavigation": "Skip to navigation",
-    "skipToFooter": "Skip to footer"
+    "skipToFooter": "Skip to footer",
+    "backToTop": {
+      "ariaLabel": "Back to top",
+      "label": "Back to top"
+    }
   },
   "meta": {
     "suffix": "Government of the Republic of Astoria",
@@ -151,32 +156,51 @@
     }
   },
   "home": {
-    "kicker": "Official Government portal",
-    "title": "The official portal of the Government of the Republic of Astoria",
-    "lead": "Welcome to info.gouv.aor, the official portal of the Government: news, analyses, the missions of the State and risk prevention.",
-    "ctaPrimary": "Discover the Government",
-    "ctaSecondary": "Access services and procedures",
-    "tasksTitle": "In one click",
-    "tasks": {
-      "composition": {
-        "title": "Government composition",
-        "desc": "Discover the structure of the Government and the list of ministries."
-      },
-      "news": {
-        "title": "News",
-        "desc": "Follow institutional news and official communications."
-      },
-      "services": {
-        "title": "Services and procedures",
-        "desc": "Access online procedures and public services."
-      },
-      "contact": {
-        "title": "Contact us",
-        "desc": "Find the official channels to contact government services."
+    "metaTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
+    "hero": {
+      "kicker": "Republic of Astoria",
+      "title": "The official information of the Government of Astoria",
+      "lead": "The official portal of the Government of the Republic of Astoria: news, government action, institutions, public services and procedures.",
+      "searchLabel": "Search the portal",
+      "searchPlaceholder": "Search for news, a service or a procedure…",
+      "trust": "An official website of the Government of the Republic of Astoria"
+    },
+    "quickAccess": {
+      "title": "What are you looking for?",
+      "items": {
+        "news": {
+          "title": "News",
+          "desc": "Institutional news and official communications."
+        },
+        "government": {
+          "title": "The Government",
+          "desc": "The composition, organisation and action of the Government."
+        },
+        "institutions": {
+          "title": "Institutions",
+          "desc": "The presidency, the council of ministers and the administrations."
+        },
+        "policies": {
+          "title": "Public policies",
+          "desc": "Major public policies and commitment follow-up."
+        },
+        "services": {
+          "title": "Public services",
+          "desc": "Public services and online procedures."
+        },
+        "prevention": {
+          "title": "Risk prevention",
+          "desc": "Preparing and reacting to major risks."
+        },
+        "etatEtMoi": {
+          "title": "The State and I",
+          "desc": "Understanding the day-to-day missions of the State."
+        }
       }
     },
     "aLaUne": {
       "title": "Headlines",
+      "lead": "The essential information of the Government of the Republic of Astoria.",
       "link": "See all the news",
       "featured": {
         "tag": "Headline",
@@ -202,78 +226,164 @@
         }
       }
     },
-    "etatEtMoi": {
-      "title": "The State and I",
-      "lead": "The State is made of women and men who act every day for the common good.",
-      "link": "Discover the missions of the State",
-      "missions": {
-        "organisateur": {
-          "desc": "It organises collective life, enables democracy and ensures that laws are respected."
-        },
-        "protecteur": {
-          "desc": "It provides full protection to every citizen."
-        },
-        "facilitateur": {
-          "desc": "It supports life paths and ensures public services are accessible to everyone."
-        },
-        "moteur": {
-          "desc": "It invests for the common good and prepares the future of the country."
-        },
-        "promoteur": {
-          "desc": "It promotes a strong, sustainable and innovative economy."
-        },
-        "influent": {
-          "desc": "It defends Astoria's sovereignty and gives the Republic a voice in the world."
-        }
-      }
-    },
-    "grandsDossiers": {
-      "title": "Major topics",
-      "lead": "Explore the State's major topics: equality, transformation, innovation… and follow the progress of public policies.",
-      "link": "See all the topics",
+    "policies": {
+      "kicker": "Government action",
+      "title": "Understanding the concrete action of the Government",
+      "lead": "Economy, education, digital, environment, health, security… The portal documents the major public policies, their progress and what they change for you.",
+      "link": "Discover the public policies",
       "items": {
-        "egalite": {
-          "desc": "The cross-ministerial plan for equality between women and men: concrete measures to act on the professional, economic and social fronts."
+        "economie": {
+          "title": "Economy",
+          "desc": "Growth, employment and competitiveness: the Government's economic policy."
         },
-        "astoria2030": {
-          "desc": "Astoria 2030 aims to accelerate the transformation of key sectors of our economy through innovation and to build the country of tomorrow."
+        "education": {
+          "title": "Education",
+          "desc": "School, training and success for everyone."
         },
-        "grandAngle": {
-          "desc": "An unprecedented listening and assessment approach across the whole territory to understand how citizens perceive the action of the State."
+        "numerique": {
+          "title": "Digital",
+          "desc": "Innovation, digital sovereignty and the transformation of public action."
+        },
+        "environnement": {
+          "title": "Environment",
+          "desc": "Ecological transition, climate and biodiversity protection."
+        },
+        "sante": {
+          "title": "Health",
+          "desc": "The health system, prevention and access to care."
+        },
+        "securite": {
+          "title": "Security",
+          "desc": "Protecting citizens and their property."
+        },
+        "mobilite": {
+          "title": "Mobility",
+          "desc": "Transport, infrastructure and everyday mobility."
+        },
+        "culture": {
+          "title": "Culture",
+          "desc": "Creation, heritage and access to culture for everyone."
         }
       }
-    },
-    "prevention": {
-      "title": "Preventing and managing major risks",
-      "lead": "From minor incidents to major disasters, many events of natural or human origin can affect people. Anticipate them and adopt the right reflexes.",
-      "link": "Discover risk prevention",
-      "items": {
-        "sePreparer": {
-          "desc": "Right reflexes, emergency kit and family plan: learn how to deal with emergency situations."
-        },
-        "canicule": {
-          "desc": "Protect yourself and your loved ones during heatwaves."
-        },
-        "cyber": {
-          "desc": "Recognise threats, protect your data and adopt the right reflexes against cyber risks."
-        },
-        "terroriste": {
-          "desc": "Learn about the right behaviours and the security framework in the face of the terrorist threat."
-        }
-      }
-    },
-    "newsletter": {
-      "kicker": "Newsletter",
-      "title": "The essentials of the Government's action, straight to your inbox.",
-      "text": "Sign up to receive a digest of information and the key announcements of the Government of the Republic of Astoria.",
-      "cta": "Subscribe"
     },
     "institutions": {
-      "title": "Government and institutions",
-      "lead": "Find the composition of the Government, institutional news and the official channels to contact us.",
-      "governmentTitle": "The Government",
-      "newsTitle": "Follow the Government's action",
-      "sitemapLink": "See the sitemap"
+      "kicker": "Government & institutions",
+      "title": "The institutions of the Republic",
+      "lead": "The Republic of Astoria is a parliamentary democracy. This section presents the organisation of the Government, the institutions and public bodies.",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "desc": "Composition, organisation and missions."
+        },
+        "composition": {
+          "title": "Government composition",
+          "desc": "The official list of Government members and ministries."
+        },
+        "institutions": {
+          "title": "Institutions of the Republic",
+          "desc": "The presidency, the council of ministers and the State administration."
+        },
+        "organismes": {
+          "title": "Public bodies",
+          "desc": "The official websites and public bodies of the Republic."
+        }
+      }
+    },
+    "services": {
+      "kicker": "Services & procedures",
+      "title": "Need to complete a procedure?",
+      "lead": "The portal informs and guides: find the public services and online procedures of the Republic of Astoria.",
+      "notice": "This portal informs and guides you. The procedures themselves are completed on the official platforms of the public services.",
+      "link": "Discover the services and procedures",
+      "items": {
+        "identite": {
+          "title": "Identity",
+          "desc": "Identity documents, passport and national identity card."
+        },
+        "fiscalite": {
+          "title": "Taxes",
+          "desc": "Taxes, duties and declarations."
+        },
+        "entreprises": {
+          "title": "Businesses",
+          "desc": "Starting, obligations and support for businesses."
+        },
+        "transport": {
+          "title": "Transport",
+          "desc": "Driving licence, registration and mobility."
+        },
+        "education": {
+          "title": "Education",
+          "desc": "Schooling, grants and guidance."
+        },
+        "logement": {
+          "title": "Housing",
+          "desc": "Housing support and tenants' rights."
+        },
+        "sante": {
+          "title": "Health",
+          "desc": "Health insurance, reimbursements and prevention."
+        }
+      }
+    },
+    "events": {
+      "kicker": "What's happening",
+      "title": "The Government's agenda",
+      "lead": "Upcoming communications, important publications and institutional events.",
+      "link": "Follow the Government's news",
+      "items": {
+        "conseilMinistres": {
+          "tag": "Agenda",
+          "title": "Council of ministers",
+          "text": "Summary and main decisions of the meeting.",
+          "date": "3 September 2026"
+        },
+        "budget": {
+          "tag": "Publication",
+          "title": "State budget data",
+          "text": "The detailed State budget data is released as open data.",
+          "date": "5 September 2026"
+        },
+        "pointPresse": {
+          "tag": "Communication",
+          "title": "Government press briefing",
+          "text": "The Government spokesperson answers questions from the press.",
+          "date": "8 September 2026"
+        },
+        "egalite": {
+          "tag": "Publication",
+          "title": "Report on equality between women and men",
+          "text": "Publication of the annual equality report and its recommendations.",
+          "date": "10 September 2026"
+        }
+      }
+    },
+    "openRepublic": {
+      "kicker": "An open Republic",
+      "title": "An open, accessible and understandable Republic",
+      "lead": "The Government of Astoria publishes its data, documents its decisions and develops software under open licences. Transparency lies at the heart of public action.",
+      "items": {
+        "transparence": {
+          "title": "Transparency",
+          "desc": "Follow-up of commitments and results of public policies."
+        },
+        "donnees": {
+          "title": "Open data",
+          "desc": "Public data, freely reusable."
+        },
+        "openSource": {
+          "title": "Open source",
+          "desc": "Software developed for public services, released under an open licence."
+        },
+        "accessibilite": {
+          "title": "Accessibility",
+          "desc": "A portal designed to be accessible to everyone."
+        },
+        "publications": {
+          "title": "Official publications",
+          "desc": "The official publications of the Republic of Astoria."
+        }
+      }
     }
   },
   "pages": {

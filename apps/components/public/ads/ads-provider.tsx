@@ -48,7 +48,10 @@ export function AdsProvider({
   lang: DsfrProviderProps["lang"];
 }) {
   return (
-    <DsfrProviderBase lang={lang} Link={Link} defaultColorScheme="system">
+    // The portal forces the light scheme: institutional sites stay readable
+    // in every environment and the “Paramètres d'affichage” dialog remains
+    // available for visitors who still want to switch theme during a session.
+    <DsfrProviderBase lang={lang} Link={Link} defaultColorScheme="light">
       {children}
       <StartDsfrOnHydration />
     </DsfrProviderBase>

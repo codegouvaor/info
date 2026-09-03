@@ -6,11 +6,10 @@ import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
-const VISIBILITY_SCROLL_PX = 600;
 const EXTRA_OFFSET_PX = 16;
 
 export function BackToTopButton() {
-  const t = useTranslations("Common");
+  const t = useTranslations("common");
   const [visible, setVisible] = React.useState(false);
   const [bottomOffset, setBottomOffset] = React.useState(EXTRA_OFFSET_PX);
 
@@ -20,9 +19,9 @@ export function BackToTopButton() {
     const updateState = () => {
       frameId = 0;
 
-      const viewportThreshold = window.innerHeight * 0.7;
-      const shouldShow = window.scrollY > Math.max(VISIBILITY_SCROLL_PX, viewportThreshold);
-      setVisible(shouldShow);
+      // Appears as soon as the page is scrolled, so the visitor can always
+      // jump back to the top without scrolling all the way up.
+      setVisible(window.scrollY > 0);
 
       const consentBanner = document.querySelector<HTMLElement>('[data-consent-banner="true"]');
       const nextOffset =

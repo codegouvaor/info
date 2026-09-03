@@ -60,6 +60,8 @@ const nextConfig: NextConfig = {
       }),
 
   basePath: process.env.BASE_PATH || "",
+  // TEMP-VERIFY: env override to render outside the root-owned .next dir.
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
 
   ...(!isStaticWebBuild && {
     images: {

@@ -7,7 +7,8 @@
   "header": {
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
-    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria"
+    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
+    "pressLink": "Espace presse"
   },
   "nav": {
     "main": "Navigation principale",
@@ -110,7 +111,11 @@
   "common": {
     "skipToContent": "Aller au contenu",
     "skipToNavigation": "Aller à la navigation",
-    "skipToFooter": "Aller au pied de page"
+    "skipToFooter": "Aller au pied de page",
+    "backToTop": {
+      "ariaLabel": "Revenir en haut de page",
+      "label": "Haut de page"
+    }
   },
   "meta": {
     "suffix": "Gouvernement de la République d'Astoria",
@@ -151,32 +156,51 @@
     }
   },
   "home": {
-    "kicker": "Portail officiel du Gouvernement",
-    "title": "Le portail officiel du Gouvernement de la République d'Astoria",
-    "lead": "Bienvenue sur info.gouv.aor, le portail officiel du Gouvernement : actualités, décryptages, missions de l'État et prévention des risques.",
-    "ctaPrimary": "Découvrir le Gouvernement",
-    "ctaSecondary": "Accéder aux démarches",
-    "tasksTitle": "En un clic",
-    "tasks": {
-      "composition": {
-        "title": "Composition du Gouvernement",
-        "desc": "Découvrir la structure du Gouvernement et la liste des ministères."
-      },
-      "news": {
-        "title": "Actualités",
-        "desc": "Suivre l'actualité institutionnelle et les communications officielles."
-      },
-      "services": {
-        "title": "Démarches et services",
-        "desc": "Accéder aux démarches en ligne et aux services publics."
-      },
-      "contact": {
-        "title": "Nous contacter",
-        "desc": "Trouver les canaux officiels pour contacter les services du Gouvernement."
+    "metaTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
+    "hero": {
+      "kicker": "République d'Astoria",
+      "title": "L'information officielle du Gouvernement d'Astoria",
+      "lead": "Le portail officiel du Gouvernement de la République d'Astoria : actualités, action du Gouvernement, institutions, services publics et démarches.",
+      "searchLabel": "Rechercher sur le portail",
+      "searchPlaceholder": "Rechercher une actualité, un service, une démarche…",
+      "trust": "Un site officiel du Gouvernement de la République d'Astoria"
+    },
+    "quickAccess": {
+      "title": "Que recherchez-vous ?",
+      "items": {
+        "news": {
+          "title": "Actualités",
+          "desc": "L'actualité institutionnelle et les communications officielles."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "desc": "La composition, l'organisation et l'action du Gouvernement."
+        },
+        "institutions": {
+          "title": "Institutions",
+          "desc": "La présidence, le conseil des ministres et les administrations."
+        },
+        "policies": {
+          "title": "Politiques publiques",
+          "desc": "Les grandes politiques publiques et le suivi des engagements."
+        },
+        "services": {
+          "title": "Services publics",
+          "desc": "Les services publics et les démarches en ligne."
+        },
+        "prevention": {
+          "title": "Prévention des risques",
+          "desc": "Se préparer et réagir face aux risques majeurs."
+        },
+        "etatEtMoi": {
+          "title": "L'État et moi",
+          "desc": "Comprendre les missions de l'État au quotidien."
+        }
       }
     },
     "aLaUne": {
       "title": "À la une",
+      "lead": "Les informations essentielles du Gouvernement de la République d'Astoria.",
       "link": "Voir toute l'actualité",
       "featured": {
         "tag": "À la une",
@@ -202,78 +226,164 @@
         }
       }
     },
-    "etatEtMoi": {
-      "title": "L'État et moi",
-      "lead": "L'État, ce sont des femmes et des hommes qui agissent chaque jour pour l'intérêt général.",
-      "link": "Découvrir les missions de l'État",
-      "missions": {
-        "organisateur": {
-          "desc": "Il organise la vie collective, permet la vie démocratique et garantit le respect des lois."
-        },
-        "protecteur": {
-          "desc": "Il assure la protection intégrale des citoyennes et des citoyens."
-        },
-        "facilitateur": {
-          "desc": "Il accompagne les parcours de vie et garantit des services publics accessibles à toutes et à tous."
-        },
-        "moteur": {
-          "desc": "Il investit pour le bien commun et prépare l'avenir du pays."
-        },
-        "promoteur": {
-          "desc": "Il promeut une économie forte, durable et innovante."
-        },
-        "influent": {
-          "desc": "Il défend la souveraineté d'Astoria et porte la voix de la République dans le monde."
-        }
-      }
-    },
-    "grandsDossiers": {
-      "title": "Grands dossiers",
-      "lead": "Retrouvez les grands dossiers de l'État : égalité, transformation, innovation… et suivez l'avancée des politiques publiques.",
-      "link": "Voir tous les dossiers",
+    "policies": {
+      "kicker": "L'action du Gouvernement",
+      "title": "Comprendre l'action concrète du Gouvernement",
+      "lead": "Économie, éducation, numérique, environnement, santé, sécurité… Le portail documente les grandes politiques publiques, leur avancement et ce qu'elles changent pour vous.",
+      "link": "Découvrir les politiques publiques",
       "items": {
-        "egalite": {
-          "desc": "Le plan interministériel pour l'égalité entre les femmes et les hommes : des mesures concrètes pour agir sur les plans professionnel, économique et social."
+        "economie": {
+          "title": "Économie",
+          "desc": "Croissance, emploi et compétitivité : la politique économique du Gouvernement."
         },
-        "astoria2030": {
-          "desc": "Astoria 2030 vise à accélérer la transformation des secteurs clés de notre économie par l'innovation et à construire le pays de demain."
+        "education": {
+          "title": "Éducation",
+          "desc": "L'école, la formation et la réussite de toutes et de tous."
         },
-        "grandAngle": {
-          "desc": "Une démarche inédite d'écoute et de diagnostic sur tout le territoire pour comprendre comment les citoyennes et les citoyens perçoivent l'action de l'État."
+        "numerique": {
+          "title": "Numérique",
+          "desc": "Innovation, souveraineté numérique et transformation de l'action publique."
+        },
+        "environnement": {
+          "title": "Environnement",
+          "desc": "Transition écologique, climat et protection de la biodiversité."
+        },
+        "sante": {
+          "title": "Santé",
+          "desc": "Le système de santé, la prévention et l'accès aux soins."
+        },
+        "securite": {
+          "title": "Sécurité",
+          "desc": "La protection des citoyennes et des citoyens et de leurs biens."
+        },
+        "mobilite": {
+          "title": "Mobilités",
+          "desc": "Transports, infrastructures et mobilités du quotidien."
+        },
+        "culture": {
+          "title": "Culture",
+          "desc": "La création, le patrimoine et l'accès de toutes et de tous à la culture."
         }
       }
-    },
-    "prevention": {
-      "title": "Prévenir et gérer les risques majeurs",
-      "lead": "De l'incident à la catastrophe majeure, de multiples événements d'origine naturelle ou humaine peuvent toucher la population. Anticipez et adoptez les bons réflexes.",
-      "link": "Découvrir la prévention des risques",
-      "items": {
-        "sePreparer": {
-          "desc": "Bons réflexes, kit d'urgence et plan familial : apprenez à faire face aux situations d'urgence."
-        },
-        "canicule": {
-          "desc": "Protégez-vous et protégez vos proches lors des épisodes de fortes chaleurs."
-        },
-        "cyber": {
-          "desc": "Reconnaissez les menaces, protégez vos données et adoptez les bons réflexes face aux risques cyber."
-        },
-        "terroriste": {
-          "desc": "Connaissez les bons comportements et le dispositif de sécurité face à la menace terroriste."
-        }
-      }
-    },
-    "newsletter": {
-      "kicker": "Newsletter",
-      "title": "L'essentiel de l'action du Gouvernement, directement dans votre boîte e-mail.",
-      "text": "Inscrivez-vous pour recevoir un condensé d'informations et les annonces essentielles du Gouvernement de la République d'Astoria.",
-      "cta": "S'abonner"
     },
     "institutions": {
-      "title": "Gouvernement et institutions",
-      "lead": "Retrouvez la composition du Gouvernement, l'actualité institutionnelle et les canaux officiels pour nous contacter.",
-      "governmentTitle": "Le Gouvernement",
-      "newsTitle": "Suivre l'action du Gouvernement",
-      "sitemapLink": "Voir le plan du site"
+      "kicker": "Gouvernement & institutions",
+      "title": "Les institutions de la République",
+      "lead": "La République d'Astoria est une démocratie parlementaire. Cette section présente l'organisation du Gouvernement, des institutions et des organismes publics.",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "desc": "Composition, organisation et missions."
+        },
+        "composition": {
+          "title": "Composition du Gouvernement",
+          "desc": "La liste officielle des membres du Gouvernement et des ministères."
+        },
+        "institutions": {
+          "title": "Institutions de la République",
+          "desc": "La présidence, le conseil des ministres et l'administration de l'État."
+        },
+        "organismes": {
+          "title": "Organismes publics",
+          "desc": "Les sites officiels et les organismes publics de la République."
+        }
+      }
+    },
+    "services": {
+      "kicker": "Services & démarches",
+      "title": "Besoin d'effectuer une démarche ?",
+      "lead": "Le portail informe et oriente : retrouvez les services publics et les démarches en ligne de la République d'Astoria.",
+      "notice": "Ce portail vous informe et vous oriente. Les démarches elles-mêmes sont effectuées sur les plateformes officielles des services publics.",
+      "link": "Découvrir les services et démarches",
+      "items": {
+        "identite": {
+          "title": "Identité",
+          "desc": "Titres d'identité, passeport et carte nationale d'identité."
+        },
+        "fiscalite": {
+          "title": "Fiscalité",
+          "desc": "Impôts, taxes et déclarations."
+        },
+        "entreprises": {
+          "title": "Entreprises",
+          "desc": "Création, obligations et aides aux entreprises."
+        },
+        "transport": {
+          "title": "Transport",
+          "desc": "Permis de conduire, immatriculation et mobilités."
+        },
+        "education": {
+          "title": "Éducation",
+          "desc": "Scolarité, bourses et orientation."
+        },
+        "logement": {
+          "title": "Logement",
+          "desc": "Aides au logement et droits des locataires."
+        },
+        "sante": {
+          "title": "Santé",
+          "desc": "Assurance maladie, remboursements et prévention."
+        }
+      }
+    },
+    "events": {
+      "kicker": "En ce moment",
+      "title": "L'agenda du Gouvernement",
+      "lead": "Les prochaines communications, les publications importantes et les événements institutionnels.",
+      "link": "Suivre l'actualité du Gouvernement",
+      "items": {
+        "conseilMinistres": {
+          "tag": "Agenda",
+          "title": "Conseil des ministres",
+          "text": "Compte rendu et principales décisions de la séance.",
+          "date": "3 septembre 2026"
+        },
+        "budget": {
+          "tag": "Publication",
+          "title": "Données budgétaires de l'État",
+          "text": "Les données détaillées du budget de l'État sont mises à disposition en données ouvertes.",
+          "date": "5 septembre 2026"
+        },
+        "pointPresse": {
+          "tag": "Communication",
+          "title": "Point presse du Gouvernement",
+          "text": "Le porte-parole du Gouvernement répond aux questions de la presse.",
+          "date": "8 septembre 2026"
+        },
+        "egalite": {
+          "tag": "Publication",
+          "title": "Rapport sur l'égalité entre les femmes et les hommes",
+          "text": "Publication du rapport annuel sur l'égalité et de ses recommandations.",
+          "date": "10 septembre 2026"
+        }
+      }
+    },
+    "openRepublic": {
+      "kicker": "Une République ouverte",
+      "title": "Une République ouverte, accessible et compréhensible",
+      "lead": "Le Gouvernement d'Astoria publie ses données, documente ses décisions et développe des logiciels sous licences ouvertes. La transparence est au cœur de l'action publique.",
+      "items": {
+        "transparence": {
+          "title": "Transparence",
+          "desc": "Le suivi des engagements et des résultats des politiques publiques."
+        },
+        "donnees": {
+          "title": "Données publiques",
+          "desc": "Les données publiques, librement réutilisables."
+        },
+        "openSource": {
+          "title": "Logiciels libres",
+          "desc": "Les logiciels développés pour les services publics, publiés sous licence ouverte."
+        },
+        "accessibilite": {
+          "title": "Accessibilité",
+          "desc": "Un portail conçu pour être accessible à toutes et à tous."
+        },
+        "publications": {
+          "title": "Publications officielles",
+          "desc": "Les publications officielles de la République d'Astoria."
+        }
+      }
     }
   },
   "pages": {

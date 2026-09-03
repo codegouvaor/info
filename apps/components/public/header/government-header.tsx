@@ -2,12 +2,12 @@
 
 import { Header } from "@codegouvaor/react-ads/Header";
 import { SkipLinks } from "@codegouvaor/react-ads/SkipLinks";
+import { headerFooterDisplayItem } from "@codegouvaor/react-ads/Display";
 import type { MainNavigationProps } from "@codegouvaor/react-ads/MainNavigation";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { pageAnchors, primaryNavigation, searchPath } from "@/lib/site-structure";
+import { pageAnchors, pressPath, primaryNavigation, searchPath } from "@/lib/site-structure";
 import { GovernmentBrand } from "../brand/government-brand";
-import { LocaleSwitcher } from "./locale-switcher";
 
 /** Whether the current pathname corresponds to a navigation href. */
 const isNavItemActive = (href: string, pathname: string): boolean =>
@@ -96,7 +96,16 @@ export function GovernmentHeader() {
         serviceTitle={t("header.serviceTitle")}
         serviceTagline={t("header.serviceTagline")}
         navigation={navigationItems}
-        quickAccessItems={[<LocaleSwitcher key="locale-switcher" />]}
+        quickAccessItems={[
+          {
+            iconId: "fr-icon-newspaper-line",
+            text: t("header.pressLink"),
+            linkProps: { href: pressPath },
+          },
+          // “Paramètres d'affichage” — opens the theme dialog (light/dark/system)
+          // rendered by the ADS `Display` component mounted by the Header.
+          headerFooterDisplayItem,
+        ]}
         renderSearchInput={(params) => (
           <input {...params} placeholder={t("meta.searchPlaceholder")} />
         )}

@@ -2,6 +2,8 @@
 
 import { CallOut } from "@codegouvaor/react-ads/CallOut";
 import { Tile } from "@codegouvaor/react-ads/Tile";
+import { Card } from "@codegouvaor/react-ads/Card";
+import { Tag } from "@codegouvaor/react-ads/Tag";
 import { ButtonsGroup } from "@codegouvaor/react-ads/ButtonsGroup";
 import type { FrIconClassName } from "@codegouvaor/react-ads/fr";
 
@@ -36,20 +38,76 @@ export type LinkTileProps = {
   href: string;
   small?: boolean;
   grey?: boolean;
+  horizontal?: boolean;
   iconId?: FrIconClassName;
 };
 
-export function LinkTile({ title, desc, href, small, grey, iconId }: LinkTileProps) {
+export function LinkTile({ title, desc, href, small, grey, horizontal, iconId }: LinkTileProps) {
   return (
     <Tile
       small={small}
       grey={grey}
+      orientation={horizontal ? "horizontal" : "vertical"}
       title={title}
       desc={desc}
       pictogram={
         <span aria-hidden="true" className={iconId ?? "fr-icon-arrow-right-line"} />
       }
       linkProps={{ href }}
+    />
+  );
+}
+
+/**
+ * Editorial card of the home page (news article, public policy…).
+ *
+ * The whole card links to `href`; the optional `tag` renders as an ADS `Tag`
+ * above the title and `date` as the card detail line, following the DSFR news
+ * card pattern.
+ */
+export type ArticleCardProps = {
+  title: string;
+  desc?: string;
+  tag?: string;
+  date?: string;
+  href: string;
+  size?: "small" | "medium" | "large";
+  /** White card on an alternating background section. */
+  background?: boolean;
+  border?: boolean;
+  titleAs?: `h${2 | 3 | 4 | 5 | 6}`;
+};
+
+export function ArticleCard({
+  title,
+  desc,
+  tag,
+  date,
+  href,
+  size,
+  background,
+  border,
+  titleAs = "h3",
+}: ArticleCardProps) {
+  return (
+    <Card
+      enlargeLink
+      linkProps={{ href }}
+      iconId="fr-icon-arrow-right-line"
+      title={title}
+      titleAs={titleAs}
+      desc={desc}
+      size={size}
+      background={background}
+      border={border}
+      start={
+        tag ? (
+          <Tag as="span" small>
+            {tag}
+          </Tag>
+        ) : undefined
+      }
+      detail={date}
     />
   );
 }

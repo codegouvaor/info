@@ -5,6 +5,7 @@ import type { FooterProps } from "@codegouvaor/react-ads/Footer";
 import { useTranslations } from "next-intl";
 import { footerNavigation, legalPaths, pageAnchors } from "@/lib/site-structure";
 import { GovernmentBrand } from "../brand/government-brand";
+import { LocaleSwitcher } from "../locale-switcher";
 
 const HOME_PATH = "/";
 
@@ -67,6 +68,9 @@ export function GovernmentFooter() {
           text: t("footer.bottom.publications"),
           linkProps: { href: "/publications-officielles" },
         },
+        // Language switching lives in the footer bottom bar so it stays
+        // available on every page without cluttering the header tools.
+        <LocaleSwitcher key="locale-switcher" />,
       ]}
       license={t("footer.license")}
       linkList={linkList}

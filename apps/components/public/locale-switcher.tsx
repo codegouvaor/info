@@ -1,15 +1,14 @@
 "use client";
 
-import { Suspense, useCallback } from "react";
+import { useCallback } from "react";
 import { LanguageSelect } from "@codegouvaor/react-ads/LanguageSelect";
 import { useLocale } from "next-intl";
-import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { localeDisplayNames } from "@/i18n/locales";
 
 /**
- * Language switcher shown in the Government Header quick-access area.
+ * Language switcher shown in the Government Footer bottom bar.
  *
  * It reuses the ADS `LanguageSelect` component (visual + behaviour source of
  * truth) and plugs the next-intl router into it so that switching language:
@@ -19,13 +18,18 @@ import { localeDisplayNames } from "@/i18n/locales";
  *
  * The list of languages comes from the centralized `routing` configuration,
  * never from hard-coded JSX.
+ *
+ * NOTE: this component deliberately avoids `useSearchParams`. That hook
+ * suspends during server rendering and would require a Suspense boundary,
+ * whose hydration can race with the ADS core (started on hydration by
+ * `StartDsfrOnHydration`), producing hydration mismatches on the collapse
+ * markup. The query string is read from `window.location` at click time
+ * instead, keeping the tree synchronous.
  */
-
-function LocaleSwitcherContent() {
+export function LocaleSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const setLang = useCallback(
     (nextLang: string) => {
@@ -37,12 +41,12 @@ function LocaleSwitcherContent() {
         return;
       }
 
-      const query = searchParams.toString();
-      router.replace(query ? `${pathname}?${query}` : pathname, {
+      const query = typeof window !== "undefined" ? window.location.search : "";
+      router.replace(query ? `${pathname}${query}` : pathname, {
         locale: nextLocale,
       });
     },
-    [locale, pathname, router, searchParams]
+    [locale, pathname, router]
   );
 
   return (
@@ -52,24 +56,5 @@ function LocaleSwitcherContent() {
       lang={locale as Locale}
       setLang={setLang}
     />
-  );
-}
-
-export function LocaleSwitcher() {
-  // `useSearchParams` suspends during static rendering: the boundary lets the
-  // header be prerendered while the interactive switcher hydrates client-side.
-  return (
-    <Suspense
-      fallback={
-        <LanguageSelect
-          supportedLangs={routing.locales}
-          fullNameByLang={localeDisplayNames}
-          lang={routing.defaultLocale}
-          setLang={() => undefined}
-        />
-      }
-    >
-      <LocaleSwitcherContent />
-    </Suspense>
   );
 }

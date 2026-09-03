@@ -12,9 +12,12 @@ import { searchPath } from "@/lib/site-structure";
 export function PortalSearchBar({
   label,
   defaultValue,
+  placeholder,
 }: {
   label: string;
   defaultValue?: string;
+  /** Overrides the ADS default placeholder (translated “Search”). */
+  placeholder?: string;
 }) {
   const router = useRouter();
 
@@ -28,6 +31,9 @@ export function PortalSearchBar({
       big
       label={label}
       defaultValue={defaultValue}
+      renderInput={(params) => (
+        <input {...params} placeholder={placeholder ?? params.placeholder} />
+      )}
       onButtonClick={handleSearch}
     />
   );

@@ -6,6 +6,7 @@ import { pageAnchors } from "@/lib/site-structure";
 import { AdsProvider } from "@/components/public/ads/ads-provider";
 import { GovernmentHeader } from "@/components/public/header/government-header";
 import { GovernmentFooter } from "@/components/public/footer/government-footer";
+import { BackToTopButton } from "@/components/common/back-to-top-button";
 
 // Astoria Design System stylesheet (icons + components). Imported here so the
 // CSS is only shipped to the localized public routes.
@@ -93,6 +94,7 @@ export default async function LocaleLayout({
                 {children}
               </main>
               <GovernmentFooter />
+              <BackToTopButton />
             </div>
           </AdsProvider>
         </NextIntlClientProvider>
