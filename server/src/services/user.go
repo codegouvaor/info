@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/skygenesisenterprise/etheriatimes/server/src/interfaces"
-	"github.com/skygenesisenterprise/etheriatimes/server/src/models"
-	"github.com/skygenesisenterprise/etheriatimes/server/src/utils"
+	"github.com/codegouvaor/info/server/src/interfaces"
+	"github.com/codegouvaor/info/server/src/models"
+	"github.com/codegouvaor/info/server/src/utils"
 )
 
 type UserService struct {

@@ -34,7 +34,7 @@ services:
       worker:
         condition: service_started
     networks:
-      - info
+      - info-gouv
 
   # ─── API / worker (Go) ──────────────────────────────────────────────────────
   # Dev:  WORKER_COMMAND=air    → hot-reload via Air (:8080)
@@ -76,7 +76,7 @@ services:
       REDIS_PASSWORD: ${REDIS_PASSWORD:-redis-dev-password}
       REDIS_DB: "0"
       REDIS_URL: redis://default:${REDIS_PASSWORD:-redis-dev-password}@redis:6379/0
-      REDIS_KEY_PREFIX: info:v1
+      REDIS_KEY_PREFIX: info-gouv:v1
       JWT_SECRET: ${JWT_SECRET:-dev-insecure-secret-change-me}
       JWT_ISSUER: ${JWT_ISSUER:-codegouvaor}
       AUTH_COOKIE_DOMAIN: ${AUTH_COOKIE_DOMAIN:-.info.gouv.localhost}
@@ -113,7 +113,7 @@ services:
       meilisearch:
         condition: service_healthy
     networks:
-      - info
+      - info-gouv
 
   # ─── PostgreSQL ─────────────────────────────────────────────────────────────
   # Runs through the unified entrypoint (`command: postgresql`); applies the
@@ -158,7 +158,7 @@ services:
     expose:
       - "5432"
     networks:
-      - info
+      - info-gouv
 
   redis:
     image: docker.io/library/redis:8-alpine
@@ -182,7 +182,7 @@ services:
     expose:
       - "6379"
     networks:
-      - info
+      - info-gouv
 
   rabbitmq:
     image: docker.io/library/rabbitmq:3.13-management-alpine
@@ -202,7 +202,7 @@ services:
       - ${RABBITMQ_AMQP_PORT:-5672}:5672
       - ${RABBITMQ_MGMT_PORT:-15672}:15672
     networks:
-      - info
+      - info-gouv
 
   meilisearch:
     image: docker.io/getmeili/meilisearch:v1.7
@@ -221,7 +221,7 @@ services:
     ports:
       - ${MEILI_PORT:-7700}:7700
     networks:
-      - info
+      - info-gouv
 
   # ─── Dev-only services (enable with: docker compose --profile dev up) ────────
 
@@ -239,7 +239,7 @@ services:
       worker:
         condition: service_healthy
     networks:
-      - info
+      - info-gouv
 
   postgres-data:
     image: docker.io/dpage/pgadmin4:latest
@@ -258,7 +258,7 @@ services:
       postgresql:
         condition: service_healthy
     networks:
-      - info
+      - info-gouv
 
 volumes:
   postgres-data:
@@ -273,5 +273,5 @@ volumes:
   cdn-data:
 
 networks:
-  info:
+  info-gouv:
     driver: bridge

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/skygenesisenterprise/etheriatimes/server/src/models"
-	"github.com/skygenesisenterprise/etheriatimes/server/src/utils"
+	"github.com/codegouvaor/info/server/src/models"
+	"github.com/codegouvaor/info/server/src/utils"
 )
 
 func (h *apiHandler) listArticles(c *gin.Context) {

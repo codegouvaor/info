@@ -3,7 +3,7 @@ package services
 import (
 	"context"
 
-	"github.com/skygenesisenterprise/etheriatimes/server/src/models"
+	"github.com/codegouvaor/info/server/src/models"
 	"gorm.io/gorm"
 )
 

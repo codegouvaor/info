@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/skygenesisenterprise/etheriatimes/server/src/models"
+	"github.com/codegouvaor/info/server/src/models"
 )
 
 type UserRepository interface {

@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/skygenesisenterprise/etheriatimes/server/src/utils"
+	"github.com/codegouvaor/info/server/src/utils"
 )
 
 const dockerSocket = "/var/run/docker.sock"
