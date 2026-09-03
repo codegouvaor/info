@@ -1,5 +1,6 @@
 packages:
-  - "app"
+  - "apps"
+  - "server/prisma"
 
 ignoredBuiltDependencies:
   - sharp

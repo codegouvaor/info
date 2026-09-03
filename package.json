@@ -1,19 +1,17 @@
 {
-  "name": "website-gouv",
+  "name": "info-gouv",
   "version": "1.0.0",
-  "description": "Official Government Website source code",
+  "description": "Official information portal of the Government of Astoria.",
   "private": true,
   "type": "module",
   "workspaces": [
-    "app",
+    "apps",
     "tools",
     "options",
     "package/node",
     "package/vscode",
     "package/extension",
     "package/snap",
-    "tests",
-    "messages",
     "server/prisma"
   ],
   "scripts": {
@@ -81,15 +79,15 @@
     "typescript"
   ],
   "author": {
-    "name": "Sky Genesis Enterprise",
+    "name": "Astoria Government Development Team",
     "email": "developer@info.gov.aor",
     "url": "https://info.gov.aor"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/astoria-gouv/website-gouv/issues"
+    "url": "https://github.com/codegouvaor/info/issues"
   },
-  "homepage": "https://github.com/astoria-gouv/website-gouv#readme",
+  "homepage": "https://github.com/codegouvaor/info#readme",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix --quiet",
@@ -101,6 +99,7 @@
   },
   "dependencies": {
     "@capacitor/core": "^8.3.0",
+    "@codegouvaor/react-ads": "^1.0.3",
     "@fontsource-variable/mona-sans": "^5.2.8",
     "@loglayer/transport-pino": "^3.0.2",
     "@prisma/client": "^7.4.2",

@@ -8,7 +8,7 @@ We’re committed to providing a great experience, and there are several ways yo
 
 ## 🆓 Community Support
 
-If you're using the open-source version of Aether Calendar and need help with:
+If you're using the open-source version of Info Gouv Website and need help with:
 
 - Installation
 - Configuration
