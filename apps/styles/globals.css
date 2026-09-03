@@ -1,0 +1,176 @@
+/*
+ * Portal layer on top of the Astoria Design System.
+ *
+ * ADS ships the legacy (DSFR-derived) stylesheet. Until the official Astorian
+ * identity tokens land in `@codegouvaor/react-ads`, this file:
+ *   1. replaces the French Marianne artwork of the `.fr-logo` lockup with the
+ *      Astorian monogram (the pseudo-elements are hidden, the emblem is
+ *      rendered by the components themselves),
+ *   2. provides the page chrome (background, fonts, footer-friendly flex
+ *      layout) and simple typography for the server-rendered portal content.
+ *
+ * All colours fall back to DSFR semantic tokens so the light/dark schemes
+ * keep working through `data-fr-scheme`.
+ */
+
+:root {
+  /* DSFR uses `rem`; keep the root at the browser default (16px). */
+  font-size: 100%;
+}
+
+html {
+  background: var(--background-default-grey, #ffffff);
+  color: var(--text-default-grey, #161616);
+}
+
+body.gov-ads {
+  margin: 0;
+  font-family:
+    "Marianne",
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--background-default-grey, #ffffff);
+  color: var(--text-default-grey, #161616);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gov-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-main {
+  flex: 1 0 auto;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Institutional lockup (header & footer brand blocks)
+ * -------------------------------------------------------------------------- */
+
+.gov-ads .fr-logo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-title-grey, #161616);
+}
+
+.gov-ads .fr-logo::before,
+.gov-ads .fr-logo::after {
+  display: none;
+}
+
+.gov-ads .fr-logo .ast-brand__name {
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.gov-ads .ast-brand__emblem {
+  width: 2.75rem;
+  height: auto;
+  flex: none;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Portal content typography (server-rendered sections)
+ * -------------------------------------------------------------------------- */
+
+.gov-section {
+  padding-block: 2rem;
+}
+
+.gov-section--subtle {
+  background: var(--background-alt-grey, #f6f6f6);
+}
+
+.gov-section__container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.gov-prose h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-title-grey, #161616);
+}
+
+.gov-prose h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text-title-grey, #161616);
+}
+
+.gov-prose p {
+  margin: 0 0 1rem;
+  max-width: 48rem;
+  line-height: 1.7;
+}
+
+.gov-prose ul {
+  margin: 0 0 1rem;
+  max-width: 48rem;
+  line-height: 1.7;
+}
+
+.gov-kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mention-grey, #666666);
+}
+
+.gov-lead {
+  margin: 0 0 1.25rem;
+  max-width: 52rem;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--text-default-grey, #3a3a3a);
+}
+
+/* Inline text links used inside prose content. */
+.gov-prose a {
+  color: var(--text-action-high-blue-france, #000091);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-prose a:hover,
+.gov-prose a:focus {
+  background-color: rgba(0, 0, 145, 0.05);
+}
+
+/* Small consistent caption under block content. */
+.gov-caption {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-mention-grey, #666666);
+}
+
+@media (min-width: 48em) {
+  .gov-section {
+    padding-block: 3rem;
+  }
+}

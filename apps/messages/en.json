@@ -1,0 +1,210 @@
+{
+  "brand": {
+    "emblemAlt": "Emblem of the Republic of Astoria",
+    "republicName": "Republic of Astoria",
+    "governmentName": "Government of Astoria"
+  },
+  "header": {
+    "serviceTitle": "info.gouv.aor",
+    "serviceTagline": "The official portal of the Government of the Republic of Astoria",
+    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
+    "search": "Search",
+    "searchLinkTitle": "Search the portal"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "primary": {
+      "home": "Home",
+      "government": "Government",
+      "news": "News",
+      "services": "Services and procedures",
+      "contact": "Contact"
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "skipToNavigation": "Skip to navigation",
+    "skipToFooter": "Skip to footer"
+  },
+  "meta": {
+    "suffix": "Government of the Republic of Astoria",
+    "defaultTitle": "The official portal of the Government of the Republic of Astoria",
+    "description": "The official website of the Government of the Republic of Astoria: news, government organisation, public services and procedures.",
+    "searchPlaceholder": "Search the portal…"
+  },
+  "footer": {
+    "contentDescription": "On this portal you will find government news, an overview of its organisation and access to the public services and procedures of the Republic of Astoria.",
+    "license": "Unless otherwise stated, the content of this site is available under an open licence.",
+    "columns": {
+      "government": { "title": "Government" },
+      "news": { "title": "News and services" },
+      "portal": { "title": "The portal" }
+    },
+    "linkLabels": {
+      "government": "The Government",
+      "composition": "Government composition",
+      "contact": "Contact us",
+      "news": "All the news",
+      "services": "Services and procedures",
+      "search": "Search",
+      "sitemap": "Sitemap"
+    },
+    "bottom": {
+      "privacy": "Privacy policy",
+      "cookies": "Cookie management"
+    },
+    "legal": {
+      "accessibility": "Accessibility",
+      "privacy": "Privacy policy",
+      "terms": "Legal notice",
+      "cookies": "Cookie management",
+      "sitemap": "Sitemap"
+    }
+  },
+  "home": {
+    "kicker": "Official portal",
+    "title": "The official portal of the Government of Astoria",
+    "lead": "Welcome to info.gouv.aor. This portal provides access to official information, news and online procedures of the Government of the Republic of Astoria.",
+    "ctaPrimary": "Discover the Government",
+    "ctaSecondary": "Go to services and procedures",
+    "tasksTitle": "In one click",
+    "tasks": {
+      "composition": {
+        "title": "Government composition",
+        "desc": "Discover the structure of the Government and the list of ministries."
+      },
+      "news": {
+        "title": "News",
+        "desc": "Follow official news and institutional communications."
+      },
+      "services": {
+        "title": "Services and procedures",
+        "desc": "Access online procedures and public services."
+      },
+      "contact": {
+        "title": "Contact us",
+        "desc": "Find the official channels to contact government services."
+      }
+    },
+    "newsTitle": "Government news",
+    "newsLead": "The institutional news feed of the portal will be published in an upcoming version.",
+    "newsCta": "See all the news"
+  },
+  "pages": {
+    "government": {
+      "title": "The Government",
+      "description": "Overview of the Government of the Republic of Astoria, its organisation and its missions.",
+      "kicker": "Institutions",
+      "lead": "This section presents the organisation of the Government of the Republic of Astoria: its composition, its services and how to contact it.",
+      "paragraphs": {
+        "p1": "The Government directs and coordinates the policy of the Nation. It is made up of the head of government and the ministers in charge of the various ministerial portfolios.",
+        "p2": "This portal aims to make government action more legible: the organisation of institutions, official announcements, related procedures and services are progressively documented here."
+      },
+      "notice": "The detailed presentation of the institutions and their missions is being drafted for this preview foundation."
+    },
+    "composition": {
+      "title": "Government composition",
+      "description": "The composition of the Government of the Republic of Astoria: presidency, council of ministers and public administrations.",
+      "kicker": "Institutions",
+      "lead": "The Government of the Republic of Astoria is organised around the presidency of the Republic, the council of ministers and the public administrations.",
+      "paragraphs": {
+        "p1": "The official list of the members of the Government (head of government, ministers and secretaries of state) and the allocation of ministerial portfolios will be published in this section.",
+        "p2": "Each institution will have a dedicated page: missions, organisation, news and related procedures."
+      },
+      "notice": "The detailed composition will be published as soon as official data is available."
+    },
+    "news": {
+      "title": "News",
+      "description": "Official news from the Government of the Republic of Astoria.",
+      "kicker": "Information",
+      "lead": "Find here the official communications, announcements and press briefings of the Government of the Republic of Astoria.",
+      "paragraphs": {
+        "p1": "The institutional news feed is being prepared. It will publish official statements, speeches and council of ministers' summaries."
+      },
+      "notice": "No news has been published on this portal yet."
+    },
+    "services": {
+      "title": "Services and procedures",
+      "description": "Access to online procedures and public services of the Government of Astoria.",
+      "kicker": "Services",
+      "lead": "This section will centralise access to online procedures and the main public services of the Republic of Astoria.",
+      "paragraphs": {
+        "p1": "The procedures presented on this portal will be progressively made available: identity and official documents, employment and training, family and everyday life, businesses and territories."
+      },
+      "notice": "The first online procedures are currently being prepared."
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "Contact the services of the Government of the Republic of Astoria.",
+      "kicker": "Contact",
+      "lead": "The official contact channels of the Government of the Republic of Astoria are presented below.",
+      "paragraphs": {
+        "p1": "For any question regarding the information published on this portal, you can write to government services using the official email address.",
+        "p2": "Press enquiries and institutional requests have dedicated channels, documented in an upcoming version of this page."
+      },
+      "emailLabel": "Contact government services"
+    },
+    "search": {
+      "title": "Search",
+      "description": "Search for information, a procedure or news on the Government of Astoria portal.",
+      "kicker": "Search",
+      "lead": "Search for information, a procedure or news published on the portal.",
+      "resultsTitle": "Search results",
+      "noQuery": "Enter one or more keywords to start a search.",
+      "noResults": "No results were found for \"{query}\". Check the spelling or try different keywords."
+    },
+    "sitemap": {
+      "title": "Sitemap",
+      "description": "The sitemap of info.gouv.aor, the official portal of the Government of Astoria.",
+      "kicker": "Navigation",
+      "lead": "All the pages of the info.gouv.aor portal.",
+      "groups": {
+        "primary": "Main navigation",
+        "sections": "Portal sections",
+        "legal": "Legal framework"
+      }
+    },
+    "legal": {
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "The accessibility statement of the info.gouv.aor portal.",
+        "kicker": "Legal framework",
+        "lead": "The Government of Astoria is committed to making its portal accessible to everyone.",
+        "paragraphs": {
+          "p1": "This page is the accessibility statement of the official portal info.gouv.aor.",
+          "p2": "The foundation currently in preview is being audited for accessibility; the compliance level announced in the footer will be updated once this work is complete."
+        }
+      },
+      "privacy": {
+        "title": "Privacy policy",
+        "description": "The privacy policy of the info.gouv.aor portal.",
+        "kicker": "Legal framework",
+        "lead": "The processing of personal data on the info.gouv.aor portal complies with applicable regulations.",
+        "paragraphs": {
+          "p1": "The data collected on this portal is strictly limited to what is necessary to operate the proposed services.",
+          "p2": "In its final version, this page will describe the processing operations, their purpose, their legal basis and your rights (access, rectification, objection, erasure)."
+        }
+      },
+      "terms": {
+        "title": "Legal notice",
+        "description": "The legal notice of the info.gouv.aor portal.",
+        "kicker": "Legal framework",
+        "lead": "The info.gouv.aor portal is published by the Government of the Republic of Astoria.",
+        "paragraphs": {
+          "p1": "Publisher: Government of the Republic of Astoria — info.gouv.aor.",
+          "p2": "The full legal notice (publication director, hosting, intellectual property) will be detailed in an upcoming version of this page."
+        }
+      },
+      "cookies": {
+        "title": "Cookie management",
+        "description": "The cookie policy of the info.gouv.aor portal.",
+        "kicker": "Legal framework",
+        "lead": "This portal uses trackers that are strictly necessary for its operation.",
+        "paragraphs": {
+          "p1": "Audience measurement cookies and third-party trackers are only placed after your consent.",
+          "p2": "In its final version, this page will present the details of the trackers used and how to exercise your choices."
+        }
+      }
+    }
+  }
+}

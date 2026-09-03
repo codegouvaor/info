@@ -1,0 +1,210 @@
+{
+  "brand": {
+    "emblemAlt": "Emblème de la République d'Astoria",
+    "republicName": "République d'Astoria",
+    "governmentName": "Gouvernement d'Astoria"
+  },
+  "header": {
+    "serviceTitle": "info.gouv.aor",
+    "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
+    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
+    "search": "Rechercher",
+    "searchLinkTitle": "Lancer une recherche sur le portail"
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "primary": {
+      "home": "Accueil",
+      "government": "Le Gouvernement",
+      "news": "Actualités",
+      "services": "Démarches et services",
+      "contact": "Contact"
+    }
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "skipToNavigation": "Aller à la navigation",
+    "skipToFooter": "Aller au pied de page"
+  },
+  "meta": {
+    "suffix": "Gouvernement de la République d'Astoria",
+    "defaultTitle": "Le portail officiel du Gouvernement de la République d'Astoria",
+    "description": "Le site officiel du Gouvernement de la République d'Astoria : actualités, organisation du Gouvernement, démarches et services publics.",
+    "searchPlaceholder": "Rechercher sur le portail…"
+  },
+  "footer": {
+    "contentDescription": "Retrouvez sur ce portail les actualités du Gouvernement, la présentation de son organisation et l'accès aux démarches et services publics de la République d'Astoria.",
+    "license": "Sauf mention contraire, les contenus de ce site sont disponibles sous licence ouverte.",
+    "columns": {
+      "government": { "title": "Le Gouvernement" },
+      "news": { "title": "Actualités et services" },
+      "portal": { "title": "Le portail" }
+    },
+    "linkLabels": {
+      "government": "Le Gouvernement",
+      "composition": "Composition du Gouvernement",
+      "contact": "Nous contacter",
+      "news": "Toute l'actualité",
+      "services": "Démarches et services",
+      "search": "Rechercher",
+      "sitemap": "Plan du site"
+    },
+    "bottom": {
+      "privacy": "Confidentialité",
+      "cookies": "Gestion des cookies"
+    },
+    "legal": {
+      "accessibility": "Accessibilité",
+      "privacy": "Confidentialité",
+      "terms": "Mentions légales",
+      "cookies": "Gestion des cookies",
+      "sitemap": "Plan du site"
+    }
+  },
+  "home": {
+    "kicker": "Portail officiel",
+    "title": "Le portail officiel du Gouvernement d'Astoria",
+    "lead": "Bienvenue sur info.gouv.aor. Ce portail donne accès aux informations institutionnelles, aux actualités et aux démarches en ligne du Gouvernement de la République d'Astoria.",
+    "ctaPrimary": "Découvrir le Gouvernement",
+    "ctaSecondary": "Accéder aux démarches",
+    "tasksTitle": "En un clic",
+    "tasks": {
+      "composition": {
+        "title": "Composition du Gouvernement",
+        "desc": "Découvrir la structure du Gouvernement et la liste des ministères."
+      },
+      "news": {
+        "title": "Actualités",
+        "desc": "Suivre l'actualité institutionnelle et les communications officielles."
+      },
+      "services": {
+        "title": "Démarches et services",
+        "desc": "Accéder aux démarches en ligne et aux services publics."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "desc": "Trouver les canaux officiels pour contacter les services du Gouvernement."
+      }
+    },
+    "newsTitle": "Actualités du Gouvernement",
+    "newsLead": "Le fil d'actualité institutionnel du portail sera publié dans une prochaine version.",
+    "newsCta": "Voir toutes les actualités"
+  },
+  "pages": {
+    "government": {
+      "title": "Le Gouvernement",
+      "description": "Présentation du Gouvernement de la République d'Astoria, de son organisation et de ses missions.",
+      "kicker": "Institutions",
+      "lead": "Cette section présente l'organisation du Gouvernement de la République d'Astoria : sa composition, ses services et la manière de le contacter.",
+      "paragraphs": {
+        "p1": "Le Gouvernement conduit et coordonne la politique de la Nation. Il est composé du chef du Gouvernement et des ministres chargés des différents portefeuilles ministériels.",
+        "p2": "Ce portail vise à rendre l'action gouvernementale plus lisible : organisation des institutions, annonces officielles, démarches et services associés y sont progressivement documentés."
+      },
+      "notice": "La présentation détaillée des institutions et de leurs missions est en cours de rédaction pour ce socle de prévisualisation."
+    },
+    "composition": {
+      "title": "Composition du Gouvernement",
+      "description": "La composition du Gouvernement de la République d'Astoria : présidence, conseil des ministres et administrations.",
+      "kicker": "Institutions",
+      "lead": "Le Gouvernement de la République d'Astoria est structuré autour de la présidence de la République, du conseil des ministres et des administrations publiques.",
+      "paragraphs": {
+        "p1": "La liste officielle des membres du Gouvernement (chef du Gouvernement, ministres et secrétaires d'État) et la répartition des portefeuilles ministériels seront publiées dans cette section.",
+        "p2": "Chaque institution disposera d'une fiche dédiée : missions, organisation, actualités et démarches associées."
+      },
+      "notice": "La composition nominative sera publiée dès que les données officielles seront disponibles."
+    },
+    "news": {
+      "title": "Actualités",
+      "description": "Les actualités officielles du Gouvernement de la République d'Astoria.",
+      "kicker": "Information",
+      "lead": "Retrouvez ici les communications officielles, les annonces et les points presse du Gouvernement de la République d'Astoria.",
+      "paragraphs": {
+        "p1": "Le fil d'actualité institutionnel est en cours de préparation. Il diffusera les communiqués officiels, les discours et les comptes rendus du conseil des ministres."
+      },
+      "notice": "Aucune actualité n'a encore été publiée sur ce portail."
+    },
+    "services": {
+      "title": "Démarches et services",
+      "description": "L'accès aux démarches en ligne et aux services publics du Gouvernement d'Astoria.",
+      "kicker": "Services",
+      "lead": "Cette section centralisera l'accès aux démarches en ligne et aux principaux services publics de la République d'Astoria.",
+      "paragraphs": {
+        "p1": "Les démarches présentées sur ce portail seront progressivement mises à disposition : identité et documents officiels, emploi et formation, famille et vie quotidienne, entreprises et territoires."
+      },
+      "notice": "La mise en ligne des premières démarches est en cours de préparation."
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "description": "Contacter les services du Gouvernement de la République d'Astoria.",
+      "kicker": "Contact",
+      "lead": "Les canaux officiels de contact des services du Gouvernement de la République d'Astoria sont présentés ci-dessous.",
+      "paragraphs": {
+        "p1": "Pour toute question relative aux informations publiées sur ce portail, vous pouvez écrire aux services du Gouvernement via l'adresse électronique officielle.",
+        "p2": "Les demandes de presse et les demandes institutionnelles font l'objet de canaux dédiés, documentés dans une prochaine version de cette page."
+      },
+      "emailLabel": "Contacter les services du Gouvernement"
+    },
+    "search": {
+      "title": "Recherche",
+      "description": "Rechercher une information, une démarche ou une actualité sur le portail du Gouvernement d'Astoria.",
+      "kicker": "Recherche",
+      "lead": "Recherchez une information, une démarche ou une actualité publiée sur le portail.",
+      "resultsTitle": "Résultats de recherche",
+      "noQuery": "Saisissez un ou plusieurs mots-clés pour lancer une recherche.",
+      "noResults": "Aucun résultat n'a été trouvé pour « {query} ». Vérifiez l'orthographe ou essayez d'autres mots-clés."
+    },
+    "sitemap": {
+      "title": "Plan du site",
+      "description": "Le plan du site info.gouv.aor, portail officiel du Gouvernement d'Astoria.",
+      "kicker": "Navigation",
+      "lead": "L'ensemble des pages du portail info.gouv.aor.",
+      "groups": {
+        "primary": "Navigation principale",
+        "sections": "Sections du portail",
+        "legal": "Cadre légal"
+      }
+    },
+    "legal": {
+      "accessibility": {
+        "title": "Accessibilité",
+        "description": "La déclaration d'accessibilité du portail info.gouv.aor.",
+        "kicker": "Cadre légal",
+        "lead": "Le Gouvernement d'Astoria s'engage à rendre son portail accessible à toutes et à tous.",
+        "paragraphs": {
+          "p1": "Cette page constitue la déclaration d'accessibilité du portail officiel info.gouv.aor.",
+          "p2": "Le socle actuellement en prévisualisation fait l'objet d'audits d'accessibilité ; le niveau de conformité annoncé dans le pied de page sera mis à jour à l'issue de ces travaux."
+        }
+      },
+      "privacy": {
+        "title": "Confidentialité",
+        "description": "La politique de confidentialité du portail info.gouv.aor.",
+        "kicker": "Cadre légal",
+        "lead": "Le traitement des données personnelles sur le portail info.gouv.aor respecte la réglementation en vigueur.",
+        "paragraphs": {
+          "p1": "Les données collectées sur ce portail sont strictement nécessaires au fonctionnement des services proposés.",
+          "p2": "Cette page décrira, dans sa version finale, les traitements mis en œuvre, leur finalité, leur base légale ainsi que vos droits (accès, rectification, opposition, effacement)."
+        }
+      },
+      "terms": {
+        "title": "Mentions légales",
+        "description": "Les mentions légales du portail info.gouv.aor.",
+        "kicker": "Cadre légal",
+        "lead": "Le portail info.gouv.aor est édité par le Gouvernement de la République d'Astoria.",
+        "paragraphs": {
+          "p1": "Éditeur : Gouvernement de la République d'Astoria — info.gouv.aor.",
+          "p2": "Les mentions légales complètes (directeur de la publication, hébergement, propriété intellectuelle) seront précisées dans une prochaine version de cette page."
+        }
+      },
+      "cookies": {
+        "title": "Gestion des cookies",
+        "description": "La politique de gestion des cookies du portail info.gouv.aor.",
+        "kicker": "Cadre légal",
+        "lead": "Ce portail utilise des traceurs strictement nécessaires à son fonctionnement.",
+        "paragraphs": {
+          "p1": "Les cookies de mesure d'audience et les traceurs tiers ne sont déposés qu'après votre consentement.",
+          "p2": "Cette page présentera, dans sa version finale, le détail des traceurs utilisés et le moyen d'exercer vos choix."
+        }
+      }
+    }
+  }
+}

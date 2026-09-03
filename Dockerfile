@@ -44,7 +44,7 @@ COPY apps/package.json ./apps/
 RUN mkdir -p apps/next/fond/google && \
     printf 'module.exports = {};\n' > apps/next/fond/google/index.js && \
     printf '{"name":"google","version":"0.0.0"}\n' > apps/next/fond/google/package.json && \
-    pnpm install --filter @info/apps... --no-frozen-lockfile
+    pnpm install --filter @info-gouv/apps... --no-frozen-lockfile
 
 COPY apps/ ./apps/
 
@@ -149,7 +149,7 @@ COPY apps/hooks/               ./apps/hooks/
 COPY apps/lib/                 ./apps/lib/
 COPY apps/public/              ./apps/public/
 COPY apps/styles/              ./apps/styles/
-COPY middleware.ts             ./apps/middleware.ts
+COPY apps/middleware.ts        ./apps/middleware.ts
 
 # ── Config ──────────────────────────────────────────────────────────────────
 COPY .air.toml   ./

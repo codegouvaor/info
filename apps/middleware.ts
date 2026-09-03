@@ -1,10 +1,26 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { routing } from "./apps/i18n/routing";
+import createIntlMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
+/**
+ * Locale-aware middleware of the Next.js app (`apps/` is the Next project
+ * root, so this file MUST live here — a middleware at the repository root is
+ * never picked up by `next dev`/`next build`).
+ *
+ * Routing principle:
+ *  - each product lives on its own domain (SSO, studios, public portal);
+ *  - on the public portal domain, locale routing is delegated to the
+ *    next-intl middleware: `/` is negotiated to `/fr` (or `/en`), locale
+ *    prefixed paths like `/fr/…` pass through untouched and the request
+ *    locale is announced via the `x-next-intl-locale` header so every
+ *    server component resolves the right messages.
+ */
 const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 
 type Locale = (typeof routing.locales)[number];
+
+const handleI18nRouting = createIntlMiddleware(routing);
 
 /* -------------------------------------------------------------------------- *
  * Domain ↔ route group mapping
@@ -14,7 +30,12 @@ type DomainGroup = "sso" | "studios" | "main";
 
 const SSO_HOSTS = ["sso.gouv.localhost", "sso.gouv.lan"];
 const STUDIOS_HOSTS = ["studios.gouv.localhost", "studios.gouv.lan"];
-const MAIN_HOSTS = ["info.gouv.localhost", "info.gouv.lan", "info.gouv.aor", "www.info.gouv.aor"];
+const MAIN_HOSTS = [
+  "info.gouv.localhost",
+  "info.gouv.lan",
+  "info.gouv.aor",
+  "www.info.gouv.aor",
+];
 
 const AUTH_PATHS = [
   "/login",
@@ -61,45 +82,14 @@ function getDomainForGroup(group: DomainGroup, currentUrl: URL): string {
   }
 }
 
-function belongsToGroup(pathname: string, group: DomainGroup): boolean {
-  switch (group) {
-    case "sso":
-      return AUTH_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"));
-    case "studios":
-      return PLATFORM_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"));
-    case "main":
-      return true;
-  }
-}
-
 function getTargetGroup(pathname: string): DomainGroup | null {
-  if (AUTH_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) return "sso";
-  if (PLATFORM_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) return "studios";
+  if (AUTH_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
+    return "sso";
+  }
+  if (PLATFORM_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
+    return "studios";
+  }
   return null;
-}
-
-/* -------------------------------------------------------------------------- *
- * Locale helpers
- * -------------------------------------------------------------------------- */
-
-const countryToLocale: Record<string, Locale> = { FR: "fr", EN: "en" };
-
-function getCountryFromRequest(request: NextRequest): string | null {
-  return (
-    request.headers.get("cf-ipcountry") ||
-    request.headers.get("x-vercel-ip-country") ||
-    request.headers.get("x-fastly-geo-country") ||
-    null
-  );
-}
-
-function getLocaleFromCountry(country: string | null): Locale {
-  if (country && country in countryToLocale) return countryToLocale[country];
-  return routing.defaultLocale;
-}
-
-function isValidLocale(segment: string): segment is Locale {
-  return routing.locales.includes(segment as Locale);
 }
 
 /* -------------------------------------------------------------------------- *
@@ -113,7 +103,8 @@ function isAuthCookiePresent(request: NextRequest): boolean {
   const refresh = request.cookies.get(REFRESH_COOKIE);
   const access = request.cookies.get(ACCESS_TOKEN_COOKIE);
   return Boolean(
-    (refresh?.value && refresh.value.length > 0) || (access?.value && access.value.length > 0)
+    (refresh?.value && refresh.value.length > 0) ||
+      (access?.value && access.value.length > 0)
   );
 }
 
@@ -134,6 +125,20 @@ function hasAdminAccess(request: NextRequest): boolean {
 }
 
 /* -------------------------------------------------------------------------- *
+ * Locale helpers
+ * -------------------------------------------------------------------------- */
+
+function isValidLocale(segment: string): segment is Locale {
+  return routing.locales.includes(segment as Locale);
+}
+
+/** Strips a leading locale segment, e.g. `/fr/login` → `/login`. */
+function stripLocalePrefix(pathname: string, localePath: string): string {
+  const cleanPath = pathname.replace(localePath, "");
+  return cleanPath === "" ? "/" : cleanPath;
+}
+
+/* -------------------------------------------------------------------------- *
  * Middleware entry
  * -------------------------------------------------------------------------- */
 
@@ -142,7 +147,7 @@ export default function proxy(request: NextRequest) {
   const host = request.headers.get("host") || request.nextUrl.hostname;
   const currentGroup = detectGroup(host);
 
-  /* ---- Root path ---- */
+  /* ---- Root path (no locale prefix yet) ---- */
   if (pathname === "/" || pathname === "") {
     switch (currentGroup) {
       case "sso":
@@ -150,30 +155,28 @@ export default function proxy(request: NextRequest) {
       case "studios":
         return NextResponse.redirect(new URL("/dash", request.url));
       case "main":
-      default: {
+      default:
+        // Logged-in users of the platform are sent to their profile area.
         if (isAuthCookiePresent(request)) {
           return NextResponse.redirect(new URL("/profile-change", request.url));
         }
-        const locale = getLocaleFromCountry(getCountryFromRequest(request));
-        return NextResponse.redirect(new URL(`/${locale}`, request.url));
-      }
+        // Locale negotiation and redirect to /fr or /en.
+        return handleI18nRouting(request);
     }
   }
 
-  /* ---- Cross-domain routing ---- */
+  /* ---- Cross-domain routing (unprefixed auth/platform paths) ---- */
   const targetGroup = getTargetGroup(pathname);
   if (targetGroup && targetGroup !== currentGroup) {
-    return NextResponse.redirect(
-      new URL(pathname, getDomainForGroup(targetGroup, request.nextUrl))
-    );
+    return NextResponse.redirect(new URL(pathname, getDomainForGroup(targetGroup, request.nextUrl)));
   }
 
-  /* ---- SSO domain: only auth routes ---- */
+  /* ---- SSO domain: auth routes only ---- */
   if (currentGroup === "sso") {
     return NextResponse.next();
   }
 
-  /* ---- Studios domain: only platform routes ---- */
+  /* ---- Studios domain: platform routes only ---- */
   if (currentGroup === "studios") {
     if (PLATFORM_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
       if (IS_DEVELOPMENT) return NextResponse.next();
@@ -183,44 +186,32 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/dash", request.url));
   }
 
-  /* ---- Main domain: public routes ---- */
-  const segments = pathname.split("/").filter(Boolean);
-  const firstSegment = segments[0];
+  /* ---- Main (portal) domain ---- */
 
+  const firstSegment = pathname.split("/").filter(Boolean)[0];
+
+  // Locale-prefixed auth/platform routes belong to the SSO/studios domains:
+  // strip the locale and let the cross-domain rules above route them.
   if (firstSegment && isValidLocale(firstSegment)) {
     const localePath = `/${firstSegment}`;
-    if (
-      AUTH_PATHS.some((p) => pathname.startsWith(localePath + p) || pathname === localePath + p)
-    ) {
-      const cleanPath = pathname.replace(localePath, "");
-      return NextResponse.redirect(new URL(cleanPath || "/", request.url));
+
+    if (AUTH_PATHS.some((p) => pathname.startsWith(localePath + p) || pathname === localePath + p)) {
+      return NextResponse.redirect(
+        new URL(stripLocalePrefix(pathname, localePath), request.url)
+      );
     }
-    if (
-      PLATFORM_PATHS.some((p) => pathname.startsWith(localePath + p) || pathname === localePath + p)
-    ) {
-      const cleanPath = pathname.replace(localePath, "");
-      return NextResponse.redirect(new URL(cleanPath || "/", request.url));
+    if (PLATFORM_PATHS.some((p) => pathname.startsWith(localePath + p) || pathname === localePath + p)) {
+      return NextResponse.redirect(
+        new URL(stripLocalePrefix(pathname, localePath), request.url)
+      );
     }
-    return NextResponse.next();
   }
 
-  if (firstSegment && !isValidLocale(firstSegment)) {
-    if (AUTH_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
-      return NextResponse.next();
-    }
-    if (PLATFORM_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
-      return NextResponse.next();
-    }
-    const locale = getLocaleFromCountry(getCountryFromRequest(request));
-    // Preserve the original query string (e.g. `?ep=<episodeId>` on watch
-    // links) — `new URL(path, base)` would silently drop it, sending users
-    // to the wrong episode after the locale redirect.
-    const url = request.nextUrl.clone();
-    url.pathname = `/${locale}${pathname}`;
-    return NextResponse.redirect(url);
-  }
-
-  return NextResponse.next();
+  // Everything else on the portal domain is handled by next-intl: it keeps
+  // `/fr/…`/`/en/…` requests untouched, redirects unprefixed public paths to
+  // the negotiated locale and sets the request-locale header used by the
+  // server components.
+  return handleI18nRouting(request);
 }
 
 export const config = {

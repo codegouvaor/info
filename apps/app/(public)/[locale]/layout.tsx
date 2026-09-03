@@ -1,11 +1,54 @@
+import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
-import { LocaleProvider } from "@/context/locale-context";
-import { Locale } from "@/lib/locale";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { routing, type Locale } from "@/i18n/routing";
+import { pageAnchors } from "@/lib/site-structure";
+import { AdsProvider } from "@/components/public/ads/ads-provider";
+import { GovernmentHeader } from "@/components/public/header/government-header";
+import { GovernmentFooter } from "@/components/public/footer/government-footer";
+
+// Astoria Design System stylesheet (icons + components). Imported here so the
+// CSS is only shipped to the localized public routes.
+import "@codegouvaor/react-ads/main.css";
+// Portal layer (Astorian identity lockup, page chrome, content typography).
+import "@/styles/globals.css";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://info.gouv.aor";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = routing.locales.includes(localeParam as Locale)
+    ? (localeParam as Locale)
+    : routing.defaultLocale;
+
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: tMeta("defaultTitle"),
+      template: `%s | ${tMeta("suffix")}`,
+    },
+    description: tMeta("description"),
+    icons: {
+      icon: [
+        {
+          url: "/icon.svg",
+          type: "image/svg+xml",
+        },
+        { url: "/icon-light-32x32.png" },
+      ],
+      apple: "/apple-icon.png",
+    },
+  };
 }
 
 export default async function LocaleLayout({
@@ -15,21 +58,32 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
 
-  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+  if (!routing.locales.includes(localeParam as Locale)) {
     return null;
   }
 
+  const locale = localeParam as Locale;
   setRequestLocale(locale);
 
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <LocaleProvider initialLocale={locale as Locale}>
-        <div className="min-h-screen flex flex-col">{children}</div>
-      </LocaleProvider>
-    </NextIntlClientProvider>
+    <html lang={locale} suppressHydrationWarning>
+      <body className="gov-ads">
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <AdsProvider lang={locale}>
+            <div className="gov-page">
+              <GovernmentHeader />
+              <main id={pageAnchors.content} className="gov-main">
+                {children}
+              </main>
+              <GovernmentFooter />
+            </div>
+          </AdsProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
