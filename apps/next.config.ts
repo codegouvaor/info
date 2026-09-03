@@ -17,7 +17,7 @@ const imageLocalPatterns: NonNullable<NextConfig["images"]>["localPatterns"] = [
   { pathname: "/api/v1/integrations/plex/image" },
 ];
 const imageRemotePatterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [
-  { protocol: "https", hostname: "etheriatimes.com", pathname: "/**" },
+  { protocol: "https", hostname: "info.gouv.aor", pathname: "/**" },
   { protocol: "https", hostname: "api.dicebear.com", pathname: "/**" },
   { protocol: "https", hostname: "avatars.githubusercontent.com", pathname: "/**" },
   { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: "../",
   },
-  allowedDevOrigins: ["etheriatimes.com", "api.etheriatimes.com", "sso.etheriatimes.com", "etheriatimes.localhost", "api.etheriatimes.localhost", "sso.etheriatimes.localhost", "studios.etheriatimes.localhost"],
+  allowedDevOrigins: ["info.gouv.aor", "api.info.gouv.aor", "sso.info.gouv.aor", "info.gouv.localhost", "api.info.gouv.localhost", "sso.gouv.localhost"],
   outputFileTracingExcludes: {
     "*": ["test/**"],
   },
