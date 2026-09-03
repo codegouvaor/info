@@ -7,7 +7,6 @@ import type { MainNavigationProps } from "@codegouvaor/react-ads/MainNavigation"
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { pageAnchors, pressPath, primaryNavigation, searchPath } from "@/lib/site-structure";
-import { GovernmentBrand } from "../brand/government-brand";
 
 /** Whether the current pathname corresponds to a navigation href. */
 const isNavItemActive = (href: string, pathname: string): boolean =>
@@ -17,7 +16,7 @@ const isNavItemActive = (href: string, pathname: string): boolean =>
  * Government Header of the Astoria portal.
  *
  * Follows the info.gouv.fr header conventions:
- *  - brand block: emblem + republic name, service title and tagline,
+ *  - brand block: official Astoria mark, service title and tagline,
  *  - main navigation row whose seven sections open mega-menu panels
  *    (leader + categories), mirroring info.gouv.fr (À la une, Décryptages,
  *    L'État et moi, Prévention des risques, Le Gouvernement, Suivi des
@@ -34,6 +33,7 @@ export function GovernmentHeader() {
   const t = useTranslations();
   const tPrimaryNav = useTranslations("nav.primary");
   const tNavPanel = useTranslations("nav.panel");
+  const tBrand = useTranslations("brand");
   const pathname = usePathname();
   const router = useRouter();
 
@@ -88,7 +88,14 @@ export function GovernmentHeader() {
       />
       <Header
         className="gov-header"
-        brandTop={<GovernmentBrand />}
+      identity={{
+        imgUrl: "/astoria-gouv.png",
+        alt: tBrand("republicName"),
+        // The lockup artwork already carries the full wordmark, so no
+        // institution line is displayed under the image. ADS requires the
+        // field, hence the empty string.
+        institution: "",
+      }}
         homeLinkProps={{
           href: "/",
           title: t("header.homeTitle"),

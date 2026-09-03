@@ -1,13 +1,11 @@
 /*
  * Portal layer on top of the Astoria Design System.
  *
- * ADS ships the legacy (DSFR-derived) stylesheet. Until the official Astorian
- * identity tokens land in `@codegouvaor/react-ads`, this file:
- *   1. replaces the French Marianne artwork of the `.fr-logo` lockup with the
- *      Astorian monogram (the pseudo-elements are hidden, the emblem is
- *      rendered by the components themselves),
- *   2. provides the page chrome (background, fonts, footer-friendly flex
- *      layout) and simple typography for the server-rendered portal content.
+ * ADS ships the DSFR-derived stylesheet plus the official Astorian identity
+ * (the Header/Footer brand lockups render the national mark through their
+ * `identity` prop). This file only provides the page chrome (background,
+ * fonts, footer-friendly flex layout) and simple typography for the
+ * server-rendered portal content.
  *
  * All colours fall back to DSFR semantic tokens so the light/dark schemes
  * keep working through `data-fr-scheme`.
@@ -60,43 +58,53 @@ body.gov-ads {
 }
 
 /* -------------------------------------------------------------------------- *
- * Institutional lockup (header & footer brand blocks)
- * -------------------------------------------------------------------------- */
+ * Header brand lockup — official-portal layout (info.gouv.fr convention)
+ * -------------------------------------------------------------------------- *
+ * From 48rem upward the official mark and the portal identity are laid out as
+ * a single horizontal band:
+ *
+ *   [astoria-gouv.png]  info.gouv.aor
+ *                       Le portail officiel du Gouvernement de la République d'Astoria
+ *
+ * with the quick-access tools / tablet menu button at the end of the band.
+ * Below 48rem the DSFR mobile pattern is kept (mark on top, then the service
+ * title) — the same behaviour as the official portal on small screens.
+ */
+@media (min-width: 48rem) and (max-width: 61.98rem) {
+  .gov-header .fr-header__brand {
+    flex-wrap: nowrap;
+    position: relative;
+  }
 
-.gov-ads .fr-logo {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0;
-  margin: 0;
-  text-indent: 0;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--text-title-grey, #161616);
+  .gov-header .fr-header__brand-top {
+    width: auto;
+  }
+
+  /* The tablet search/menu buttons keep their place at the end of the band
+     instead of sliding between the mark and the service title. */
+  .gov-header .fr-header__navbar {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .gov-header .fr-header__service {
+    align-self: center;
+    margin-left: 0.5rem;
+  }
+
+  /* No divider above the title once it sits beside the mark. */
+  .gov-header .fr-header__service::before {
+    content: none;
+  }
 }
 
-.gov-ads .fr-logo::before,
-.gov-ads .fr-logo::after {
+/* The institution line under the mark is intentionally empty (the lockup
+ * artwork carries the full wordmark) — drop it entirely so it adds no gap. */
+.ads-identity__institution:empty {
   display: none;
-}
-
-.gov-ads .fr-logo .ast-brand__name {
-  text-transform: uppercase;
-  letter-spacing: 0.045em;
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.35;
-}
-
-.gov-ads .ast-brand__emblem {
-  width: 2.75rem;
-  height: auto;
-  flex: none;
-  color: inherit;
 }
 
 /* -------------------------------------------------------------------------- *
@@ -313,5 +321,75 @@ body.gov-ads {
   .gov-event {
     grid-template-columns: 11rem 1fr;
     align-items: baseline;
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * Floating “back to top” bubble
+ * -------------------------------------------------------------------------- *
+ * The portal pages do not load Tailwind utilities, so this control is styled
+ * with plain CSS: a fixed, circular bubble pinned to the bottom-right corner,
+ * independent from the page flow and from the footer. It fades in once the
+ * page is scrolled; its `bottom` is set inline at runtime to clear the
+ * consent banner when one is displayed.
+ */
+.gov-back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--border-default-grey, #dddddd);
+  border-radius: 9999px;
+  background-color: var(--background-default-grey, #ffffff);
+  color: var(--text-default-grey, #161616);
+  cursor: pointer;
+  box-shadow: 0 0.375rem 1rem rgb(0 0 0 / 18%);
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.gov-back-to-top.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.gov-back-to-top:hover {
+  background-color: var(--background-alt-grey, #f6f6f6);
+  box-shadow: 0 0.5rem 1.25rem rgb(0 0 0 / 25%);
+}
+
+.gov-back-to-top:focus-visible {
+  outline: 2px solid var(--text-action-high-blue-france, #000091);
+  outline-offset: 2px;
+}
+
+.gov-back-to-top svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .gov-back-to-top {
+    right: 1.5rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .gov-back-to-top svg {
+    width: 1.375rem;
+    height: 1.375rem;
   }
 }

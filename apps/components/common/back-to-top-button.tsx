@@ -4,8 +4,6 @@ import * as React from "react";
 import { ArrowUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { cn } from "@/lib/utils";
-
 const EXTRA_OFFSET_PX = 16;
 
 export function BackToTopButton() {
@@ -62,22 +60,21 @@ export function BackToTopButton() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  // Compact circular bubble, always shown in the bottom-right corner when the
+  // page is scrolled. The portal pages do not load Tailwind utilities, so the
+  // appearance lives entirely in `.gov-back-to-top` (globals.css): a fixed
+  // overlay independent from the page flow and from the footer.
   return (
     <button
       type="button"
       aria-label={t("backToTop.ariaLabel")}
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
       onClick={handleClick}
-      className={cn(
-        "fixed right-4 z-40 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/92 px-3 py-2 text-sm font-medium text-foreground shadow-sm backdrop-blur transition-all duration-200 hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/20 sm:right-6 sm:px-4",
-        "supports-backdrop-filter:bg-background/86",
-        visible
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-3 opacity-0",
-      )}
+      className={`gov-back-to-top${visible ? " is-visible" : ""}`}
       style={{ bottom: `${bottomOffset}px` }}
     >
-      <ArrowUp className="h-4 w-4 shrink-0" aria-hidden="true" />
-      <span className="hidden sm:inline">{t("backToTop.label")}</span>
+      <ArrowUp strokeWidth={2.5} aria-hidden="true" />
     </button>
   );
 }

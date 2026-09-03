@@ -90,7 +90,15 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     ".next-verify/types/**/*.ts",
-    ".next-verify/dev/types/**/*.ts"
+    ".next-verify/dev/types/**/*.ts",
+    ".next-buffy2/types/**/*.ts",
+    ".next-buffy2/dev/types/**/*.ts",
+    ".next-buffy3/types/**/*.ts",
+    ".next-buffy3/dev/types/**/*.ts",
+    ".next-buffy4/types/**/*.ts",
+    ".next-buffy4/dev/types/**/*.ts",
+    ".next-buffy5/types/**/*.ts",
+    ".next-buffy5/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

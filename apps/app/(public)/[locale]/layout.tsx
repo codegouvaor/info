@@ -42,7 +42,7 @@ export async function generateMetadata({
     icons: {
       icon: [
         {
-          url: "/icon.svg",
+          url: "/astoria-gouv.png",
           type: "image/svg+xml",
         },
         { url: "/icon-light-32x32.png" },

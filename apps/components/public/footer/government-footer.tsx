@@ -4,7 +4,6 @@ import { Footer } from "@codegouvaor/react-ads/Footer";
 import type { FooterProps } from "@codegouvaor/react-ads/Footer";
 import { useTranslations } from "next-intl";
 import { footerNavigation, legalPaths, pageAnchors } from "@/lib/site-structure";
-import { GovernmentBrand } from "../brand/government-brand";
 import { LocaleSwitcher } from "../locale-switcher";
 
 const HOME_PATH = "/";
@@ -31,6 +30,7 @@ const OFFICIAL_DOMAINS: string[] = [
 export function GovernmentFooter() {
   const t = useTranslations();
   const tNavPanel = useTranslations("nav.panel");
+  const tBrand = useTranslations("brand");
 
   const linkList = footerNavigation.map((column) => ({
     categoryName: t(`footer.columns.${column.columnKey}.title`),
@@ -45,7 +45,14 @@ export function GovernmentFooter() {
       id={pageAnchors.footer}
       className="gov-footer"
       accessibility="partially compliant"
-      brandTop={<GovernmentBrand />}
+      identity={{
+        imgUrl: "/astoria-gouv.png",
+        alt: tBrand("republicName"),
+        // The lockup artwork already carries the full wordmark, so no
+        // institution line is displayed under the image. ADS requires the
+        // field, hence the empty string.
+        institution: "",
+      }}
       homeLinkProps={{
         href: HOME_PATH,
         title: t("header.homeTitle"),
