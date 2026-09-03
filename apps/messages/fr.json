@@ -7,18 +7,104 @@
   "header": {
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
-    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
-    "search": "Rechercher",
-    "searchLinkTitle": "Lancer une recherche sur le portail"
+    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria"
   },
   "nav": {
     "main": "Navigation principale",
     "primary": {
-      "home": "Accueil",
-      "government": "Le Gouvernement",
-      "news": "Actualités",
-      "services": "Démarches et services",
-      "contact": "Contact"
+      "aLaUne": "À la une",
+      "decryptages": "Décryptages",
+      "etatEtMoi": "L'État et moi",
+      "preventionDesRisques": "Prévention des risques",
+      "gouvernement": "Le Gouvernement",
+      "suiviDesEngagements": "Suivi des engagements",
+      "liensUtiles": "Liens utiles"
+    },
+    "panel": {
+      "aLaUneTitle": "À la une",
+      "aLaUneText": "Les actualités et informations essentielles du Gouvernement de la République d'Astoria.",
+      "homeLink": "Accueil",
+      "allNews": "Toute l'actualité",
+      "actualiteCategory": "L'actualité",
+      "ceQuiChange": "Ce qui change",
+      "vosQuestions": "Vos questions, nos réponses",
+      "actualitePremierMinistre": "Actualité du Premier ministre",
+      "mediasCategory": "Médias",
+      "podcasts": "Podcasts",
+      "articlesAudio": "Articles audio",
+      "newsletters": "Newsletters",
+      "videos": "Vidéos",
+      "thematiquesCategory": "Thématiques",
+      "budget": "Budget",
+      "harcelement": "Harcèlement à l'école",
+      "laicite": "Laïcité",
+      "narcotrafic": "Narcotrafic",
+      "sante": "Santé",
+      "handicap": "Handicap",
+      "rechercheInnovation": "Recherche et innovation",
+      "intelligenceArtificielle": "Intelligence artificielle",
+      "grandsDossiersCategory": "Grands dossiers",
+      "parlonsSanteMentale": "Parlons santé mentale !",
+      "relanceLogement": "Relance logement",
+      "franceGrandAngle": "La République en grand angle",
+      "france2030": "Astoria 2030",
+      "toutesEtTousEgaux": "Toutes et tous égaux",
+      "franceNationVerte": "Astoria Nation verte",
+      "maisonsFranceServices": "Maisons France services",
+      "tousLesGrandsDossiers": "Tous les grands dossiers",
+      "decryptagesTitle": "Décryptages",
+      "decryptagesText": "Analyses, décodages et regards sur l'action du Gouvernement.",
+      "decryptagesDiscover": "Découvrir les décryptages",
+      "decryptagesCategory": "Actualités",
+      "etatEtMoiMissionsTitle": "Les 6 missions essentielles de l'État",
+      "etatEtMoiMissionsText": "Découvrir ses missions, son rôle quotidien, ses acteurs et son impact sur la vie des citoyens.",
+      "etatEtMoiDiscover": "Découvrir",
+      "etatEtMoiCategory": "Les missions de l'État",
+      "etatOrganisateur": "L'État organisateur",
+      "etatProtecteur": "L'État protecteur",
+      "etatFacilitateur": "L'État facilitateur",
+      "etatMoteur": "L'État moteur",
+      "etatPromoteur": "L'État promoteur",
+      "etatInfluent": "L'État influent",
+      "gouvernementCategory": "Le Gouvernement",
+      "gouvernementLink": "Le Gouvernement",
+      "gouvernementComposition": "Composition du Gouvernement",
+      "prevenirLesRisquesCategory": "Prévenir les risques",
+      "risquesAccueil": "Accueil : les risques en France",
+      "risquesNaturels": "Risques naturels et technologiques",
+      "cybercriminalite": "Cybercriminalité",
+      "menaceTerroriste": "Menace terroriste",
+      "infectionsRespiratoires": "Infections respiratoires",
+      "kitUrgence": "Kit d'urgence",
+      "devenirVolontaire": "Devenir volontaire",
+      "caniculeCategory": "Canicule et vagues de chaleur",
+      "caniculeLink": "Canicule et vagues de chaleur",
+      "sePreparerUrgenceTitle": "Se préparer à une situation d'urgence",
+      "sePreparerUrgenceText": "Apprenez à faire face aux risques majeurs : guide complet pour se préparer, protéger ses proches, constituer un kit et adopter les bons réflexes.",
+      "preventionDiscover": "Découvrir",
+      "gouvernementTitle": "Le Gouvernement de la République d'Astoria",
+      "gouvernementText": "Découvrez l'organisation du Gouvernement, sa composition et comment le contacter.",
+      "gouvernementDiscover": "Découvrir le Gouvernement",
+      "contactCategory": "Nous contacter",
+      "contactLink": "Contact",
+      "suiviTitle": "Suivi des engagements",
+      "suiviText": "Suivre la mise en œuvre des engagements du Gouvernement.",
+      "suiviDiscover": "Découvrir le suivi des engagements",
+      "liensTitle": "Liens utiles",
+      "liensText": "Les sites officiels et les services utiles au quotidien.",
+      "liensDiscover": "Découvrir les liens utiles",
+      "liensSitesCategory": "Sites officiels",
+      "servicesLink": "Démarches et services",
+      "sitemapLink": "Plan du site",
+      "liensPortalCategory": "Le portail",
+      "searchLink": "Rechercher",
+      "lettresInfo": "Lettres d'info",
+      "risquesEpidemiques": "Risques épidémiques",
+      "menaceCyber": "Menace cyber",
+      "portailAccessibilite": "Portail de l'accessibilité",
+      "marqueEtat": "Marque de l'État",
+      "devenirPartenaireEtat": "Devenir partenaire de l'État",
+      "liensUtilesDemarches": "Liens utiles et démarches"
     }
   },
   "common": {
@@ -33,12 +119,14 @@
     "searchPlaceholder": "Rechercher sur le portail…"
   },
   "footer": {
-    "contentDescription": "Retrouvez sur ce portail les actualités du Gouvernement, la présentation de son organisation et l'accès aux démarches et services publics de la République d'Astoria.",
-    "license": "Sauf mention contraire, les contenus de ce site sont disponibles sous licence ouverte.",
+    "contentDescription": "Ce site est géré par le Service d'Information du Gouvernement (SIG) d'Astoria.",
+    "license": "Sauf mention contraire, tous les contenus de ce site sont disponibles sous licence APSL.",
     "columns": {
-      "government": { "title": "Le Gouvernement" },
-      "news": { "title": "Actualités et services" },
-      "portal": { "title": "Le portail" }
+      "actualites": { "title": "Actualités" },
+      "grandsDossiers": { "title": "Grands dossiers" },
+      "prevenirLesRisques": { "title": "Prévenir les risques" },
+      "outils": { "title": "Outils" },
+      "lEtatEtMoi": { "title": "L'État et moi" }
     },
     "linkLabels": {
       "government": "Le Gouvernement",
@@ -50,8 +138,9 @@
       "sitemap": "Plan du site"
     },
     "bottom": {
-      "privacy": "Confidentialité",
-      "cookies": "Gestion des cookies"
+      "privacy": "Données personnelles",
+      "cookies": "Gestion des cookies",
+      "publications": "Publications officielles"
     },
     "legal": {
       "accessibility": "Accessibilité",
@@ -62,9 +151,9 @@
     }
   },
   "home": {
-    "kicker": "Portail officiel",
-    "title": "Le portail officiel du Gouvernement d'Astoria",
-    "lead": "Bienvenue sur info.gouv.aor. Ce portail donne accès aux informations institutionnelles, aux actualités et aux démarches en ligne du Gouvernement de la République d'Astoria.",
+    "kicker": "Portail officiel du Gouvernement",
+    "title": "Le portail officiel du Gouvernement de la République d'Astoria",
+    "lead": "Bienvenue sur info.gouv.aor, le portail officiel du Gouvernement : actualités, décryptages, missions de l'État et prévention des risques.",
     "ctaPrimary": "Découvrir le Gouvernement",
     "ctaSecondary": "Accéder aux démarches",
     "tasksTitle": "En un clic",
@@ -86,9 +175,106 @@
         "desc": "Trouver les canaux officiels pour contacter les services du Gouvernement."
       }
     },
-    "newsTitle": "Actualités du Gouvernement",
-    "newsLead": "Le fil d'actualité institutionnel du portail sera publié dans une prochaine version.",
-    "newsCta": "Voir toutes les actualités"
+    "aLaUne": {
+      "title": "À la une",
+      "link": "Voir toute l'actualité",
+      "featured": {
+        "tag": "À la une",
+        "title": "Ce qui change en septembre 2026",
+        "text": "Retraites, rentrée scolaire, mobilités, santé… Tour d'horizon des mesures qui entrent en vigueur ce mois-ci et de ce qu'elles changent concrètement pour vous.",
+        "date": "1ᵉʳ septembre 2026"
+      },
+      "items": {
+        "sante": {
+          "tag": "Santé",
+          "title": "Parlons santé mentale !",
+          "date": "2 septembre 2026"
+        },
+        "education": {
+          "tag": "Éducation",
+          "title": "Rentrée scolaire : les dates clés",
+          "date": "1ᵉʳ septembre 2026"
+        },
+        "retraites": {
+          "tag": "Retraites",
+          "title": "Retraites : de nouveaux droits liés à la parentalité",
+          "date": "28 août 2026"
+        }
+      }
+    },
+    "etatEtMoi": {
+      "title": "L'État et moi",
+      "lead": "L'État, ce sont des femmes et des hommes qui agissent chaque jour pour l'intérêt général.",
+      "link": "Découvrir les missions de l'État",
+      "missions": {
+        "organisateur": {
+          "desc": "Il organise la vie collective, permet la vie démocratique et garantit le respect des lois."
+        },
+        "protecteur": {
+          "desc": "Il assure la protection intégrale des citoyennes et des citoyens."
+        },
+        "facilitateur": {
+          "desc": "Il accompagne les parcours de vie et garantit des services publics accessibles à toutes et à tous."
+        },
+        "moteur": {
+          "desc": "Il investit pour le bien commun et prépare l'avenir du pays."
+        },
+        "promoteur": {
+          "desc": "Il promeut une économie forte, durable et innovante."
+        },
+        "influent": {
+          "desc": "Il défend la souveraineté d'Astoria et porte la voix de la République dans le monde."
+        }
+      }
+    },
+    "grandsDossiers": {
+      "title": "Grands dossiers",
+      "lead": "Retrouvez les grands dossiers de l'État : égalité, transformation, innovation… et suivez l'avancée des politiques publiques.",
+      "link": "Voir tous les dossiers",
+      "items": {
+        "egalite": {
+          "desc": "Le plan interministériel pour l'égalité entre les femmes et les hommes : des mesures concrètes pour agir sur les plans professionnel, économique et social."
+        },
+        "astoria2030": {
+          "desc": "Astoria 2030 vise à accélérer la transformation des secteurs clés de notre économie par l'innovation et à construire le pays de demain."
+        },
+        "grandAngle": {
+          "desc": "Une démarche inédite d'écoute et de diagnostic sur tout le territoire pour comprendre comment les citoyennes et les citoyens perçoivent l'action de l'État."
+        }
+      }
+    },
+    "prevention": {
+      "title": "Prévenir et gérer les risques majeurs",
+      "lead": "De l'incident à la catastrophe majeure, de multiples événements d'origine naturelle ou humaine peuvent toucher la population. Anticipez et adoptez les bons réflexes.",
+      "link": "Découvrir la prévention des risques",
+      "items": {
+        "sePreparer": {
+          "desc": "Bons réflexes, kit d'urgence et plan familial : apprenez à faire face aux situations d'urgence."
+        },
+        "canicule": {
+          "desc": "Protégez-vous et protégez vos proches lors des épisodes de fortes chaleurs."
+        },
+        "cyber": {
+          "desc": "Reconnaissez les menaces, protégez vos données et adoptez les bons réflexes face aux risques cyber."
+        },
+        "terroriste": {
+          "desc": "Connaissez les bons comportements et le dispositif de sécurité face à la menace terroriste."
+        }
+      }
+    },
+    "newsletter": {
+      "kicker": "Newsletter",
+      "title": "L'essentiel de l'action du Gouvernement, directement dans votre boîte e-mail.",
+      "text": "Inscrivez-vous pour recevoir un condensé d'informations et les annonces essentielles du Gouvernement de la République d'Astoria.",
+      "cta": "S'abonner"
+    },
+    "institutions": {
+      "title": "Gouvernement et institutions",
+      "lead": "Retrouvez la composition du Gouvernement, l'actualité institutionnelle et les canaux officiels pour nous contacter.",
+      "governmentTitle": "Le Gouvernement",
+      "newsTitle": "Suivre l'action du Gouvernement",
+      "sitemapLink": "Voir le plan du site"
+    }
   },
   "pages": {
     "government": {
@@ -143,6 +329,56 @@
         "p2": "Les demandes de presse et les demandes institutionnelles font l'objet de canaux dédiés, documentés dans une prochaine version de cette page."
       },
       "emailLabel": "Contacter les services du Gouvernement"
+    },
+    "decryptages": {
+      "title": "Décryptages",
+      "description": "Les analyses et décryptages du Gouvernement de la République d'Astoria.",
+      "kicker": "Information",
+      "lead": "Retrouvez ici les analyses, décodages et regards croisés sur l'action du Gouvernement.",
+      "paragraphs": {
+        "p1": "Cette section présentera les décryptages publiés par le Gouvernement : analyses d'experts, regards croisés et points de vue sur les grands sujets de l'action publique."
+      },
+      "notice": "Les premiers décryptages seront publiés dans une prochaine version."
+    },
+    "lEtatEtMoi": {
+      "title": "L'État et moi",
+      "description": "Comprendre le rôle de l'État d'Astoria et son action au quotidien.",
+      "kicker": "Comprendre",
+      "lead": "L'État, ce sont des femmes et des hommes qui agissent chaque jour pour l'intérêt général.",
+      "paragraphs": {
+        "p1": "Cette section présentera les missions essentielles de l'État d'Astoria : organiser, protéger, accompagner, préparer, favoriser et défendre."
+      },
+      "notice": "La présentation détaillée des missions de l'État sera publiée dans une prochaine version."
+    },
+    "preventionDesRisques": {
+      "title": "Prévention des risques",
+      "description": "Se préparer et réagir face aux risques majeurs.",
+      "kicker": "Sécurité",
+      "lead": "De l'incident à la catastrophe majeure, les risques naturels, technologiques et sanitaires peuvent toucher la population.",
+      "paragraphs": {
+        "p1": "Cette section présentera les bons réflexes et les dispositifs de l'État pour se préparer et réagir face aux risques majeurs."
+      },
+      "notice": "Les contenus de prévention des risques seront publiés dans une prochaine version."
+    },
+    "suiviDesEngagements": {
+      "title": "Suivi des engagements",
+      "description": "Suivre la mise en œuvre des engagements du Gouvernement.",
+      "kicker": "Transparence",
+      "lead": "Le Gouvernement rend compte de la mise en œuvre de ses engagements.",
+      "paragraphs": {
+        "p1": "Cette section présentera l'avancement des engagements du Gouvernement et les résultats des politiques publiques."
+      },
+      "notice": "Le tableau de suivi des engagements sera publié dans une prochaine version."
+    },
+    "liensUtiles": {
+      "title": "Liens utiles",
+      "description": "Les sites officiels et les services utiles au quotidien.",
+      "kicker": "Ressources",
+      "lead": "Retrouvez les sites officiels et les services utiles au quotidien.",
+      "paragraphs": {
+        "p1": "Cette section centralisera les liens vers les sites officiels et les services en ligne de la République d'Astoria."
+      },
+      "notice": "La liste des liens utiles sera publiée dans une prochaine version."
     },
     "search": {
       "title": "Recherche",

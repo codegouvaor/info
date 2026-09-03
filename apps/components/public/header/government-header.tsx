@@ -4,35 +4,79 @@ import { Header } from "@codegouvaor/react-ads/Header";
 import { SkipLinks } from "@codegouvaor/react-ads/SkipLinks";
 import type { MainNavigationProps } from "@codegouvaor/react-ads/MainNavigation";
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { pageAnchors, primaryNavigation, searchPath } from "@/lib/site-structure";
 import { GovernmentBrand } from "../brand/government-brand";
 import { LocaleSwitcher } from "./locale-switcher";
 
+/** Whether the current pathname corresponds to a navigation href. */
+const isNavItemActive = (href: string, pathname: string): boolean =>
+  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+
 /**
  * Government Header of the Astoria portal.
  *
- * ADS provides the markup, the responsive behaviour (desktop navigation row,
- * accessible mobile menu) and the accessibility. This component only supplies
- * the *content* — identity, navigation structure, search access and language
- * switching — entirely from the message catalogs and the centralized
- * `site-structure` configuration.
+ * Follows the info.gouv.fr header conventions:
+ *  - brand block: emblem + republic name, service title and tagline,
+ *  - main navigation row whose seven sections open mega-menu panels
+ *    (leader + categories), mirroring info.gouv.fr (À la une, Décryptages,
+ *    L'État et moi, Prévention des risques, Le Gouvernement, Suivi des
+ *    engagements, Liens utiles),
+ *  - quick-access tools: language switching and the display settings widget,
+ *  - in-header search modal that navigates to the localized search page.
+ *
+ * ADS provides the markup, the responsive behaviour and the accessibility.
+ * This component only supplies the *content* — identity, navigation
+ * structure, search access and language switching — entirely from the
+ * message catalogs and the centralized `site-structure` configuration.
  */
 export function GovernmentHeader() {
   const t = useTranslations();
   const tPrimaryNav = useTranslations("nav.primary");
+  const tNavPanel = useTranslations("nav.panel");
   const pathname = usePathname();
+  const router = useRouter();
 
-  const navigationItems: MainNavigationProps.Item[] = primaryNavigation.map(
-    ({ key, href }) => ({
-      isActive:
-        href === "/"
-          ? pathname === "/"
-          : pathname === href || pathname.startsWith(`${href}/`),
-      text: tPrimaryNav(key),
-      linkProps: { href },
-    })
-  );
+  const navigationItems: MainNavigationProps.Item[] = primaryNavigation.map((item) => {
+    const common = {
+      isActive: isNavItemActive(item.href, pathname),
+      text: tPrimaryNav(item.labelKey),
+    };
+
+    if (item.type === "link") {
+      return { ...common, linkProps: { href: item.href } };
+    }
+
+    return {
+      ...common,
+      megaMenu: {
+        leader: {
+          title: tNavPanel(item.leader.titleKey),
+          paragraph: tNavPanel(item.leader.paragraphKey),
+          ...(item.leader.link
+            ? {
+                link: {
+                  text: tNavPanel(item.leader.link.labelKey),
+                  linkProps: { href: item.leader.link.href },
+                },
+              }
+            : {}),
+        },
+        categories: (item.categories ?? []).map((category) => ({
+          categoryMainText: tNavPanel(category.titleKey),
+          links: category.links.map((link) => ({
+            text: tNavPanel(link.labelKey),
+            linkProps: { href: link.href },
+          })),
+        })),
+      },
+    };
+  });
+
+  const handleSearch = (text: string) => {
+    const query = text.trim();
+    router.push(query ? `${searchPath}?q=${encodeURIComponent(query)}` : searchPath);
+  };
 
   return (
     <>
@@ -52,21 +96,11 @@ export function GovernmentHeader() {
         serviceTitle={t("header.serviceTitle")}
         serviceTagline={t("header.serviceTagline")}
         navigation={navigationItems}
-        quickAccessItems={[
-          {
-            iconId: "fr-icon-search-line",
-            text: t("header.search"),
-            linkProps: {
-              href: searchPath,
-              title: t("header.searchLinkTitle"),
-            },
-          },
-          <LocaleSwitcher key="locale-switcher" />,
-        ]}
-        // The ADS “Display” widget (text size / colour scheme) is part of the
-        // generic design system, but the Astorian portal manages its own
-        // accessibility preferences. Disabled for now to keep the header lean.
-        disableDisplay
+        quickAccessItems={[<LocaleSwitcher key="locale-switcher" />]}
+        renderSearchInput={(params) => (
+          <input {...params} placeholder={t("meta.searchPlaceholder")} />
+        )}
+        onSearchButtonClick={handleSearch}
       />
     </>
   );

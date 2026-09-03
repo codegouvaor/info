@@ -3,62 +3,38 @@
 import { Footer } from "@codegouvaor/react-ads/Footer";
 import type { FooterProps } from "@codegouvaor/react-ads/Footer";
 import { useTranslations } from "next-intl";
-import { legalPaths, pageAnchors, sectionPaths, searchPath } from "@/lib/site-structure";
+import { footerNavigation, legalPaths, pageAnchors } from "@/lib/site-structure";
 import { GovernmentBrand } from "../brand/government-brand";
 
 const HOME_PATH = "/";
-const GOVERNMENT_PATH = "/government";
-const NEWS_PATH = "/news";
-const SERVICES_PATH = "/services";
-const CONTACT_PATH = "/contact";
 
-/**
- * Link structure of the Government Footer columns. Hrefs come from the
- * centralized site structure, labels from the message catalogs — no user-visible
- * text is hard-coded here.
- */
-const footerColumns: ReadonlyArray<{
-  columnKey: "government" | "news" | "portal";
-  links: ReadonlyArray<{ labelKey: string; href: string }>;
-}> = [
-  {
-    columnKey: "government",
-    links: [
-      { labelKey: "footer.linkLabels.government", href: GOVERNMENT_PATH },
-      { labelKey: "footer.linkLabels.composition", href: sectionPaths.composition },
-      { labelKey: "footer.linkLabels.contact", href: CONTACT_PATH },
-    ],
-  },
-  {
-    columnKey: "news",
-    links: [
-      { labelKey: "footer.linkLabels.news", href: NEWS_PATH },
-      { labelKey: "footer.linkLabels.services", href: SERVICES_PATH },
-    ],
-  },
-  {
-    columnKey: "portal",
-    links: [
-      { labelKey: "footer.linkLabels.search", href: searchPath },
-      { labelKey: "footer.linkLabels.sitemap", href: legalPaths.sitemap },
-    ],
-  },
+/** Official portal domains of the Republic of Astoria, shown in the footer. */
+const OFFICIAL_DOMAINS: string[] = [
+  "legi.gouv.aor",
+  "service-public.gouv.aor",
+  "data.gouv.aor",
 ];
 
 /**
- * Government Footer of the Astoria portal.
+ * Government Footer of the Astoria portal, modelled after info.gouv.fr:
+ *  - brand block + “managed by” line,
+ *  - five link columns (Actualités, Grands dossiers, Prévenir les risques,
+ *    Outils, L'État et moi) fed by the centralized `site-structure`
+ *    configuration,
+ *  - official portal domains and the legal bottom bar.
  *
  * ADS provides the markup (columns, accessibility line, bottom bar) and the
- * responsive behaviour. This component only decides *what* is shown —
- * institutional links, legal pages and licence — from the message catalogs.
+ * responsive behaviour. This component only decides *what* is shown — from
+ * the centralized `site-structure` configuration and the message catalogs.
  */
 export function GovernmentFooter() {
   const t = useTranslations();
+  const tNavPanel = useTranslations("nav.panel");
 
-  const linkList: FooterProps.LinkList.List = footerColumns.map((column) => ({
+  const linkList = footerNavigation.map((column) => ({
     categoryName: t(`footer.columns.${column.columnKey}.title`),
     links: column.links.map(({ labelKey, href }) => ({
-      text: t(labelKey),
+      text: tNavPanel(labelKey),
       linkProps: { href },
     })),
   })) as FooterProps.LinkList.List;
@@ -74,6 +50,7 @@ export function GovernmentFooter() {
         title: t("header.homeTitle"),
       }}
       contentDescription={t("footer.contentDescription")}
+      domains={OFFICIAL_DOMAINS}
       websiteMapLinkProps={{ href: legalPaths.sitemap }}
       accessibilityLinkProps={{ href: legalPaths.accessibility }}
       termsLinkProps={{ href: legalPaths.terms }}
@@ -85,6 +62,10 @@ export function GovernmentFooter() {
         {
           text: t("footer.bottom.cookies"),
           linkProps: { href: legalPaths.cookies },
+        },
+        {
+          text: t("footer.bottom.publications"),
+          linkProps: { href: "/publications-officielles" },
         },
       ]}
       license={t("footer.license")}

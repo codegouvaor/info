@@ -36,7 +36,7 @@ export default async function SitemapPage({ params }: PageProps) {
     {
       titleKey: "pages.sitemap.groups.primary",
       entries: primaryNavigation.map((item) => ({
-        label: tNav(item.key),
+        label: tNav(item.labelKey),
         href: item.href,
       })),
     },

@@ -7,18 +7,104 @@
   "header": {
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "The official portal of the Government of the Republic of Astoria",
-    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
-    "search": "Search",
-    "searchLinkTitle": "Search the portal"
+    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria"
   },
   "nav": {
     "main": "Main navigation",
     "primary": {
-      "home": "Home",
-      "government": "Government",
-      "news": "News",
-      "services": "Services and procedures",
-      "contact": "Contact"
+      "aLaUne": "Headlines",
+      "decryptages": "Analysis",
+      "etatEtMoi": "The State and I",
+      "preventionDesRisques": "Risk prevention",
+      "gouvernement": "The Government",
+      "suiviDesEngagements": "Commitment follow-up",
+      "liensUtiles": "Useful links"
+    },
+    "panel": {
+      "aLaUneTitle": "Headlines",
+      "aLaUneText": "The essential news and information of the Government of the Republic of Astoria.",
+      "homeLink": "Home",
+      "allNews": "All the news",
+      "actualiteCategory": "Latest news",
+      "ceQuiChange": "What's changing",
+      "vosQuestions": "Your questions, our answers",
+      "actualitePremierMinistre": "Prime Minister news",
+      "mediasCategory": "Media",
+      "podcasts": "Podcasts",
+      "articlesAudio": "Audio articles",
+      "newsletters": "Newsletters",
+      "videos": "Videos",
+      "thematiquesCategory": "Topics",
+      "budget": "Budget",
+      "harcelement": "Bullying at school",
+      "laicite": "Secularism",
+      "narcotrafic": "Drug trafficking",
+      "sante": "Health",
+      "handicap": "Disability",
+      "rechercheInnovation": "Research and innovation",
+      "intelligenceArtificielle": "Artificial intelligence",
+      "grandsDossiersCategory": "Major topics",
+      "parlonsSanteMentale": "Let's talk mental health!",
+      "relanceLogement": "Housing recovery",
+      "franceGrandAngle": "France in wide angle",
+      "france2030": "France 2030",
+      "toutesEtTousEgaux": "All equal",
+      "franceNationVerte": "France Green Nation",
+      "maisonsFranceServices": "France services centres",
+      "tousLesGrandsDossiers": "All major topics",
+      "decryptagesTitle": "Analysis",
+      "decryptagesText": "Analysis, decoding and viewpoints on the Government's action.",
+      "decryptagesDiscover": "Discover the analysis",
+      "decryptagesCategory": "News",
+      "etatEtMoiMissionsTitle": "The 6 essential missions of the State",
+      "etatEtMoiMissionsText": "Discover its missions, its day-to-day role, its actors and its impact on citizens' lives.",
+      "etatEtMoiDiscover": "Discover",
+      "etatEtMoiCategory": "The missions of the State",
+      "etatOrganisateur": "The organising State",
+      "etatProtecteur": "The protecting State",
+      "etatFacilitateur": "The facilitating State",
+      "etatMoteur": "The driving State",
+      "etatPromoteur": "The promoting State",
+      "etatInfluent": "The influential State",
+      "gouvernementCategory": "The Government",
+      "gouvernementLink": "The Government",
+      "gouvernementComposition": "Government composition",
+      "prevenirLesRisquesCategory": "Prevent risks",
+      "risquesAccueil": "Home: risks in France",
+      "risquesNaturels": "Natural and technological risks",
+      "cybercriminalite": "Cybercrime",
+      "menaceTerroriste": "Terrorist threat",
+      "infectionsRespiratoires": "Respiratory infections",
+      "kitUrgence": "Emergency kit",
+      "devenirVolontaire": "Become a volunteer",
+      "caniculeCategory": "Heatwaves",
+      "caniculeLink": "Heatwaves",
+      "sePreparerUrgenceTitle": "Preparing for an emergency",
+      "sePreparerUrgenceText": "Learn to deal with major risks: a complete guide to prepare, protect your loved ones, build an emergency kit and adopt the right reflexes.",
+      "preventionDiscover": "Discover",
+      "gouvernementTitle": "The Government of the Republic of Astoria",
+      "gouvernementText": "Discover the Government's organisation, composition and how to contact it.",
+      "gouvernementDiscover": "Discover the Government",
+      "contactCategory": "Contact us",
+      "contactLink": "Contact",
+      "suiviTitle": "Commitment follow-up",
+      "suiviText": "Tracking the implementation of the Government's commitments.",
+      "suiviDiscover": "Discover the commitment follow-up",
+      "liensTitle": "Useful links",
+      "liensText": "Official sites and services useful in everyday life.",
+      "liensDiscover": "Discover the useful links",
+      "liensSitesCategory": "Official sites",
+      "servicesLink": "Services and procedures",
+      "sitemapLink": "Sitemap",
+      "liensPortalCategory": "The portal",
+      "searchLink": "Search",
+      "lettresInfo": "Newsletters",
+      "risquesEpidemiques": "Epidemic risks",
+      "menaceCyber": "Cyber threat",
+      "portailAccessibilite": "Accessibility portal",
+      "marqueEtat": "State brand",
+      "devenirPartenaireEtat": "Become a State partner",
+      "liensUtilesDemarches": "Useful links and procedures"
     }
   },
   "common": {
@@ -33,12 +119,14 @@
     "searchPlaceholder": "Search the portal…"
   },
   "footer": {
-    "contentDescription": "On this portal you will find government news, an overview of its organisation and access to the public services and procedures of the Republic of Astoria.",
-    "license": "Unless otherwise stated, the content of this site is available under an open licence.",
+    "contentDescription": "This site is managed by the Government Information Service (SIG) of the Republic of Astoria.",
+    "license": "Unless otherwise stated, all the content of this site is available under an open licence.",
     "columns": {
-      "government": { "title": "Government" },
-      "news": { "title": "News and services" },
-      "portal": { "title": "The portal" }
+      "actualites": { "title": "News" },
+      "grandsDossiers": { "title": "Major topics" },
+      "prevenirLesRisques": { "title": "Prevent risks" },
+      "outils": { "title": "Tools" },
+      "lEtatEtMoi": { "title": "The State and I" }
     },
     "linkLabels": {
       "government": "The Government",
@@ -50,8 +138,9 @@
       "sitemap": "Sitemap"
     },
     "bottom": {
-      "privacy": "Privacy policy",
-      "cookies": "Cookie management"
+      "privacy": "Personal data",
+      "cookies": "Cookie management",
+      "publications": "Official publications"
     },
     "legal": {
       "accessibility": "Accessibility",
@@ -62,11 +151,11 @@
     }
   },
   "home": {
-    "kicker": "Official portal",
-    "title": "The official portal of the Government of Astoria",
-    "lead": "Welcome to info.gouv.aor. This portal provides access to official information, news and online procedures of the Government of the Republic of Astoria.",
+    "kicker": "Official Government portal",
+    "title": "The official portal of the Government of the Republic of Astoria",
+    "lead": "Welcome to info.gouv.aor, the official portal of the Government: news, analyses, the missions of the State and risk prevention.",
     "ctaPrimary": "Discover the Government",
-    "ctaSecondary": "Go to services and procedures",
+    "ctaSecondary": "Access services and procedures",
     "tasksTitle": "In one click",
     "tasks": {
       "composition": {
@@ -75,7 +164,7 @@
       },
       "news": {
         "title": "News",
-        "desc": "Follow official news and institutional communications."
+        "desc": "Follow institutional news and official communications."
       },
       "services": {
         "title": "Services and procedures",
@@ -86,9 +175,106 @@
         "desc": "Find the official channels to contact government services."
       }
     },
-    "newsTitle": "Government news",
-    "newsLead": "The institutional news feed of the portal will be published in an upcoming version.",
-    "newsCta": "See all the news"
+    "aLaUne": {
+      "title": "Headlines",
+      "link": "See all the news",
+      "featured": {
+        "tag": "Headline",
+        "title": "What changes in September 2026",
+        "text": "Pensions, back to school, transport, health… An overview of the measures coming into force this month and how they concretely affect you.",
+        "date": "1 September 2026"
+      },
+      "items": {
+        "sante": {
+          "tag": "Health",
+          "title": "Let's talk mental health!",
+          "date": "2 September 2026"
+        },
+        "education": {
+          "tag": "Education",
+          "title": "Back to school: the key dates",
+          "date": "1 September 2026"
+        },
+        "retraites": {
+          "tag": "Pensions",
+          "title": "Pensions: new rights related to parenthood",
+          "date": "28 August 2026"
+        }
+      }
+    },
+    "etatEtMoi": {
+      "title": "The State and I",
+      "lead": "The State is made of women and men who act every day for the common good.",
+      "link": "Discover the missions of the State",
+      "missions": {
+        "organisateur": {
+          "desc": "It organises collective life, enables democracy and ensures that laws are respected."
+        },
+        "protecteur": {
+          "desc": "It provides full protection to every citizen."
+        },
+        "facilitateur": {
+          "desc": "It supports life paths and ensures public services are accessible to everyone."
+        },
+        "moteur": {
+          "desc": "It invests for the common good and prepares the future of the country."
+        },
+        "promoteur": {
+          "desc": "It promotes a strong, sustainable and innovative economy."
+        },
+        "influent": {
+          "desc": "It defends Astoria's sovereignty and gives the Republic a voice in the world."
+        }
+      }
+    },
+    "grandsDossiers": {
+      "title": "Major topics",
+      "lead": "Explore the State's major topics: equality, transformation, innovation… and follow the progress of public policies.",
+      "link": "See all the topics",
+      "items": {
+        "egalite": {
+          "desc": "The cross-ministerial plan for equality between women and men: concrete measures to act on the professional, economic and social fronts."
+        },
+        "astoria2030": {
+          "desc": "Astoria 2030 aims to accelerate the transformation of key sectors of our economy through innovation and to build the country of tomorrow."
+        },
+        "grandAngle": {
+          "desc": "An unprecedented listening and assessment approach across the whole territory to understand how citizens perceive the action of the State."
+        }
+      }
+    },
+    "prevention": {
+      "title": "Preventing and managing major risks",
+      "lead": "From minor incidents to major disasters, many events of natural or human origin can affect people. Anticipate them and adopt the right reflexes.",
+      "link": "Discover risk prevention",
+      "items": {
+        "sePreparer": {
+          "desc": "Right reflexes, emergency kit and family plan: learn how to deal with emergency situations."
+        },
+        "canicule": {
+          "desc": "Protect yourself and your loved ones during heatwaves."
+        },
+        "cyber": {
+          "desc": "Recognise threats, protect your data and adopt the right reflexes against cyber risks."
+        },
+        "terroriste": {
+          "desc": "Learn about the right behaviours and the security framework in the face of the terrorist threat."
+        }
+      }
+    },
+    "newsletter": {
+      "kicker": "Newsletter",
+      "title": "The essentials of the Government's action, straight to your inbox.",
+      "text": "Sign up to receive a digest of information and the key announcements of the Government of the Republic of Astoria.",
+      "cta": "Subscribe"
+    },
+    "institutions": {
+      "title": "Government and institutions",
+      "lead": "Find the composition of the Government, institutional news and the official channels to contact us.",
+      "governmentTitle": "The Government",
+      "newsTitle": "Follow the Government's action",
+      "sitemapLink": "See the sitemap"
+    }
   },
   "pages": {
     "government": {
@@ -143,6 +329,56 @@
         "p2": "Press enquiries and institutional requests have dedicated channels, documented in an upcoming version of this page."
       },
       "emailLabel": "Contact government services"
+    },
+    "decryptages": {
+      "title": "Analysis",
+      "description": "The analysis and decoding of the Government of the Republic of Astoria.",
+      "kicker": "Information",
+      "lead": "Find here the analyses, decoding and viewpoints on the Government's action.",
+      "paragraphs": {
+        "p1": "This section will present the analysis published by the Government: expert analyses, cross viewpoints and opinions on the major topics of public action."
+      },
+      "notice": "The first analyses will be published in an upcoming version."
+    },
+    "lEtatEtMoi": {
+      "title": "The State and I",
+      "description": "Understanding the role of the State of Astoria and its day-to-day action.",
+      "kicker": "Understanding",
+      "lead": "The State is made up of women and men who act every day for the general interest.",
+      "paragraphs": {
+        "p1": "This section will present the essential missions of the State of Astoria: organising, protecting, supporting, preparing, fostering and defending."
+      },
+      "notice": "The detailed presentation of the State's missions will be published in an upcoming version."
+    },
+    "preventionDesRisques": {
+      "title": "Risk prevention",
+      "description": "Preparing for and reacting to major risks.",
+      "kicker": "Safety",
+      "lead": "From incident to major disaster, natural, technological and health risks can affect the population.",
+      "paragraphs": {
+        "p1": "This section will present the right reflexes and the State's schemes to prepare for and react to major risks."
+      },
+      "notice": "Risk prevention content will be published in an upcoming version."
+    },
+    "suiviDesEngagements": {
+      "title": "Commitment follow-up",
+      "description": "Tracking the implementation of the Government's commitments.",
+      "kicker": "Transparency",
+      "lead": "The Government reports on the implementation of its commitments.",
+      "paragraphs": {
+        "p1": "This section will present the progress of the Government's commitments and the results of public policies."
+      },
+      "notice": "The commitment follow-up dashboard will be published in an upcoming version."
+    },
+    "liensUtiles": {
+      "title": "Useful links",
+      "description": "Official sites and services useful in everyday life.",
+      "kicker": "Resources",
+      "lead": "Find the official sites and services useful in everyday life.",
+      "paragraphs": {
+        "p1": "This section will centralise links to the official sites and online services of the Republic of Astoria."
+      },
+      "notice": "The list of useful links will be published in an upcoming version."
     },
     "search": {
       "title": "Search",
