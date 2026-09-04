@@ -8,7 +8,13 @@
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
     "homeTitle": "Site Officiel du Gouvernement de la République d'Astoria",
-    "pressLink": "Espace presse"
+    "loginLink": "Se connecter",
+    "accountLabel": "Mon compte",
+    "logoutLink": "Se deconnecter",
+    "account": {
+      "profile": "Mon profil",
+      "settings": "Parametres"
+    }
   },
   "nav": {
     "main": "Navigation principale",
@@ -145,6 +151,8 @@
       "planDuSite": "Plan du site",
       "espacePresse": "Espace presse",
       "informationsLegales": "Informations légales",
+      "confidentialite": "Confidentialité",
+      "gestionCookies": "Gestion des cookies",
       "suiviEngagementsFooter": "Suivi des engagements du Gouvernement",
       "portailAccessibilite": "Portail de l'accessibilité",
       "marqueEtat": "Marque de l'État",
@@ -839,7 +847,7 @@
       "kicker": "Institutions",
       "title": "Les ministères",
       "subtitle": "Les départements ministériels de la République d'Astoria",
-      "intro": "Les ministères sont les départements de l'État chargés de préparer et de mettre en œuvre les politiques publiques dans leurs domaines de compétence. Cette page présente les ministères de la République d'Astoria, leurs responsabilités et, lorsqu'ils sont connus, les personnes qui les dirigent."
+      "intro": "Les ministères sont les principaux départements de l'organisation gouvernementale chargés de mettre en œuvre les politiques publiques dans leurs domaines de compétence. Chaque ministère constitue une institution permanente de la République d'Astoria."
     },
     "understand": {
       "kicker": "Comprendre",
@@ -865,6 +873,10 @@
       "title": "Les ministères de la République",
       "lead": "Chaque ministère est présenté avec sa description, ses domaines de compétence et, lorsqu'il existe, le ministre qui en est responsable.",
       "responsibilitiesLabel": "Compétences :",
+      "holderLabel": "Ministre :",
+      "holderEmpty": "Aucun titulaire actuellement nommé",
+      "viewProfile": "Voir le profil",
+      "website": "Site officiel",
       "emptyTitle": "Les départements ministériels seront publiés lors de leur définition officielle.",
       "emptyText": "Cette page présentera les compétences, l'organisation et les responsables de chaque ministère de la République d'Astoria.",
       "ficheTitle": "Chaque ministère fera l'objet d'une fiche présentant :",
@@ -894,6 +906,55 @@
           "text": "La structure de l'exécutif, du Président de la République aux administrations."
         }
       }
+    },
+    "detail": {
+      "hero": {
+        "kicker": "Ministère",
+        "subtitle": "Ministère de la République d'Astoria",
+        "backToDirectory": "Retour à l'annuaire des ministères"
+      },
+      "presentation": {
+        "kicker": "Présentation",
+        "title": "Présentation du ministère"
+      },
+      "missions": {
+        "kicker": "Missions",
+        "title": "Les missions du ministère",
+        "lead": "Les principales missions confiées au ministère dans le cadre de l'organisation gouvernementale :"
+      },
+      "competences": {
+        "kicker": "Compétences",
+        "title": "Domaines de compétence",
+        "lead": "Les domaines d'intervention principaux du ministère :"
+      },
+      "holder": {
+        "kicker": "Ministre",
+        "title": "Ministre en fonction",
+        "empty": "Aucun titulaire n'est actuellement nommé à la tête de ce ministère.",
+        "viewProfile": "Voir le profil du ministre"
+      },
+      "administrations": {
+        "kicker": "Organisation",
+        "title": "Administrations rattachées",
+        "lead": "Les services et directions rattachés au ministère :"
+      },
+      "publications": {
+        "kicker": "Publications",
+        "title": "Publications et rapports",
+        "empty": "Les publications et rapports du ministère seront disponibles prochainement."
+      },
+      "news": {
+        "kicker": "Actualités",
+        "title": "Actualités du ministère",
+        "empty": "Les actualités liées au ministère seront publiées ici."
+      },
+      "contact": {
+        "kicker": "Contact",
+        "title": "Informations de contact",
+        "empty": "Les informations de contact du ministère seront disponibles prochainement."
+      },
+      "website": "Site officiel",
+      "backLink": "Retour à l'annuaire des ministères"
     }
   },
   "membres": {
@@ -1240,7 +1301,25 @@
         "p1": "Pour toute question relative aux informations publiées sur ce portail, vous pouvez écrire aux services du Gouvernement via l'adresse électronique officielle.",
         "p2": "Les demandes de presse et les demandes institutionnelles font l'objet de canaux dédiés, documentés dans une prochaine version de cette page."
       },
-      "emailLabel": "Contacter les services du Gouvernement"
+      "emailLabel": "Contacter les services du Gouvernement",
+      "form": {
+        "recipientLabel": "Destinataire",
+        "recipientPlaceholder": "Choisir un destinataire",
+        "presidency": "Présidence de la République",
+        "subjectLabel": "Objet",
+        "subjectPlaceholder": "Objet de votre message",
+        "nameLabel": "Nom",
+        "namePlaceholder": "Votre nom",
+        "emailFieldLabel": "Adresse électronique",
+        "emailPlaceholder": "citizen@gouv.aor",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Votre message...",
+        "sendButton": "Envoyer par courriel",
+        "requiredField": "Ce champ est obligatoire",
+        "invalidEmail": "Veuillez saisir une adresse électronique valide",
+        "selectMinistry": "— Sélectionner un ministère —",
+        "selectRecipient": "— Sélectionner un destinataire —"
+      }
     },
     "decryptages": {
       "title": "Décryptages",
@@ -1291,6 +1370,58 @@
       "noQuery": "Saisissez un ou plusieurs mots-clés pour lancer une recherche.",
       "noResults": "Aucun résultat n'a été trouvé pour « {query} ». Vérifiez l'orthographe ou essayez d'autres mots-clés."
     },
+    "presse": {
+      "title": "Presse",
+      "description": "Les informations et ressources presse du Gouvernement de la République d'Astoria : communiqués, dossiers, discours, agenda et contacts.",
+      "kicker": "Espace presse",
+      "lead": "Les informations et ressources officielles destinées aux médias et au public pour suivre et couvrir l'activité du Gouvernement.",
+      "paragraphs": {
+        "p1": "Cet espace rassemble les ressources officielles permettant de suivre l'activité gouvernementale : communiqués de presse, dossiers documentaires, discours et déclarations, agenda presse, ainsi que les contacts et ressources médias du Gouvernement de la République d'Astoria."
+      },
+      "quickAccess": {
+        "title": "Accès rapides",
+        "communiques": "Communiqués de presse",
+        "dossiers": "Dossiers de presse",
+        "discours": "Discours",
+        "agenda": "Agenda presse",
+        "conferences": "Conférences et points presse",
+        "contacts": "Contacts presse"
+      },
+      "latestCommuniques": {
+        "title": "Derniers communiqués de presse",
+        "empty": "Aucun communiqué de presse n'est actuellement disponible.",
+        "readMore": "Lire le communiqué"
+      },
+      "dossiers": {
+        "title": "Dossiers de presse",
+        "empty": "Aucun dossier de presse n'est actuellement disponible.",
+        "readMore": "Consulter le dossier"
+      },
+      "discours": {
+        "title": "Discours et déclarations",
+        "empty": "Aucun discours ou déclaration n'est actuellement disponible.",
+        "readMore": "Lire le discours"
+      },
+      "agenda": {
+        "title": "Agenda presse",
+        "empty": "Aucun événement presse n'est actuellement annoncé.",
+        "dateLabel": "Date",
+        "locationLabel": "Lieu",
+        "statusLabel": "Statut"
+      },
+      "contacts": {
+        "title": "Contacts presse",
+        "government": "Service de presse du Gouvernement",
+        "presidency": "Service de presse de la Présidence",
+        "emailLabel": "Adresse électronique",
+        "phoneLabel": "Téléphone",
+        "note": "Les coordonnées seront publiées dès leur officialisation."
+      },
+      "resources": {
+        "title": "Ressources médias",
+        "empty": "Les ressources médias (photographies, logos, éléments d'identité visuelle) seront disponibles prochainement."
+      }
+    },
     "sitemap": {
       "title": "Plan du site",
       "description": "Le plan du site info.gouv.aor, portail officiel du Gouvernement d'Astoria.",
@@ -1298,7 +1429,13 @@
       "lead": "L'ensemble des pages du portail info.gouv.aor.",
       "groups": {
         "primary": "Navigation principale",
-        "sections": "Sections du portail",
+        "gouvernement": "Le Gouvernement",
+        "actionPublique": "L'action publique",
+        "services": "Services publics",
+        "actualites": "Actualités",
+        "republique": "La République",
+        "informationsUtiles": "Informations utiles",
+        "footer": "Autres rubriques",
         "legal": "Cadre légal"
       }
     },
@@ -1341,6 +1478,200 @@
         "paragraphs": {
           "p1": "Les cookies de mesure d'audience et les traceurs tiers ne sont déposés qu'après votre consentement.",
           "p2": "Cette page présentera, dans sa version finale, le détail des traceurs utilisés et le moyen d'exercer vos choix."
+        }
+      }
+    }
+  },
+  "constitution": {
+    "readMore": "En savoir plus",
+    "title": "Constitution",
+    "description": "Consultez la Constitution de la République d'Astoria, son préambule, ses titres et ses articles.",
+    "hero": {
+      "kicker": "La République",
+      "title": "Constitution de la République d'Astoria",
+      "lead": "Le texte fondamental de la République",
+      "intro": "La Constitution est le texte juridique suprême de la République d'Astoria. Elle définit les principes fondamentaux de la République, l'organisation des pouvoirs publics, les droits et obligations constitutionnellement reconnus, ainsi que les relations entre les institutions de l'État."
+    },
+    "info": {
+      "kicker": "Le texte",
+      "title": "La Constitution",
+      "adoptedAt": "Adoptée le",
+      "promulgatedAt": "Promulguée le",
+      "effectiveAt": "Entrée en vigueur",
+      "version": "Version",
+      "status": "Statut du texte",
+      "statusCurrent": "Texte en vigueur",
+      "statusPending": "En cours de publication"
+    },
+    "preamble": {
+      "kicker": "Préambule",
+      "title": "Préambule"
+    },
+    "tableOfContents": {
+      "kicker": "Sommaire",
+      "title": "Sommaire de la Constitution",
+      "lead": "Structure du texte constitutionnel. Chaque titre et chaque article sont directement accessibles."
+    },
+    "search": {
+      "kicker": "Recherche",
+      "title": "Rechercher dans la Constitution",
+      "placeholder": "Rechercher un article, un terme, un titre…",
+      "ariaLabel": "Rechercher dans le texte constitutionnel"
+    },
+    "pending": {
+      "title": "Le texte constitutionnel sera prochainement publié",
+      "lead": "La Constitution de la République d'Astoria est en cours de préparation pour publication sur le portail officiel. Elle sera accessible dans cette rubrique dès sa mise à disposition."
+    },
+    "articleNav": {
+      "previous": "Article précédent",
+      "next": "Article suivant",
+      "share": "Lien vers cet article",
+      "copied": "Lien copié"
+    },
+    "related": {
+      "kicker": "Comprendre",
+      "title": "Pour comprendre la Constitution",
+      "lead": "La Constitution définit le cadre institutionnel de la République. Pour en savoir plus sur les institutions qu'elle organise :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive qui agit dans le cadre constitutionnel."
+        },
+        "president": {
+          "title": "Le Président de la République",
+          "text": "L'institution qui exerce la fonction exécutive, définie par la Constitution."
+        },
+        "composition": {
+          "title": "Composition du Gouvernement",
+          "text": "Les fonctions gouvernementales et leur articulation institutionnelle."
+        }
+      },
+      "governmentHref": "/government",
+      "presidentHref": "/government/liamvonastoria",
+      "compositionHref": "/government/composition"
+    },
+    "revisions": {
+      "kicker": "Révisions",
+      "title": "Historique constitutionnel",
+      "lead": "Les révisions éventuelles de la Constitution et leurs dates d'entrée en vigueur.",
+      "empty": "Aucune révision n'est actuellement publiée."
+    }
+  },
+  "organisation": {
+    "readMore": "En savoir plus",
+    "title": "Organisation de la République",
+    "description": "Découvrez comment l'État, les institutions et les pouvoirs publics de la République d'Astoria sont organisés.",
+    "hero": {
+      "kicker": "La République",
+      "title": "Organisation de la République",
+      "subtitle": "Comprendre comment l'État et les institutions de la République d'Astoria sont organisés.",
+      "intro": "La République d'Astoria repose sur une organisation institutionnelle qui définit les grandes composantes de l'État, répartit les compétences entre institutions et organise le fonctionnement des pouvoirs publics. Cette page présente une vue d'ensemble de cette organisation."
+    },
+    "overview": {
+      "kicker": "Vue d'ensemble",
+      "title": "L'organisation de l'État",
+      "lead": "La structure institutionnelle de la République s'articule autour de principes fondamentaux et de composantes organisées par la Constitution.",
+      "note": "Les composantes présentées ci-dessous reflètent le modèle institutionnel tel qu'il est défini par les sources officielles du projet."
+    },
+    "institutions": {
+      "kicker": "Les institutions",
+      "title": "Les principales institutions",
+      "lead": "Les institutions de la République exercent les fonctions constitutionnelles et assurent le fonctionnement de l'État.",
+      "items": {
+        "constitution": {
+          "title": "La Constitution",
+          "text": "La Constitution est le texte fondamental qui définit l'organisation des pouvoirs publics, les droits et obligations des citoyens et le cadre institutionnel de la République."
+        },
+        "president": {
+          "title": "Le Président de la République",
+          "text": "Chef de l'État, le Président exerce la fonction exécutive et assure la direction et la coordination du Gouvernement. Il est l'institution centrale de l'exécutif."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive chargée de mettre en œuvre l'action gouvernementale. Le Gouvernement agit sous la direction du Président de la République."
+        }
+      }
+    },
+    "governmentSection": {
+      "kicker": "Le Gouvernement dans l'État",
+      "title": "Le Gouvernement dans l'organisation de l'État",
+      "lead": "Le Gouvernement constitue l'organe exécutif chargé de conduire l'action gouvernementale dans le cadre défini par la Constitution et les lois.",
+      "intro": "Le Président de la République est le chef de l'État : il exerce la fonction exécutive, assure la direction et la coordination du Gouvernement. Le Gouvernement conduit la politique de la Nation et coordonne l'action publique, en s'appuyant sur les ministères et les administrations."
+    },
+    "levels": {
+      "kicker": "Les niveaux",
+      "title": "De l'institution à l'administration",
+      "lead": "L'organisation de l'État comporte plusieurs niveaux, des institutions fondamentales aux services qui assurent le fonctionnement quotidien.",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive qui réunit les ministres et conduit l'action gouvernementale."
+        },
+        "ministry": {
+          "title": "Un ministère",
+          "text": "Le département de l'État chargé d'un domaine de compétence. Il existe indépendamment de son titulaire."
+        },
+        "administration": {
+          "title": "Une administration",
+          "text": "Les services qui exécutent les politiques publiques au quotidien et assurent les services au public."
+        }
+      }
+    },
+    "relations": {
+      "kicker": "Articulation",
+      "title": "Comment les institutions travaillent ensemble",
+      "lead": "Les composantes de l'État travaillent dans un cadre institutionnel défini par la Constitution.",
+      "items": {
+        "constitution": {
+          "title": "La Constitution",
+          "text": "Définit le cadre institutionnel et la répartition des compétences."
+        },
+        "institutions": {
+          "title": "Les institutions",
+          "text": "Exercent leurs compétences constitutionnelles."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "Conduit l'action exécutive et met en œuvre les politiques publiques."
+        },
+        "ministries": {
+          "title": "Les ministères",
+          "text": "Structurent les domaines gouvernementaux et coordonnent l'action publique."
+        },
+        "administrations": {
+          "title": "Les administrations",
+          "text": "Mettent en œuvre les décisions et assurent les services publics au quotidien."
+        }
+      }
+    },
+    "navigation": {
+      "kicker": "Pour aller plus loin",
+      "title": "Pages de référence",
+      "lead": "Pour approfondir la compréhension de l'organisation institutionnelle :",
+      "items": {
+        "constitution": {
+          "title": "La Constitution",
+          "text": "Le texte fondamental de la République."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'institution qui exerce l'exécutif et conduit l'action gouvernementale."
+        },
+        "composition": {
+          "title": "Composition du Gouvernement",
+          "text": "Les fonctions et les institutions qui composent le Gouvernement."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements de l'État et leurs domaines de compétence."
+        },
+        "membres": {
+          "title": "Les membres du Gouvernement",
+          "text": "Les personnes qui exercent actuellement les fonctions gouvernementales."
+        },
+        "biographies": {
+          "title": "Biographies",
+          "text": "Les parcours des responsables publics."
         }
       }
     }

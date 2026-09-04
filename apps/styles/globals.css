@@ -833,6 +833,187 @@ html.select-none [contenteditable="true"] {
 }
 
 /* -------------------------------------------------------------------------- *
+ * Ministry institutional card (`/government/ministere` directory)
+ * -------------------------------------------------------------------------- *
+ * Each ministry is rendered as an autonomous institutional entry: name,
+ * description, responsibilities, holder status and optional link to its
+ * dedicated page. The holder information is deliberately secondary.
+ */
+.gov-ministry-list {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  max-width: 62rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gov-ministry-card {
+  padding: 1.5rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+}
+
+.gov-ministry-card__name {
+  margin: 0 0 0.375rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-ministry-card__short-name {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  margin-left: 0.5rem;
+}
+
+.gov-ministry-card__description {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+  max-width: 48rem;
+}
+
+.gov-ministry-card__section-title {
+  margin: 1rem 0 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-ministry-card__competences {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.5rem;
+}
+
+.gov-ministry-card__competence {
+  display: inline-block;
+  padding: 0.2rem 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--foreground);
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.gov-ministry-card__holder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-ministry-card__holder-label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--title);
+}
+
+.gov-ministry-card__holder-value {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+}
+
+.gov-ministry-card__holder-value--named {
+  color: var(--foreground);
+}
+
+.gov-ministry-card__holder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.gov-ministry-card__holder-link:hover,
+.gov-ministry-card__holder-link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-ministry-card__actions {
+  margin-top: 1rem;
+}
+
+/* External link button — used for official ministry websites on the
+   directory and detail pages. Styled as a secondary ADS button with the
+   external-link icon so the user immediately sees it opens a new tab.
+
+   The DSFR stylesheet auto-adds a second external icon for any
+   `a[target="_blank"]` via its `.fr-icon-external-link-line::before`
+   rule. We suppress that by overriding the pseudo-element, and render
+   our own icon via an inline SVG so there is exactly one icon.
+
+   We also force `!important` on the hover colour because the DSFR
+   link hover rules are more specific and would otherwise turn the
+   button text invisible on mouse-over. */
+.gov-external-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.gov-external-link-btn:hover,
+.gov-external-link-btn:focus {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+}
+
+.gov-external-link-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Suppress the DSFR auto-injected external-link icon.
+   The DSFR adds an icon via two rules:
+     1. [target=_blank]::after              (any blank link)
+     2. [target=_blank][class*=" fr-icon-"]::after  (icon-class links)
+   We neutralise both so only our explicit SVG icon renders. */
+.gov-external-link-btn::after {
+  content: none !important;
+}
+
+.gov-external-link-btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Suppress the DSFR auto-injected external-link icon on header quick-access
+   items (the login link points to a different subdomain, so DSFR adds one). */
+.gov-header .fr-btns-group--right::after,
+.gov-header [target="_blank"]::after {
+  content: none !important;
+}
+
+/* -------------------------------------------------------------------------- *
  * Executive-branch diagram (section « Le Président et l'exécutif »)
  * -------------------------------------------------------------------------- *
  * Ordered institutional blocks connected by sober lines. The markup is a real
@@ -1056,4 +1237,1089 @@ html.select-none [contenteditable="true"] {
   margin: 1rem 0 0;
   object-fit: cover;
   border: 1px solid var(--border);
+}
+
+/* -------------------------------------------------------------------------- *
+ * Contact form (`/contact`)
+ * -------------------------------------------------------------------------- *
+ * Institutional contact form: the citizen selects a recipient, fills in
+ * their details and message, then opens their email client via mailto.
+ */
+.gov-contact-form {
+  max-width: 40rem;
+  margin: 2rem 0 0;
+}
+
+.gov-contact-form__field {
+  margin-bottom: 1.25rem;
+}
+
+.gov-contact-form__label {
+  display: block;
+  margin: 0 0 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.gov-contact-form__required {
+  color: var(--destructive);
+  margin-left: 0.125rem;
+}
+
+.gov-contact-form__input,
+.gov-contact-form__select,
+.gov-contact-form__textarea {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease;
+}
+
+.gov-contact-form__input:focus,
+.gov-contact-form__select:focus,
+.gov-contact-form__textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+.gov-contact-form__input--error,
+.gov-contact-form__select.gov-contact-form__input--error {
+  border-color: var(--destructive);
+}
+
+.gov-contact-form__input--error:focus,
+.gov-contact-form__select.gov-contact-form__input--error:focus {
+  outline-color: var(--destructive);
+}
+
+.gov-contact-form__textarea {
+  resize: vertical;
+  min-height: 10rem;
+}
+
+.gov-contact-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2334404c' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+.gov-contact-form__error {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--destructive);
+  line-height: 1.4;
+}
+
+.gov-contact-form__actions {
+  margin-top: 1.5rem;
+}
+
+.gov-contact-form__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.gov-contact-form__submit:hover {
+  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}
+
+.gov-contact-form__submit:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-contact-form__submit svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Auth login page (`/login`)
+ * -------------------------------------------------------------------------- *
+ * Centered, minimal layout inspired by the French government SSO login
+ * (FranceConnect / impots.gouv.fr). No header or footer — the auth layout
+ * provides only the <html> + <body> shell.
+ */
+
+.gov-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--muted);
+}
+
+.gov-login__container {
+  width: 100%;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- Header / branding --- */
+
+.gov-login__header {
+  text-align: center;
+}
+
+.gov-login__logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.gov-login__logo-link:hover {
+  opacity: 0.85;
+}
+
+.gov-login__logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.gov-login__brand {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.gov-login__brand-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-login__brand-subtitle {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+/* --- Card --- */
+
+.gov-login__card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.gov-login__card-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.gov-login__title {
+  margin: 0 0 0.375rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-login__subtitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.gov-login__card-body {
+  padding: 1.5rem;
+}
+
+/* --- Form --- */
+
+.gov-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gov-login-form__alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.75rem 1rem;
+  background: color-mix(in srgb, var(--destructive) 8%, transparent);
+  border: 1px solid var(--destructive);
+  border-radius: 0.25rem;
+  color: var(--destructive);
+}
+
+.gov-login-form__alert .fr-icon-error-line::before {
+  font-size: 1.25rem;
+  margin-top: 0.125rem;
+}
+
+.gov-login-form__alert-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.gov-login-form__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gov-login-form__forgot-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-login-form__forgot-link:hover,
+.gov-login-form__forgot-link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-login-form__submit {
+  margin-top: 0.25rem;
+}
+
+.gov-login-form__submit .fr-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.gov-login-form__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+}
+
+.gov-login-form__divider::before,
+.gov-login-form__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.gov-login-form__divider-text {
+  white-space: nowrap;
+}
+
+.gov-login-form__register {
+  text-align: center;
+}
+
+.gov-login-form__register-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--foreground);
+}
+
+.gov-login-form__register-link {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-login-form__register-link:hover,
+.gov-login-form__register-link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+/* --- Footer --- */
+
+.gov-login__footer {
+  text-align: center;
+}
+
+.gov-login__footer-text {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+.gov-login__footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+
+.gov-login__footer-links a {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-login__footer-links a:hover,
+.gov-login__footer-links a:focus {
+  color: var(--foreground);
+}
+
+/* --- Responsive --- */
+
+@media (min-width: 40rem) {
+  .gov-login__container {
+    max-width: 28rem;
+  }
+}
+
+/* Screen-reader only utility (used by the Checkbox legend) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Sitemap page (`/[locale]/sitemap`)
+ * -------------------------------------------------------------------------- *
+ * Comprehensive HTML sitemap: hierarchical sections derived from
+ * site-structure.ts. Two-column grid on desktop, single column on mobile.
+ */
+
+.gov-sitemap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 3rem;
+  margin-top: 2.5rem;
+  max-width: 72rem;
+}
+
+@media (min-width: 48em) {
+  .gov-sitemap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gov-sitemap__section {
+  padding: 1.5rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+}
+
+.gov-sitemap__section-title {
+  margin: 0 0 0.375rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-sitemap__section-desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.gov-sitemap__subsection {
+  margin-top: 1rem;
+}
+
+.gov-sitemap__subsection:first-child {
+  margin-top: 0;
+}
+
+.gov-sitemap__subsection-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-sitemap__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.gov-sitemap__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.gov-sitemap__link {
+  display: inline;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-sitemap__link:hover,
+.gov-sitemap__link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-sitemap__item-desc {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+
+/* -------------------------------------------------------------------------- *
+ * Press center page (`/[locale]/presse`)
+ * -------------------------------------------------------------------------- *
+ * Institutional press center: quick access grid, contact cards, and
+ * resource sections. Slightly denser than a standard editorial page.
+ */
+
+/* Hero — centred institutional introduction. */
+.gov-press-hero .gov-section__container {
+  max-width: 58rem;
+  text-align: center;
+}
+
+.gov-press-hero .gov-lead {
+  margin-inline: auto;
+}
+
+/* Quick access — compact grid of icon + label links, centred under the hero. */
+.gov-press-quick-access {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 40em) {
+  .gov-press-quick-access {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .gov-press-quick-access {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.gov-press-quick-access__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.gov-press-quick-access__item:hover,
+.gov-press-quick-access__item:focus {
+  border-color: var(--primary);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+}
+
+.gov-press-quick-access__item:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-press-quick-access__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.gov-press-quick-access__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Contact cards — two-column layout on desktop. */
+.gov-press-contacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 52rem;
+}
+
+@media (min-width: 40em) {
+  .gov-press-contacts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gov-press-contacts__card {
+  padding: 1.25rem 1.5rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+}
+
+.gov-press-contacts__name {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-press-contacts__details {
+  margin: 0;
+  padding: 0;
+}
+
+.gov-press-contacts__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.gov-press-contacts__field dt {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-press-contacts__field dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.gov-press-contacts__field dd a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}.gov-press-contacts__field dd a:hover,
+.gov-press-contacts__field dd a:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+/* -------------------------------------------------------------------------- *
+ * Constitution page (`/[locale]/republique/constitution`)
+ * -------------------------------------------------------------------------- *
+ * Institutional, document-oriented layout for the constitutional reference
+ * page. Designed for long-form legal reading with clear typographic hierarchy,
+ * sober design and print-friendly styles.
+ */
+
+/* Hero — centred institutional introduction. */
+.gov-constitution-hero .gov-section__container {
+  max-width: 58rem;
+}
+
+.gov-constitution-hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-hero__intro {
+  margin: 0;
+  max-width: 52rem;
+  line-height: 1.7;
+}
+
+/* Constitution info — definition list of metadata. */
+.gov-constitution-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 1.25rem 0 0;
+  max-width: 40rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 40em) {
+  .gov-constitution-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gov-constitution-info__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-info__item dt {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-info__item dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.gov-constitution-info--pending {
+  max-width: 30rem;
+  margin-top: 1.5rem;
+  border-top: none;
+}
+
+/* Status badge. */
+.gov-constitution-info__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.gov-constitution-info__badge--pending {
+  color: var(--muted-foreground);
+  background: var(--muted);
+}
+
+/* Document container — legal text styling. */
+.gov-constitution-document {
+  max-width: 48rem;
+}
+
+.gov-constitution-document__heading {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+  text-align: center;
+}
+
+.gov-constitution-document__text {
+  margin: 0;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.gov-constitution-document__text p {
+  margin: 0 0 1rem;
+}
+
+/* Table of contents. */
+.gov-constitution-toc {
+  margin: 1.25rem 0 0;
+  max-width: 40rem;
+}
+
+.gov-constitution-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-toc__item {
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-toc__link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.gov-constitution-toc__link:hover,
+.gov-constitution-toc__link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-constitution-toc__link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.gov-constitution-toc__number {
+  flex-shrink: 0;
+  min-width: 3.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-toc__text {
+  color: var(--foreground);
+}
+
+.gov-constitution-toc__sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.5rem 1rem;
+}
+
+.gov-constitution-toc__subitem {
+  border-bottom: none;
+}
+
+.gov-constitution-toc__article-link {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.gov-constitution-toc__article-link:hover,
+.gov-constitution-toc__article-link:focus {
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+/* Title heading inside the document. */
+.gov-constitution-title {
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+.gov-constitution-title:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+
+.gov-constitution-title__heading {
+  margin: 0 0 1.25rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-title__number {
+  font-weight: 700;
+}
+
+/* Chapter heading. */
+.gov-constitution-chapter {
+  margin: 1.75rem 0 0;
+}
+
+.gov-constitution-chapter__heading {
+  margin: 0 0 1rem;
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--title);
+}
+
+/* Section heading. */
+.gov-constitution-section {
+  margin: 1.25rem 0 0;
+}
+
+.gov-constitution-section__heading {
+  margin: 0 0 0.875rem;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--title);
+}
+
+/* Article — the core legal unit. */
+.gov-constitution-article {
+  margin: 1.25rem 0 0;
+  padding: 1rem 0;
+  scroll-margin-top: 6rem;
+}
+
+.gov-constitution-article + .gov-constitution-article {
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-article__number {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--title);
+  letter-spacing: 0.02em;
+}
+
+.gov-constitution-article__content {
+  margin: 0;
+  max-width: 44rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Pending state. */
+.gov-constitution-pending {
+  max-width: 48rem;
+}
+
+.gov-constitution-pending__notice {
+  margin-bottom: 1.5rem;
+}
+
+/* Print styles — legal document readability. */
+@media print {
+  .gov-constitution-hero {
+    padding-block: 1rem;
+  }
+
+  .gov-constitution-hero__intro {
+    max-width: none;
+  }
+
+  .gov-constitution-document {
+    max-width: none;
+  }
+
+  .gov-constitution-article {
+    scroll-margin-top: 0;
+  }
+
+  .gov-constitution-article__content {
+    max-width: none;
+    text-align: justify;
+  }
+
+  .gov-constitution-toc {
+    page-break-after: always;
+  }
+
+  .gov-constitution-title {
+    page-break-before: always;
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * User account menu (header)
+ * -------------------------------------------------------------------------- *
+ * Dropdown menu displayed in the header when the user is authenticated.
+ * Positioned relative to the header quick-access toolbar. The component
+ * is rendered outside the ADS Header to avoid conflicts with the
+ * quick-access toolbar internals.
+ */
+
+.gov-account-menu {
+  position: fixed;
+  top: 0;
+  right: 6rem;
+  z-index: 800;
+}
+
+@media (max-width: 48rem) {
+  .gov-account-menu {
+    display: none;
+  }
+}
+
+.gov-account-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--foreground);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.gov-account-menu__trigger:hover,
+.gov-account-menu__trigger:focus-visible {
+  background-color: var(--muted);
+  border-color: var(--border);
+}
+
+.gov-account-menu__trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-account-menu__avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gov-account-menu__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--muted-foreground);
+}
+
+.gov-account-menu__name {
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gov-account-menu__chevron {
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--muted-foreground);
+  transition: transform 0.15s ease;
+}
+
+.gov-account-menu__chevron--open {
+  transform: rotate(180deg);
+}
+
+.gov-account-menu__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  min-width: 14rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  z-index: 800;
+}
+
+.gov-account-menu__header {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.gov-account-menu__header-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--title);
+  line-height: 1.3;
+}
+
+.gov-account-menu__header-email {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+}
+
+.gov-account-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.gov-account-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease;
+}
+
+.gov-account-menu__item:hover,
+.gov-account-menu__item:focus-visible {
+  background-color: var(--muted);
+}
+
+.gov-account-menu__item:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.gov-account-menu__item-icon {
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+.gov-account-menu__footer {
+  padding: 0.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.gov-account-menu__item--destructive {
+  color: var(--destructive);
+}
+
+.gov-account-menu__item--destructive:hover,
+.gov-account-menu__item--destructive:focus-visible {
+  background-color: color-mix(in srgb, var(--destructive) 6%, transparent);
+}
+
+.gov-account-menu__item--destructive .gov-account-menu__item-icon {
+  color: var(--destructive);
 }

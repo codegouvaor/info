@@ -365,10 +365,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
+const defaultAuthValue: AuthContextValue = {
+  user: null,
+  accessToken: null,
+  hasActiveSession: false,
+  status: "unauthenticated",
+  isAuthenticated: false,
+  isLoading: false,
+  sessionPreferences: {
+    rememberMe: true,
+    autoRefresh: true,
+    syncAcrossTabs: true,
+  },
+  login: async () => {},
+  register: async () => {},
+  logout: async () => {},
+  refresh: async () => null,
+  loadCurrentUser: async () => null,
+  setSessionPreference: () => {},
+  clearSession: () => {},
+};
+
 export function useAuth(): AuthContextValue {
   const context = React.useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
+  // When no AuthProvider is present (e.g. components rendered outside the
+  // auth tree such as the GovernmentHeader), return a safe default that
+  // reports the user as unauthenticated instead of throwing.
+  return context ?? defaultAuthValue;
 }

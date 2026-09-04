@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { localizedAlternates, resolveLocaleParam } from "@/lib/localized-metadata";
 import { Link } from "@/i18n/navigation";
-import { ministries, relatedItems, understandItems } from "@/lib/government-ministries";
+import {
+  getMinistriesWithHolders,
+  relatedItems,
+  understandItems,
+  type MinistryWithHolder,
+} from "@/lib/government-ministries";
 import { NoticeCallout } from "@/components/public/content/ads-fragments";
 
 const PAGE_PATH = "/government/ministere";
@@ -22,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /**
- * `/government/ministere` — the institutional directory of the ministries of
+ * `/government/ministere` — the official directory of the ministries of
  * the Republic of Astoria.
  *
  * The page presents the ministries themselves — the departments of State in
@@ -30,8 +35,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * a ministry is an institution, a minister is a person who may be appointed
  * to lead it. The structure lives in `lib/government-ministries.ts`, every
  * word comes from the `ministere.*` message catalogs, and the official list
- * is fed by the `ministries` array of that file (today empty: the directory
- * shows its institutional empty state instead of inventing portfolios).
+ * is fed by the `getMinistriesWithHolders()` resolver.
+ *
+ * Each ministry is rendered as an autonomous institutional entry with:
+ *   - Official name
+ *   - Description
+ *   - Areas of responsibility
+ *   - Current holder (or "No holder currently appointed")
+ *   - Link to dedicated page (when published)
  *
  * The page is the entry point of the « Le Gouvernement → Ministères » mega
  * menu entry and stays coherent with `/government` and
@@ -45,6 +56,9 @@ export default async function GovernmentMinistryPage({ params }: PageProps) {
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "ministere" });
+  const tOffices = await getTranslations({ locale, namespace: "government.offices" });
+
+  const entries = getMinistriesWithHolders();
 
   return (
     <>
@@ -86,37 +100,16 @@ export default async function GovernmentMinistryPage({ params }: PageProps) {
           </h2>
           <p className="gov-lead">{t("directory.lead")}</p>
 
-          {ministries.length === 0 ? (
+          {entries.length === 0 ? (
             <div className="gov-section-notice">
               <NoticeCallout iconId="fr-icon-information-line" title={t("directory.emptyTitle")}>
                 {t("directory.emptyText")}
               </NoticeCallout>
             </div>
           ) : (
-            /* Feed slot: renders one row per ministry once `ministries` is
-               populated. The ministry stays the primary information — name,
-               description, areas of responsibility — and the holder, joined
-               from `governmentOffices` + `officeHolders` + `persons` when the
-               Government is constituted, stays secondary. The `href` of each
-               entry points to its published page; no layout rework needed. */
-            <ul className="gov-rows">
-              {ministries.map((ministry) => (
-                <li key={ministry.id} className="gov-row">
-                  <h3>{ministry.name}</h3>
-                  <p className="gov-row__text">{ministry.description}</p>
-                  <p className="gov-row__text">
-                    <strong>{t("directory.responsibilitiesLabel")}</strong>{" "}
-                    {ministry.responsibilities.join(" · ")}
-                  </p>
-                  {ministry.href && (
-                    <p className="gov-row__actions">
-                      <Link className="gov-row__link" href={ministry.href}>
-                        {t("readMore")}
-                        <span aria-hidden="true" className="fr-icon-arrow-right-line" />
-                      </Link>
-                    </p>
-                  )}
-                </li>
+            <ul className="gov-ministry-list" role="list">
+              {entries.map((entry) => (
+                <MinistryCard key={entry.ministry.id} entry={entry} t={t} tOffices={tOffices} />
               ))}
             </ul>
           )}
@@ -155,5 +148,99 @@ export default async function GovernmentMinistryPage({ params }: PageProps) {
         </div>
       </section>
     </>
+  );
+}
+
+/**
+ * Renders a single ministry as an autonomous institutional card.
+ *
+ * The ministry name is the dominant visual element. Description and
+ * responsibilities allow immediate understanding of its role. Holder
+ * information is deliberately secondary: when a minister is appointed, their
+ * name appears with a link to their profile; when no minister is appointed,
+ * a neutral institutional message is displayed — the ministry itself remains
+ * fully visible.
+ */
+function MinistryCard({
+  entry,
+  t,
+  tOffices,
+}: {
+  entry: MinistryWithHolder;
+  t: Awaited<ReturnType<typeof getTranslations>>;
+  tOffices: Awaited<ReturnType<typeof getTranslations>>;
+}) {
+  const { ministry, holder } = entry;
+
+  return (
+    <li className="gov-ministry-card">
+      <h3 className="gov-ministry-card__name">
+        {ministry.name}
+        {ministry.shortName && (
+          <span className="gov-ministry-card__short-name">({ministry.shortName})</span>
+        )}
+      </h3>
+
+      <p className="gov-ministry-card__description">{ministry.description}</p>
+
+      {ministry.responsibilities.length > 0 && (
+        <>
+          <p className="gov-ministry-card__section-title">{t("directory.responsibilitiesLabel")}</p>
+          <ul className="gov-ministry-card__competences" aria-label={t("directory.responsibilitiesLabel")}>
+            {ministry.responsibilities.map((resp) => (
+              <li key={resp} className="gov-ministry-card__competence">
+                {resp}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      <div className="gov-ministry-card__holder">
+        <span className="gov-ministry-card__holder-label">{t("directory.holderLabel")}</span>
+        {holder ? (
+          <span className="gov-ministry-card__holder-value gov-ministry-card__holder-value--named">
+            {holder.person.firstName} {holder.person.lastName}
+          </span>
+        ) : (
+          <span className="gov-ministry-card__holder-value">
+            {t("directory.holderEmpty")}
+          </span>
+        )}
+      </div>
+
+      {holder && holder.person.slug && (
+        <p className="gov-ministry-card__actions">
+          <Link
+            className="gov-ministry-card__holder-link"
+            href={`/government/membres/${holder.person.slug}`}
+          >
+            {t("directory.viewProfile")}
+            <span aria-hidden="true" className="fr-icon-arrow-right-line" />
+          </Link>
+        </p>
+      )}
+
+      {ministry.officialWebsite && (
+        <p className="gov-ministry-card__actions">
+          <a
+            href={`https://${ministry.officialWebsite}`}
+            className="gov-external-link-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("directory.website")}
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+          </a>
+        </p>
+      )}
+
+      <p className="gov-ministry-card__actions">
+        <Link className="gov-row__link" href={`/government/ministere/${ministry.slug}`}>
+          {t("readMore")}
+          <span aria-hidden="true" className="fr-icon-arrow-right-line" />
+        </Link>
+      </p>
+    </li>
   );
 }

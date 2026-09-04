@@ -9,15 +9,15 @@ export interface DomainConfig {
 
 const DOMAINS: Record<Environment, DomainConfig> = {
   production: {
-    main: 'etheriatimes.com',
-    studios: 'studios.etheriatimes.com',
-    sso: 'sso.etheriatimes.com',
+    main: 'info.gouv.aor',
+    studios: 'studios.gouv.aor',
+    sso: 'sso.gouv.aor',
     protocol: 'https',
   },
   localhost: {
-    main: 'etheriatimes.localhost',
-    studios: 'studios.etheriatimes.localhost',
-    sso: 'sso.etheriatimes.localhost',
+    main: 'info.gouv.localhost',
+    studios: 'studios.gouv.localhost',
+    sso: 'sso.gouv.localhost',
     protocol: 'http',
   },
 }

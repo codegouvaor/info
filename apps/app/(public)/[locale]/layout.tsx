@@ -73,19 +73,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning className="select-none">
       <body className="gov-ads">
-        {/*
-          Runs while the HTML is still being parsed, before any JS bundle can
-          evaluate. Seeding `window.dsfr` with `mode: "react"` prevents the ADS
-          core module from defaulting to AUTO mode, in which it would initialize
-          the DOM itself before React hydrates (causing hydration mismatches on
-          the header menus and the language selector).
-        */}
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: `window.dsfr = window.dsfr || {}; window.dsfr.mode = "react";`,
-          }}
-        />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AdsProvider lang={locale}>
             <div className="gov-page">

@@ -435,11 +435,11 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
     categories: [
       {
         // INSTITUTIONS
-        mainLink: { labelKey: "institutionsRepublic", href: "/government" },
+        mainLink: { labelKey: "institutionsRepublic", href: "/republique" },
         links: [
           { labelKey: "constitution", href: "/republique/constitution" },
-          { labelKey: "organisationEtat", href: "/organisation" },
-          { labelKey: "administrations", href: "/organisation/administrations" },
+          { labelKey: "organisationEtat", href: "/republique/organisation" },
+          { labelKey: "administrations", href: "/republique/administrations" },
           { labelKey: "autoritesPubliques", href: "/republique/autorites-publiques" },
           { labelKey: "territoiresCollectivites", href: "/republique/territoires" },
         ],
@@ -450,7 +450,7 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
         links: [
           { labelKey: "fonctionnementInstitutions", href: "/republique/fonctionnement" },
           { labelKey: "relationsInstitutions", href: "/republique/relations-entre-institutions" },
-          { labelKey: "servicePublicLink", href: "/services" },
+          { labelKey: "servicePublicLink", href: "/republique/services" },
         ],
       },
       {
@@ -459,7 +459,7 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
         links: [
           { labelKey: "transparence", href: "/republique/transparence" },
           { labelKey: "donneesOuvertes", href: "https://data.gouv.aor/" },
-          { labelKey: "publications", href: "/publications-officielles" },
+          { labelKey: "publications", href: "/republique/publications-officielles" },
           { labelKey: "openSource", href: "/republique/open-source" },
           { labelKey: "participationCitoyenne", href: sectionPaths.participation },
           { labelKey: "devenirVolontaire", href: "/risques/devenir-volontaire" },
@@ -513,7 +513,10 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
         links: [
           { labelKey: "planDuSite", href: legalPaths.sitemap },
           { labelKey: "espacePresse", href: pressPath },
+          { labelKey: "accessibilite", href: legalPaths.accessibility },
           { labelKey: "informationsLegales", href: legalPaths.terms },
+          { labelKey: "confidentialite", href: legalPaths.privacy },
+          { labelKey: "gestionCookies", href: legalPaths.cookies },
         ],
       },
     ],

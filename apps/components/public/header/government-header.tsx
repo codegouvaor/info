@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { Header } from "@codegouvaor/react-ads/Header";
 import { SkipLinks } from "@codegouvaor/react-ads/SkipLinks";
 import { headerFooterDisplayItem } from "@codegouvaor/react-ads/Display";
@@ -7,11 +8,32 @@ import type { MainNavigationProps } from "@codegouvaor/react-ads/MainNavigation"
 import type { MegaMenuProps } from "@codegouvaor/react-ads/MainNavigation/MegaMenu";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { pageAnchors, pressPath, primaryNavigation, searchPath } from "@/lib/site-structure";
+import { getDomainUrl } from "@/lib/domains";
+import { pageAnchors, primaryNavigation, searchPath } from "@/lib/site-structure";
+import { useAuth } from "@/context/AuthContext";
+import { UserAccountMenu } from "@/components/public/header/user-account-menu";
+import { siteAccountConfig } from "@/lib/site-config";
 
 /** Whether the current pathname corresponds to a navigation href. */
 const isNavItemActive = (href: string, pathname: string): boolean =>
   href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+
+/**
+ * Collect every href reachable from a mega-menu item (categories, featured
+ * link, leader link) so the parent tab can be marked active when the user
+ * lands on any child page — even if the child href lives outside the
+ * parent's own path tree (e.g. /decryptages under Actualites -> /news).
+ */
+function collectChildHrefs(item: (typeof primaryNavigation)[number]): string[] {
+  if (item.type === "link") return [];
+  const hrefs: string[] = [item.leader.link.href];
+  if (item.featuredLink) hrefs.push(item.featuredLink.href);
+  for (const cat of item.categories ?? []) {
+    if (cat.mainLink) hrefs.push(cat.mainLink.href);
+    for (const link of cat.links) hrefs.push(link.href);
+  }
+  return hrefs;
+}
 
 /**
  * Government Header of the Astoria portal.
@@ -19,30 +41,18 @@ const isNavItemActive = (href: string, pathname: string): boolean =>
  * Main navigation — the permanent architecture of the portal, six entries,
  * each answering one user intention:
  *
- *   Le Gouvernement      → Qui gouverne ?
- *   L'action publique    → Que fait la République ?
- *   Services publics     → Que puis-je faire avec l'État ?
- *   Actualités           → Que se passe-t-il actuellement ?
- *   La République        → Comment fonctionne l'État ?
- *   Informations utiles  → Où trouver une information pratique ?
+ *   Le Gouvernement      -> Qui gouverne ?
+ *   L'action publique    -> Que fait la Republique ?
+ *   Services publics     -> Puis-je faire avec l'Etat ?
+ *   Actualites           -> Que se passe-t-il actuellement ?
+ *   La Republique        -> Comment fonctionne l'Etat ?
+ *   Informations utiles  -> O trouver une information pratique ?
  *
- * Every entry opens a mega-menu panel composed of:
- *  - a leader band: section name, a one-line description and the main
- *    section action (e.g. “→ Tout le Gouvernement”),
- *  - an optional featured zone (“À la une” in Actualités), fed by the shared
- *    `home.news.featured` messages so the headline has a single source,
- *  - a few columns of links — the panel shows the destinations that matter to
- *    the user journey, not the sitemap of the portal.
- *
- * The navigation content comes entirely from the centralized
- * `site-structure` configuration and the message catalogs (FR/EN), so a new
- * news item or a new government priority never requires touching the header.
- *
- * ADS provides the markup, the responsive behaviour (mega-menus on desktop,
- * progressive navigation in the mobile modal) and the accessibility (keyboard
- * navigation, aria-expanded/aria-controls, Escape and outside-click closing).
- * This component only supplies the *content*: identity, navigation structure,
- * search access, language switching and the display settings widget.
+ * When the user is authenticated, the "Se connecter" link in the
+ * quick-access toolbar is hidden and a custom account menu
+ * (`UserAccountMenu`) is rendered instead. The menu content is driven
+ * by `siteAccountConfig` so each site can present a different account
+ * interface without touching this component.
  */
 export function GovernmentHeader() {
   const t = useTranslations();
@@ -53,8 +63,13 @@ export function GovernmentHeader() {
   const router = useRouter();
 
   const navigationItems: MainNavigationProps.Item[] = primaryNavigation.map((item) => {
+    const childHrefs = collectChildHrefs(item);
+    const isActive =
+      isNavItemActive(item.href, pathname) ||
+      childHrefs.some((href) => isNavItemActive(href, pathname));
+
     const common = {
-      isActive: isNavItemActive(item.href, pathname),
+      isActive,
       text: tPrimaryNav(item.labelKey),
     };
 
@@ -63,9 +78,6 @@ export function GovernmentHeader() {
     }
 
     const categories: MegaMenuProps.Category[] = [
-      // Featured zone — e.g. “À la une” in Actualités: the group title links
-      // to the featured article, whose headline comes from the shared
-      // `home.news.featured` messages (single source with the homepage).
       ...(item.featuredLink
         ? [
             {
@@ -77,6 +89,7 @@ export function GovernmentHeader() {
                 {
                   text: t("home.news.featured.title"),
                   linkProps: { href: item.featuredLink.href },
+                  isActive: isNavItemActive(item.featuredLink.href, pathname),
                 },
               ],
             } satisfies MegaMenuProps.Category,
@@ -92,6 +105,7 @@ export function GovernmentHeader() {
               links: category.links.map((link) => ({
                 text: tNavPanel(link.labelKey),
                 linkProps: { href: link.href },
+                isActive: isNavItemActive(link.href, pathname),
               })),
             }
           : {
@@ -99,6 +113,7 @@ export function GovernmentHeader() {
               links: category.links.map((link) => ({
                 text: tNavPanel(link.labelKey),
                 linkProps: { href: link.href },
+                isActive: isNavItemActive(link.href, pathname),
               })),
             }
       ),
@@ -125,6 +140,26 @@ export function GovernmentHeader() {
     router.push(query ? `${searchPath}?q=${encodeURIComponent(query)}` : searchPath);
   };
 
+  // Auth state for conditional account UI
+  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+
+  // Quick-access items — the login link is replaced by the account menu
+  // when the user is authenticated.
+  const quickAccessItems = React.useMemo(() => {
+    const items: MainNavigationProps.QuickAccessItem[] = [];
+
+    if (!isAuthenticated || isAuthLoading) {
+      items.push({
+        iconId: "fr-icon-account-circle-line",
+        text: t("header.loginLink"),
+        linkProps: { href: getDomainUrl("sso", "/login") },
+      });
+    }
+
+    items.push(headerFooterDisplayItem);
+    return items;
+  }, [isAuthenticated, isAuthLoading, t]);
+
   return (
     <>
       <SkipLinks
@@ -138,9 +173,6 @@ export function GovernmentHeader() {
         identity={{
           imgUrl: "/astoria-gouv.png",
           alt: tBrand("republicName"),
-          // The lockup artwork already carries the full wordmark, so no
-          // institution line is displayed under the image. ADS requires the
-          // field, hence the empty string.
           institution: "",
         }}
         homeLinkProps={{
@@ -150,21 +182,16 @@ export function GovernmentHeader() {
         serviceTitle={t("header.serviceTitle")}
         serviceTagline={t("header.serviceTagline")}
         navigation={navigationItems}
-        quickAccessItems={[
-          {
-            iconId: "fr-icon-newspaper-line",
-            text: t("header.pressLink"),
-            linkProps: { href: pressPath },
-          },
-          // “Paramètres d'affichage” — opens the theme dialog (light/dark/system)
-          // rendered by the ADS `Display` component mounted by the Header.
-          headerFooterDisplayItem,
-        ]}
+        quickAccessItems={quickAccessItems}
         renderSearchInput={(params) => (
           <input {...params} placeholder={t("meta.searchPlaceholder")} />
         )}
         onSearchButtonClick={handleSearch}
       />
+      {/* Account menu — rendered outside the ADS Header so it can use
+          its own dropdown positioning and auth state without conflicting
+          with the ADS quick-access toolbar. */}
+      {siteAccountConfig.enabled && <UserAccountMenu />}
     </>
   );
 }

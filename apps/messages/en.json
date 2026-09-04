@@ -8,7 +8,13 @@
     "serviceTitle": "Gouvernement",
     "serviceTagline": "The official portal of the Government of the Republic of Astoria",
     "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
-    "pressLink": "Press area"
+    "loginLink": "Sign in",
+    "accountLabel": "My account",
+    "logoutLink": "Sign out",
+    "account": {
+      "profile": "My profile",
+      "settings": "Settings"
+    }
   },
   "nav": {
     "main": "Main navigation",
@@ -145,6 +151,8 @@
       "planDuSite": "Sitemap",
       "espacePresse": "Press area",
       "informationsLegales": "Legal information",
+      "confidentialite": "Privacy policy",
+      "gestionCookies": "Cookie management",
       "suiviEngagementsFooter": "Government commitment follow-up",
       "portailAccessibilite": "Accessibility portal",
       "marqueEtat": "State brand",
@@ -839,7 +847,7 @@
       "kicker": "Institutions",
       "title": "The ministries",
       "subtitle": "The ministerial departments of the Republic of Astoria",
-      "intro": "Ministries are the departments of State responsible for preparing and implementing public policies in their areas of responsibility. This page presents the ministries of the Republic of Astoria, their responsibilities and, when known, the people who lead them."
+      "intro": "Ministries are the principal departments of the governmental organisation responsible for implementing public policies in their areas of responsibility. Each ministry constitutes a permanent institution of the Republic of Astoria."
     },
     "understand": {
       "kicker": "Understand",
@@ -865,6 +873,10 @@
       "title": "The ministries of the Republic",
       "lead": "Each ministry is presented with its description, its areas of responsibility and, when there is one, the minister responsible for it.",
       "responsibilitiesLabel": "Areas of responsibility:",
+      "holderLabel": "Minister:",
+      "holderEmpty": "No holder currently appointed",
+      "viewProfile": "View the profile",
+      "website": "Official website",
       "emptyTitle": "The ministerial departments will be published as soon as they are officially defined.",
       "emptyText": "This page will present the responsibilities, the organisation and the heads of each ministry of the Republic of Astoria.",
       "ficheTitle": "Each ministry will have a page presenting:",
@@ -894,6 +906,55 @@
           "text": "The structure of the executive branch, from the President of the Republic to the administrations."
         }
       }
+    },
+    "detail": {
+      "hero": {
+        "kicker": "Ministry",
+        "subtitle": "Ministry of the Republic of Astoria",
+        "backToDirectory": "Back to the ministry directory"
+      },
+      "presentation": {
+        "kicker": "Overview",
+        "title": "Ministry overview"
+      },
+      "missions": {
+        "kicker": "Missions",
+        "title": "Missions of the ministry",
+        "lead": "The main missions entrusted to the ministry within the governmental organisation:"
+      },
+      "competences": {
+        "kicker": "Competencies",
+        "title": "Areas of responsibility",
+        "lead": "The main areas of intervention of the ministry:"
+      },
+      "holder": {
+        "kicker": "Minister",
+        "title": "Current minister",
+        "empty": "No holder is currently appointed to lead this ministry.",
+        "viewProfile": "View the minister's profile"
+      },
+      "administrations": {
+        "kicker": "Organisation",
+        "title": "Attached administrations",
+        "lead": "The services and directorates attached to the ministry:"
+      },
+      "publications": {
+        "kicker": "Publications",
+        "title": "Publications and reports",
+        "empty": "The ministry's publications and reports will be available soon."
+      },
+      "news": {
+        "kicker": "News",
+        "title": "Ministry news",
+        "empty": "News related to the ministry will be published here."
+      },
+      "contact": {
+        "kicker": "Contact",
+        "title": "Contact information",
+        "empty": "The ministry's contact information will be available soon."
+      },
+      "website": "Official website",
+      "backLink": "Back to the ministry directory"
     }
   },
   "membres": {
@@ -1240,7 +1301,25 @@
         "p1": "For any question regarding the information published on this portal, you can write to government services using the official email address.",
         "p2": "Press enquiries and institutional requests have dedicated channels, documented in an upcoming version of this page."
       },
-      "emailLabel": "Contact government services"
+      "emailLabel": "Contact government services",
+      "form": {
+        "recipientLabel": "Recipient",
+        "recipientPlaceholder": "Choose a recipient",
+        "presidency": "Presidency of the Republic",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Subject of your message",
+        "nameLabel": "Name",
+        "namePlaceholder": "Your name",
+        "emailFieldLabel": "Email address",
+        "emailPlaceholder": "citizen@gouv.aor",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Your message...",
+        "sendButton": "Send by email",
+        "requiredField": "This field is required",
+        "invalidEmail": "Please enter a valid email address",
+        "selectMinistry": "— Select a ministry —",
+        "selectRecipient": "— Select a recipient —"
+      }
     },
     "decryptages": {
       "title": "Analysis",
@@ -1328,6 +1407,269 @@
         "paragraphs": {
           "p1": "Audience measurement cookies and third-party trackers are only placed after your consent.",
           "p2": "In its final version, this page will present the details of the trackers used and how to exercise your choices."
+        }
+      }
+    },
+    "presse": {
+      "title": "Press",
+      "description": "The press information and resources of the Government of the Republic of Astoria: press releases, dossiers, speeches, agenda and contacts.",
+      "kicker": "Press area",
+      "lead": "Official information and resources for the media and the public to follow and cover Government activity.",
+      "paragraphs": {
+        "p1": "This area brings together the official resources for following Government activity: press releases, documentary dossiers, speeches and declarations, press agenda, as well as media contacts and resources of the Government of the Republic of Astoria."
+      },
+      "quickAccess": {
+        "title": "Quick access",
+        "communiques": "Press releases",
+        "dossiers": "Press dossiers",
+        "discours": "Speeches",
+        "agenda": "Press agenda",
+        "conferences": "Conferences and press briefings",
+        "contacts": "Press contacts"
+      },
+      "latestCommuniques": {
+        "title": "Latest press releases",
+        "empty": "No press release is currently available.",
+        "readMore": "Read the press release"
+      },
+      "dossiers": {
+        "title": "Press dossiers",
+        "empty": "No press dossier is currently available.",
+        "readMore": "View the dossier"
+      },
+      "discours": {
+        "title": "Speeches and declarations",
+        "empty": "No speech or declaration is currently available.",
+        "readMore": "Read the speech"
+      },
+      "agenda": {
+        "title": "Press agenda",
+        "empty": "No press event is currently announced.",
+        "dateLabel": "Date",
+        "locationLabel": "Location",
+        "statusLabel": "Status"
+      },
+      "contacts": {
+        "title": "Press contacts",
+        "government": "Government press service",
+        "presidency": "Presidency press service",
+        "emailLabel": "Email address",
+        "phoneLabel": "Phone",
+        "note": "Contact details will be published once officially confirmed."
+      },
+      "resources": {
+        "title": "Media resources",
+        "empty": "Media resources (photographs, logos, visual identity elements) will be available soon."
+      }
+    },
+    "sitemap": {
+      "title": "Sitemap",
+      "description": "The sitemap of info.gouv.aor, the official portal of the Government of Astoria.",
+      "kicker": "Navigation",
+      "lead": "All the pages of the info.gouv.aor portal.",
+      "groups": {
+        "primary": "Main navigation",
+        "gouvernement": "The Government",
+        "actionPublique": "Public action",
+        "services": "Public services",
+        "actualites": "News",
+        "republique": "The Republic",
+        "informationsUtiles": "Useful information",
+        "footer": "Other sections",
+        "legal": "Legal framework"
+      }
+    }
+  },
+  "constitution": {
+    "readMore": "Find out more",
+    "title": "Constitution",
+    "description": "Consult the Constitution of the Republic of Astoria, its preamble, titles and articles.",
+    "hero": {
+      "kicker": "The Republic",
+      "title": "Constitution of the Republic of Astoria",
+      "lead": "The foundational text of the Republic",
+      "intro": "The Constitution is the supreme legal text of the Republic of Astoria. It defines the fundamental principles of the Republic, the organisation of public authorities, constitutionally recognised rights and obligations, and the relations between the institutions of the State."
+    },
+    "info": {
+      "kicker": "The text",
+      "title": "The Constitution",
+      "adoptedAt": "Adopted on",
+      "promulgatedAt": "Promulgated on",
+      "effectiveAt": "In force since",
+      "version": "Version",
+      "status": "Status of the text",
+      "statusCurrent": "Text in force",
+      "statusPending": "Being published"
+    },
+    "preamble": {
+      "kicker": "Preamble",
+      "title": "Preamble"
+    },
+    "tableOfContents": {
+      "kicker": "Contents",
+      "title": "Contents of the Constitution",
+      "lead": "Structure of the constitutional text. Each title and each article is directly accessible."
+    },
+    "search": {
+      "kicker": "Search",
+      "title": "Search in the Constitution",
+      "placeholder": "Search for an article, a term, a title…",
+      "ariaLabel": "Search in the constitutional text"
+    },
+    "pending": {
+      "title": "The constitutional text will be published shortly",
+      "lead": "The Constitution of the Republic of Astoria is being prepared for publication on the official portal. It will be available in this section as soon as it is made available."
+    },
+    "articleNav": {
+      "previous": "Previous article",
+      "next": "Next article",
+      "share": "Link to this article",
+      "copied": "Link copied"
+    },
+    "related": {
+      "kicker": "Understanding",
+      "title": "Understanding the Constitution",
+      "lead": "The Constitution defines the institutional framework of the Republic. To learn more about the institutions it organises:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation that acts within the constitutional framework."
+        },
+        "president": {
+          "title": "The President of the Republic",
+          "text": "The institution that exercises executive power, as defined by the Constitution."
+        },
+        "composition": {
+          "title": "Composition of the Government",
+          "text": "Government functions and their institutional articulation."
+        }
+      },
+      "governmentHref": "/government",
+      "presidentHref": "/government/liamvonastoria",
+      "compositionHref": "/government/composition"
+    },
+    "revisions": {
+      "kicker": "Revisions",
+      "title": "Constitutional history",
+      "lead": "Any revisions to the Constitution and their dates of entry into force.",
+      "empty": "No revision is currently published."
+    }
+  },
+  "organisation": {
+    "readMore": "Find out more",
+    "title": "Organisation of the Republic",
+    "description": "Discover how the State, the institutions and the public authorities of the Republic of Astoria are organised.",
+    "hero": {
+      "kicker": "The Republic",
+      "title": "Organisation of the Republic",
+      "subtitle": "Understanding how the State and institutions of the Republic of Astoria are organised.",
+      "intro": "The Republic of Astoria relies on an institutional organisation that defines the main components of the State, distributes competences between institutions and organises the functioning of public authorities. This page presents an overview of this organisation."
+    },
+    "overview": {
+      "kicker": "Overview",
+      "title": "The organisation of the State",
+      "lead": "The institutional structure of the Republic is built around fundamental principles and components organised by the Constitution.",
+      "note": "The components presented below reflect the institutional model as defined by the official sources of the project."
+    },
+    "institutions": {
+      "kicker": "The institutions",
+      "title": "The main institutions",
+      "lead": "The institutions of the Republic exercise constitutional functions and ensure the functioning of the State.",
+      "items": {
+        "constitution": {
+          "title": "The Constitution",
+          "text": "The Constitution is the foundational text that defines the organisation of public authorities, citizens' rights and obligations, and the institutional framework of the Republic."
+        },
+        "president": {
+          "title": "The President of the Republic",
+          "text": "Head of State, the President exercises executive power and ensures the direction and coordination of the Government. He is the central institution of the executive."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation responsible for implementing government action. The Government acts under the direction of the President of the Republic."
+        }
+      }
+    },
+    "governmentSection": {
+      "kicker": "The Government in the State",
+      "title": "The Government in the organisation of the State",
+      "lead": "The Government is the executive body responsible for conducting government action within the framework defined by the Constitution and the laws.",
+      "intro": "The President of the Republic is the Head of State: he exercises executive power, ensures the direction and coordination of the Government. The Government conducts the policy of the Nation and coordinates public action, relying on the ministries and administrations."
+    },
+    "levels": {
+      "kicker": "The levels",
+      "title": "From institution to administration",
+      "lead": "The organisation of the State comprises several levels, from fundamental institutions to the services that ensure daily functioning.",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation that brings together the ministers and conducts government action."
+        },
+        "ministry": {
+          "title": "A ministry",
+          "text": "The department of the State responsible for an area of competence. It exists independently of its holder."
+        },
+        "administration": {
+          "title": "An administration",
+          "text": "The services that implement public policies on a daily basis and provide public services."
+        }
+      }
+    },
+    "relations": {
+      "kicker": "Articulation",
+      "title": "How institutions work together",
+      "lead": "The components of the State work within an institutional framework defined by the Constitution.",
+      "items": {
+        "constitution": {
+          "title": "The Constitution",
+          "text": "Defines the institutional framework and the distribution of competences."
+        },
+        "institutions": {
+          "title": "The institutions",
+          "text": "Exercise their constitutional competences."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "Conducts executive action and implements public policies."
+        },
+        "ministries": {
+          "title": "The ministries",
+          "text": "Structure governmental domains and coordinate public action."
+        },
+        "administrations": {
+          "title": "The administrations",
+          "text": "Implement decisions and provide daily public services."
+        }
+      }
+    },
+    "navigation": {
+      "kicker": "Learn more",
+      "title": "Reference pages",
+      "lead": "To deepen the understanding of the institutional organisation:",
+      "items": {
+        "constitution": {
+          "title": "The Constitution",
+          "text": "The foundational text of the Republic."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "The institution that exercises the executive and conducts government action."
+        },
+        "composition": {
+          "title": "Composition of the Government",
+          "text": "The functions and institutions that compose the Government."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The departments of the State and their areas of competence."
+        },
+        "membres": {
+          "title": "Members of the Government",
+          "text": "The persons currently exercising government functions."
+        },
+        "biographies": {
+          "title": "Biographies",
+          "text": "The backgrounds of public officials."
         }
       }
     }
