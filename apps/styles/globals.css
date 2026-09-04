@@ -365,10 +365,84 @@ html.select-none [contenteditable="true"] {
   }
 }
 
-/* The institution line under the mark is intentionally empty (the lockup
- * artwork carries the full wordmark) — drop it entirely so it adds no gap. */
-.ads-identity__institution:empty {
+/* Hide the institution text when empty so it adds no gap. */
+.gov-header .ads-identity__institution:empty {
   display: none;
+}
+
+/* Enlarge the institutional logo (Astoria emblem) for better visibility.
+ * The image is the primary branding element. */
+.gov-header .ads-identity__img {
+  height: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .gov-header .ads-identity__img {
+    height: 4.5rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .gov-header .ads-identity__img {
+    height: 5rem;
+  }
+}
+
+/* Footer branding — same as header: large logo, no institution text. */
+.gov-footer .ads-identity__institution:empty {
+  display: none;
+}
+
+.gov-footer .ads-identity__img {
+  height: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .gov-footer .ads-identity__img {
+    height: 4.5rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .gov-footer .ads-identity__img {
+    height: 5rem;
+  }
+}
+
+/* Footer service block — the footer brand zone mirrors the header's: logo on
+ * the left, portal service title and tagline on its right (info.gouv.fr
+ * convention). The markup comes from the ADS Footer `serviceTitle` /
+ * `serviceTagline` props (patched, see patches/). On mobile the two lines
+ * stack under the logo, like the header's brand on small screens. */
+.gov-footer .ads-identity__service {
+  margin-left: 1rem;
+  align-self: center;
+  color: var(--title);
+}
+
+.gov-footer .ads-identity__service-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--title);
+}
+
+.gov-footer .ads-identity__service-tagline {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: var(--title);
+}
+
+@media (max-width: 47.98em) {
+  .gov-footer .ads-identity__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gov-footer .ads-identity__service {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
 }
 
 /* -------------------------------------------------------------------------- *
@@ -572,6 +646,138 @@ html.select-none [contenteditable="true"] {
   padding: 0;
   display: grid;
   gap: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- *
+ * 09 — Social network section (newsletter + social links)
+ * -------------------------------------------------------------------------- *
+ * Compact, secondary section — smaller than the main portal sections.
+ * Two-column layout matching info.gouv.fr:
+ *   [ newsletter (left) ] | [ social icons (right) ]
+ * On mobile the columns stack vertically with a horizontal separator.
+ */
+
+/* Override the default gov-section padding for a more compact feel. */
+section:has(.gov-home-social) {
+  padding-block: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  section:has(.gov-home-social) {
+    padding-block: 2rem;
+  }
+}
+
+.gov-home-social {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 72rem;
+}
+
+@media (min-width: 48em) {
+  .gov-home-social {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+}
+
+/* --- Left column: newsletter --- */
+
+.gov-home-social__newsletter {
+  padding-right: 0;
+}
+
+@media (min-width: 48em) {
+  .gov-home-social__newsletter {
+    padding-right: 2rem;
+    border-right: 1px solid var(--border);
+  }
+}
+
+.gov-home-social__newsletter .gov-kicker {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.gov-home-social__newsletter .gov-section__title {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.gov-home-social__newsletter .gov-lead {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* --- Right column: social icons --- */
+
+.gov-home-social__follow {
+  padding-left: 0;
+}
+
+@media (min-width: 48em) {
+  .gov-home-social__follow {
+    padding-left: 2rem;
+  }
+}
+
+.gov-home-social__follow-title {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--title);
+}
+
+/* Grid of circular icon buttons. */
+.gov-home-social__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+/* Circular icon button for each social network. */
+.gov-home-social__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  color: var(--foreground);
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.gov-home-social__icon:hover,
+.gov-home-social__icon:focus {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.gov-home-social__icon:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-home-social__icon svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Suppress the DSFR auto-injected external-link icon. */
+.gov-home-social__icon::after {
+  content: none !important;
 }
 
 /* -------------------------------------------------------------------------- *

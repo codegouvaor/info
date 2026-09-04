@@ -52,7 +52,7 @@
       "narcotrafic": "Drug trafficking",
       "intelligenceArtificielle": "Artificial intelligence",
       "rentreeScolaire": "Back-to-school",
-      "franceNationVerte": "Astoria Green Nation",
+      "astoriaNationVerte": "Astoria Green Nation",
       "grandsDossiers": "Major topics",
       "gouvernementTitle": "The Government",
       "gouvernementText": "Discover the composition, organisation and action of the Government.",
@@ -64,6 +64,7 @@
       "gouvernementOrganisation": "Organisation",
       "gouvernementSecretariats": "Secretariats",
       "administrationsRattachees": "Attached administrations",
+      "serviceInformationGouvernement": "Government Information Service",
       "ministeres": "Ministries",
       "politiquesPubliques": "Public policies",
       "actionPubliqueTitle": "Public action",
@@ -165,9 +166,9 @@
       "parlonsSanteMentale": "Let's talk mental health!",
       "toutesEtTousEgaux": "All equal",
       "relanceLogement": "Housing recovery",
-      "franceGrandAngle": "France in wide angle",
-      "france2030": "France 2030",
-      "maisonsFranceServices": "France services centres",
+      "republiqueGrandAngle": "The Republic in wide angle",
+      "astoria2030": "Astoria 2030",
+      "maisonsServicesPublics": "Public services centres",
       "tousLesGrandsDossiers": "All major topics",
       "etatOrganisateur": "The organising State",
       "etatProtecteur": "The protecting State",
@@ -194,7 +195,7 @@
   },
   "footer": {
     "contentDescription": "This site is managed by the Government Information Service (SIG) of the Republic of Astoria.",
-    "license": "Unless otherwise stated, all the content of this site is available under an open licence.",
+    "license": "Unless otherwise stated, all the content of this site is available under an <link>open licence</link>.",
     "columns": {
       "actualites": { "title": "News" },
       "grandsDossiers": { "title": "Major topics" },
@@ -228,132 +229,97 @@
     "metaTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
     "hero": {
       "kicker": "Republic of Astoria",
-      "title": "The Republic of Astoria, simply.",
-      "lead": "Understand public decisions, find State services and follow the Government's action.",
+      "title": "The official portal of the Government",
+      "lead": "Inform yourself about the Government's action, the Republic's institutions and public services.",
       "searchLabel": "Search the portal",
-      "searchPlaceholder": "Search for a procedure, news or public policy…",
+      "searchPlaceholder": "What are you looking for?",
       "popularSearchesLabel": "Popular searches",
       "popularSearches": {
-        "retraites": "Pensions",
-        "rentreeScolaire": "Back to school",
-        "logement": "Housing",
-        "budget": "Budget",
-        "sante": "Health"
+        "gouvernement": "The Government",
+        "republique": "The Republic",
+        "services": "Public services",
+        "actualites": "News",
+        "constitution": "Constitution"
       },
       "trust": "An official website of the Government of the Republic of Astoria"
     },
     "quickAccess": {
-      "title": "What are you looking for?",
-      "items": {
-        "demarche": {
-          "title": "Complete a procedure",
-          "desc": "Identity, housing, work: online procedures and how they work."
-        },
-        "service": {
-          "title": "Find a public service",
-          "desc": "Public services and their contact points."
-        },
-        "decision": {
-          "title": "Understand a decision",
-          "desc": "Analysis and decoding of Government decisions."
-        },
-        "contact": {
-          "title": "Contact the State",
-          "desc": "The official channels to contact government services."
-        },
+      "title": "Quick access",
+      "primaryItems": {
         "gouvernement": {
-          "title": "See the Government",
-          "desc": "Composition, organisation and missions of the Government."
+          "title": "The Government",
+          "desc": "Composition, organisation and action of the Government of the Republic of Astoria."
+        },
+        "services": {
+          "title": "Public services",
+          "desc": "Find the services and procedures offered by the Republic of Astoria."
         },
         "actualites": {
-          "title": "Read the news",
-          "desc": "Official communications and announcements of the Government."
+          "title": "News",
+          "desc": "Follow the Government and Republic news."
+        },
+        "republique": {
+          "title": "The Republic",
+          "desc": "Understand the institutions and how the State works."
         }
-      }
-    },
-    "changes": {
-      "kicker": "What's changing",
-      "title": "What's changing",
-      "lead": "New measures and decisions that may affect your everyday life.",
-      "link": "See everything that is changing",
-      "items": {
-        "fiscalite": {
-          "tag": "Taxes",
-          "title": "Income tax brackets adjusted",
-          "desc": "Income tax brackets are index-linked to inflation: taxpayers whose income has not increased will see their tax fall.",
-          "date": "1 September 2026",
-          "effectiveDate": "In force from: 1 January 2027"
+      },
+      "secondaryItems": {
+        "constitution": {
+          "title": "Constitution",
+          "desc": "The constitutional framework of the Republic of Astoria."
         },
-        "logement": {
-          "tag": "Housing",
-          "title": "Housing support strengthened",
-          "desc": "Personal housing support is increased and the interest-free loan is extended to first-time buyers.",
-          "date": "1 September 2026",
-          "effectiveDate": "In force from: 1 October 2026"
+        "ministeres": {
+          "title": "Ministries",
+          "desc": "The ministries and their areas of responsibility."
         },
-        "transport": {
-          "tag": "Transport",
-          "title": "More affordable mobility",
-          "desc": "New support for buying bicycles and car-sharing comes into force to reduce the cost of everyday mobility.",
-          "date": "1 September 2026",
-          "effectiveDate": "In force from: 1 November 2026"
+        "territoires": {
+          "title": "Territories",
+          "desc": "The territorial organisation of the Republic."
         },
-        "education": {
-          "tag": "Education",
-          "title": "Back to school: what's new",
-          "desc": "Mixed-ability groups, new exam papers and higher grants: what changes for pupils and their families.",
-          "date": "1 September 2026",
-          "effectiveDate": "In force from: 2 September 2026"
+        "administrations": {
+          "title": "Administrations",
+          "desc": "The public administrations of the Republic."
         },
-        "sante": {
-          "tag": "Health",
-          "title": "Prevention extended to new ages",
-          "desc": "Prevention check-ups are extended to new stages of life, covered with no upfront payment.",
-          "date": "1 September 2026",
-          "effectiveDate": "In force from: 1 January 2027"
-        },
-        "travail": {
-          "tag": "Work",
-          "title": "New rights for retired parents",
-          "desc": "Pension quarters linked to parenthood are better taken into account in retirement calculations.",
-          "date": "28 August 2026",
-          "effectiveDate": "In force from: 1 September 2026"
+        "presse": {
+          "title": "Press",
+          "desc": "The Government's press area."
         }
       }
     },
     "news": {
-      "title": "Government news",
+      "title": "News",
       "lead": "The essential information of the Government of the Republic of Astoria.",
       "link": "See all the news",
       "featured": {
         "tag": "Headline",
-        "title": "What changes in September 2026",
-        "text": "Pensions, back to school, transport, health… An overview of the measures coming into force this month and how they concretely affect you.",
-        "date": "1 September 2026"
+        "title": "No news published",
+        "text": "The next Government news will be published on this page.",
+        "date": ""
       },
       "items": {
-        "sante": {
-          "tag": "Health",
-          "title": "Let's talk mental health!",
-          "date": "2 September 2026"
+        "second1": {
+          "tag": "",
+          "title": "",
+          "date": ""
         },
-        "education": {
-          "tag": "Education",
-          "title": "Back to school: the key dates",
-          "date": "1 September 2026"
+        "second2": {
+          "tag": "",
+          "title": "",
+          "date": ""
         },
-        "retraites": {
-          "tag": "Pensions",
-          "title": "Pensions: new rights related to parenthood",
-          "date": "28 August 2026"
+        "second3": {
+          "tag": "",
+          "title": "",
+          "date": ""
         }
-      }
+      },
+      "emptyNotice": "No news published at this time. Government announcements will appear here."
     },
     "policies": {
-      "kicker": "Public policies",
+      "kicker": "Public action",
       "title": "Public action",
-      "lead": "Discover the Republic's priorities and the measures implemented by the Government.",
-      "link": "Discover the public policies",
+      "lead": "Discover the public policies, priorities and actions carried out by the Government of the Republic of Astoria.",
+      "link": "Discover public action",
       "items": {
         "economie": {
           "title": "Economy",
@@ -363,14 +329,6 @@
           "title": "Education",
           "desc": "School, training and success for everyone."
         },
-        "numerique": {
-          "title": "Digital",
-          "desc": "Innovation, digital sovereignty and the transformation of public action."
-        },
-        "environnement": {
-          "title": "Environment",
-          "desc": "Ecological transition, climate and biodiversity protection."
-        },
         "sante": {
           "title": "Health",
           "desc": "The health system, prevention and access to care."
@@ -379,137 +337,154 @@
           "title": "Security",
           "desc": "Protecting citizens and their property."
         },
-        "mobilite": {
-          "title": "Mobility",
-          "desc": "Transport, infrastructure and everyday mobility."
+        "environnement": {
+          "title": "Environment",
+          "desc": "Ecological transition, climate and biodiversity protection."
         },
-        "culture": {
-          "title": "Culture",
-          "desc": "Creation, heritage and access to culture for everyone."
+        "numerique": {
+          "title": "Digital",
+          "desc": "Innovation, digital sovereignty and the transformation of public action."
         }
       }
     },
-    "audiences": {
-      "kicker": "For you",
-      "title": "State services for you",
-      "lead": "Find the services, support and procedures that concern you, according to your profile.",
+    "services": {
+      "kicker": "Public services",
+      "title": "Public services",
+      "lead": "Find the services and procedures offered by the Republic of Astoria.",
       "notice": "This portal informs and guides you. The procedures themselves are completed on the official platforms of the public services.",
-      "link": "Discover the services and procedures",
+      "link": "Access public services",
       "items": {
-        "citoyen": {
-          "title": "Citizen",
-          "desc": "Civil status, taxes, housing, family: your everyday procedures."
+        "identite": {
+          "title": "Identity and documents",
+          "desc": "National identity card, passport, civil status."
         },
-        "etudiant": {
-          "title": "Student",
-          "desc": "Grants, student housing, guidance and campus life."
+        "fiscalite": {
+          "title": "Taxes",
+          "desc": "Taxes, duties and tax obligations."
         },
-        "professionnel": {
-          "title": "Professional",
-          "desc": "Employment, training and employees' rights."
+        "logement": {
+          "title": "Housing",
+          "desc": "Housing support, procedures and services."
         },
-        "entreprise": {
-          "title": "Business",
-          "desc": "Starting a business, obligations, support and corporate tax."
+        "transport": {
+          "title": "Transport",
+          "desc": "Driving licence, vehicle registration and mobility."
         },
-        "association": {
-          "title": "Association",
-          "desc": "Starting, funding and obligations of associations."
+        "education": {
+          "title": "Education",
+          "desc": "Enrolment, grants and school life."
         },
-        "etranger": {
-          "title": "Foreign national",
-          "desc": "Residence permits, nationality and settling in Astoria."
-        },
-        "administration": {
-          "title": "Administration",
-          "desc": "Services and tools for public servants."
+        "sante": {
+          "title": "Health",
+          "desc": "Social security, health insurance and care."
         }
       }
     },
-    "institutions": {
-      "kicker": "Government & institutions",
-      "title": "The institutions of the Republic",
-      "lead": "The Republic of Astoria is a parliamentary democracy. This section presents the organisation of the Government, the institutions and public bodies.",
+    "government": {
+      "kicker": "The Government",
+      "title": "The Government",
+      "lead": "Discover how the Government of the Republic of Astoria works, its organisation and the people who hold its offices.",
       "items": {
-        "government": {
+        "gouvernement": {
           "title": "The Government",
           "desc": "Composition, organisation and missions."
         },
-        "composition": {
-          "title": "Government composition",
-          "desc": "The official list of Government members and ministries."
+        "ministeres": {
+          "title": "The ministries",
+          "desc": "The governmental structures and their areas of responsibility."
         },
-        "institutions": {
-          "title": "Institutions of the Republic",
-          "desc": "The presidency, the council of ministers and the State administration."
+        "membres": {
+          "title": "Government members",
+          "desc": "The people who hold governmental offices."
         },
-        "organismes": {
-          "title": "Public bodies",
-          "desc": "The official websites and public bodies of the Republic."
+        "president": {
+          "title": "President of the Republic",
+          "desc": "Head of State, exercises executive power and directs the Government."
         }
       }
     },
-    "events": {
-      "kicker": "What's happening",
-      "title": "Government agenda",
-      "lead": "Upcoming communications, important publications and institutional events.",
-      "link": "Follow the Government's news",
+    "republic": {
+      "kicker": "The Republic",
+      "title": "The Republic",
+      "lead": "Understand the institutions, the organisation of the State and how the Republic of Astoria works.",
       "items": {
-        "conseilMinistres": {
-          "tag": "Agenda",
-          "title": "Council of ministers",
-          "text": "Summary and main decisions of the meeting.",
-          "date": "3 September 2026"
+        "constitution": {
+          "title": "Constitution",
+          "desc": "The constitutional framework of the Republic of Astoria."
         },
-        "budget": {
-          "tag": "Publication",
-          "title": "State budget data",
-          "text": "The detailed State budget data is released as open data.",
-          "date": "5 September 2026"
+        "organisation": {
+          "title": "Organisation of the State",
+          "desc": "The general organisation of the State and its institutions."
         },
-        "pointPresse": {
-          "tag": "Communication",
-          "title": "Government press briefing",
-          "text": "The Government spokesperson answers questions from the press.",
-          "date": "8 September 2026"
+        "administrations": {
+          "title": "Public administrations",
+          "desc": "The administrative structures that implement public policies."
         },
-        "egalite": {
-          "tag": "Publication",
-          "title": "Report on equality between women and men",
-          "text": "Publication of the annual equality report and its recommendations.",
-          "date": "10 September 2026"
+        "autorites": {
+          "title": "Public authorities",
+          "desc": "The authorities invested with specific public powers."
+        },
+        "territoires": {
+          "title": "Territories",
+          "desc": "The territorial organisation of the Republic."
         }
       }
     },
-    "openRepublic": {
-      "kicker": "An open Republic",
-      "title": "An open, accessible and understandable Republic",
-      "lead": "The Government of Astoria publishes its data, documents its decisions and develops software under open licences. Transparency lies at the heart of public action.",
+    "usefulInfo": {
+      "kicker": "Useful information",
+      "title": "Useful information",
+      "lead": "Cross-cutting resources and practical information from the institutional portal.",
       "items": {
+        "presse": {
+          "title": "Press",
+          "href": "/presse"
+        },
         "transparence": {
           "title": "Transparency",
-          "desc": "Follow-up of commitments and results of public policies."
+          "href": "/republique/transparence"
         },
-        "donnees": {
-          "title": "Open data",
-          "desc": "Public data, freely reusable."
-        },
-        "openSource": {
-          "title": "Open source",
-          "desc": "Software developed for public services, released under an open licence."
+        "publications": {
+          "title": "Publications",
+          "href": "/publications-officielles"
         },
         "accessibilite": {
           "title": "Accessibility",
-          "desc": "A portal designed to be accessible to everyone."
-        },
-        "publications": {
-          "title": "Official publications",
-          "desc": "The official publications of the Republic of Astoria."
+          "href": "/legal/accessibility"
         },
         "participation": {
-          "title": "Citizen participation",
-          "desc": "The consultations and initiatives that involve citizens in public action."
+          "title": "Participation",
+          "href": "/participation"
+        },
+        "prevention": {
+          "title": "Prevention",
+          "href": "/prevention-des-risques"
+        },
+        "liensUtiles": {
+          "title": "Useful links",
+          "href": "/liens-utiles"
         }
+      }
+    },
+    "socialNetwork": {
+      "kicker": "Social media",
+      "title": "Follow the Government",
+      "newsletter": {
+        "title": "Subscribe to our newsletters",
+        "desc": "Regularly receive news from info.gouv.aor or the Council of Ministers, directly in your inbox.",
+        "cta": "Subscribe",
+        "href": "/news/newsletters"
+      },
+      "socials": {
+        "x": "X (formerly Twitter)",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "threads": "Threads",
+        "tiktok": "TikTok",
+        "whatsapp": "WhatsApp",
+        "youtube": "YouTube",
+        "github": "GitHub",
+        "rss": "RSS Feed"
       }
     }
   },
@@ -1229,6 +1204,58 @@
       "biographyUnavailable": "The institutional biography of {name} is being published."
     }
   },
+  "sig": {
+    "hero": {
+      "kicker": "Attached administration",
+      "title": "Government Information Service (SIG)",
+      "subtitle": "The official information service of the Government of the Republic of Astoria",
+      "intro": "The Government Information Service (SIG) is the communication service of the Government of the Republic of Astoria. It informs about government action, runs the official portal info.gouv.aor and organises relations with the press and citizens."
+    },
+    "presentation": {
+      "kicker": "Overview",
+      "title": "The Government Information Service",
+      "lead": "Attached to the Government, the SIG is the service in charge of government communication: it explains the Government's action, publishes its official communications and ensures everyone has access to reliable, understandable information."
+    },
+    "missions": {
+      "kicker": "Missions",
+      "title": "The missions of the service",
+      "lead": "The SIG carries out the following communication and information missions on behalf of the Government:",
+      "items": {
+        "informer": {
+          "title": "Informing about government action",
+          "text": "Explaining the Government's decisions and public policies in plain language to all citizens."
+        },
+        "portail": {
+          "title": "Running the official Government portal",
+          "text": "Publishing and running info.gouv.aor, the official showcase of the Government and gateway to public services."
+        },
+        "presse": {
+          "title": "Organising relations with the press",
+          "text": "Accrediting journalists, preparing press briefings and conferences, and issuing official statements."
+        },
+        "campagnes": {
+          "title": "Conducting official communication campaigns",
+          "text": "Designing and broadcasting the State's information and prevention campaigns across all official channels."
+        }
+      }
+    },
+    "publications": {
+      "kicker": "Publications",
+      "title": "Publications and reports",
+      "empty": "The service's publications and reports will be available soon."
+    },
+    "news": {
+      "kicker": "News",
+      "title": "News from the service",
+      "empty": "News related to the service will be published here."
+    },
+    "contact": {
+      "kicker": "Contact",
+      "title": "Contact information",
+      "empty": "The service's contact information will be available soon."
+    },
+    "backLink": "Back to the Government page"
+  },
   "pages": {
     "organisation": {
       "title": "Organisation of the Government",
@@ -1271,6 +1298,10 @@
     "president": {
       "title": "Liam Von Astoria — President of the Republic of Astoria",
       "description": "Liam Von Astoria, President of the Republic of Astoria: Head of State, he exercises executive power and directs and coordinates the Government."
+    },
+    "sig": {
+      "title": "Government Information Service (SIG)",
+      "description": "The Government Information Service (SIG) of the Republic of Astoria: the Government's communication service and operator of the official portal info.gouv.aor."
     },
     "news": {
       "title": "News",

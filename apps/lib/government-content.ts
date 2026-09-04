@@ -21,6 +21,8 @@ export const governmentPaths = {
   composition: "/government/composition",
   organisation: "/government/organisation",
   ministere: "/government/ministere",
+  /** Service d'Information du Gouvernement (SIG) — dedicated page. */
+  sig: "/government/sig",
 } as const;
 
 /** A row of the page: message key prefix + optional published destination. */

@@ -4,6 +4,7 @@ import * as React from "react";
 import { Header } from "@codegouvaor/react-ads/Header";
 import { SkipLinks } from "@codegouvaor/react-ads/SkipLinks";
 import { headerFooterDisplayItem } from "@codegouvaor/react-ads/Display";
+import type { HeaderProps } from "@codegouvaor/react-ads/Header";
 import type { MainNavigationProps } from "@codegouvaor/react-ads/MainNavigation";
 import type { MegaMenuProps } from "@codegouvaor/react-ads/MainNavigation/MegaMenu";
 import { useTranslations } from "next-intl";
@@ -146,7 +147,7 @@ export function GovernmentHeader() {
   // Quick-access items — the login link is replaced by the account menu
   // when the user is authenticated.
   const quickAccessItems = React.useMemo(() => {
-    const items: MainNavigationProps.QuickAccessItem[] = [];
+    const items: HeaderProps.QuickAccessItem[] = [];
 
     if (!isAuthenticated || isAuthLoading) {
       items.push({

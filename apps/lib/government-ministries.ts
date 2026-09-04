@@ -310,7 +310,7 @@ export const ministries: ReadonlyArray<Ministry> = [
     attachedAdministrations: [
       { name: "Direction générale des affaires politiques et des affaires européennes" },
       { name: "Direction générale de la mondialisation et des affaires économiques" },
-      { name: "Direction générale des Français à l'étranger et de l'administration consulaire" },
+      { name: "Direction générale des Astoriens à l'étranger et de l'administration consulaire" },
     ],
     policyDomains: [
       "Diplomatie",

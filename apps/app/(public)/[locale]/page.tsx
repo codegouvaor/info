@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { localizedAlternates, resolveLocaleParam } from "@/lib/localized-metadata";
-import { sectionPaths } from "@/lib/site-structure";
 import { Link } from "@/i18n/navigation";
 import {
-  audienceItems,
-  changesItems,
   featuredArticle,
+  governmentItems,
   heroPopularSearches,
-  homeEvents,
-  institutionItems,
-  openRepublicItems,
   policyItems,
-  quickAccessItems,
+  quickAccessPrimaryItems,
+  quickAccessSecondaryItems,
+  republicItems,
   secondaryArticles,
+  serviceCategories,
+  socialLinks,
+  usefulLinks,
 } from "@/lib/home-content";
 import { PortalSearchBar } from "@/components/public/search/portal-search-bar";
 import {
@@ -27,7 +27,7 @@ import {
 const HOME_PATH = "/";
 const NEWS_PATH = "/news";
 const SERVICES_PATH = "/services";
-const CHANGES_PATH = "/news/ce-qui-change";
+const PUBLIC_ACTION_PATH = "/politiques-publiques";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -48,14 +48,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 /**
  * Home page of the official portal of the Republic of Astoria.
  *
- * Nine sections, ordered by user priority: hero with the portal search and
- * popular searches, quick access by intention, what is changing, the
- * Government's news, public action, services by profile, government &
- * institutions, the Government's agenda and the open Republic.
+ * Eight sections answering: "What are the main entry points of the digital
+ * Republic of Astoria?"
  *
- * The structure (hrefs, icons, order) lives in `lib/home-content.ts` and every
- * label comes from the `home.*` message catalogs, so the page can be fed by a
- * CMS or an API later without reworking the layout.
+ *   01 — Hero + Search
+ *   02 — Quick access
+ *   03 — News (actualités)
+ *   04 — Public action (l'action publique)
+ *   05 — Public services (services publics)
+ *   06 — The Government (le Gouvernement)
+ *   07 — The Republic (la République)
+ *   08 — Useful information (informations utiles)
+ *   09 — Social network
  */
 export default async function HomePage({ params }: PageProps) {
   const { locale: rawLocale } = await params;
@@ -66,7 +70,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <>
-      {/* 01 — Hero : the official entry point, with the global search */}
+      {/* 01 — Hero: the official entry point with the global search */}
       <section className="gov-home-hero gov-section" aria-labelledby="home-hero-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("hero.kicker")}</p>
@@ -100,18 +104,32 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 02 — Accès rapides : the user intentions served by the portal */}
+      {/* 02 — Accès rapides: the four main portals + secondary entries */}
       <section className="gov-section gov-section--subtle" aria-labelledby="quick-access-title">
         <div className="gov-section__container">
           <h2 id="quick-access-title" className="gov-section__title">
             {t("quickAccess.title")}
           </h2>
           <div className="fr-grid-row fr-grid-row--gutters">
-            {quickAccessItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-4">
+            {quickAccessPrimaryItems.map((item) => (
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-3">
                 <LinkTile
-                  title={t(`quickAccess.items.${item.key}.title`)}
-                  desc={t(`quickAccess.items.${item.key}.desc`)}
+                  title={t(`quickAccess.primaryItems.${item.key}.title`)}
+                  desc={t(`quickAccess.primaryItems.${item.key}.desc`)}
+                  href={item.href}
+                  iconId={item.iconId}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="fr-grid-row fr-grid-row--gutters" style={{ marginTop: "1rem" }}>
+            {quickAccessSecondaryItems.map((item) => (
+              <div key={item.key} className="fr-col-6 fr-col-sm-4 fr-col-lg">
+                <LinkTile
+                  small
+                  horizontal
+                  title={t(`quickAccess.secondaryItems.${item.key}.title`)}
+                  desc={t(`quickAccess.secondaryItems.${item.key}.desc`)}
                   href={item.href}
                   iconId={item.iconId}
                 />
@@ -121,45 +139,8 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 03 — Ce qui change : measures with a concrete impact */}
-      <section className="gov-section" aria-labelledby="changes-title">
-        <div className="gov-section__container">
-          <div className="gov-section__header">
-            <div>
-              <h2 id="changes-title" className="gov-section__title">
-                {t("changes.title")}
-              </h2>
-              <p className="gov-lead">{t("changes.lead")}</p>
-            </div>
-            <CtaButtonsGroup
-              buttons={[
-                {
-                  children: t("changes.link"),
-                  href: CHANGES_PATH,
-                  priority: "secondary",
-                  iconId: "fr-icon-arrow-right-line",
-                },
-              ]}
-            />
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
-            {changesItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-4">
-                <ArticleCard
-                  title={t(`changes.items.${item.key}.title`)}
-                  desc={t(`changes.items.${item.key}.desc`)}
-                  tag={t(`changes.items.${item.key}.tag`)}
-                  date={t(`changes.items.${item.key}.effectiveDate`)}
-                  href={item.href}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 04 — Actualités du Gouvernement */}
-      <section className="gov-section gov-section--subtle" aria-labelledby="news-title">
+      {/* 03 — Actualités: 1 featured + 3 secondary */}
+      <section className="gov-section" aria-labelledby="news-title">
         <div className="gov-section__container">
           <div className="gov-section__header">
             <div>
@@ -206,11 +187,14 @@ export default async function HomePage({ params }: PageProps) {
               </ul>
             </div>
           </div>
+          <div className="gov-section-notice">
+            <NoticeCallout iconId="fr-icon-information-line">{t("news.emptyNotice")}</NoticeCallout>
+          </div>
         </div>
       </section>
 
-      {/* 05 — L'action publique */}
-      <section className="gov-section" aria-labelledby="policies-title">
+      {/* 04 — L'action publique */}
+      <section className="gov-section gov-section--subtle" aria-labelledby="policies-title">
         <div className="gov-section__container">
           <div className="gov-section__header">
             <div>
@@ -224,7 +208,7 @@ export default async function HomePage({ params }: PageProps) {
               buttons={[
                 {
                   children: t("policies.link"),
-                  href: sectionPaths.suiviDesEngagements,
+                  href: PUBLIC_ACTION_PATH,
                   priority: "secondary",
                   iconId: "fr-icon-arrow-right-line",
                 },
@@ -233,7 +217,7 @@ export default async function HomePage({ params }: PageProps) {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters">
             {policyItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-3">
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-4">
                 <ArticleCard
                   title={t(`policies.items.${item.key}.title`)}
                   desc={t(`policies.items.${item.key}.desc`)}
@@ -246,21 +230,21 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 06 — Pour moi : services oriented by user profile */}
-      <section className="gov-section gov-section--subtle" aria-labelledby="audiences-title">
+      {/* 05 — Services publics */}
+      <section className="gov-section" aria-labelledby="services-title">
         <div className="gov-section__container">
           <div className="gov-section__header">
             <div>
-              <p className="gov-kicker">{t("audiences.kicker")}</p>
-              <h2 id="audiences-title" className="gov-section__title">
-                {t("audiences.title")}
+              <p className="gov-kicker">{t("services.kicker")}</p>
+              <h2 id="services-title" className="gov-section__title">
+                {t("services.title")}
               </h2>
-              <p className="gov-lead">{t("audiences.lead")}</p>
+              <p className="gov-lead">{t("services.lead")}</p>
             </div>
             <CtaButtonsGroup
               buttons={[
                 {
-                  children: t("audiences.link"),
+                  children: t("services.link"),
                   href: SERVICES_PATH,
                   priority: "secondary",
                   iconId: "fr-icon-arrow-right-line",
@@ -269,16 +253,14 @@ export default async function HomePage({ params }: PageProps) {
             />
           </div>
           <div className="gov-section-notice">
-            <NoticeCallout iconId="fr-icon-information-line">{t("audiences.notice")}</NoticeCallout>
+            <NoticeCallout iconId="fr-icon-information-line">{t("services.notice")}</NoticeCallout>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters">
-            {audienceItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-md-6">
+            {serviceCategories.map((item) => (
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-4">
                 <LinkTile
-                  small
-                  horizontal
-                  title={t(`audiences.items.${item.key}.title`)}
-                  desc={t(`audiences.items.${item.key}.desc`)}
+                  title={t(`services.items.${item.key}.title`)}
+                  desc={t(`services.items.${item.key}.desc`)}
                   href={item.href}
                   iconId={item.iconId}
                 />
@@ -288,92 +270,133 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 07 — Gouvernement & institutions */}
-      <section className="gov-section" aria-labelledby="institutions-title">
-        <div className="gov-section__container">
-          <p className="gov-kicker">{t("institutions.kicker")}</p>
-          <h2 id="institutions-title" className="gov-section__title">
-            {t("institutions.title")}
-          </h2>
-          <p className="gov-lead">{t("institutions.lead")}</p>
-          <div className="fr-grid-row fr-grid-row--gutters">
-            {institutionItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-3">
-                <LinkTile
-                  grey
-                  title={t(`institutions.items.${item.key}.title`)}
-                  desc={t(`institutions.items.${item.key}.desc`)}
-                  href={item.href}
-                  iconId={item.iconId}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 08 — Agenda du Gouvernement */}
-      <section className="gov-section gov-section--subtle" aria-labelledby="events-title">
+      {/* 06 — Le Gouvernement */}
+      <section className="gov-section gov-section--subtle" aria-labelledby="government-title">
         <div className="gov-section__container">
           <div className="gov-section__header">
             <div>
-              <p className="gov-kicker">{t("events.kicker")}</p>
-              <h2 id="events-title" className="gov-section__title">
-                {t("events.title")}
+              <p className="gov-kicker">{t("government.kicker")}</p>
+              <h2 id="government-title" className="gov-section__title">
+                {t("government.title")}
               </h2>
-              <p className="gov-lead">{t("events.lead")}</p>
+              <p className="gov-lead">{t("government.lead")}</p>
             </div>
-            <CtaButtonsGroup
-              buttons={[
-                {
-                  children: t("events.link"),
-                  href: NEWS_PATH,
-                  priority: "secondary",
-                  iconId: "fr-icon-arrow-right-line",
-                },
-              ]}
-            />
           </div>
-          <ul className="gov-event-list">
-            {homeEvents.map((event) => (
-              <li key={event.key} className="gov-event">
-                <time className="gov-event__date" dateTime={event.isoDate}>
-                  {t(`events.items.${event.key}.date`)}
-                </time>
-                <div className="gov-event__content">
-                  <p className="gov-event__tag">{t(`events.items.${event.key}.tag`)}</p>
-                  <h3 className="gov-event__title">
-                    <Link href={event.href}>{t(`events.items.${event.key}.title`)}</Link>
-                  </h3>
-                  <p className="gov-event__text">{t(`events.items.${event.key}.text`)}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 09 — Une République ouverte */}
-      <section className="gov-section" aria-labelledby="open-republic-title">
-        <div className="gov-section__container">
-          <p className="gov-kicker">{t("openRepublic.kicker")}</p>
-          <h2 id="open-republic-title" className="gov-section__title">
-            {t("openRepublic.title")}
-          </h2>
-          <p className="gov-lead">{t("openRepublic.lead")}</p>
           <div className="fr-grid-row fr-grid-row--gutters">
-            {openRepublicItems.map((item) => (
-              <div key={item.key} className="fr-col-12 fr-col-md-6">
+            {governmentItems.map((item) => (
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-3">
                 <LinkTile
-                  small
-                  horizontal
-                  title={t(`openRepublic.items.${item.key}.title`)}
-                  desc={t(`openRepublic.items.${item.key}.desc`)}
+                  grey
+                  title={t(`government.items.${item.key}.title`)}
+                  desc={t(`government.items.${item.key}.desc`)}
                   href={item.href}
                   iconId={item.iconId}
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 07 — La République */}
+      <section className="gov-section" aria-labelledby="republic-title">
+        <div className="gov-section__container">
+          <div className="gov-section__header">
+            <div>
+              <p className="gov-kicker">{t("republic.kicker")}</p>
+              <h2 id="republic-title" className="gov-section__title">
+                {t("republic.title")}
+              </h2>
+              <p className="gov-lead">{t("republic.lead")}</p>
+            </div>
+          </div>
+          <div className="fr-grid-row fr-grid-row--gutters">
+            {republicItems.map((item) => (
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-lg-4">
+                <LinkTile
+                  title={t(`republic.items.${item.key}.title`)}
+                  desc={t(`republic.items.${item.key}.desc`)}
+                  href={item.href}
+                  iconId={item.iconId}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 08 — Informations utiles */}
+      <section className="gov-section gov-section--subtle" aria-labelledby="useful-info-title">
+        <div className="gov-section__container">
+          <p className="gov-kicker">{t("usefulInfo.kicker")}</p>
+          <h2 id="useful-info-title" className="gov-section__title">
+            {t("usefulInfo.title")}
+          </h2>
+          <p className="gov-lead">{t("usefulInfo.lead")}</p>
+          <div className="fr-grid-row fr-grid-row--gutters">
+            {usefulLinks.map((item) => (
+              <div key={item.key} className="fr-col-12 fr-col-sm-6 fr-col-md-4 fr-col-lg-3">
+                <LinkTile
+                  small
+                  horizontal
+                  title={t(`usefulInfo.items.${item.key}.title`)}
+                  href={item.href}
+                  iconId={item.iconId}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 09 — Social network: newsletter + social media links */}
+      <section className="gov-section" aria-labelledby="social-network-title">
+        <div className="gov-section__container">
+          <div className="gov-home-social">
+            <div className="gov-home-social__newsletter">
+              <p className="gov-kicker">{t("socialNetwork.kicker")}</p>
+              <h2 id="social-network-title" className="gov-section__title">
+                {t("socialNetwork.newsletter.title")}
+              </h2>
+              <p className="gov-lead">{t("socialNetwork.newsletter.desc")}</p>
+              <CtaButtonsGroup
+                buttons={[{
+                  children: t("socialNetwork.newsletter.cta"),
+                  href: t("socialNetwork.newsletter.href"),
+                  priority: "primary",
+                  iconId: "fr-icon-mail-line",
+                }]}
+              />
+            </div>
+            <div className="gov-home-social__follow">
+              <h3 className="gov-home-social__follow-title">
+                {t("socialNetwork.title")}
+              </h3>
+              <ul className="gov-home-social__list" role="list">
+                {socialLinks.map((link) => (
+                  <li key={link.key}>
+                    <a
+                      className="gov-home-social__icon"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t(`socialNetwork.socials.${link.key}`)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox={`0 0 ${link.svgW} ${link.svgH}`}
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d={link.svgPath} />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

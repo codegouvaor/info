@@ -68,7 +68,7 @@
   "packageManager": "pnpm@8.15.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/astoria-gouv/website-gouv.git"
+    "url": "https://github.com/codegouvaor/info.git"
   },
   "keywords": [
     "news",
@@ -80,8 +80,8 @@
   ],
   "author": {
     "name": "Astoria Government Development Team",
-    "email": "developer@info.gov.aor",
-    "url": "https://info.gov.aor"
+    "email": "developer@info.gouv.aor",
+    "url": "https://info.gouv.aor"
   },
   "license": "MIT",
   "bugs": {

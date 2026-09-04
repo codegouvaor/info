@@ -76,7 +76,13 @@ export function GovernmentFooter() {
           linkProps: { href: "/publications-officielles" },
         },
       ]}
-      license={t("footer.license")}
+      license={t.rich("footer.license", {
+        link: (chunks) => (
+          <a href="https://code.gouv.aor/" target="_blank" rel="noopener noreferrer">
+            {chunks}
+          </a>
+        ),
+      })}
       linkList={linkList}
     />
   );

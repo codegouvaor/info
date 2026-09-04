@@ -52,7 +52,7 @@
       "narcotrafic": "Narcotrafic",
       "intelligenceArtificielle": "Intelligence artificielle",
       "rentreeScolaire": "Rentrée scolaire",
-      "franceNationVerte": "Astoria Nation verte",
+      "astoriaNationVerte": "Astoria Nation verte",
       "grandsDossiers": "Grands dossiers",
       "gouvernementTitle": "Le Gouvernement",
       "gouvernementText": "Découvrez la composition, l'organisation et l'action du Gouvernement.",
@@ -64,6 +64,7 @@
       "gouvernementOrganisation": "Organisation",
       "gouvernementSecretariats": "Secrétariats",
       "administrationsRattachees": "Administrations rattachées",
+      "serviceInformationGouvernement": "Service d'information du Gouvernement",
       "ministeres": "Ministères",
       "politiquesPubliques": "Politiques publiques",
       "actionPubliqueTitle": "L'action publique",
@@ -165,9 +166,10 @@
       "parlonsSanteMentale": "Parlons santé mentale !",
       "toutesEtTousEgaux": "Toutes et tous égaux",
       "relanceLogement": "Relance logement",
-      "franceGrandAngle": "La République en grand angle",
-      "france2030": "Astoria 2030",
-      "maisonsFranceServices": "Maisons France services",
+      "republiqueGrandAngle": "La République en grand angle",
+      "astoria2030": "Astoria 2030",
+      "astoriaNationVerte": "Astoria Nation verte",
+      "maisonsServicesPublics": "Maisons services publics",
       "tousLesGrandsDossiers": "Tous les grands dossiers",
       "etatOrganisateur": "L'État organisateur",
       "etatProtecteur": "L'État protecteur",
@@ -194,7 +196,7 @@
   },
   "footer": {
     "contentDescription": "Ce site est géré par le Service d'Information du Gouvernement (SIG) d'Astoria.",
-    "license": "Sauf mention contraire, tous les contenus de ce site sont disponibles sous licence APSL.",
+    "license": "Sauf mention contraire, tous les contenus de ce site sont disponibles sous <link>licence APSL</link>.",
     "columns": {
       "actualites": { "title": "Actualités" },
       "grandsDossiers": { "title": "Grands dossiers" },
@@ -225,135 +227,100 @@
     }
   },
   "home": {
-    "metaTitle": "Site Officiel du Gouvernement de la République d'Astoria",
+    "metaTitle": "Le portail officiel du Gouvernement de la République d'Astoria",
     "hero": {
       "kicker": "République d'Astoria",
-      "title": "La République d'Astoria, simplement.",
-      "lead": "Comprenez les décisions publiques, trouvez les services de l'État et suivez l'action du Gouvernement.",
+      "title": "Le portail officiel du Gouvernement",
+      "lead": "Informez-vous sur l'action du Gouvernement, les institutions de la République et les services publics.",
       "searchLabel": "Rechercher sur le portail",
-      "searchPlaceholder": "Rechercher une démarche, une actualité, une politique publique…",
+      "searchPlaceholder": "Que recherchez-vous ?",
       "popularSearchesLabel": "Recherches populaires",
       "popularSearches": {
-        "retraites": "Retraites",
-        "rentreeScolaire": "Rentrée scolaire",
-        "logement": "Logement",
-        "budget": "Budget",
-        "sante": "Santé"
+        "gouvernement": "Le Gouvernement",
+        "republique": "La République",
+        "services": "Services publics",
+        "actualites": "Actualités",
+        "constitution": "Constitution"
       },
       "trust": "Un site officiel du Gouvernement de la République d'Astoria"
     },
     "quickAccess": {
-      "title": "Que recherchez-vous ?",
-      "items": {
-        "demarche": {
-          "title": "Faire une démarche",
-          "desc": "Identité, logement, travail : les démarches en ligne et leurs modalités."
-        },
-        "service": {
-          "title": "Trouver un service public",
-          "desc": "Les services publics et leurs points de contact."
-        },
-        "decision": {
-          "title": "Comprendre une décision",
-          "desc": "Analyses et décryptages des décisions du Gouvernement."
-        },
-        "contact": {
-          "title": "Contacter l'État",
-          "desc": "Les canaux officiels pour contacter les services du Gouvernement."
-        },
+      "title": "Accès rapides",
+      "primaryItems": {
         "gouvernement": {
-          "title": "Voir le Gouvernement",
-          "desc": "Composition, organisation et missions du Gouvernement."
+          "title": "Le Gouvernement",
+          "desc": "Composition, organisation et action du Gouvernement de la République d'Astoria."
+        },
+        "services": {
+          "title": "Services publics",
+          "desc": "Trouvez les services et démarches proposés par la République d'Astoria."
         },
         "actualites": {
-          "title": "Consulter les actualités",
-          "desc": "Les communications et annonces officielles du Gouvernement."
+          "title": "Actualités",
+          "desc": "Suivez l'actualité du Gouvernement et de la République."
+        },
+        "republique": {
+          "title": "La République",
+          "desc": "Comprenez les institutions et le fonctionnement de l'État."
         }
-      }
-    },
-    "changes": {
-      "kicker": "Ce qui change",
-      "title": "Ce qui change",
-      "lead": "Les nouvelles mesures et décisions qui peuvent avoir un impact sur votre quotidien.",
-      "link": "Voir tout ce qui change",
-      "items": {
-        "fiscalite": {
-          "tag": "Fiscalité",
-          "title": "Le barème de l'impôt revalorisé",
-          "desc": "Le barème de l'impôt sur le revenu est indexé sur l'inflation : les contribuables dont les revenus n'ont pas progressé voient leur impôt baisser.",
-          "date": "1ᵉʳ septembre 2026",
-          "effectiveDate": "Entrée en vigueur : 1ᵉʳ janvier 2027"
+      },
+      "secondaryItems": {
+        "constitution": {
+          "title": "Constitution",
+          "desc": "Le cadre constitutionnel de la République d'Astoria."
         },
-        "logement": {
-          "tag": "Logement",
-          "title": "Les aides au logement renforcées",
-          "desc": "Les aides personnelles au logement sont revalorisées et le prêt à taux zéro est élargi aux primo-accédants.",
-          "date": "1ᵉʳ septembre 2026",
-          "effectiveDate": "Entrée en vigueur : 1ᵉʳ octobre 2026"
+        "ministeres": {
+          "title": "Ministères",
+          "desc": "Les ministères et leurs domaines de compétence."
         },
-        "transport": {
-          "tag": "Transport",
-          "title": "Des mobilités plus abordables",
-          "desc": "De nouvelles aides à l'achat de vélos et au covoiturage entrent en vigueur pour réduire le coût des mobilités du quotidien.",
-          "date": "1ᵉʳ septembre 2026",
-          "effectiveDate": "Entrée en vigueur : 1ᵉʳ novembre 2026"
+        "territoires": {
+          "title": "Territoires",
+          "desc": "L'organisation territoriale de la République."
         },
-        "education": {
-          "tag": "Éducation",
-          "title": "Rentrée scolaire : les nouveautés",
-          "desc": "Groupes de niveau, nouvelles épreuves et bourses revalorisées : ce qui change pour les élèves et leurs familles.",
-          "date": "1ᵉʳ septembre 2026",
-          "effectiveDate": "Entrée en vigueur : 2 septembre 2026"
+        "administrations": {
+          "title": "Administrations",
+          "desc": "Les administrations publiques de la République."
         },
-        "sante": {
-          "tag": "Santé",
-          "title": "La prévention élargie à de nouveaux âges",
-          "desc": "Les rendez-vous de prévention sont généralisés à de nouveaux âges de la vie, pris en charge sans avance de frais.",
-          "date": "1ᵉʳ septembre 2026",
-          "effectiveDate": "Entrée en vigueur : 1ᵉʳ janvier 2027"
-        },
-        "travail": {
-          "tag": "Travail",
-          "title": "De nouveaux droits pour les parents retraités",
-          "desc": "Les trimestres liés à la parentalité sont mieux pris en compte dans le calcul des retraites.",
-          "date": "28 août 2026",
-          "effectiveDate": "Entrée en vigueur : 1ᵉʳ septembre 2026"
+        "presse": {
+          "title": "Presse",
+          "desc": "L'espace presse du Gouvernement."
         }
       }
     },
     "news": {
-      "title": "Actualités du Gouvernement",
+      "title": "Actualités",
       "lead": "Les informations essentielles du Gouvernement de la République d'Astoria.",
       "link": "Voir toute l'actualité",
       "featured": {
         "tag": "À la une",
-        "title": "Ce qui change en septembre 2026",
-        "text": "Retraites, rentrée scolaire, mobilités, santé… Tour d'horizon des mesures qui entrent en vigueur ce mois-ci et de ce qu'elles changent concrètement pour vous.",
-        "date": "1ᵉʳ septembre 2026"
+        "title": "Aucune actualité publiée",
+        "text": "Les prochaines actualités du Gouvernement seront publiées sur cette page.",
+        "date": ""
       },
       "items": {
-        "sante": {
-          "tag": "Santé",
-          "title": "Parlons santé mentale !",
-          "date": "2 septembre 2026"
+        "second1": {
+          "tag": "",
+          "title": "",
+          "date": ""
         },
-        "education": {
-          "tag": "Éducation",
-          "title": "Rentrée scolaire : les dates clés",
-          "date": "1ᵉʳ septembre 2026"
+        "second2": {
+          "tag": "",
+          "title": "",
+          "date": ""
         },
-        "retraites": {
-          "tag": "Retraites",
-          "title": "Retraites : de nouveaux droits liés à la parentalité",
-          "date": "28 août 2026"
+        "second3": {
+          "tag": "",
+          "title": "",
+          "date": ""
         }
-      }
+      },
+      "emptyNotice": "Aucune actualité publiée actuellement. Les prochaines annonces du Gouvernement apparaîtront ici."
     },
     "policies": {
-      "kicker": "Politiques publiques",
+      "kicker": "L'action publique",
       "title": "L'action publique",
-      "lead": "Découvrez les priorités de la République et les mesures mises en œuvre par le Gouvernement.",
-      "link": "Découvrir les politiques publiques",
+      "lead": "Découvrez les politiques publiques, les priorités et les actions conduites par le Gouvernement de la République d'Astoria.",
+      "link": "Découvrir l'action publique",
       "items": {
         "economie": {
           "title": "Économie",
@@ -363,14 +330,6 @@
           "title": "Éducation",
           "desc": "L'école, la formation et la réussite de toutes et de tous."
         },
-        "numerique": {
-          "title": "Numérique",
-          "desc": "Innovation, souveraineté numérique et transformation de l'action publique."
-        },
-        "environnement": {
-          "title": "Environnement",
-          "desc": "Transition écologique, climat et protection de la biodiversité."
-        },
         "sante": {
           "title": "Santé",
           "desc": "Le système de santé, la prévention et l'accès aux soins."
@@ -379,137 +338,154 @@
           "title": "Sécurité",
           "desc": "La protection des citoyennes et des citoyens et de leurs biens."
         },
-        "mobilite": {
-          "title": "Mobilités",
-          "desc": "Transports, infrastructures et mobilités du quotidien."
+        "environnement": {
+          "title": "Environnement",
+          "desc": "Transition écologique, climat et protection de la biodiversité."
         },
-        "culture": {
-          "title": "Culture",
-          "desc": "La création, le patrimoine et l'accès de toutes et de tous à la culture."
+        "numerique": {
+          "title": "Numérique",
+          "desc": "Innovation, souveraineté numérique et transformation de l'action publique."
         }
       }
     },
-    "audiences": {
-      "kicker": "Pour vous",
-      "title": "Les services de l'État pour vous",
-      "lead": "Selon votre profil, retrouvez les services, les aides et les démarches qui vous concernent.",
+    "services": {
+      "kicker": "Services publics",
+      "title": "Services publics",
+      "lead": "Trouvez les services et démarches proposés par la République d'Astoria.",
       "notice": "Ce portail vous informe et vous oriente. Les démarches elles-mêmes sont effectuées sur les plateformes officielles des services publics.",
-      "link": "Découvrir les services et démarches",
+      "link": "Accéder aux services publics",
       "items": {
-        "citoyen": {
-          "title": "Citoyen",
-          "desc": "État civil, impôts, logement, famille : vos démarches du quotidien."
+        "identite": {
+          "title": "Identité et documents",
+          "desc": "Carte nationale d'identité, passeport, état civil."
         },
-        "etudiant": {
-          "title": "Étudiant",
-          "desc": "Bourses, logement étudiant, orientation et vie de campus."
+        "fiscalite": {
+          "title": "Fiscalité",
+          "desc": "Impôts, taxes et obligations fiscales."
         },
-        "professionnel": {
-          "title": "Professionnel",
-          "desc": "Emploi, formation et droits des salariés."
+        "logement": {
+          "title": "Logement",
+          "desc": "Aides au logement, démarches et services."
         },
-        "entreprise": {
-          "title": "Entreprise",
-          "desc": "Création, obligations, aides et fiscalité des entreprises."
+        "transport": {
+          "title": "Transport",
+          "desc": "Permis, carte grise et mobilités."
         },
-        "association": {
-          "title": "Association",
-          "desc": "Création, subventions et obligations des associations."
+        "education": {
+          "title": "Éducation",
+          "desc": "Inscription, bourses et vie scolaire."
         },
-        "etranger": {
-          "title": "Étranger",
-          "desc": "Titres de séjour, nationalité et accueil en Astoria."
-        },
-        "administration": {
-          "title": "Administration",
-          "desc": "Les services et outils destinés aux agents publics."
+        "sante": {
+          "title": "Santé",
+          "desc": "Sécurité sociale, mutuelle et soins."
         }
       }
     },
-    "institutions": {
-      "kicker": "Gouvernement & institutions",
-      "title": "Les institutions de la République",
-      "lead": "La République d'Astoria est une démocratie parlementaire. Cette section présente l'organisation du Gouvernement, des institutions et des organismes publics.",
+    "government": {
+      "kicker": "Le Gouvernement",
+      "title": "Le Gouvernement",
+      "lead": "Découvrez comment fonctionne le Gouvernement de la République d'Astoria, son organisation et les personnes qui exercent ses fonctions.",
       "items": {
-        "government": {
+        "gouvernement": {
           "title": "Le Gouvernement",
           "desc": "Composition, organisation et missions."
         },
-        "composition": {
-          "title": "Composition du Gouvernement",
-          "desc": "La liste officielle des membres du Gouvernement et des ministères."
+        "ministeres": {
+          "title": "Les ministères",
+          "desc": "Les structures gouvernementales et leurs domaines de compétence."
         },
-        "institutions": {
-          "title": "Institutions de la République",
-          "desc": "La présidence, le conseil des ministres et l'administration de l'État."
+        "membres": {
+          "title": "Les membres du Gouvernement",
+          "desc": "Les personnes qui exercent les fonctions gouvernementales."
         },
-        "organismes": {
-          "title": "Organismes publics",
-          "desc": "Les sites officiels et les organismes publics de la République."
+        "president": {
+          "title": "Le Président de la République",
+          "desc": "Chef de l'État, il exerce la fonction exécutive et dirige le Gouvernement."
         }
       }
     },
-    "events": {
-      "kicker": "En ce moment",
-      "title": "Agenda du Gouvernement",
-      "lead": "Les prochaines communications, les publications importantes et les événements institutionnels.",
-      "link": "Suivre l'actualité du Gouvernement",
+    "republic": {
+      "kicker": "La République",
+      "title": "La République",
+      "lead": "Comprenez les institutions, l'organisation de l'État et le fonctionnement de la République d'Astoria.",
       "items": {
-        "conseilMinistres": {
-          "tag": "Agenda",
-          "title": "Conseil des ministres",
-          "text": "Compte rendu et principales décisions de la séance.",
-          "date": "3 septembre 2026"
+        "constitution": {
+          "title": "Constitution",
+          "desc": "Le cadre constitutionnel de la République d'Astoria."
         },
-        "budget": {
-          "tag": "Publication",
-          "title": "Données budgétaires de l'État",
-          "text": "Les données détaillées du budget de l'État sont mises à disposition en données ouvertes.",
-          "date": "5 septembre 2026"
+        "organisation": {
+          "title": "Organisation de l'État",
+          "desc": "L'organisation générale de l'État et de ses institutions."
         },
-        "pointPresse": {
-          "tag": "Communication",
-          "title": "Point presse du Gouvernement",
-          "text": "Le porte-parole du Gouvernement répond aux questions de la presse.",
-          "date": "8 septembre 2026"
+        "administrations": {
+          "title": "Administrations publiques",
+          "desc": "Les structures administratives qui mettent en œuvre les politiques publiques."
         },
-        "egalite": {
-          "tag": "Publication",
-          "title": "Rapport sur l'égalité entre les femmes et les hommes",
-          "text": "Publication du rapport annuel sur l'égalité et de ses recommandations.",
-          "date": "10 septembre 2026"
+        "autorites": {
+          "title": "Autorités publiques",
+          "desc": "Les autorités investies de compétences publiques particulières."
+        },
+        "territoires": {
+          "title": "Territoires",
+          "desc": "L'organisation territoriale de la République."
         }
       }
     },
-    "openRepublic": {
-      "kicker": "Une République ouverte",
-      "title": "Une République ouverte, accessible et compréhensible",
-      "lead": "Le Gouvernement d'Astoria publie ses données, documente ses décisions et développe des logiciels sous licences ouvertes. La transparence est au cœur de l'action publique.",
+    "usefulInfo": {
+      "kicker": "Informations utiles",
+      "title": "Informations utiles",
+      "lead": "Ressources transversales et informations pratiques du portail institutionnel.",
       "items": {
+        "presse": {
+          "title": "Presse",
+          "href": "/presse"
+        },
         "transparence": {
           "title": "Transparence",
-          "desc": "Le suivi des engagements et des résultats des politiques publiques."
+          "href": "/republique/transparence"
         },
-        "donnees": {
-          "title": "Données publiques",
-          "desc": "Les données publiques, librement réutilisables."
-        },
-        "openSource": {
-          "title": "Logiciels libres",
-          "desc": "Les logiciels développés pour les services publics, publiés sous licence ouverte."
+        "publications": {
+          "title": "Publications",
+          "href": "/publications-officielles"
         },
         "accessibilite": {
           "title": "Accessibilité",
-          "desc": "Un portail conçu pour être accessible à toutes et à tous."
-        },
-        "publications": {
-          "title": "Publications officielles",
-          "desc": "Les publications officielles de la République d'Astoria."
+          "href": "/legal/accessibility"
         },
         "participation": {
-          "title": "Participation citoyenne",
-          "desc": "Les consultations et initiatives qui associent les citoyennes et citoyens à l'action publique."
+          "title": "Participation",
+          "href": "/participation"
+        },
+        "prevention": {
+          "title": "Prévention",
+          "href": "/prevention-des-risques"
+        },
+        "liensUtiles": {
+          "title": "Liens utiles",
+          "href": "/liens-utiles"
         }
+      }
+    },
+    "socialNetwork": {
+      "kicker": "Réseaux sociaux",
+      "title": "Suivez le Gouvernement",
+      "newsletter": {
+        "title": "Abonnez-vous à nos lettres d'information",
+        "desc": "Recevez régulièrement les actualités de info.gouv.aor ou du Conseil des ministres, directement dans votre boîte de réception.",
+        "cta": "S'abonner",
+        "href": "/news/newsletters"
+      },
+      "socials": {
+        "x": "X (anciennement Twitter)",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "threads": "Threads",
+        "tiktok": "TikTok",
+        "whatsapp": "WhatsApp",
+        "youtube": "YouTube",
+        "github": "GitHub",
+        "rss": "Flux RSS"
       }
     }
   },
@@ -1229,6 +1205,58 @@
       "biographyUnavailable": "La biographie institutionnelle de {name} est en cours de publication."
     }
   },
+  "sig": {
+    "hero": {
+      "kicker": "Administration rattachée",
+      "title": "Service d'information du Gouvernement (SIG)",
+      "subtitle": "Le service d'information officiel du Gouvernement de la République d'Astoria",
+      "intro": "Le Service d'Information du Gouvernement (SIG) est le service de communication du Gouvernement de la République d'Astoria. Il informe sur l'action gouvernementale, gère le portail officiel info.gouv.aor et organise la relation avec la presse et les citoyens."
+    },
+    "presentation": {
+      "kicker": "Présentation",
+      "title": "Le Service d'information du Gouvernement",
+      "lead": "Rattaché au Gouvernement, le SIG est le service chargé de la communication gouvernementale : il explique l'action du Gouvernement, diffuse ses communications officielles et veille à l'accès de toutes et tous à une information fiable et compréhensible."
+    },
+    "missions": {
+      "kicker": "Missions",
+      "title": "Les missions du service",
+      "lead": "Le SIG exerce les missions de communication et d'information suivantes au nom du Gouvernement :",
+      "items": {
+        "informer": {
+          "title": "Informer sur l'action gouvernementale",
+          "text": "Expliquer les décisions et les politiques publiques du Gouvernement, dans un langage clair, à l'ensemble des citoyens."
+        },
+        "portail": {
+          "title": "Gérer le portail officiel du Gouvernement",
+          "text": "Publier et animer le portail info.gouv.aor, la vitrine officielle du Gouvernement et l'accès aux services publics."
+        },
+        "presse": {
+          "title": "Organiser la relation avec la presse",
+          "text": "Accréditer les journalistes, préparer les points presse et les conférences de presse, et diffuser les communiqués officiels."
+        },
+        "campagnes": {
+          "title": "Conduire les campagnes de communication officielles",
+          "text": "Concevoir et diffuser les campagnes d'information et de prévention de l'État sur l'ensemble des canaux officiels."
+        }
+      }
+    },
+    "publications": {
+      "kicker": "Publications",
+      "title": "Publications et rapports",
+      "empty": "Les publications et rapports du service seront disponibles prochainement."
+    },
+    "news": {
+      "kicker": "Actualités",
+      "title": "Actualités du service",
+      "empty": "Les actualités liées au service seront publiées ici."
+    },
+    "contact": {
+      "kicker": "Contact",
+      "title": "Informations de contact",
+      "empty": "Les informations de contact du service seront disponibles prochainement."
+    },
+    "backLink": "Retour à la page du Gouvernement"
+  },
   "pages": {
     "organisation": {
       "title": "Organisation du Gouvernement",
@@ -1271,6 +1299,10 @@
     "president": {
       "title": "Liam Von Astoria — Président de la République d'Astoria",
       "description": "Liam Von Astoria, Président de la République d'Astoria : chef de l'État, il exerce la fonction exécutive et assure la direction et la coordination du Gouvernement."
+    },
+    "sig": {
+      "title": "Service d'information du Gouvernement (SIG)",
+      "description": "Le Service d'Information du Gouvernement (SIG) de la République d'Astoria : le service de communication du Gouvernement, gestionnaire du portail officiel info.gouv.aor."
     },
     "news": {
       "title": "Actualités",
@@ -1345,7 +1377,7 @@
       "title": "Prévention des risques",
       "description": "Se préparer et réagir face aux risques majeurs.",
       "kicker": "Sécurité",
-      "lead": "De l'incident à la catastrophe majeure, les risques naturels, technologiques et sanitaires peuvent toucher la population française et ses territoires.",
+      "lead": "De l'incident à la catastrophe majeure, les risques naturels, technologiques et sanitaires peuvent toucher la population astorienne et ses territoires.",
       "paragraphs": {
         "p1": "Cette section présentera les bons réflexes et les dispositifs de l'État pour se préparer et réagir face aux risques majeurs."
       },
