@@ -7,7 +7,7 @@
   "header": {
     "serviceTitle": "info.gouv.aor",
     "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
-    "homeTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
+    "homeTitle": "Site Officiel du Gouvernement de la République d'Astoria",
     "pressLink": "Espace presse"
   },
   "nav": {
@@ -217,7 +217,7 @@
     }
   },
   "home": {
-    "metaTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
+    "metaTitle": "Site Officiel du Gouvernement de la République d'Astoria",
     "hero": {
       "kicker": "République d'Astoria",
       "title": "La République d'Astoria, simplement.",
@@ -505,7 +505,681 @@
       }
     }
   },
+  "government": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Le Gouvernement",
+      "subtitle": "Gouvernement de la République d'Astoria",
+      "intro": "Le Gouvernement est l'organisation exécutive chargée de mettre en œuvre l'action gouvernementale. Il agit sous la direction et la coordination du Président de la République, chef de l'État, qui exerce la fonction exécutive. Cette page explique ce qu'est le Gouvernement, comment il est organisé et comment il conduit son action.",
+      "compositionAction": "La composition du Gouvernement",
+      "organisationAction": "L'organisation du Gouvernement"
+    },
+    "understand": {
+      "kicker": "Comprendre",
+      "title": "Qu'est-ce que le Gouvernement ?",
+      "lead": "Le Gouvernement conduit la politique de la Nation et coordonne l'action publique. Il n'est ni une personne ni une simple liste de ministres : c'est l'organisation exécutive qui réunit les ministres responsables des politiques publiques.",
+      "items": {
+        "executive": {
+          "title": "Une composante de l'exécutif",
+          "text": "Le Président de la République et le Gouvernement forment l'exécutif. Le Gouvernement est l'organisation qui prépare et met en œuvre la politique de la Nation."
+        },
+        "direction": {
+          "title": "Dirigé par le Président de la République",
+          "text": "Le Président de la République est le chef de l'État : il exerce la fonction exécutive, dirige et coordonne le Gouvernement, qui agit sous son autorité."
+        },
+        "membres": {
+          "title": "Composé de ministres",
+          "text": "Les ministres sont les membres du Gouvernement. Chacun est responsable d'un ministère et des politiques publiques de son domaine de compétence."
+        },
+        "administrations": {
+          "title": "Appuyé sur des administrations",
+          "text": "Pour agir, le Gouvernement s'appuie sur les ministères, les secrétariats d'État et les administrations publiques, qui exécutent les politiques publiques et assurent les services au public."
+        }
+      }
+    },
+    "executive": {
+      "kicker": "L'exécutif",
+      "title": "Le Président de la République, centre de l'exécutif",
+      "lead": "Dans le modèle constitutionnel astorien, le Président de la République est le chef de l'État et exerce la fonction exécutive. Il assure la direction et la coordination du Gouvernement : c'est lui qui impulse l'action gouvernementale.",
+      "intro": "Le schéma ci-dessous présente l'organisation de l'exécutif astorien. Le Président n'est pas un membre du Gouvernement parmi d'autres : il en est le chef et le coordinateur. Les fonctions sont décrites de manière institutionnelle, sans référence à des titulaires.",
+      "ariaLabel": "Schéma de l'organisation de l'exécutif : le Président de la République dirige et coordonne le Gouvernement, qui s'appuie sur les ministères, les secrétariats d'État et les administrations publiques.",
+      "president": {
+        "title": "Président de la République",
+        "text": "Chef de l'État. Il exerce la fonction exécutive."
+      },
+      "relation": {
+        "title": "Direction et coordination du Gouvernement"
+      },
+      "government": {
+        "title": "Le Gouvernement",
+        "text": "Organisation exécutive chargée de mettre en œuvre l'action gouvernementale."
+      },
+      "ministries": {
+        "title": "Ministères",
+        "text": "Conduisent les politiques publiques dans leur domaine de compétence."
+      },
+      "secretariats": {
+        "title": "Secrétariats d'État",
+        "text": "Portent des politiques publiques spécifiques au sein du Gouvernement."
+      },
+      "administrations": {
+        "title": "Administrations publiques",
+        "text": "Exécutent les politiques publiques et assurent les services au public."
+      },
+      "note": "Ce schéma décrit des fonctions institutionnelles. Il sera complété par la liste des titulaires dès la constitution officielle du Gouvernement."
+    },
+    "organisation": {
+      "kicker": "Organisation",
+      "title": "L'organisation du Gouvernement",
+      "lead": "Le Gouvernement s'organise autour de composantes aux rôles complémentaires. Chaque composante fera l'objet d'une page dédiée dès sa publication.",
+      "detailAction": "Toute l'organisation du Gouvernement",
+      "items": {
+        "president": {
+          "title": "Président de la République",
+          "text": "Chef de l'État, il exerce la fonction exécutive et assure la direction du Gouvernement."
+        },
+        "gouvernement": {
+          "title": "Le Gouvernement",
+          "text": "Organisation exécutive qui réunit les ministres responsables des politiques publiques."
+        },
+        "composition": {
+          "title": "Composition du Gouvernement",
+          "text": "La liste officielle des membres du Gouvernement et la répartition des portefeuilles ministériels."
+        },
+        "conseil": {
+          "title": "Conseil des ministres",
+          "text": "La réunion des membres du Gouvernement, où se formalisent les grandes orientations de l'action publique."
+        },
+        "ministeres": {
+          "title": "Ministères",
+          "text": "Les structures gouvernementales qui conduisent les politiques publiques dans chaque domaine."
+        },
+        "secretariats": {
+          "title": "Secrétariats d'État",
+          "text": "Les composantes du Gouvernement chargées de politiques publiques spécifiques."
+        },
+        "administrations": {
+          "title": "Administrations rattachées",
+          "text": "Les administrations qui exécutent les politiques publiques au service des citoyens."
+        }
+      }
+    },
+    "ministries": {
+      "kicker": "Ministères",
+      "title": "Les ministères",
+      "lead": "Un ministère est la structure gouvernementale qui conduit les politiques publiques dans un domaine de compétence : économie, éducation, santé, sécurité ou environnement, par exemple.",
+      "paragraph": "À la tête d'un ministère, un ministre, membre du Gouvernement, est responsable des politiques publiques de son portefeuille. Le ministère s'appuie sur des services et des administrations qui les mettent en œuvre au quotidien.",
+      "ficheTitle": "Chaque ministère fera l'objet d'une fiche présentant :",
+      "fiche": {
+        "name": "Le nom du ministère",
+        "description": "Sa description et ses missions",
+        "competences": "Ses domaines de compétence",
+        "titulaire": "Son titulaire actuel",
+        "page": "Un accès direct à sa page dédiée"
+      },
+      "emptyTitle": "Aucun ministère publié à ce jour",
+      "emptyText": "La liste officielle des ministères et les fiches associées seront publiées dans cette section dès la constitution du Gouvernement."
+    },
+    "council": {
+      "kicker": "Conseil des ministres",
+      "title": "Le Conseil des ministres",
+      "lead": "Le Conseil des ministres est la réunion des membres du Gouvernement. C'est l'instance où se préparent et se formalisent les grandes orientations et les décisions de l'action gouvernementale.",
+      "paragraph": "Les ordres du jour, les décisions, les comptes rendus et les archives des conseils des ministres seront publiés dans cette rubrique au fil de l'actualité gouvernementale.",
+      "emptyTitle": "Aucun conseil des ministres publié",
+      "emptyText": "Aucune réunion n'a encore été publiée. Dès la première publication, l'agenda, les décisions et les comptes rendus apparaîtront ici."
+    },
+    "action": {
+      "kicker": "L'action du Gouvernement",
+      "title": "Que fait le Gouvernement ?",
+      "lead": "Le Gouvernement conduit l'action publique : il fixe les orientations, prépare les réformes et veille à leur mise en œuvre par les ministères et les administrations, sous la direction du Président de la République.",
+      "cta": "Découvrir l'action publique",
+      "items": {
+        "priorites": {
+          "title": "Les priorités",
+          "text": "Les grands chantiers que le Gouvernement engage en priorité."
+        },
+        "politiquesPubliques": {
+          "title": "Les politiques publiques",
+          "text": "Les actions conduites dans chaque domaine : économie, éducation, santé, sécurité, environnement…"
+        },
+        "reformes": {
+          "title": "Les réformes",
+          "text": "Les transformations engagées pour améliorer l'action publique et les services rendus."
+        },
+        "grandsDossiers": {
+          "title": "Les grands dossiers",
+          "text": "Les sujets d'ampleur suivis par le Gouvernement dans la durée."
+        },
+        "engagements": {
+          "title": "Les engagements",
+          "text": "Les objectifs publics annoncés, assortis d'un suivi régulier."
+        },
+        "resultats": {
+          "title": "Les résultats",
+          "text": "Le suivi des engagements et les effets mesurables de l'action publique."
+        }
+      }
+    },
+    "productions": {
+      "kicker": "Agenda & travaux",
+      "title": "Les travaux du Gouvernement",
+      "lead": "Agenda, décisions, discours, communiqués et publications : les productions institutionnelles du Gouvernement seront regroupées dans cette section au fil de leur publication.",
+      "emptyTitle": "Aucun contenu publié à ce jour",
+      "emptyText": "Les travaux du Gouvernement seront publiés ici dès leur disponibilité officielle.",
+      "channelsTitle": "Cette section rassemblera notamment :",
+      "channels": {
+        "agenda": {
+          "title": "L'agenda",
+          "text": "Les réunions et déplacements publics des membres du Gouvernement."
+        },
+        "decisions": {
+          "title": "Les décisions",
+          "text": "Les décisions issues des conseils des ministres et des réunions gouvernementales."
+        },
+        "discours": {
+          "title": "Les discours",
+          "text": "Les interventions officielles du Président de la République et des membres du Gouvernement."
+        },
+        "communiques": {
+          "title": "Les communiqués",
+          "text": "Les annonces officielles du Gouvernement."
+        },
+        "publications": {
+          "title": "Les publications",
+          "text": "Les rapports, documents et publications officiels."
+        }
+      }
+    },
+    "info": {
+      "kicker": "Pour aller plus loin",
+      "title": "Informations gouvernementales",
+      "lead": "Données publiques, participation citoyenne et ressources institutionnelles : les informations utiles pour suivre le Gouvernement et la République.",
+      "readMore": "Découvrir",
+      "items": {
+        "donnees": {
+          "title": "Les données publiques",
+          "text": "Les données ouvertes de l'État et du Gouvernement."
+        },
+        "participation": {
+          "title": "La participation citoyenne",
+          "text": "Les consultations et dispositifs de participation ouverts à toutes et à tous."
+        },
+        "ressources": {
+          "title": "Les ressources institutionnelles",
+          "text": "Les sites officiels et les ressources institutionnelles de la République."
+        }
+      }
+    },
+    "offices": {
+      "president": "Président de la République"
+    }
+  },
+  "composition": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Composition du Gouvernement",
+      "subtitle": "Les institutions et les fonctions qui composent le Gouvernement de la République d'Astoria",
+      "intro": "Cette page présente la composition institutionnelle du Gouvernement : les fonctions qui le constituent, leur articulation et, dès que l'information est disponible, les personnes qui les exercent. Les titulaires seront publiés lors de la constitution officielle du Gouvernement."
+    },
+    "overview": {
+      "kicker": "Vue d'ensemble",
+      "title": "De la République aux administrations",
+      "lead": "La composition du Gouvernement s'inscrit dans l'organisation de la République. Le schéma ci-dessous présente les fonctions qui la composent, du Président de la République aux administrations.",
+      "ariaLabel": "Schéma de la composition du Gouvernement : la République d'Astoria, le Président de la République qui exerce la fonction exécutive et coordonne le Gouvernement, composé des ministères, des secrétariats d'État et des autres structures, puis les administrations publiques qui mettent en œuvre les politiques.",
+      "note": "Cette représentation décrit des fonctions institutionnelles. Elle ne présuppose pas les personnes qui pourront les exercer.",
+      "republic": {
+        "title": "République d'Astoria",
+        "text": "La Nation et son organisation institutionnelle."
+      },
+      "president": {
+        "title": "Président de la République",
+        "text": "Chef de l'État. Exerce la fonction exécutive et coordonne le Gouvernement."
+      },
+      "relation": {
+        "title": "Direction et coordination du Gouvernement"
+      },
+      "government": {
+        "title": "Le Gouvernement",
+        "text": "Composé des ministres, des secrétaires d'État et des autres structures chargées de l'action gouvernementale."
+      },
+      "ministries": {
+        "title": "Ministères",
+        "text": "Conduisent les politiques publiques dans leur domaine de compétence."
+      },
+      "secretariats": {
+        "title": "Secrétariats d'État",
+        "text": "Portent des politiques publiques spécifiques au sein du Gouvernement."
+      },
+      "others": {
+        "title": "Autres structures rattachées",
+        "text": "Les structures officiellement rattachées au Gouvernement."
+      },
+      "administrations": {
+        "title": "Administrations publiques",
+        "text": "Exécutent les politiques publiques et assurent les services au public."
+      },
+      "distinctions": {
+        "title": "Gouvernement, ministère, administration : trois niveaux à distinguer",
+        "items": {
+          "gouvernement": {
+            "title": "Le Gouvernement",
+            "text": "L'organisation exécutive qui réunit les ministres et les secrétaires d'État autour du Président de la République."
+          },
+          "ministere": {
+            "title": "Un ministère",
+            "text": "Le département de l'État chargé d'un domaine de politique publique. Il existe indépendamment de son titulaire."
+          },
+          "administration": {
+            "title": "Une administration",
+            "text": "Les services qui exécutent les politiques publiques au quotidien et assurent le fonctionnement de l'État."
+          }
+        }
+      }
+    },
+    "president": {
+      "kicker": "L'exécutif",
+      "title": "Le Président de la République",
+      "lead": "Première composante institutionnelle de l'exécutif, le Président de la République est le chef de l'État. Il exerce la fonction exécutive et assure la direction et la coordination du Gouvernement.",
+      "paragraph": "Cette page présente la fonction présidentielle en tant que composante du Gouvernement. Son titulaire sera publié dès sa prise de fonction officielle.",
+      "officeName": "Président de la République",
+      "officeKicker": "Fonction constitutionnelle",
+      "officeText": "Institution permanente de la République, la présidence existe indépendamment de la personne qui l'exerce.",
+      "holderLabel": "Titulaire actuel",
+      "holderEmpty": "Sera publié lors de la constitution officielle du Gouvernement."
+    },
+    "ministers": {
+      "kicker": "Membres du Gouvernement",
+      "title": "Les ministres",
+      "lead": "Les ministres sont les membres du Gouvernement responsables d'un ministère et des politiques publiques de son domaine de compétence.",
+      "paragraph": "Chaque ministre sera présenté avec sa fonction, son ministère et, dès leur publication officielle, son portrait et un lien vers sa fiche institutionnelle.",
+      "emptyTitle": "La composition nominative n'est pas encore publiée",
+      "emptyText": "Les ministres seront présentés dans cette section lors de la constitution officielle du Gouvernement."
+    },
+    "secretaries": {
+      "kicker": "Membres du Gouvernement",
+      "title": "Les secrétaires d'État",
+      "lead": "Les secrétaires d'État sont les membres du Gouvernement chargés de politiques publiques spécifiques, aux côtés des ministres et des ministères.",
+      "paragraph": "Chaque secrétaire d'État sera présenté avec son domaine de responsabilité et son rattachement ministériel dès sa nomination officielle.",
+      "emptyTitle": "Aucun secrétaire d'État publié à ce jour",
+      "emptyText": "Les secrétaires d'État seront présentés dans cette section lors de la constitution officielle du Gouvernement."
+    },
+    "ministries": {
+      "kicker": "Ministères",
+      "title": "Les ministères",
+      "lead": "Les ministères sont les départements de l'État chargés d'un domaine de politique publique. Ils constituent la structure durable de l'action publique : un changement de ministre ou de Gouvernement ne modifie pas le ministère lui-même.",
+      "paragraph": "Chaque ministère sera présenté avec sa description, ses domaines de compétence et, lorsqu'il existe, le ministre qui en est responsable.",
+      "emptyTitle": "Aucun ministère publié à ce jour",
+      "emptyText": "La liste officielle des ministères sera publiée dans cette section dès sa définition."
+    },
+    "related": {
+      "kicker": "Comprendre",
+      "title": "Comprendre le Gouvernement",
+      "lead": "Pour situer la composition du Gouvernement dans l'ensemble de l'organisation de l'État :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "La page institutionnelle du Gouvernement : son rôle, son organisation et son action."
+        },
+        "organisation": {
+          "title": "L'organisation du Gouvernement",
+          "text": "La structure de l'exécutif, du Président de la République aux administrations."
+        },
+        "membres": {
+          "title": "Les membres du Gouvernement",
+          "text": "Les personnes qui exercent actuellement les fonctions gouvernementales."
+        }
+      }
+    }
+  },
+  "ministere": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Les ministères",
+      "subtitle": "Les départements ministériels de la République d'Astoria",
+      "intro": "Les ministères sont les départements de l'État chargés de préparer et de mettre en œuvre les politiques publiques dans leurs domaines de compétence. Cette page présente les ministères de la République d'Astoria, leurs responsabilités et, lorsqu'ils sont connus, les personnes qui les dirigent."
+    },
+    "understand": {
+      "kicker": "Comprendre",
+      "title": "Un ministère est une institution",
+      "lead": "Un ministère existe indépendamment de la personne qui le dirige : un ministre peut être remplacé, le ministère demeure.",
+      "items": {
+        "institution": {
+          "title": "Une institution durable",
+          "text": "Un ministère est le département de l'État chargé d'un domaine de politique publique. Il constitue la structure durable de l'action publique : un changement de ministre ou de Gouvernement ne modifie pas le ministère lui-même."
+        },
+        "minister": {
+          "title": "Un ministre à sa tête",
+          "text": "Le ministre, membre du Gouvernement, est la personne nommée à la tête d'un ministère. Il est responsable des politiques publiques de son portefeuille."
+        },
+        "administrations": {
+          "title": "Des administrations pour agir",
+          "text": "Pour préparer et mettre en œuvre les politiques publiques, le ministère s'appuie sur des services, des directions et des administrations qui agissent au quotidien."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Annuaire",
+      "title": "Les ministères de la République",
+      "lead": "Chaque ministère est présenté avec sa description, ses domaines de compétence et, lorsqu'il existe, le ministre qui en est responsable.",
+      "responsibilitiesLabel": "Compétences :",
+      "emptyTitle": "Les départements ministériels seront publiés lors de leur définition officielle.",
+      "emptyText": "Cette page présentera les compétences, l'organisation et les responsables de chaque ministère de la République d'Astoria.",
+      "ficheTitle": "Chaque ministère fera l'objet d'une fiche présentant :",
+      "fiche": {
+        "name": "Le nom du ministère",
+        "description": "Sa description et ses missions",
+        "competences": "Ses domaines de compétence",
+        "titulaire": "Son titulaire actuel",
+        "page": "Un accès direct à sa page dédiée"
+      }
+    },
+    "related": {
+      "kicker": "Pour aller plus loin",
+      "title": "Comprendre le Gouvernement",
+      "lead": "Pour situer les ministères dans l'organisation de l'État :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "La page institutionnelle du Gouvernement : son rôle, son organisation et son action."
+        },
+        "composition": {
+          "title": "La composition du Gouvernement",
+          "text": "Les fonctions qui composent le Gouvernement, du Président de la République aux ministères."
+        },
+        "organisation": {
+          "title": "L'organisation du Gouvernement",
+          "text": "La structure de l'exécutif, du Président de la République aux administrations."
+        }
+      }
+    }
+  },
+  "membres": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Les membres du Gouvernement",
+      "subtitle": "Les personnes qui exercent les fonctions gouvernementales de la République d'Astoria",
+      "intro": "Cette page présente les titulaires des fonctions gouvernementales de la République d'Astoria : le Président de la République, les ministres et les secrétaires d'État, ainsi que leurs responsabilités."
+    },
+    "summary": {
+      "kicker": "Le Gouvernement",
+      "title": "Composition actuelle",
+      "presidentLabel": "Président de la République",
+      "ministersLabel": "Ministres",
+      "secretariesLabel": "Secrétaires d'État",
+      "membersCount": "{count, plural, one {# membre} other {# membres}}"
+    },
+    "president": {
+      "kicker": "L'exécutif",
+      "title": "Président de la République",
+      "lead": "Le Président de la République est le chef de l'État. Il exerce la fonction exécutive et assure la direction et la coordination du Gouvernement.",
+      "sinceLabel": "En fonction depuis le"
+    },
+    "ministers": {
+      "kicker": "Membres du Gouvernement",
+      "title": "Les ministres",
+      "lead": "Les ministres sont les membres du Gouvernement responsables d'un ministère et des politiques publiques de son domaine de compétence.",
+      "emptyText": "Aucun ministre n'a encore été publié sur cette page."
+    },
+    "secretaries": {
+      "kicker": "Membres du Gouvernement",
+      "title": "Les secrétaires d'État",
+      "lead": "Les secrétaires d'État sont les membres du Gouvernement chargés de politiques publiques spécifiques, rattachés à un ministère.",
+      "emptyText": "Aucun secrétaire d'État n'a encore été publié sur cette page."
+    },
+    "members": {
+      "ministryLabel": "Ministère :",
+      "sinceLabel": "En fonction depuis le",
+      "profileLink": "Voir le profil",
+      "portraitAlt": "Portrait officiel de {name}, {title}"
+    },
+    "empty": {
+      "kicker": "Composition nominative",
+      "title": "La composition nominative du Gouvernement n'est pas encore publiée",
+      "lead": "Les membres du Gouvernement seront présentés sur cette page après leur nomination officielle : le Président de la République, les ministres et les secrétaires d'État, avec leurs fonctions et leurs responsabilités.",
+      "noticeTitle": "Gouvernement en cours de constitution",
+      "noticeText": "Cette page présentera les titulaires des fonctions gouvernementales dès leur nomination officielle. Aucune information nominative n'est publiée à ce jour."
+    },
+    "related": {
+      "kicker": "Pour aller plus loin",
+      "title": "Comprendre le Gouvernement",
+      "lead": "Pour situer les membres du Gouvernement dans l'organisation de l'État :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "La page institutionnelle du Gouvernement : son rôle, son organisation et son action."
+        },
+        "composition": {
+          "title": "La composition du Gouvernement",
+          "text": "Les fonctions qui composent le Gouvernement, du Président de la République aux ministères."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements ministériels de la République d'Astoria, leurs compétences et leurs responsables."
+        }
+      }
+    }
+  },
+  "president": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "subtitle": "Président de la République d'Astoria",
+      "intro": "Chef de l'État, le Président de la République exerce la fonction exécutive et assure la direction et la coordination du Gouvernement. Cette fiche présente sa fonction institutionnelle et, actuellement, la personne qui l'exerce : Liam Von Astoria.",
+      "portraitAlt": "Portrait officiel de {name}"
+    },
+    "office": {
+      "kicker": "La fonction",
+      "title": "Le Président de la République",
+      "lead": "Dans le modèle constitutionnel astorien, la présidence est une institution permanente de la République : elle existe indépendamment de la personne qui l'exerce.",
+      "paragraph1": "Le Président de la République est le chef de l'État. Il exerce la fonction exécutive, au centre de l'exécutif astorien : c'est lui qui impulse et coordonne l'action gouvernementale.",
+      "paragraph2": "Il assure la direction et la coordination du Gouvernement, qui agit sous son autorité. Le Gouvernement s'appuie sur les ministères, les secrétariats d'État et les administrations publiques pour préparer et mettre en œuvre les politiques publiques."
+    },
+    "responsibilities": {
+      "kicker": "Responsabilités",
+      "title": "Les responsabilités du Président",
+      "lead": "Les responsabilités présentées ci-dessous sont celles définies par le modèle institutionnel astorien :",
+      "items": {
+        "chefEtat": {
+          "title": "Chef de l'État",
+          "text": "Le Président de la République est le chef de l'État : il incarne la permanence de la République et en assure la représentation."
+        },
+        "executif": {
+          "title": "Fonction exécutive",
+          "text": "Il exerce la fonction exécutive, au centre de l'exécutif astorien."
+        },
+        "direction": {
+          "title": "Direction et coordination du Gouvernement",
+          "text": "Il dirige et coordonne le Gouvernement, qui agit sous son autorité."
+        },
+        "impulsion": {
+          "title": "Impulsion de l'action gouvernementale",
+          "text": "C'est lui qui impulse l'action gouvernementale, mise en œuvre par le Gouvernement, les ministères et les administrations."
+        }
+      }
+    },
+    "diagram": {
+      "kicker": "L'exécutif",
+      "title": "Le Président et le Gouvernement",
+      "lead": "Le Président de la République est au centre de la coordination de l'exécutif gouvernemental :",
+      "ariaLabel": "Schéma de l'exécutif : le Président de la République assure la direction et la coordination du Gouvernement, qui s'appuie sur les ministères, les secrétariats d'État et les administrations publiques.",
+      "president": {
+        "title": "Président de la République",
+        "text": "Chef de l'État. Exerce la fonction exécutive."
+      },
+      "relation": {
+        "title": "Direction et coordination du Gouvernement"
+      },
+      "government": {
+        "title": "Le Gouvernement",
+        "text": "Organisation exécutive chargée de mettre en œuvre l'action gouvernementale."
+      },
+      "ministries": {
+        "title": "Ministères",
+        "text": "Conduisent les politiques publiques dans leur domaine de compétence."
+      },
+      "secretariats": {
+        "title": "Secrétariats d'État",
+        "text": "Portent des politiques publiques spécifiques au sein du Gouvernement."
+      },
+      "administrations": {
+        "title": "Administrations publiques",
+        "text": "Exécutent les politiques publiques et assurent les services au public."
+      },
+      "note": "Ce schéma décrit des fonctions institutionnelles. Il sera complété par la liste des titulaires dès la constitution officielle du Gouvernement."
+    },
+    "action": {
+      "kicker": "L'action publique",
+      "title": "Le Président et l'action publique",
+      "lead": "Le Président coordonne l'exécutif : l'action publique est préparée et mise en œuvre à travers le Gouvernement, les ministères et les administrations.",
+      "cta": "Découvrir l'action publique"
+    },
+    "mandate": {
+      "kicker": "Mandat",
+      "title": "Mandat présidentiel",
+      "lead": "La fonction de Président de la République est actuellement exercée par :",
+      "sinceLabel": "En fonction depuis le",
+      "membersLink": "Voir les membres du Gouvernement"
+    },
+    "activity": {
+      "kicker": "Agenda & médias",
+      "title": "Agenda, discours et actualités de la Présidence",
+      "lead": "Les déplacements, réunions, prises de parole, communiqués et actualités de la Présidence seront publiés dans cette section.",
+      "emptyTitle": "Aucune publication présidentielle n'est actuellement disponible",
+      "emptyText": "L'agenda, les discours et les actualités de la Présidence seront publiés ici dès leur disponibilité officielle."
+    },
+    "related": {
+      "kicker": "Pour aller plus loin",
+      "title": "Institutions liées",
+      "lead": "Pour situer la Présidence dans l'organisation de la République :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "La page institutionnelle du Gouvernement : son rôle, son organisation et son action."
+        },
+        "composition": {
+          "title": "La composition du Gouvernement",
+          "text": "Les fonctions qui composent le Gouvernement, du Président de la République aux ministères."
+        },
+        "membres": {
+          "title": "Les membres du Gouvernement",
+          "text": "Les personnes qui exercent actuellement les fonctions gouvernementales."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements ministériels de la République d'Astoria, leurs compétences et leurs responsables."
+        }
+      }
+    }
+  },
+  "biographies": {
+    "readMore": "En savoir plus",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Biographies",
+      "subtitle": "Les responsables du Gouvernement de la République d'Astoria",
+      "intro": "Cette rubrique présente les biographies institutionnelles des personnes exerçant ou ayant exercé des responsabilités au sein du Gouvernement de la République d'Astoria. Les informations peuvent évoluer avec les changements de Gouvernement."
+    },
+    "president": {
+      "kicker": "Le Président de la République",
+      "title": "Président de la République d'Astoria",
+      "lead": "Le Président de la République est le chef de l'État. Il exerce la fonction exécutive et assure la direction et la coordination du Gouvernement.",
+      "profileLink": "Consulter le profil du Président"
+    },
+    "current": {
+      "kicker": "Responsables en fonction",
+      "title": "Les responsables actuellement en fonction",
+      "lead": "Les personnes actuellement en fonction au sein du Gouvernement de la République d'Astoria.",
+      "emptyText": "Aucun responsable n'est actuellement publié sur cette page."
+    },
+    "past": {
+      "kicker": "Anciens responsables",
+      "title": "Les anciens responsables",
+      "lead": "Les personnes ayant précédemment exercé une fonction gouvernementale au sein de la République d'Astoria.",
+      "emptyText": "Aucun ancien responsable n'est encore documenté."
+    },
+    "profile": {
+      "portraitAlt": "Portrait officiel de {name}, {title}",
+      "ministryLabel": "Ministère :",
+      "sinceLabel": "En fonction depuis le",
+      "untilLabel": "Fonction exercée jusqu'au",
+      "profileLink": "Voir le profil",
+      "biographyUnavailable": "Biographie en cours de publication."
+    },
+    "related": {
+      "kicker": "Pour aller plus loin",
+      "title": "Comprendre le Gouvernement",
+      "lead": "Pour situer les biographies dans l'organisation de l'État :",
+      "items": {
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "La page institutionnelle du Gouvernement : son rôle, son organisation et son action."
+        },
+        "membres": {
+          "title": "Les membres du Gouvernement",
+          "text": "Les personnes qui exercent actuellement les fonctions gouvernementales."
+        },
+        "composition": {
+          "title": "La composition du Gouvernement",
+          "text": "Les fonctions qui composent le Gouvernement, du Président de la République aux ministères."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements ministériels de la République d'Astoria, leurs compétences et leurs responsables."
+        }
+      }
+    },
+    "detail": {
+      "identity": {
+        "kicker": "Identité",
+        "title": "Identité officielle",
+        "sinceLabel": "En fonction depuis le",
+        "ministryLabel": "Ministère :"
+      },
+      "currentOffice": {
+        "kicker": "Fonction actuelle",
+        "title": "Fonction actuellement exercée",
+        "roleLabel": "Rôle institutionnel"
+      },
+      "career": {
+        "kicker": "Parcours",
+        "title": "Parcours institutionnel",
+        "emptyText": "Le parcours institutionnel sera documenté dès que les données officielles seront publiées."
+      },
+      "professional": {
+        "kicker": "Parcours professionnel",
+        "title": "Parcours professionnel",
+        "emptyText": "Le parcours professionnel sera documenté lorsque les informations officielles seront disponibles."
+      },
+      "education": {
+        "kicker": "Formation",
+        "title": "Formation",
+        "emptyText": "La formation sera documentée lorsque les informations officielles seront disponibles."
+      },
+      "publications": {
+        "kicker": "Publications & discours",
+        "title": "Publications et interventions officielles",
+        "emptyText": "Les publications, discours et interventions seront publiés dès leur disponibilité."
+      },
+      "backLink": "Retour aux biographies",
+      "presidentLink": "Consulter le profil du Président",
+      "biographyUnavailable": "La biographie institutionnelle de {name} est en cours de publication."
+    }
+  },
   "pages": {
+    "organisation": {
+      "title": "Organisation du Gouvernement",
+      "description": "L'organisation du Gouvernement de la République d'Astoria : présidence, conseil des ministres, ministères et administrations.",
+      "kicker": "Institutions",
+      "lead": "L'exécutif astorien s'organise autour du Président de la République, qui exerce la fonction exécutive, et du Gouvernement qu'il dirige et coordonne.",
+      "paragraphs": {
+        "p1": "Le Gouvernement est l'organisation exécutive chargée de mettre en œuvre l'action gouvernementale. Il s'appuie sur les ministères et les secrétariats d'État, conduits par ses membres, ainsi que sur les administrations publiques qui exécutent les politiques publiques.",
+        "p2": "Cette section décrit les structures du Gouvernement et leurs missions. Les pages dédiées à chaque structure seront publiées progressivement."
+      },
+      "notice": "Les fiches détaillées des ministères et des administrations seront publiées dès leur officialisation."
+    },
     "government": {
       "title": "Le Gouvernement",
       "description": "Présentation du Gouvernement de la République d'Astoria, de son organisation et de ses missions.",
@@ -519,14 +1193,23 @@
     },
     "composition": {
       "title": "Composition du Gouvernement",
-      "description": "La composition du Gouvernement de la République d'Astoria : présidence, conseil des ministres et administrations.",
-      "kicker": "Institutions",
-      "lead": "Le Gouvernement de la République d'Astoria est structuré autour de la présidence de la République, du conseil des ministres et des administrations publiques.",
-      "paragraphs": {
-        "p1": "La liste officielle des membres du Gouvernement (chef du Gouvernement, ministres et secrétaires d'État) et la répartition des portefeuilles ministériels seront publiées dans cette section.",
-        "p2": "Chaque institution disposera d'une fiche dédiée : missions, organisation, actualités et démarches associées."
-      },
-      "notice": "La composition nominative sera publiée dès que les données officielles seront disponibles."
+      "description": "La composition du Gouvernement de la République d'Astoria : les fonctions, les membres et les structures qui le composent."
+    },
+    "ministere": {
+      "title": "Les ministères",
+      "description": "L'annuaire officiel des ministères de la République d'Astoria : les départements ministériels, leurs compétences et leurs responsables."
+    },
+    "membres": {
+      "title": "Les membres du Gouvernement",
+      "description": "Les personnes qui exercent les fonctions gouvernementales de la République d'Astoria : le Président de la République, les ministres et les secrétaires d'État, et leurs responsabilités."
+    },
+    "biographies": {
+      "title": "Biographies — Gouvernement de la République d'Astoria",
+      "description": "Découvrez les biographies des responsables du Gouvernement de la République d'Astoria et leur parcours institutionnel."
+    },
+    "president": {
+      "title": "Liam Von Astoria — Président de la République d'Astoria",
+      "description": "Liam Von Astoria, Président de la République d'Astoria : chef de l'État, il exerce la fonction exécutive et assure la direction et la coordination du Gouvernement."
     },
     "news": {
       "title": "Actualités",

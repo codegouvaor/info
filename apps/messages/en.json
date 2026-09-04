@@ -505,7 +505,681 @@
       }
     }
   },
+  "government": {
+    "readMore": "Find out more",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "The Government",
+      "subtitle": "Government of the Republic of Astoria",
+      "intro": "The Government is the executive organisation responsible for carrying out government action. It acts under the direction and coordination of the President of the Republic, Head of State, who exercises executive power. This page explains what the Government is, how it is organised and how it carries out its action.",
+      "compositionAction": "The composition of the Government",
+      "organisationAction": "The organisation of the Government"
+    },
+    "understand": {
+      "kicker": "Understand",
+      "title": "What is the Government?",
+      "lead": "The Government steers the Nation's policy and coordinates public action. It is neither a person nor a simple list of ministers: it is the executive organisation bringing together the ministers responsible for public policies.",
+      "items": {
+        "executive": {
+          "title": "Part of the executive branch",
+          "text": "The President of the Republic and the Government form the executive branch. The Government is the organisation that prepares and carries out the Nation's policy."
+        },
+        "direction": {
+          "title": "Led by the President of the Republic",
+          "text": "The President of the Republic is the Head of State: they exercise executive power and direct and coordinate the Government, which acts under their authority."
+        },
+        "membres": {
+          "title": "Made up of ministers",
+          "text": "Ministers are the members of the Government. Each one is responsible for a ministry and for the public policies within its area of responsibility."
+        },
+        "administrations": {
+          "title": "Backed by administrations",
+          "text": "To act, the Government relies on ministries, secretariats of state and public administrations, which carry out public policies and deliver public services."
+        }
+      }
+    },
+    "executive": {
+      "kicker": "The executive branch",
+      "title": "The President of the Republic at the centre of the executive branch",
+      "lead": "Under the Astorian constitutional model, the President of the Republic is the Head of State and exercises executive power. The President directs and coordinates the Government: the head of the executive gives government action its direction.",
+      "intro": "The diagram below presents the organisation of the Astorian executive branch. The President is not one government member among others: they are its leader and coordinator. The roles are described institutionally, without reference to office holders.",
+      "ariaLabel": "Diagram of the executive branch organisation: the President of the Republic directs and coordinates the Government, which relies on ministries, secretariats of state and public administrations.",
+      "president": {
+        "title": "President of the Republic",
+        "text": "Head of State. Exercises executive power."
+      },
+      "relation": {
+        "title": "Direction and coordination of the Government"
+      },
+      "government": {
+        "title": "The Government",
+        "text": "Executive organisation responsible for carrying out government action."
+      },
+      "ministries": {
+        "title": "Ministries",
+        "text": "Lead public policies in their area of responsibility."
+      },
+      "secretariats": {
+        "title": "Secretariats of State",
+        "text": "Carry specific public policies within the Government."
+      },
+      "administrations": {
+        "title": "Public administrations",
+        "text": "Carry out public policies and deliver public services."
+      },
+      "note": "This diagram describes institutional roles. It will be completed with the list of office holders as soon as the Government is officially formed."
+    },
+    "organisation": {
+      "kicker": "Organisation",
+      "title": "The organisation of the Government",
+      "lead": "The Government is organised around complementary bodies. Each body will have a dedicated page as soon as it is published.",
+      "detailAction": "The whole organisation of the Government",
+      "items": {
+        "president": {
+          "title": "President of the Republic",
+          "text": "Head of State, exercises executive power and directs the Government."
+        },
+        "gouvernement": {
+          "title": "The Government",
+          "text": "Executive organisation bringing together the ministers responsible for public policies."
+        },
+        "composition": {
+          "title": "Composition of the Government",
+          "text": "The official list of Government members and the allocation of ministerial portfolios."
+        },
+        "conseil": {
+          "title": "Council of Ministers",
+          "text": "The meeting of Government members, where the main directions of public action are formalised."
+        },
+        "ministeres": {
+          "title": "Ministries",
+          "text": "The government bodies leading public policies in each area."
+        },
+        "secretariats": {
+          "title": "Secretariats of State",
+          "text": "The government bodies responsible for specific public policies."
+        },
+        "administrations": {
+          "title": "Attached administrations",
+          "text": "The administrations carrying out public policies for citizens."
+        }
+      }
+    },
+    "ministries": {
+      "kicker": "Ministries",
+      "title": "The ministries",
+      "lead": "A ministry is the government body that leads public policies in an area of responsibility: the economy, education, health, security or the environment, for example.",
+      "paragraph": "A ministry is headed by a minister, a member of the Government, who is responsible for the public policies within their portfolio. The ministry relies on departments and administrations that carry them out day to day.",
+      "ficheTitle": "Each ministry will have a page presenting:",
+      "fiche": {
+        "name": "The name of the ministry",
+        "description": "Its description and missions",
+        "competences": "Its areas of responsibility",
+        "titulaire": "Its current office holder",
+        "page": "A direct link to its dedicated page"
+      },
+      "emptyTitle": "No ministry published yet",
+      "emptyText": "The official list of ministries and their pages will be published in this section as soon as the Government is formed."
+    },
+    "council": {
+      "kicker": "Council of Ministers",
+      "title": "The Council of Ministers",
+      "lead": "The Council of Ministers brings together the members of the Government. It is the body where the main directions and decisions of government action are prepared and formalised.",
+      "paragraph": "Agendas, decisions, minutes and archives of the Council of Ministers will be published in this section as government business unfolds.",
+      "emptyTitle": "No Council of Ministers published yet",
+      "emptyText": "No meeting has been published yet. As soon as the first one is, its agenda, decisions and minutes will appear here."
+    },
+    "action": {
+      "kicker": "The Government's action",
+      "title": "What does the Government do?",
+      "lead": "The Government carries out public action: it sets the directions, prepares the reforms and ensures they are implemented by ministries and administrations, under the direction of the President of the Republic.",
+      "cta": "Discover public action",
+      "items": {
+        "priorites": {
+          "title": "Priorities",
+          "text": "The major undertakings the Government commits to first."
+        },
+        "politiquesPubliques": {
+          "title": "Public policies",
+          "text": "The action carried out in each area: economy, education, health, security, the environment…"
+        },
+        "reformes": {
+          "title": "Reforms",
+          "text": "The transformations introduced to improve public action and public services."
+        },
+        "grandsDossiers": {
+          "title": "Major projects",
+          "text": "The large-scale issues the Government works on over time."
+        },
+        "engagements": {
+          "title": "Commitments",
+          "text": "Publicly announced objectives, regularly monitored."
+        },
+        "resultats": {
+          "title": "Results",
+          "text": "The monitoring of commitments and the measurable effects of public action."
+        }
+      }
+    },
+    "productions": {
+      "kicker": "Agenda & work",
+      "title": "The Government's work",
+      "lead": "Agenda, decisions, speeches, press releases and publications: the Government's institutional output will be gathered in this section as it is published.",
+      "emptyTitle": "No content published yet",
+      "emptyText": "The Government's work will be published here as soon as it is officially available.",
+      "channelsTitle": "This section will notably include:",
+      "channels": {
+        "agenda": {
+          "title": "The agenda",
+          "text": "Public meetings and official engagements of Government members."
+        },
+        "decisions": {
+          "title": "Decisions",
+          "text": "Decisions taken at the Council of Ministers and during government meetings."
+        },
+        "discours": {
+          "title": "Speeches",
+          "text": "Official addresses by the President of the Republic and Government members."
+        },
+        "communiques": {
+          "title": "Press releases",
+          "text": "Official announcements from the Government."
+        },
+        "publications": {
+          "title": "Publications",
+          "text": "Official reports, documents and publications."
+        }
+      }
+    },
+    "info": {
+      "kicker": "Going further",
+      "title": "Government information",
+      "lead": "Open data, citizen participation and institutional resources: useful information to follow the Government and the Republic.",
+      "readMore": "Discover",
+      "items": {
+        "donnees": {
+          "title": "Open data",
+          "text": "The open data of the State and the Government."
+        },
+        "participation": {
+          "title": "Citizen participation",
+          "text": "Public consultations and participation schemes open to everyone."
+        },
+        "ressources": {
+          "title": "Institutional resources",
+          "text": "Official websites and institutional resources of the Republic."
+        }
+      }
+    },
+    "offices": {
+      "president": "President of the Republic"
+    }
+  },
+  "composition": {
+    "readMore": "Find out more",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Composition of the Government",
+      "subtitle": "The institutions and functions that make up the Government of the Republic of Astoria",
+      "intro": "This page presents the institutional composition of the Government: the functions that make it up, how they fit together and, as soon as the information is available, the people who hold them. Office holders will be published when the Government is officially formed."
+    },
+    "overview": {
+      "kicker": "Overview",
+      "title": "From the Republic to the administrations",
+      "lead": "The composition of the Government fits within the organisation of the Republic. The diagram below shows the functions that make it up, from the President of the Republic to the administrations.",
+      "ariaLabel": "Diagram of the composition of the Government: the Republic of Astoria, the President of the Republic who exercises executive power and coordinates the Government, made up of ministries, secretariats of state and other structures, then the public administrations that implement policies.",
+      "note": "This diagram describes institutional functions. It does not presume who will hold them.",
+      "republic": {
+        "title": "Republic of Astoria",
+        "text": "The Nation and its institutional organisation."
+      },
+      "president": {
+        "title": "President of the Republic",
+        "text": "Head of State. Exercises executive power and coordinates the Government."
+      },
+      "relation": {
+        "title": "Direction and coordination of the Government"
+      },
+      "government": {
+        "title": "The Government",
+        "text": "Made up of the ministers, secretaries of state and other structures in charge of government action."
+      },
+      "ministries": {
+        "title": "Ministries",
+        "text": "Lead public policies in their area of responsibility."
+      },
+      "secretariats": {
+        "title": "Secretariats of State",
+        "text": "Carry specific public policies within the Government."
+      },
+      "others": {
+        "title": "Other attached structures",
+        "text": "The structures officially attached to the Government."
+      },
+      "administrations": {
+        "title": "Public administrations",
+        "text": "Carry out public policies and deliver public services."
+      },
+      "distinctions": {
+        "title": "Government, ministry and administration: three levels to distinguish",
+        "items": {
+          "gouvernement": {
+            "title": "The Government",
+            "text": "The executive organisation bringing together ministers and secretaries of state around the President of the Republic."
+          },
+          "ministere": {
+            "title": "A ministry",
+            "text": "The department of State in charge of an area of public policy. It exists independently of its office holder."
+          },
+          "administration": {
+            "title": "An administration",
+            "text": "The services that carry out public policies day to day and ensure the smooth running of the State."
+          }
+        }
+      }
+    },
+    "president": {
+      "kicker": "The executive branch",
+      "title": "The President of the Republic",
+      "lead": "The first institutional component of the executive branch, the President of the Republic is the Head of State. They exercise executive power and direct and coordinate the Government.",
+      "paragraph": "This page presents the presidential office as a component of the Government. Its office holder will be published as soon as they officially take office.",
+      "officeName": "President of the Republic",
+      "officeKicker": "Constitutional office",
+      "officeText": "A permanent institution of the Republic, the presidency exists independently of the person who holds it.",
+      "holderLabel": "Current office holder",
+      "holderEmpty": "To be published when the Government is officially formed."
+    },
+    "ministers": {
+      "kicker": "Members of the Government",
+      "title": "The ministers",
+      "lead": "Ministers are the members of the Government responsible for a ministry and for the public policies within its area of responsibility.",
+      "paragraph": "Each minister will be presented with their role, their ministry and, as soon as officially available, their portrait and a link to their institutional page.",
+      "emptyTitle": "The list of office holders has not been published yet",
+      "emptyText": "Ministers will be presented in this section when the Government is officially formed."
+    },
+    "secretaries": {
+      "kicker": "Members of the Government",
+      "title": "The secretaries of state",
+      "lead": "Secretaries of state are members of the Government responsible for specific public policies, alongside ministers and ministries.",
+      "paragraph": "Each secretary of state will be presented with their area of responsibility and their ministerial attachment once officially appointed.",
+      "emptyTitle": "No secretary of state published yet",
+      "emptyText": "Secretaries of state will be presented in this section when the Government is officially formed."
+    },
+    "ministries": {
+      "kicker": "Ministries",
+      "title": "The ministries",
+      "lead": "Ministries are the departments of State in charge of an area of public policy. They are the lasting structure of public action: a change of minister or of Government does not change the ministry itself.",
+      "paragraph": "Each ministry will be presented with its description, its areas of responsibility and, when there is one, the minister responsible for it.",
+      "emptyTitle": "No ministry published yet",
+      "emptyText": "The official list of ministries will be published in this section as soon as it is defined."
+    },
+    "related": {
+      "kicker": "Understand",
+      "title": "Understanding the Government",
+      "lead": "To place the composition of the Government within the broader organisation of the State:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The institutional page of the Government: its role, its organisation and its action."
+        },
+        "organisation": {
+          "title": "The organisation of the Government",
+          "text": "The structure of the executive branch, from the President of the Republic to the administrations."
+        },
+        "membres": {
+          "title": "The members of the Government",
+          "text": "The people currently holding the government offices."
+        }
+      }
+    }
+  },
+  "ministere": {
+    "readMore": "Find out more",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "The ministries",
+      "subtitle": "The ministerial departments of the Republic of Astoria",
+      "intro": "Ministries are the departments of State responsible for preparing and implementing public policies in their areas of responsibility. This page presents the ministries of the Republic of Astoria, their responsibilities and, when known, the people who lead them."
+    },
+    "understand": {
+      "kicker": "Understand",
+      "title": "A ministry is an institution",
+      "lead": "A ministry exists independently of the person who leads it: a minister can be replaced, the ministry remains.",
+      "items": {
+        "institution": {
+          "title": "A lasting institution",
+          "text": "A ministry is the department of State in charge of an area of public policy. It is the lasting structure of public action: a change of minister or of Government does not change the ministry itself."
+        },
+        "minister": {
+          "title": "A minister at its head",
+          "text": "The minister, a member of the Government, is the person appointed to lead a ministry. They are responsible for the public policies within their portfolio."
+        },
+        "administrations": {
+          "title": "Administrations to act",
+          "text": "To prepare and implement public policies, the ministry relies on departments, directorates and administrations that act on a daily basis."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Directory",
+      "title": "The ministries of the Republic",
+      "lead": "Each ministry is presented with its description, its areas of responsibility and, when there is one, the minister responsible for it.",
+      "responsibilitiesLabel": "Areas of responsibility:",
+      "emptyTitle": "The ministerial departments will be published as soon as they are officially defined.",
+      "emptyText": "This page will present the responsibilities, the organisation and the heads of each ministry of the Republic of Astoria.",
+      "ficheTitle": "Each ministry will have a page presenting:",
+      "fiche": {
+        "name": "The name of the ministry",
+        "description": "Its description and missions",
+        "competences": "Its areas of responsibility",
+        "titulaire": "Its current office holder",
+        "page": "A direct link to its dedicated page"
+      }
+    },
+    "related": {
+      "kicker": "Go further",
+      "title": "Understanding the Government",
+      "lead": "To place the ministries within the organisation of the State:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The institutional page of the Government: its role, its organisation and its action."
+        },
+        "composition": {
+          "title": "The composition of the Government",
+          "text": "The roles that make up the Government, from the President of the Republic to the ministries."
+        },
+        "organisation": {
+          "title": "The organisation of the Government",
+          "text": "The structure of the executive branch, from the President of the Republic to the administrations."
+        }
+      }
+    }
+  },
+  "membres": {
+    "readMore": "Find out more",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "The members of the Government",
+      "subtitle": "The people who hold the government offices of the Republic of Astoria",
+      "intro": "This page presents the office holders of the government offices of the Republic of Astoria: the President of the Republic, the ministers and the secretaries of state, and their responsibilities."
+    },
+    "summary": {
+      "kicker": "The Government",
+      "title": "Current composition",
+      "presidentLabel": "President of the Republic",
+      "ministersLabel": "Ministers",
+      "secretariesLabel": "Secretaries of State",
+      "membersCount": "{count, plural, one {# member} other {# members}}"
+    },
+    "president": {
+      "kicker": "The executive branch",
+      "title": "President of the Republic",
+      "lead": "The President of the Republic is the Head of State. They exercise executive power and direct and coordinate the Government.",
+      "sinceLabel": "In office since"
+    },
+    "ministers": {
+      "kicker": "Members of the Government",
+      "title": "The ministers",
+      "lead": "Ministers are the members of the Government responsible for a ministry and for the public policies within its area of responsibility.",
+      "emptyText": "No minister has been published on this page yet."
+    },
+    "secretaries": {
+      "kicker": "Members of the Government",
+      "title": "The secretaries of state",
+      "lead": "Secretaries of state are members of the Government responsible for specific public policies, attached to a ministry.",
+      "emptyText": "No secretary of state has been published on this page yet."
+    },
+    "members": {
+      "ministryLabel": "Ministry:",
+      "sinceLabel": "In office since",
+      "profileLink": "View the profile",
+      "portraitAlt": "Official portrait of {name}, {title}"
+    },
+    "empty": {
+      "kicker": "List of office holders",
+      "title": "The list of office holders has not been published yet",
+      "lead": "The members of the Government will be presented on this page after their official appointment: the President of the Republic, the ministers and the secretaries of state, with their roles and responsibilities.",
+      "noticeTitle": "Government being formed",
+      "noticeText": "This page will present the office holders of the government offices as soon as they are officially appointed. No personal information is published at this time."
+    },
+    "related": {
+      "kicker": "Go further",
+      "title": "Understanding the Government",
+      "lead": "To place the members of the Government within the organisation of the State:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The institutional page of the Government: its role, its organisation and its action."
+        },
+        "composition": {
+          "title": "The composition of the Government",
+          "text": "The roles that make up the Government, from the President of the Republic to the ministries."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The ministerial departments of the Republic of Astoria, their areas of responsibility and their heads."
+        }
+      }
+    }
+  },
+  "president": {
+    "readMore": "Find out more",
+    "hero": {
+      "subtitle": "President of the Republic of Astoria",
+      "intro": "Head of State, the President of the Republic exercises executive power and directs and coordinates the Government. This page presents the institutional office and, currently, the person who holds it: Liam Von Astoria.",
+      "portraitAlt": "Official portrait of {name}"
+    },
+    "office": {
+      "kicker": "The office",
+      "title": "The President of the Republic",
+      "lead": "Under the Astorian constitutional model, the presidency is a permanent institution of the Republic: it exists independently of the person who holds it.",
+      "paragraph1": "The President of the Republic is the Head of State. They exercise executive power, at the centre of the Astorian executive branch: they give government action its direction and coordination.",
+      "paragraph2": "They direct and coordinate the Government, which acts under their authority. The Government relies on ministries, secretariats of state and public administrations to prepare and implement public policies."
+    },
+    "responsibilities": {
+      "kicker": "Responsibilities",
+      "title": "The responsibilities of the President",
+      "lead": "The responsibilities below are those defined by the Astorian institutional model:",
+      "items": {
+        "chefEtat": {
+          "title": "Head of State",
+          "text": "The President of the Republic is the Head of State: they embody the permanence of the Republic and ensure its representation."
+        },
+        "executif": {
+          "title": "Executive office",
+          "text": "They exercise executive power, at the centre of the Astorian executive branch."
+        },
+        "direction": {
+          "title": "Directing and coordinating the Government",
+          "text": "They direct and coordinate the Government, which acts under their authority."
+        },
+        "impulsion": {
+          "title": "Giving government action its direction",
+          "text": "They give government action its direction, implemented by the Government, the ministries and the administrations."
+        }
+      }
+    },
+    "diagram": {
+      "kicker": "The executive branch",
+      "title": "The President and the Government",
+      "lead": "The President of the Republic is at the centre of the coordination of the government executive branch:",
+      "ariaLabel": "Diagram of the executive branch: the President of the Republic directs and coordinates the Government, which relies on ministries, secretariats of state and public administrations.",
+      "president": {
+        "title": "President of the Republic",
+        "text": "Head of State. Exercises executive power."
+      },
+      "relation": {
+        "title": "Direction and coordination of the Government"
+      },
+      "government": {
+        "title": "The Government",
+        "text": "Executive organisation responsible for carrying out government action."
+      },
+      "ministries": {
+        "title": "Ministries",
+        "text": "Lead public policies in their area of responsibility."
+      },
+      "secretariats": {
+        "title": "Secretariats of State",
+        "text": "Carry specific public policies within the Government."
+      },
+      "administrations": {
+        "title": "Public administrations",
+        "text": "Carry out public policies and deliver public services."
+      },
+      "note": "This diagram describes institutional roles. It will be completed with the list of office holders as soon as the Government is officially formed."
+    },
+    "action": {
+      "kicker": "Public action",
+      "title": "The President and public action",
+      "lead": "The President coordinates the executive branch: public action is prepared and implemented through the Government, the ministries and the administrations.",
+      "cta": "Discover public action"
+    },
+    "mandate": {
+      "kicker": "Term of office",
+      "title": "Presidential term of office",
+      "lead": "The office of President of the Republic is currently held by:",
+      "sinceLabel": "In office since",
+      "membersLink": "View the members of the Government"
+    },
+    "activity": {
+      "kicker": "Agenda & media",
+      "title": "Agenda, speeches and news of the Presidency",
+      "lead": "Travel, meetings, speeches, statements and news of the Presidency will be published in this section.",
+      "emptyTitle": "No presidential publication is currently available",
+      "emptyText": "The agenda, speeches and news of the Presidency will be published here as soon as they are officially available."
+    },
+    "related": {
+      "kicker": "Go further",
+      "title": "Related institutions",
+      "lead": "To place the Presidency within the organisation of the Republic:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The institutional page of the Government: its role, its organisation and its action."
+        },
+        "composition": {
+          "title": "The composition of the Government",
+          "text": "The roles that make up the Government, from the President of the Republic to the ministries."
+        },
+        "membres": {
+          "title": "The members of the Government",
+          "text": "The people currently holding the government offices."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The ministerial departments of the Republic of Astoria, their areas of responsibility and their heads."
+        }
+      }
+    }
+  },
+  "biographies": {
+    "readMore": "Find out more",
+    "hero": {
+      "kicker": "Institutions",
+      "title": "Biographies",
+      "subtitle": "The officials of the Government of the Republic of Astoria",
+      "intro": "This section presents the institutional biographies of the people currently holding or who have previously held responsibilities within the Government of the Republic of Astoria. Information may change with changes in Government."
+    },
+    "president": {
+      "kicker": "The President of the Republic",
+      "title": "President of the Republic of Astoria",
+      "lead": "The President of the Republic is the Head of State. They exercise executive power and direct and coordinate the Government.",
+      "profileLink": "View the President's profile"
+    },
+    "current": {
+      "kicker": "Officials in office",
+      "title": "Officials currently in office",
+      "lead": "The people currently holding office within the Government of the Republic of Astoria.",
+      "emptyText": "No officials are currently published on this page."
+    },
+    "past": {
+      "kicker": "Former officials",
+      "title": "Former officials",
+      "lead": "People who have previously held a government office within the Republic of Astoria.",
+      "emptyText": "No former officials are documented yet."
+    },
+    "profile": {
+      "portraitAlt": "Official portrait of {name}, {title}",
+      "ministryLabel": "Ministry:",
+      "sinceLabel": "In office since",
+      "untilLabel": "Term ended on",
+      "profileLink": "View profile",
+      "biographyUnavailable": "Biography is being published."
+    },
+    "related": {
+      "kicker": "Find out more",
+      "title": "Understanding the Government",
+      "lead": "To place the biographies within the organisation of the State:",
+      "items": {
+        "government": {
+          "title": "The Government",
+          "text": "The institutional page of the Government: its role, its organisation and its action."
+        },
+        "membres": {
+          "title": "The members of the Government",
+          "text": "The people currently holding the government offices."
+        },
+        "composition": {
+          "title": "The composition of the Government",
+          "text": "The roles that make up the Government, from the President of the Republic to the ministries."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The ministerial departments of the Republic of Astoria, their areas of responsibility and their heads."
+        }
+      }
+    },
+    "detail": {
+      "identity": {
+        "kicker": "Identity",
+        "title": "Official identity",
+        "sinceLabel": "In office since",
+        "ministryLabel": "Ministry:"
+      },
+      "currentOffice": {
+        "kicker": "Current office",
+        "title": "Current function",
+        "roleLabel": "Institutional role"
+      },
+      "career": {
+        "kicker": "Career",
+        "title": "Institutional career",
+        "emptyText": "The institutional career will be documented once official data is published."
+      },
+      "professional": {
+        "kicker": "Professional background",
+        "title": "Professional background",
+        "emptyText": "The professional background will be documented when official information is available."
+      },
+      "education": {
+        "kicker": "Education",
+        "title": "Education",
+        "emptyText": "Education will be documented when official information is available."
+      },
+      "publications": {
+        "kicker": "Publications & speeches",
+        "title": "Publications and official interventions",
+        "emptyText": "Publications, speeches and interventions will be published as soon as they are available."
+      },
+      "backLink": "Back to biographies",
+      "presidentLink": "View the President's profile",
+      "biographyUnavailable": "The institutional biography of {name} is being published."
+    }
+  },
   "pages": {
+    "organisation": {
+      "title": "Organisation of the Government",
+      "description": "The organisation of the Government of the Republic of Astoria: presidency, Council of Ministers, ministries and administrations.",
+      "kicker": "Institutions",
+      "lead": "The Astorian executive branch is organised around the President of the Republic, who exercises executive power, and the Government they direct and coordinate.",
+      "paragraphs": {
+        "p1": "The Government is the executive organisation responsible for carrying out government action. It relies on ministries and secretariats of state, led by its members, as well as on the public administrations that carry out public policies.",
+        "p2": "This section describes the Government's structures and missions. Dedicated pages for each structure will be published progressively."
+      },
+      "notice": "Detailed pages for ministries and administrations will be published as soon as they are officially established."
+    },
     "government": {
       "title": "The Government",
       "description": "Overview of the Government of the Republic of Astoria, its organisation and its missions.",
@@ -518,15 +1192,24 @@
       "notice": "The detailed presentation of the institutions and their missions is being drafted for this preview foundation."
     },
     "composition": {
-      "title": "Government composition",
-      "description": "The composition of the Government of the Republic of Astoria: presidency, council of ministers and public administrations.",
-      "kicker": "Institutions",
-      "lead": "The Government of the Republic of Astoria is organised around the presidency of the Republic, the council of ministers and the public administrations.",
-      "paragraphs": {
-        "p1": "The official list of the members of the Government (head of government, ministers and secretaries of state) and the allocation of ministerial portfolios will be published in this section.",
-        "p2": "Each institution will have a dedicated page: missions, organisation, news and related procedures."
-      },
-      "notice": "The detailed composition will be published as soon as official data is available."
+      "title": "Composition of the Government",
+      "description": "The composition of the Government of the Republic of Astoria: the functions, members and structures that make it up."
+    },
+    "ministere": {
+      "title": "The ministries",
+      "description": "The official directory of the ministries of the Republic of Astoria: the ministerial departments, their areas of responsibility and their heads."
+    },
+    "membres": {
+      "title": "The members of the Government",
+      "description": "The people who hold the government offices of the Republic of Astoria: the President of the Republic, the ministers and the secretaries of state, and their responsibilities."
+    },
+    "biographies": {
+      "title": "Biographies — Government of the Republic of Astoria",
+      "description": "Discover the biographies of the officials of the Government of the Republic of Astoria and their institutional background."
+    },
+    "president": {
+      "title": "Liam Von Astoria — President of the Republic of Astoria",
+      "description": "Liam Von Astoria, President of the Republic of Astoria: Head of State, he exercises executive power and directs and coordinates the Government."
     },
     "news": {
       "title": "News",

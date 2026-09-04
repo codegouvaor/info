@@ -9,7 +9,7 @@ import { NoticeCallout } from "./ads-fragments";
  */
 export type SectionPageKind =
   | "government"
-  | "composition"
+  | "organisation"
   | "news"
   | "services"
   | "contact"

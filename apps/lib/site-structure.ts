@@ -239,22 +239,22 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
         // LE GOUVERNEMENT
         mainLink: { labelKey: "gouvernementCategory", href: "/government" },
         links: [
-          { labelKey: "gouvernementComposition", href: "/composition-du-gouvernement" },
-          { labelKey: "gouvernementMembres", href: "/composition-du-gouvernement/membres" },
-          { labelKey: "premierMinistre", href: "/personnalite/sebastien-lecornu" },
-          { labelKey: "gouvernementBiographies", href: "/composition-du-gouvernement/biographies" },
+          { labelKey: "gouvernementComposition", href: "/government/composition" },
+          { labelKey: "gouvernementMembres", href: "/government/membres" },
+          { labelKey: "premierMinistre", href: "/government/liamvonastoria" },
+          { labelKey: "gouvernementBiographies", href: "/government/biographies" },
         ],
       },
       {
         // ORGANISATION
-        mainLink: { labelKey: "gouvernementOrganisation", href: "/organisation" },
+        mainLink: { labelKey: "gouvernementOrganisation", href: "/government/organisation" },
         links: [
-          { labelKey: "conseilMinistres", href: "/conseil-des-ministres" },
-          { labelKey: "ministeres", href: "/ministere" },
-          { labelKey: "gouvernementSecretariats", href: "/organisation/secretariats" },
+          { labelKey: "conseilMinistres", href: "/government/conseil-des-ministres" },
+          { labelKey: "ministeres", href: "/government/ministere" },
+          { labelKey: "gouvernementSecretariats", href: "/government/organisation/secretariats" },
           {
             labelKey: "administrationsRattachees",
-            href: "/organisation/administrations-rattachees",
+            href: "/government/organisation/administrations-rattachees",
           },
         ],
       },
@@ -310,7 +310,7 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
         mainLink: { labelKey: "prioritesGouvernement", href: sectionPaths.politiquesPrioritaires },
         links: [
           { labelKey: "grandsDossiers", href: "/news/grands-dossiers" },
-          { labelKey: "reformes", href: "/reformes" },
+          { labelKey: "reformes", href: "/government/reformes" },
         ],
       },
       {

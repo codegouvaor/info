@@ -8,7 +8,6 @@ import type { MegaMenuProps } from "@codegouvaor/react-ads/MainNavigation/MegaMe
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { pageAnchors, pressPath, primaryNavigation, searchPath } from "@/lib/site-structure";
-import { LocaleSwitcher } from "../locale-switcher";
 
 /** Whether the current pathname corresponds to a navigation href. */
 const isNavItemActive = (href: string, pathname: string): boolean =>
