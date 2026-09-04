@@ -1480,6 +1480,18 @@
           "p2": "Cette page présentera, dans sa version finale, le détail des traceurs utilisés et le moyen d'exercer vos choix."
         }
       }
+    },
+    "administrations": {
+      "title": "Administrations publiques",
+      "description": "Consultez l'annuaire des administrations et organismes publics de la République d'Astoria et découvrez leurs missions."
+    },
+    "autoritesPubliques": {
+      "title": "Autorités publiques de la République d'Astoria",
+      "description": "Découvrez les autorités publiques et organismes investis de compétences particulières au sein de la République d'Astoria."
+    },
+    "territoires": {
+      "title": "Territoires de la République d'Astoria",
+      "description": "Découvrez l'organisation territoriale de la République d'Astoria et les institutions qui administrent ses territoires."
     }
   },
   "constitution": {
@@ -1672,6 +1684,309 @@
         "biographies": {
           "title": "Biographies",
           "text": "Les parcours des responsables publics."
+        }
+      }
+    }
+  },
+  "administrations": {
+    "readMore": "En savoir plus",
+    "title": "Administrations publiques",
+    "description": "Consultez l'annuaire des administrations et organismes publics de la République d'Astoria et découvrez leurs missions.",
+    "hero": {
+      "kicker": "La République",
+      "title": "Les administrations publiques",
+      "subtitle": "Annuaire des administrations et organismes de la République d'Astoria",
+      "lead": "Découvrez les administrations et organismes qui mettent en œuvre les politiques publiques et assurent le fonctionnement des services de l'État."
+    },
+    "intro": {
+      "kicker": "Comprendre",
+      "title": "Qu'est-ce qu'une administration publique ?",
+      "lead": "Une administration publique est une structure chargée d'exercer des missions publiques et de mettre en œuvre les décisions et politiques relevant de ses compétences. Elle agit dans le cadre de l'organisation de l'État et au service des citoyens.",
+      "note": "Les administrations sont distinctes des ministères, des institutions et des services publics. Chaque catégorie correspond à un niveau spécifique de l'organisation étatique."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Institution, ministère, administration, service public",
+      "lead": "Ces quatre notions sont distinctes et ne doivent pas être confondues. Chaque catégorie désigne un niveau différent de l'organisation de l'État.",
+      "items": {
+        "institution": {
+          "title": "Institution",
+          "text": "Structure constitutionnelle ou institutionnelle exerçant une fonction de l'État."
+        },
+        "ministry": {
+          "title": "Ministère",
+          "text": "Structure gouvernementale organisée autour d'un domaine de compétence."
+        },
+        "administration": {
+          "title": "Administration",
+          "text": "Structure chargée d'exercer des missions administratives et de mettre en œuvre les politiques ou décisions relevant de ses compétences."
+        },
+        "service": {
+          "title": "Service public",
+          "text": "Service ou prestation accessible aux citoyens et usagers."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Annuaire",
+      "title": "Les administrations publiques",
+      "lead": "Chaque administration officiellement publiée est présentée avec sa description, ses missions et son domaine d'intervention.",
+      "responsibilitiesLabel": "Missions :",
+      "domainLabel": "Domaine :",
+      "parentLabel": "Rattachement :",
+      "website": "Site officiel",
+      "viewDetails": "Voir la fiche détaillée",
+      "emptyTitle": "L'annuaire des administrations publiques est en cours de constitution",
+      "emptyText": "Les informations relatives aux administrations de la République d'Astoria seront publiées progressivement dans cette section. L'annuaire sera complété à mesure que les données officielles seront disponibles.",
+      "partialNotice": "Cet annuaire est en cours de constitution. Certaines administrations ne sont pas encore référencées.",
+      "ficheTitle": "Chaque administration fera l'objet d'une fiche présentant :",
+      "fiche": {
+        "name": "Le nom officiel",
+        "description": "Sa description et ses missions",
+        "competences": "Ses domaines de compétence",
+        "rattachement": "Son rattachement éventuel",
+        "page": "Un accès direct à sa page dédiée"
+      }
+    },
+    "relationToServices": {
+      "kicker": "Administration et service public",
+      "title": "De l'administration au service public",
+      "lead": "L'administration agit ; le service public est ce que le citoyen utilise. Une administration peut opérer des services publics accessibles aux usagers.",
+      "note": "Le catalogue des démarches et des services accessibles au citoyen est disponible dans la section Services publics."
+    },
+    "navigation": {
+      "kicker": "Pour aller plus loin",
+      "title": "Pages de référence",
+      "lead": "Pour comprendre l'organisation administrative de la République :",
+      "items": {
+        "organisation": {
+          "title": "Organisation de la République",
+          "text": "Comment l'État et les institutions de la République d'Astoria sont organisés."
+        },
+        "constitution": {
+          "title": "La Constitution",
+          "text": "Le texte fondamental qui définit l'organisation des pouvoirs publics."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive qui agit sous la direction du Président de la République."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements ministériels et leurs domaines de compétence."
+        },
+        "services": {
+          "title": "Services publics",
+          "text": "Les services et démarches accessibles aux citoyens."
+        }
+      }
+    }
+  },
+  "autoritesPubliques": {
+    "readMore": "En savoir plus",
+    "title": "Autorités publiques",
+    "description": "Découvrez les autorités publiques et organismes investis de compétences particulières au sein de la République d'Astoria.",
+    "hero": {
+      "kicker": "La République",
+      "title": "Les autorités publiques",
+      "subtitle": "Répertoire des autorités et organismes de la République d'Astoria",
+      "lead": "Découvrez les autorités et organismes publics investis de compétences particulières au sein de la République d'Astoria."
+    },
+    "intro": {
+      "kicker": "Comprendre",
+      "title": "Les autorités publiques dans l'organisation de l'État",
+      "lead": "Certaines compétences publiques peuvent être exercées par des autorités ou organismes spécifiquement institués à cette fin. Ces structures disposent officiellement de compétences, de pouvoirs ou de responsabilités publiques particulières, conférés par la Constitution, une loi ou un autre texte officiel.",
+      "note": "Toutes les structures publiques ne sont pas des autorités publiques. Leur statut doit être déterminé individuellement à partir des sources officielles."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Autorité publique, administration, institution, service public",
+      "lead": "Ces quatre notions sont distinctes et ne doivent pas être confondues. Chaque catégorie désigne un niveau différent de l'organisation de l'État.",
+      "items": {
+        "institution": {
+          "title": "Institution",
+          "text": "Composante fondamentale de l'organisation de l'État, notamment lorsqu'elle est définie par la Constitution."
+        },
+        "administration": {
+          "title": "Administration",
+          "text": "Structure chargée d'exercer des missions administratives et de mettre en œuvre les décisions et politiques relevant de ses compétences."
+        },
+        "authority": {
+          "title": "Autorité publique",
+          "text": "Autorité ou organisme auquel la Constitution, une loi ou un autre texte officiel confère des compétences ou responsabilités publiques particulières."
+        },
+        "service": {
+          "title": "Service public",
+          "text": "Service ou prestation mis à disposition des citoyens et usagers."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Répertoire",
+      "title": "Les autorités publiques",
+      "lead": "Chaque autorité officiellement publiée est présentée avec sa description, ses compétences et son statut institutionnel.",
+      "roleLabel": "Rôle :",
+      "competencesLabel": "Compétences :",
+      "statusLabel": "Statut :",
+      "legalBasisLabel": "Base juridique :",
+      "independenceLabel": "Indépendance :",
+      "parentLabel": "Rattachement :",
+      "website": "Site officiel",
+      "viewDetails": "Voir la fiche détaillée",
+      "emptyTitle": "Le répertoire des autorités publiques est en cours de constitution",
+      "emptyText": "Les informations relatives aux autorités publiques de la République d'Astoria seront publiées progressivement dans cette section. Le répertoire sera complété à mesure que les données officielles seront disponibles.",
+      "partialNotice": "Ce répertoire est en cours de constitution. Certaines autorités ne sont pas encore référencées.",
+      "ficheTitle": "Chaque autorité fera l'objet d'une fiche présentant :",
+      "fiche": {
+        "name": "Le nom officiel",
+        "description": "Sa description et son rôle",
+        "competences": "Ses compétences",
+        "status": "Son statut",
+        "rattachement": "Son rattachement éventuel",
+        "page": "Un accès direct à sa page dédiée"
+      }
+    },
+    "relationToAdmin": {
+      "kicker": "Autorité et administration",
+      "title": "De l'autorité à l'administration",
+      "lead": "Une autorité publique peut travailler avec une administration sans être elle-même une administration. Chaque relation doit être explicitement définie.",
+      "note": "Le répertoire des administrations publiques est disponible dans la section Administrations publiques."
+    },
+    "navigation": {
+      "kicker": "Pour aller plus loin",
+      "title": "Pages de référence",
+      "lead": "Pour comprendre le positionnement des autorités publiques dans l'organisation de l'État :",
+      "items": {
+        "organisation": {
+          "title": "Organisation de la République",
+          "text": "Comment l'État et les institutions de la République d'Astoria sont organisés."
+        },
+        "constitution": {
+          "title": "La Constitution",
+          "text": "Le texte fondamental qui définit l'organisation des pouvoirs publics."
+        },
+        "administrations": {
+          "title": "Les administrations publiques",
+          "text": "Les structures administratives et leurs missions."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive qui agit sous la direction du Président de la République."
+        },
+        "ministere": {
+          "title": "Les ministères",
+          "text": "Les départements ministériels et leurs domaines de compétence."
+        },
+        "services": {
+          "title": "Services publics",
+          "text": "Les services et démarches accessibles aux citoyens."
+        }
+      }
+    }
+  },
+  "territoires": {
+    "readMore": "En savoir plus",
+    "title": "Les territoires",
+    "description": "Découvrez l'organisation territoriale de la République d'Astoria et les institutions qui administrent ses territoires.",
+    "hero": {
+      "kicker": "La République",
+      "title": "Les territoires",
+      "subtitle": "Organisation territoriale de la République d'Astoria",
+      "lead": "Découvrez l'organisation territoriale de la République d'Astoria et les institutions qui administrent ses territoires."
+    },
+    "intro": {
+      "kicker": "Comprendre",
+      "title": "La place du territoire dans l'organisation de la République",
+      "lead": "Le territoire constitue un élément fondamental de l'organisation de l'État. Différentes entités territoriales peuvent disposer de compétences propres, réparties entre l'État et les autorités territoriales selon le cadre constitutionnel et légal.",
+      "note": "L'organisation territoriale dépend du cadre constitutionnel et légal. Les compétences et les responsabilités peuvent être réparties entre l'État et les autorités territoriales."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Territoire, administration, autorité territoriale, service public",
+      "lead": "Ces quatre notions sont distinctes et ne doivent pas être confondues. Chaque catégorie désigne un niveau différent de l'organisation territoriale de l'État.",
+      "items": {
+        "territory": {
+          "title": "Territoire",
+          "text": "Portion géographique définie par l'organisation de la République."
+        },
+        "territorialAuthority": {
+          "title": "Autorité territoriale",
+          "text": "Institution ou autorité chargée d'exercer certaines compétences sur un territoire."
+        },
+        "administration": {
+          "title": "Administration territoriale",
+          "text": "Structure administrative intervenant sur un territoire."
+        },
+        "service": {
+          "title": "Service public",
+          "text": "Service accessible aux habitants et usagers du territoire."
+        }
+      }
+    },
+    "levels": {
+      "kicker": "Organisation territoriale",
+      "title": "Les niveaux territoriaux",
+      "lead": "L'organisation territoriale de la République peut comporter différents niveaux, définis par la Constitution et les lois.",
+      "emptyTitle": "L'organisation territoriale est en cours de publication",
+      "emptyText": "Les niveaux territoriaux officiellement reconnus seront publiés dans cette section."
+    },
+    "directory": {
+      "kicker": "Annuaire territorial",
+      "title": "Les territoires",
+      "lead": "Chaque territoire officiellement publié est présenté avec sa description, son type et ses institutions responsables.",
+      "typeLabel": "Type :",
+      "parentLabel": "Territoire parent :",
+      "authorityLabel": "Institution responsable :",
+      "competencesLabel": "Compétences :",
+      "website": "Site officiel",
+      "viewDetails": "Voir la fiche détaillée",
+      "emptyTitle": "L'annuaire territorial est en cours de constitution",
+      "emptyText": "Les informations relatives aux territoires de la République d'Astoria seront publiées progressivement dans cette section. L'annuaire sera complété à mesure que les données officielles seront disponibles.",
+      "partialNotice": "Cet annuaire territorial est en cours de constitution. Certains territoires ne sont pas encore référencés.",
+      "ficheTitle": "Chaque territoire fera l'objet d'une fiche présentant :",
+      "fiche": {
+        "name": "Le nom officiel",
+        "description": "Sa description et sa situation",
+        "type": "Son type de territoire",
+        "competences": "Ses compétences",
+        "rattachement": "Son territoire parent",
+        "page": "Un accès direct à sa page dédiée"
+      }
+    },
+    "stateTerritoryRelations": {
+      "kicker": "État et territoires",
+      "title": "Les relations entre l'État et les territoires",
+      "lead": "L'État et les territoires entretiennent des relations institutionnelles qui peuvent être définies par la Constitution et les lois. Les compétences peuvent être réparties entre le niveau national et les niveaux territoriaux.",
+      "note": "La nature exacte de ces relations dépend du cadre constitutionnel et légal applicable."
+    },
+    "navigation": {
+      "kicker": "Pour aller plus loin",
+      "title": "Pages de référence",
+      "lead": "Pour comprendre l'organisation territoriale de la République :",
+      "items": {
+        "organisation": {
+          "title": "Organisation de la République",
+          "text": "Comment l'État et les institutions de la République d'Astoria sont organisés."
+        },
+        "constitution": {
+          "title": "La Constitution",
+          "text": "Le texte fondamental qui définit l'organisation des pouvoirs publics."
+        },
+        "administrations": {
+          "title": "Les administrations publiques",
+          "text": "Les structures administratives et leurs missions."
+        },
+        "autorites": {
+          "title": "Les autorités publiques",
+          "text": "Les autorités investies de compétences publiques particulières."
+        },
+        "government": {
+          "title": "Le Gouvernement",
+          "text": "L'organisation exécutive qui agit sous la direction du Président de la République."
+        },
+        "services": {
+          "title": "Services publics",
+          "text": "Les services et démarches accessibles aux citoyens."
         }
       }
     }

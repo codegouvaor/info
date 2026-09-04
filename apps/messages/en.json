@@ -1478,6 +1478,18 @@
         "footer": "Other sections",
         "legal": "Legal framework"
       }
+    },
+    "administrations": {
+      "title": "Public administrations",
+      "description": "Browse the directory of public administrations and bodies of the Republic of Astoria and discover their missions."
+    },
+    "autoritesPubliques": {
+      "title": "Public authorities of the Republic of Astoria",
+      "description": "Discover the public authorities and bodies invested with specific competences within the Republic of Astoria."
+    },
+    "territoires": {
+      "title": "Territories of the Republic of Astoria",
+      "description": "Discover the territorial organisation of the Republic of Astoria and the institutions that administer its territories."
     }
   },
   "constitution": {
@@ -1670,6 +1682,309 @@
         "biographies": {
           "title": "Biographies",
           "text": "The backgrounds of public officials."
+        }
+      }
+    }
+  },
+  "administrations": {
+    "readMore": "Learn more",
+    "title": "Public administrations",
+    "description": "Browse the directory of public administrations and bodies of the Republic of Astoria and discover their missions.",
+    "hero": {
+      "kicker": "The Republic",
+      "title": "Public administrations",
+      "subtitle": "Directory of administrations and bodies of the Republic of Astoria",
+      "lead": "Discover the administrations and bodies that implement public policies and ensure the functioning of the State's services."
+    },
+    "intro": {
+      "kicker": "Understanding",
+      "title": "What is a public administration?",
+      "lead": "A public administration is a structure responsible for carrying out public missions and implementing decisions and policies within its area of competence. It operates within the framework of the State's organisation and at the service of citizens.",
+      "note": "Administrations are distinct from ministries, institutions and public services. Each category corresponds to a specific level of the State's organisation."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Institution, ministry, administration, public service",
+      "lead": "These four concepts are distinct and must not be confused. Each category designates a different level of the State's organisation.",
+      "items": {
+        "institution": {
+          "title": "Institution",
+          "text": "A constitutional or institutional structure exercising a function of the State."
+        },
+        "ministry": {
+          "title": "Ministry",
+          "text": "A governmental structure organised around an area of competence."
+        },
+        "administration": {
+          "title": "Administration",
+          "text": "A structure responsible for carrying out administrative missions and implementing policies or decisions within its area of competence."
+        },
+        "service": {
+          "title": "Public service",
+          "text": "A service or provision accessible to citizens and users."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Directory",
+      "title": "Public administrations",
+      "lead": "Each officially published administration is presented with its description, missions and area of intervention.",
+      "responsibilitiesLabel": "Missions:",
+      "domainLabel": "Domain:",
+      "parentLabel": "Affiliation:",
+      "website": "Official website",
+      "viewDetails": "View detailed file",
+      "emptyTitle": "The directory of public administrations is under construction",
+      "emptyText": "Information relating to the administrations of the Republic of Astoria will be published gradually in this section. The directory will be completed as official data becomes available.",
+      "partialNotice": "This directory is under construction. Some administrations are not yet listed.",
+      "ficheTitle": "Each administration will have a detailed file presenting:",
+      "fiche": {
+        "name": "The official name",
+        "description": "Its description and missions",
+        "competences": "Its areas of competence",
+        "rattachement": "Its affiliation when defined",
+        "page": "A direct link to its dedicated page"
+      }
+    },
+    "relationToServices": {
+      "kicker": "Administration and public service",
+      "title": "From administration to public service",
+      "lead": "The administration acts; the public service is what the citizen uses. An administration may operate public services accessible to users.",
+      "note": "The catalogue of procedures and services accessible to citizens is available in the Public services section."
+    },
+    "navigation": {
+      "kicker": "Learn more",
+      "title": "Reference pages",
+      "lead": "To understand the administrative organisation of the Republic:",
+      "items": {
+        "organisation": {
+          "title": "Organisation of the Republic",
+          "text": "How the State and institutions of the Republic of Astoria are organised."
+        },
+        "constitution": {
+          "title": "The Constitution",
+          "text": "The foundational text that defines the organisation of public authorities."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation that acts under the direction of the President of the Republic."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The ministerial departments and their areas of competence."
+        },
+        "services": {
+          "title": "Public services",
+          "text": "The services and procedures accessible to citizens."
+        }
+      }
+    }
+  },
+  "autoritesPubliques": {
+    "readMore": "Learn more",
+    "title": "Public authorities",
+    "description": "Discover the public authorities and bodies invested with specific competences within the Republic of Astoria.",
+    "hero": {
+      "kicker": "The Republic",
+      "title": "Public authorities",
+      "subtitle": "Directory of authorities and bodies of the Republic of Astoria",
+      "lead": "Discover the public authorities and bodies invested with specific competences within the Republic of Astoria."
+    },
+    "intro": {
+      "kicker": "Understanding",
+      "title": "Public authorities within the organisation of the State",
+      "lead": "Certain public competences may be exercised by authorities or bodies specifically established for that purpose. These structures officially hold specific public competences, powers or responsibilities, conferred by the Constitution, a law or another official text.",
+      "note": "Not all public structures are public authorities. Their status must be determined individually from official sources."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Public authority, administration, institution, public service",
+      "lead": "These four concepts are distinct and must not be confused. Each category designates a different level of the State's organisation.",
+      "items": {
+        "institution": {
+          "title": "Institution",
+          "text": "A fundamental component of the organisation of the State, particularly when defined by the Constitution."
+        },
+        "administration": {
+          "title": "Administration",
+          "text": "A structure responsible for carrying out administrative missions and implementing decisions and policies within its area of competence."
+        },
+        "authority": {
+          "title": "Public authority",
+          "text": "An authority or body to which the Constitution, a law or another official text confers specific public competences or responsibilities."
+        },
+        "service": {
+          "title": "Public service",
+          "text": "A service or provision made available to citizens and users."
+        }
+      }
+    },
+    "directory": {
+      "kicker": "Directory",
+      "title": "Public authorities",
+      "lead": "Each officially published authority is presented with its description, competences and institutional status.",
+      "roleLabel": "Role:",
+      "competencesLabel": "Competences:",
+      "statusLabel": "Status:",
+      "legalBasisLabel": "Legal basis:",
+      "independenceLabel": "Independence:",
+      "parentLabel": "Affiliation:",
+      "website": "Official website",
+      "viewDetails": "View detailed file",
+      "emptyTitle": "The directory of public authorities is under construction",
+      "emptyText": "Information relating to the public authorities of the Republic of Astoria will be published gradually in this section. The directory will be completed as official data becomes available.",
+      "partialNotice": "This directory is under construction. Some authorities are not yet listed.",
+      "ficheTitle": "Each authority will have a detailed file presenting:",
+      "fiche": {
+        "name": "The official name",
+        "description": "Its description and role",
+        "competences": "Its competences",
+        "status": "Its status",
+        "rattachement": "Its affiliation when defined",
+        "page": "A direct link to its dedicated page"
+      }
+    },
+    "relationToAdmin": {
+      "kicker": "Authority and administration",
+      "title": "From authority to administration",
+      "lead": "A public authority may work with an administration without being an administration itself. Each relationship must be explicitly defined.",
+      "note": "The directory of public administrations is available in the Public administrations section."
+    },
+    "navigation": {
+      "kicker": "Learn more",
+      "title": "Reference pages",
+      "lead": "To understand the positioning of public authorities within the organisation of the State:",
+      "items": {
+        "organisation": {
+          "title": "Organisation of the Republic",
+          "text": "How the State and institutions of the Republic of Astoria are organised."
+        },
+        "constitution": {
+          "title": "The Constitution",
+          "text": "The foundational text that defines the organisation of public authorities."
+        },
+        "administrations": {
+          "title": "Public administrations",
+          "text": "The administrative structures and their missions."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation that acts under the direction of the President of the Republic."
+        },
+        "ministere": {
+          "title": "The ministries",
+          "text": "The ministerial departments and their areas of competence."
+        },
+        "services": {
+          "title": "Public services",
+          "text": "The services and procedures accessible to citizens."
+        }
+      }
+    }
+  },
+  "territoires": {
+    "readMore": "Learn more",
+    "title": "Territories",
+    "description": "Discover the territorial organisation of the Republic of Astoria and the institutions that administer its territories.",
+    "hero": {
+      "kicker": "The Republic",
+      "title": "Territories",
+      "subtitle": "Territorial organisation of the Republic of Astoria",
+      "lead": "Discover the territorial organisation of the Republic of Astoria and the institutions that administer its territories."
+    },
+    "intro": {
+      "kicker": "Understanding",
+      "title": "The place of the territory in the organisation of the Republic",
+      "lead": "The territory is a fundamental element of the organisation of the State. Different territorial entities may have their own competences, distributed between the State and territorial authorities according to the constitutional and legal framework.",
+      "note": "The territorial organisation depends on the constitutional and legal framework. Competences and responsibilities may be shared between the national level and territorial levels."
+    },
+    "distinctions": {
+      "kicker": "Distinctions",
+      "title": "Territory, administration, territorial authority, public service",
+      "lead": "These four concepts are distinct and must not be confused. Each category designates a different level of the territorial organisation of the State.",
+      "items": {
+        "territory": {
+          "title": "Territory",
+          "text": "A geographic portion defined by the organisation of the Republic."
+        },
+        "territorialAuthority": {
+          "title": "Territorial authority",
+          "text": "An institution or authority responsible for exercising certain competences on a territory."
+        },
+        "administration": {
+          "title": "Territorial administration",
+          "text": "An administrative structure operating on a territory."
+        },
+        "service": {
+          "title": "Public service",
+          "text": "A service accessible to inhabitants and users of the territory."
+        }
+      }
+    },
+    "levels": {
+      "kicker": "Territorial organisation",
+      "title": "Territorial levels",
+      "lead": "The territorial organisation of the Republic may comprise different levels, defined by the Constitution and the laws.",
+      "emptyTitle": "The territorial organisation is being published",
+      "emptyText": "The officially recognised territorial levels will be published in this section."
+    },
+    "directory": {
+      "kicker": "Territorial directory",
+      "title": "Territories",
+      "lead": "Each officially published territory is presented with its description, type and responsible institutions.",
+      "typeLabel": "Type:",
+      "parentLabel": "Parent territory:",
+      "authorityLabel": "Responsible institution:",
+      "competencesLabel": "Competences:",
+      "website": "Official website",
+      "viewDetails": "View detailed file",
+      "emptyTitle": "The territorial directory is under construction",
+      "emptyText": "Information relating to the territories of the Republic of Astoria will be published gradually in this section. The directory will be completed as official data becomes available.",
+      "partialNotice": "This territorial directory is under construction. Some territories are not yet listed.",
+      "ficheTitle": "Each territory will have a detailed file presenting:",
+      "fiche": {
+        "name": "The official name",
+        "description": "Its description and situation",
+        "type": "Its type of territory",
+        "competences": "Its competences",
+        "rattachement": "Its parent territory",
+        "page": "A direct link to its dedicated page"
+      }
+    },
+    "stateTerritoryRelations": {
+      "kicker": "State and territories",
+      "title": "Relations between the State and the territories",
+      "lead": "The State and the territories maintain institutional relationships that may be defined by the Constitution and the laws. Competences may be distributed between the national level and the territorial levels.",
+      "note": "The exact nature of these relationships depends on the applicable constitutional and legal framework."
+    },
+    "navigation": {
+      "kicker": "Learn more",
+      "title": "Reference pages",
+      "lead": "To understand the territorial organisation of the Republic:",
+      "items": {
+        "organisation": {
+          "title": "Organisation of the Republic",
+          "text": "How the State and institutions of the Republic of Astoria are organised."
+        },
+        "constitution": {
+          "title": "The Constitution",
+          "text": "The foundational text that defines the organisation of public authorities."
+        },
+        "administrations": {
+          "title": "Public administrations",
+          "text": "The administrative structures and their missions."
+        },
+        "autorites": {
+          "title": "Public authorities",
+          "text": "The authorities invested with specific public competences."
+        },
+        "government": {
+          "title": "The Government",
+          "text": "The executive organisation that acts under the direction of the President of the Republic."
+        },
+        "services": {
+          "title": "Public services",
+          "text": "The services and procedures accessible to citizens."
         }
       }
     }

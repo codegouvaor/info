@@ -3,20 +3,20 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { localizedAlternates, resolveLocaleParam } from "@/lib/localized-metadata";
 import { Link } from "@/i18n/navigation";
 import {
-  administrations,
+  publicAuthorities,
   distinctionItems,
   navigationLinks,
-} from "@/lib/administrations";
+} from "@/lib/public-authorities";
 import { NoticeCallout } from "@/components/public/content/ads-fragments";
 
-const PAGE_PATH = "/republique/administrations";
+const PAGE_PATH = "/republique/autorites-publiques";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = resolveLocaleParam(rawLocale);
-  const t = await getTranslations({ locale, namespace: "pages.administrations" });
+  const t = await getTranslations({ locale, namespace: "pages.autoritesPubliques" });
 
   return {
     title: t("title"),
@@ -26,44 +26,48 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /**
- * `/republique/administrations` — the institutional reference page for the
- * public administrations of the Republic of Astoria.
+ * `/republique/autorites-publiques` — the institutional reference page for the
+ * public authorities of the Republic of Astoria.
  *
- * This page serves as the institutional directory of administrative structures.
+ * This page serves as the institutional directory of public authorities —
+ * entities to which the Constitution, a law or another official text confers
+ * specific public competences or responsibilities.
+ *
  * It is distinct from:
  *   - /republique/organisation (how the State is organised)
+ *   - /republique/administrations (administrative structures)
  *   - /government (how the Government works)
  *   - /government/ministere (the ministerial departments)
  *   - /services-publics (the services accessible to citizens)
  *
- * The page works with an empty or partial directory: when no administrations
- * are officially published, it renders a clean institutional "under
- * construction" state rather than any fabricated content.
+ * The page works with an empty or partial directory: when no public
+ * authorities are officially published, it renders a clean institutional
+ * "under construction" state rather than any fabricated content.
  */
-export default async function AdministrationsPage({ params }: PageProps) {
+export default async function AutoritesPubliquesPage({ params }: PageProps) {
   const { locale: rawLocale } = await params;
   const locale = resolveLocaleParam(rawLocale);
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: "administrations" });
+  const t = await getTranslations({ locale, namespace: "autoritesPubliques" });
 
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="gov-section gov-page-hero" aria-labelledby="administrations-hero-title">
+      <section className="gov-section gov-page-hero" aria-labelledby="autorites-hero-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("hero.kicker")}</p>
-          <h1 id="administrations-hero-title">{t("hero.title")}</h1>
+          <h1 id="autorites-hero-title">{t("hero.title")}</h1>
           <p className="gov-page-hero__subtitle">{t("hero.subtitle")}</p>
           <p className="gov-lead">{t("hero.lead")}</p>
         </div>
       </section>
 
       {/* ── Introduction ──────────────────────────────────────────────── */}
-      <section className="gov-section gov-section--subtle" aria-labelledby="administrations-intro-title">
+      <section className="gov-section gov-section--subtle" aria-labelledby="autorites-intro-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("intro.kicker")}</p>
-          <h2 id="administrations-intro-title" className="gov-section__title">
+          <h2 id="autorites-intro-title" className="gov-section__title">
             {t("intro.title")}
           </h2>
           <p className="gov-lead">{t("intro.lead")}</p>
@@ -72,10 +76,10 @@ export default async function AdministrationsPage({ params }: PageProps) {
       </section>
 
       {/* ── Distinctions ──────────────────────────────────────────────── */}
-      <section className="gov-section" aria-labelledby="administrations-distinctions-title">
+      <section className="gov-section" aria-labelledby="autorites-distinctions-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("distinctions.kicker")}</p>
-          <h2 id="administrations-distinctions-title" className="gov-section__title">
+          <h2 id="autorites-distinctions-title" className="gov-section__title">
             {t("distinctions.title")}
           </h2>
           <p className="gov-lead">{t("distinctions.lead")}</p>
@@ -91,15 +95,15 @@ export default async function AdministrationsPage({ params }: PageProps) {
       </section>
 
       {/* ── Directory ─────────────────────────────────────────────────── */}
-      <section className="gov-section gov-section--subtle" id="administrations-directory" aria-labelledby="administrations-directory-title">
+      <section className="gov-section gov-section--subtle" id="autorites-directory" aria-labelledby="autorites-directory-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("directory.kicker")}</p>
-          <h2 id="administrations-directory-title" className="gov-section__title">
+          <h2 id="autorites-directory-title" className="gov-section__title">
             {t("directory.title")}
           </h2>
           <p className="gov-lead">{t("directory.lead")}</p>
 
-          {administrations.length === 0 ? (
+          {publicAuthorities.length === 0 ? (
             /* ── Empty state: directory under construction ──────────────── */
             <div className="gov-administrations-empty">
               <NoticeCallout iconId="fr-icon-information-line" title={t("directory.emptyTitle")}>
@@ -113,30 +117,40 @@ export default async function AdministrationsPage({ params }: PageProps) {
                 <li>{t("directory.fiche.name")}</li>
                 <li>{t("directory.fiche.description")}</li>
                 <li>{t("directory.fiche.competences")}</li>
+                <li>{t("directory.fiche.status")}</li>
                 <li>{t("directory.fiche.rattachement")}</li>
                 <li>{t("directory.fiche.page")}</li>
               </ul>
             </div>
           ) : (
-            /* ── Populated state: administration cards ──────────────────── */
+            /* ── Populated state: authority cards ───────────────────────── */
             <ul className="gov-administration-list">
-              {administrations.map((admin) => (
-                <li key={admin.id} className="gov-administration-card">
+              {publicAuthorities.map((authority) => (
+                <li key={authority.id} className="gov-administration-card">
                   <h3 className="gov-administration-card__name">
-                    {admin.name}
-                    {admin.acronym && (
-                      <span className="gov-administration-card__acronym">({admin.acronym})</span>
+                    {authority.name}
+                    {authority.acronym && (
+                      <span className="gov-administration-card__acronym">({authority.acronym})</span>
                     )}
                   </h3>
-                  <p className="gov-administration-card__description">{admin.description}</p>
+                  <p className="gov-administration-card__description">{authority.description}</p>
 
-                  {admin.responsibilities && admin.responsibilities.length > 0 && (
+                  {authority.role && (
+                    <p className="gov-administration-card__domain">
+                      <span className="gov-administration-card__domain-label">
+                        {t("directory.roleLabel")}
+                      </span>{" "}
+                      {authority.role}
+                    </p>
+                  )}
+
+                  {authority.responsibilities && authority.responsibilities.length > 0 && (
                     <>
                       <p className="gov-administration-card__section-title">
-                        {t("directory.responsibilitiesLabel")}
+                        {t("directory.competencesLabel")}
                       </p>
                       <ul className="gov-administration-card__competences">
-                        {admin.responsibilities.map((resp) => (
+                        {authority.responsibilities.map((resp) => (
                           <li key={resp} className="gov-administration-card__competence">
                             {resp}
                           </li>
@@ -145,28 +159,39 @@ export default async function AdministrationsPage({ params }: PageProps) {
                     </>
                   )}
 
-                  {admin.domain && (
+                  {authority.status && (
                     <p className="gov-administration-card__domain">
                       <span className="gov-administration-card__domain-label">
-                        {t("directory.domainLabel")}
+                        {t("directory.statusLabel")}
                       </span>{" "}
-                      {admin.domain}
+                      {authority.status}
                     </p>
                   )}
 
-                  {admin.parentInstitutionId && (
+                  {authority.independence && authority.independence !== "unknown" && (
+                    <p className="gov-administration-card__domain">
+                      <span className="gov-administration-card__domain-label">
+                        {t("directory.independenceLabel")}
+                      </span>{" "}
+                      {authority.independence === "independent"
+                        ? t("directory.independenceLabel")
+                        : authority.independence}
+                    </p>
+                  )}
+
+                  {authority.parentInstitutionId && (
                     <p className="gov-administration-card__parent">
                       <span className="gov-administration-card__parent-label">
                         {t("directory.parentLabel")}
                       </span>{" "}
-                      {admin.parentInstitutionId}
+                      {authority.parentInstitutionId}
                     </p>
                   )}
 
                   <div className="gov-administration-card__actions">
-                    {admin.website && (
+                    {authority.website && (
                       <a
-                        href={`https://${admin.website}`}
+                        href={`https://${authority.website}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="gov-external-link-btn"
@@ -190,8 +215,8 @@ export default async function AdministrationsPage({ params }: PageProps) {
                         </svg>
                       </a>
                     )}
-                    {admin.href && (
-                      <Link className="gov-row__link" href={admin.href}>
+                    {authority.href && (
+                      <Link className="gov-row__link" href={authority.href}>
                         {t("directory.viewDetails")}
                         <span aria-hidden="true" className="fr-icon-arrow-right-line" />
                       </Link>
@@ -204,23 +229,23 @@ export default async function AdministrationsPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Relation to services ──────────────────────────────────────── */}
-      <section className="gov-section" aria-labelledby="administrations-services-title">
+      {/* ── Relation to administrations ────────────────────────────────── */}
+      <section className="gov-section" aria-labelledby="autorites-admin-title">
         <div className="gov-section__container">
-          <p className="gov-kicker">{t("relationToServices.kicker")}</p>
-          <h2 id="administrations-services-title" className="gov-section__title">
-            {t("relationToServices.title")}
+          <p className="gov-kicker">{t("relationToAdmin.kicker")}</p>
+          <h2 id="autorites-admin-title" className="gov-section__title">
+            {t("relationToAdmin.title")}
           </h2>
-          <p className="gov-lead">{t("relationToServices.lead")}</p>
-          <p className="gov-gov-intro">{t("relationToServices.note")}</p>
+          <p className="gov-lead">{t("relationToAdmin.lead")}</p>
+          <p className="gov-gov-intro">{t("relationToAdmin.note")}</p>
         </div>
       </section>
 
       {/* ── Navigation links ──────────────────────────────────────────── */}
-      <section className="gov-section gov-section--subtle" aria-labelledby="administrations-nav-title">
+      <section className="gov-section gov-section--subtle" aria-labelledby="autorites-nav-title">
         <div className="gov-section__container">
           <p className="gov-kicker">{t("navigation.kicker")}</p>
-          <h2 id="administrations-nav-title" className="gov-section__title">
+          <h2 id="autorites-nav-title" className="gov-section__title">
             {t("navigation.title")}
           </h2>
           <p className="gov-lead">{t("navigation.lead")}</p>
