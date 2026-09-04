@@ -2051,77 +2051,58 @@ section:has(.gov-home-social) {
   background-color: color-mix(in srgb, var(--primary) 5%, transparent);
 }
 
+
 /* -------------------------------------------------------------------------- *
- * Constitution page (`/[locale]/republique/constitution`)
+ * Constitution — official reader (`/[locale]/republique/constitution`)
  * -------------------------------------------------------------------------- *
- * Institutional, document-oriented layout for the constitutional reference
- * page. Designed for long-form legal reading with clear typographic hierarchy,
- * sober design and print-friendly styles.
+ * Documentary, institutional layout for consulting the constitutional text:
+ * breadcrumb, sober document header, live search, a sticky sommaire column
+ * (progressive disclosure on mobile) and the official text with stable
+ * anchors, copy-link actions and previous/next navigation. The explanatory
+ * fiche pages (`/republique/constitution/[slug]`) share the same language.
  */
 
-/* Hero — centred institutional introduction. */
+.gov-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Document header ----------------------------------------------------- */
 .gov-constitution-hero .gov-section__container {
   max-width: 58rem;
 }
 
 .gov-constitution-hero h1 {
   margin: 0 0 0.75rem;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
   line-height: 1.15;
   font-weight: 700;
   color: var(--title);
 }
 
+.gov-constitution-hero .gov-lead {
+  max-width: 52rem;
+}
+
 .gov-constitution-hero__intro {
-  margin: 0;
+  margin: 1rem 0 0;
   max-width: 52rem;
   line-height: 1.7;
-}
-
-/* Constitution info — definition list of metadata. */
-.gov-constitution-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  margin: 1.25rem 0 0;
-  max-width: 40rem;
-  border-top: 1px solid var(--border);
-}
-
-@media (min-width: 40em) {
-  .gov-constitution-info {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.gov-constitution-info__item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  padding: 0.875rem 1rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.gov-constitution-info__item dt {
-  font-size: 0.8125rem;
-  font-weight: 600;
   color: var(--muted-foreground);
 }
 
-.gov-constitution-info__item dd {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--foreground);
+.gov-constitution-hero__status {
+  margin: 1.5rem 0 0;
 }
 
-.gov-constitution-info--pending {
-  max-width: 30rem;
-  margin-top: 1.5rem;
-  border-top: none;
-}
-
-/* Status badge. */
+/* ---- Status badge -------------------------------------------------------- */
 .gov-constitution-info__badge {
   display: inline-flex;
   align-items: center;
@@ -2138,202 +2119,783 @@ section:has(.gov-home-social) {
 
 .gov-constitution-info__badge--pending {
   color: var(--muted-foreground);
-  background: var(--muted);
 }
 
-/* Document container — legal text styling. */
-.gov-constitution-document {
-  max-width: 48rem;
+/* ---- Text information (metadata strip) ----------------------------------- */
+.gov-constitution-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  max-width: 52rem;
+  border-top: 1px solid var(--border);
 }
 
-.gov-constitution-document__heading {
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.375rem, 3vw, 1.75rem);
-  line-height: 1.3;
+@media (min-width: 40em) {
+  .gov-constitution-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gov-constitution-info__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.875rem 1rem 0.875rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-info__item:not(:first-child) {
+  padding-left: 0;
+}
+
+@media (min-width: 40em) {
+  .gov-constitution-info__item:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+}
+
+.gov-constitution-info__item dt {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-info__item dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.gov-constitution-notice {
+  max-width: 52rem;
+}
+
+/* ---- Search -------------------------------------------------------------- */
+.gov-constitution-search-section {
+  max-width: 56rem;
+}
+
+.gov-constitution-search-section .gov-section__title {
+  margin-bottom: 1.25rem;
+}
+
+.gov-constitution-search {
+  max-width: 46rem;
+}
+
+.gov-constitution-search__results {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-search__count {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-search__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-constitution-search__clear:hover,
+.gov-constitution-search__clear:focus-visible {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  outline: none;
+}
+
+.gov-constitution-search__clear:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-constitution-search__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gov-constitution-search__result {
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-search__link {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 0;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.gov-constitution-search__link:hover,
+.gov-constitution-search__link:focus {
+  background-color: color-mix(in srgb, var(--primary) 4%, transparent);
+}
+
+.gov-constitution-search__link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.gov-constitution-search__result-title {
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--title);
-  text-align: center;
+}
+
+.gov-constitution-search__result-excerpt {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.gov-constitution-search__result-excerpt mark,
+.gov-constitution-search__result-excerpt .gov-constitution-search__result-mark {
+  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 0.125rem;
+}
+
+.gov-constitution-search__result-context {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-search__empty {
+  padding: 1rem 0 0.5rem;
+}
+
+.gov-constitution-search__empty-title {
+  margin: 0.5rem 0 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-search__empty-text {
+  margin: 0.375rem 0 0;
+  max-width: 40rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+/* ---- Reader layout -------------------------------------------------------- */
+.gov-constitution-reader__layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 62em) {
+  .gov-constitution-reader__layout {
+    grid-template-columns: 19rem minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.gov-constitution-reader__content {
+  min-width: 0;
+}
+
+/* ---- Sommaire (accordion) ------------------------------------------------- */
+/* The two presentations share the tree styles; only visibility differs. */
+.gov-sommaire {
+  font-size: 0.9375rem;
+}
+
+/* Mobile / tablet — progressive disclosure */
+.gov-sommaire--mobile {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-sommaire__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.875rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--title);
+  cursor: pointer;
+  list-style: none;
+}
+
+.gov-sommaire__summary::-webkit-details-marker {
+  display: none;
+}
+
+.gov-sommaire__summary .fr-icon-arrow-down-s-line {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+  transition: transform 0.15s ease;
+}
+
+.gov-sommaire--mobile[open] > .gov-sommaire__summary .fr-icon-arrow-down-s-line {
+  transform: rotate(180deg);
+}
+
+.gov-sommaire--mobile .gov-sommaire__body {
+  padding-bottom: 1rem;
+}
+
+/* Desktop — permanent index column */
+.gov-sommaire--desktop {
+  display: none;
+}
+
+@media (min-width: 62em) {
+  .gov-sommaire--mobile {
+    display: none;
+  }
+
+  .gov-sommaire--desktop {
+    display: block;
+    position: sticky;
+    top: 7rem;
+    max-height: calc(100vh - 8.5rem);
+    overflow-y: auto;
+    padding-bottom: 1rem;
+  }
+}
+
+.gov-sommaire__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-sommaire__heading {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.gov-sommaire__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.625rem 0 0.25rem;
+}
+
+.gov-sommaire__expand-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-sommaire__expand-all:hover,
+.gov-sommaire__expand-all:focus-visible {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  outline: none;
+}
+
+.gov-sommaire__expand-all:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-sommaire__expand-all .fr-icon-arrow-down-s-line,
+.gov-sommaire__expand-all .fr-icon-arrow-up-s-line {
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.gov-sommaire__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gov-sommaire__list .gov-sommaire__list {
+  padding-left: 1rem;
+}
+
+.gov-sommaire__list--nested {
+  padding-top: 0.125rem;
+}
+
+.gov-sommaire__row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gov-sommaire__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  line-height: 1.4;
+  color: var(--foreground);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+
+.gov-sommaire__link--group {
+  margin-top: 0.125rem;
+}
+
+.gov-sommaire__link-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--title);
+}
+
+.gov-sommaire__link-label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--muted-foreground);
+}
+
+.gov-sommaire__link-subtitle {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--muted-foreground);
+}
+
+.gov-sommaire__meta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--muted-foreground);
+}
+
+.gov-sommaire__link:hover,
+.gov-sommaire__link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-sommaire__link:hover .gov-sommaire__link-label,
+.gov-sommaire__link:hover .gov-sommaire__link-subtitle,
+.gov-sommaire__link:focus .gov-sommaire__link-label,
+.gov-sommaire__link:focus .gov-sommaire__link-subtitle {
+  color: var(--primary);
+}
+
+.gov-sommaire__link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.gov-sommaire__link[aria-current="true"] {
+  border-left-color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 6%, transparent);
+}
+
+.gov-sommaire__link[aria-current="true"] .gov-sommaire__link-title,
+.gov-sommaire__link[aria-current="true"] .gov-sommaire__link-label {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.gov-sommaire__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.gov-sommaire__toggle:hover,
+.gov-sommaire__toggle:focus-visible {
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-sommaire__toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-sommaire__toggle .fr-icon-arrow-down-s-line {
+  font-size: 1.125rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.gov-sommaire__toggle[aria-expanded="true"] .fr-icon-arrow-down-s-line {
+  transform: rotate(180deg);
+}
+
+/* ---- Official document ---------------------------------------------------- */
+.gov-constitution-document {
+  max-width: 48rem;
 }
 
 .gov-constitution-document__text {
   margin: 0;
   line-height: 1.8;
   text-align: justify;
+  hyphens: auto;
 }
 
 .gov-constitution-document__text p {
   margin: 0 0 1rem;
 }
 
-/* Table of contents. */
-.gov-constitution-toc {
-  margin: 1.25rem 0 0;
-  max-width: 40rem;
+.gov-constitution-document__text p:last-child {
+  margin-bottom: 0;
 }
 
-.gov-constitution-toc__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--border);
+.gov-constitution-preamble,
+.gov-constitution-title,
+.gov-constitution-chapter,
+.gov-constitution-section,
+.gov-constitution-article {
+  scroll-margin-top: 7rem;
 }
 
-.gov-constitution-toc__item {
-  border-bottom: 1px solid var(--border);
+.gov-constitution-preamble {
+  margin: 0 0 2.5rem;
 }
 
-.gov-constitution-toc__link {
+.gov-constitution-preamble__heading {
   display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.gov-constitution-toc__link:hover,
-.gov-constitution-toc__link:focus {
-  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
-}
-
-.gov-constitution-toc__link:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: -2px;
-}
-
-.gov-constitution-toc__number {
-  flex-shrink: 0;
-  min-width: 3.5rem;
-  font-size: 0.875rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
   font-weight: 700;
   color: var(--title);
 }
 
-.gov-constitution-toc__text {
-  color: var(--foreground);
-}
-
-.gov-constitution-toc__sublist {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 0.5rem 1rem;
-}
-
-.gov-constitution-toc__subitem {
-  border-bottom: none;
-}
-
-.gov-constitution-toc__article-link {
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--muted-foreground);
-  text-decoration: none;
-}
-
-.gov-constitution-toc__article-link:hover,
-.gov-constitution-toc__article-link:focus {
+.gov-constitution-preamble__heading .fr-icon-quote-line {
+  font-size: 1.25rem;
   color: var(--primary);
-  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
 }
 
-/* Title heading inside the document. */
+/* Structure headings (Titre / Chapitre / Section). */
 .gov-constitution-title {
-  margin: 2.5rem 0 0;
+  margin: 2.75rem 0 0;
   padding-top: 1.5rem;
   border-top: 2px solid var(--border);
-}
-
-.gov-constitution-title:first-child {
-  margin-top: 0;
-  border-top: none;
-}
-
-.gov-constitution-title__heading {
-  margin: 0 0 1.25rem;
   font-size: 1.375rem;
   line-height: 1.3;
   font-weight: 700;
   color: var(--title);
 }
 
-.gov-constitution-title__number {
-  font-weight: 700;
+.gov-constitution-title:first-of-type {
+  margin-top: 0;
+  border-top: 0;
 }
 
-/* Chapter heading. */
 .gov-constitution-chapter {
   margin: 1.75rem 0 0;
-}
-
-.gov-constitution-chapter__heading {
-  margin: 0 0 1rem;
   font-size: 1.1875rem;
   line-height: 1.4;
   font-weight: 700;
   color: var(--title);
 }
 
-/* Section heading. */
 .gov-constitution-section {
   margin: 1.25rem 0 0;
-}
-
-.gov-constitution-section__heading {
-  margin: 0 0 0.875rem;
   font-size: 1.0625rem;
   line-height: 1.4;
   font-weight: 600;
   color: var(--title);
 }
 
-/* Article — the core legal unit. */
+/* ---- Article -------------------------------------------------------------- */
 .gov-constitution-article {
-  margin: 1.25rem 0 0;
-  padding: 1rem 0;
-  scroll-margin-top: 6rem;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem 0;
 }
 
 .gov-constitution-article + .gov-constitution-article {
   border-top: 1px solid var(--border);
 }
 
+.gov-constitution-article__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gov-constitution-article__heading {
+  min-width: 0;
+}
+
 .gov-constitution-article__number {
-  margin: 0 0 0.5rem;
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.3;
   font-weight: 700;
   color: var(--title);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+}
+
+.gov-constitution-article__official-title {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--title);
 }
 
 .gov-constitution-article__content {
-  margin: 0;
+  margin: 0.875rem 0 0;
   max-width: 44rem;
-  line-height: 1.8;
+  line-height: 1.85;
   text-align: justify;
+  hyphens: auto;
 }
 
-/* Pending state. */
+/* Discreet copy-link action. */
+.gov-constitution-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex: none;
+  padding: 0.3rem 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.gov-constitution-copy:hover,
+.gov-constitution-copy:focus-visible {
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-constitution-copy:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-constitution-copy .fr-icon-links-line {
+  font-size: 0.9375rem;
+}
+
+.gov-constitution-copy__label--copied {
+  display: none;
+}
+
+.gov-constitution-copy[data-copied="true"] .gov-constitution-copy__label {
+  display: none;
+}
+
+.gov-constitution-copy[data-copied="true"] .gov-constitution-copy__label--copied {
+  display: inline;
+}
+
+/* ---- Article footer: understand link + previous/next ----------------------- */
+.gov-constitution-article__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-article__understand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-constitution-article__understand-link:hover,
+.gov-constitution-article__understand-link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-constitution-pager {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.gov-constitution-pager__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  max-width: 20rem;
+  padding: 0.375rem 0.5rem;
+  color: var(--foreground);
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.gov-constitution-pager__link:hover,
+.gov-constitution-pager__link:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-constitution-pager__link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-constitution-pager__link .fr-icon-arrow-left-line,
+.gov-constitution-pager__link .fr-icon-arrow-right-line {
+  flex: none;
+  font-size: 1.125rem;
+  color: var(--primary);
+}
+
+.gov-constitution-pager__link--next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.gov-constitution-pager__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.gov-constitution-pager__direction {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-pager__target {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-pager--pages {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  max-width: 62rem;
+}
+
+.gov-constitution-pager--pages .gov-constitution-pager__link {
+  align-items: flex-start;
+}
+
+/* ---- Pending state --------------------------------------------------------- */
 .gov-constitution-pending {
-  max-width: 48rem;
+  max-width: 52rem;
 }
 
 .gov-constitution-pending__notice {
   margin-bottom: 1.5rem;
 }
 
-/* Print styles — legal document readability. */
+/* ---- Explanatory fiche (`/republique/constitution/[slug]`) ------------------ */
+.gov-constitution-fiche-hero__action {
+  margin-top: 1.5rem;
+}
+
+/* Official text — visually identified as the legal source. */
+.gov-constitution-fiche__official {
+  max-width: 52rem;
+}
+
+.gov-constitution-fiche__official .gov-constitution-document__text {
+  max-width: 48rem;
+}
+
+.gov-constitution-fiche__explanation {
+  max-width: 52rem;
+}
+
+.gov-constitution-fiche__block {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-fiche__block:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.gov-constitution-fiche__block .gov-prose p {
+  line-height: 1.8;
+}
+
+/* ---- Print ---------------------------------------------------------------- */
 @media print {
+  .gov-constitution-search,
+  .gov-sommaire,
+  .gov-constitution-toolbar,
+  .gov-constitution-versions,
+  .gov-constitution-pager,
+  .gov-constitution-copy,
+  .gov-constitution-hero__status,
+  .gov-constitution-article__foot {
+    display: none !important;
+  }
+
   .gov-constitution-hero {
-    padding-block: 1rem;
+    padding-block: 0.5rem 1rem;
   }
 
   .gov-constitution-hero__intro {
     max-width: none;
+  }
+
+  .gov-constitution-reader__layout {
+    display: block;
   }
 
   .gov-constitution-document {
@@ -2341,21 +2903,432 @@ section:has(.gov-home-social) {
   }
 
   .gov-constitution-article {
-    scroll-margin-top: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  .gov-constitution-article__content {
-    max-width: none;
-    text-align: justify;
-  }
-
-  .gov-constitution-toc {
-    page-break-after: always;
-  }
-
-  .gov-constitution-title {
+  .gov-constitution-title,
+  .gov-constitution-preamble {
+    break-before: page;
     page-break-before: always;
   }
+
+  .gov-constitution-title:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .gov-constitution-document__text,
+  .gov-constitution-article__content {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------- *
+ * Constitution — Légifrance-style documentary rendering
+ * -------------------------------------------------------------------------- *
+ * The Constitution pages behave like an official text consultation: the
+ * page *is* the document. A compact text header (title, status, metadata)
+ * comes first, followed by the search accessory, then the sommaire + full
+ * text. Explanations, revision history and institution links are annexes of
+ * the document and never dominate the reading.
+ */
+
+/* ---- Document zone (header / metadata / search) -------------------------- */
+.gov-constitution-doc {
+  padding-block: 1.75rem 0;
+}
+
+.gov-constitution-doc__notice {
+  max-width: 52rem;
+  margin-bottom: 1.25rem;
+}
+
+.gov-constitution-doc__header {
+  max-width: 60rem;
+}
+
+.gov-constitution-doc__context {
+  margin: 0 0 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-doc__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.gov-constitution-doc__title {
+  margin: 0;
+  font-size: clamp(1.625rem, 3.4vw, 2.25rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-doc__meta-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0.75rem 0 0;
+}
+
+.gov-constitution-doc__subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+/* ---- Metadata « Informations sur le texte » ------------------------------ */
+.gov-constitution-doc__meta {
+  max-width: 60rem;
+  margin-top: 1.75rem;
+}
+
+.gov-constitution-doc__meta-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-doc__search {
+  max-width: 46rem;
+  margin-top: 1.75rem;
+}
+
+/* ---- Reader grid ---------------------------------------------------------- */
+.gov-constitution-reader {
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 48em) {
+  .gov-constitution-reader {
+    padding-top: 3.5rem;
+  }
+}
+
+/* ---- Annexes of the document ---------------------------------------------- */
+.gov-constitution-annex {
+  max-width: 52rem;
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-annex > h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-annex__text {
+  margin: 0 0 0.75rem;
+  max-width: 48rem;
+  line-height: 1.7;
+}
+
+.gov-constitution-annex__rows {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-annex__row {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-annex__row h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-annex__row-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-annex__row-text {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.gov-constitution-annex .gov-section-notice {
+  margin-top: 1rem;
+}
+
+/* ---- Fiche article: official text panel ----------------------------------- */
+.gov-constitution-fiche__official {
+  max-width: 56rem;
+  margin-top: 1.75rem;
+  padding: 1.5rem 1.75rem;
+  background: color-mix(in srgb, var(--primary) 3%, var(--background));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+}
+
+.gov-constitution-fiche__official-title {
+  margin: 0 0 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-fiche__official .gov-constitution-document__text {
+  max-width: 50rem;
+}
+
+.gov-constitution-fiche__explanation {
+  border-top: 0;
+}
+
+.gov-constitution-fiche__block > h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-fiche__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  max-width: 56rem;
+  margin: 2.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-fiche__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.gov-constitution-fiche__back:hover,
+.gov-constitution-fiche__back:focus {
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+/* ---- Print: only the official text keeps printing ------------------------- */
+@media print {
+  .gov-constitution-doc__notice,
+  .gov-constitution-doc__meta,
+  .gov-constitution-doc__toolbar,
+  .gov-constitution-doc__search,
+  .gov-sommaire,
+  .gov-constitution-toolbar,
+  .gov-constitution-versions,
+  .gov-constitution-annex,
+  .gov-constitution-fiche__footer {
+    display: none !important;
+  }
+
+  .gov-constitution-doc {
+    padding-block: 0.5rem;
+  }
+
+  .gov-constitution-fiche__official {
+    padding: 0.75rem 0 0.75rem 1rem;
+    background: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: none;
+  }
+}
+
+/* ---- Document actions (toolbar) ------------------------------------------- */
+.gov-constitution-doc__toolbar {
+  max-width: 60rem;
+  margin-top: 1.75rem;
+}
+
+.gov-constitution-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gov-constitution-toolbar__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.gov-constitution-toolbar__action:hover,
+.gov-constitution-toolbar__action:focus-visible {
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.gov-constitution-toolbar__action:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gov-constitution-toolbar__action .fr-icon-search-line,
+.gov-constitution-toolbar__action .fr-icon-time-line,
+.gov-constitution-toolbar__action .fr-icon-clipboard-line,
+.gov-constitution-toolbar__action .fr-icon-printer-line,
+.gov-constitution-toolbar__action .fr-icon-share-line {
+  flex: none;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.gov-constitution-toolbar__action--primary {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.gov-constitution-toolbar__action--primary:hover,
+.gov-constitution-toolbar__action--primary:focus-visible {
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 90%, var(--primary));
+}
+
+.gov-constitution-toolbar__action--primary .fr-icon-search-line {
+  color: inherit;
+}
+
+/* Transient “done” state of the copy action. */
+.gov-constitution-toolbar__label--done {
+  display: none;
+}
+
+.gov-constitution-toolbar__action[data-feedback="true"] .gov-constitution-toolbar__label {
+  display: none;
+}
+
+.gov-constitution-toolbar__action[data-feedback="true"] .gov-constitution-toolbar__label--done {
+  display: inline;
+}
+
+.gov-constitution-toolbar__action[data-feedback="true"] .fr-icon-clipboard-line,
+.gov-constitution-toolbar__action[data-feedback="true"] .fr-icon-share-line {
+  color: var(--primary);
+}
+
+/* ---- Versions panel -------------------------------------------------------- */
+.gov-constitution-versions {
+  max-width: 46rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: color-mix(in srgb, var(--primary) 3%, var(--background));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+}
+
+.gov-constitution-versions__title {
+  margin: 0 0 0.375rem;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-versions__lead {
+  margin: 0 0 1rem;
+  max-width: 40rem;
+  line-height: 1.65;
+}
+
+.gov-constitution-versions__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.gov-constitution-versions__row {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-constitution-versions__row-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-versions__row-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.gov-constitution-versions__version {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+
+.gov-constitution-versions__row-text {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.gov-constitution-versions__empty {
+  padding-top: 1rem;
+}
+
+.gov-constitution-versions__empty-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.gov-constitution-versions__empty-text {
+  margin: 0;
+  max-width: 40rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
 }
 
 /* -------------------------------------------------------------------------- *

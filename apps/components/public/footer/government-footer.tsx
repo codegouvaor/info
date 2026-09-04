@@ -10,7 +10,7 @@ const HOME_PATH = "/";
 
 /** Official portal domains of the Republic of Astoria, shown in the footer. */
 const OFFICIAL_DOMAINS: string[] = [
-  "legi.gouv.aor",
+  "code.gouv.aor",
   "service-public.gouv.aor",
   "data.gouv.aor",
 ];

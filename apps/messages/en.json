@@ -1527,6 +1527,13 @@
     "readMore": "Find out more",
     "title": "Constitution",
     "description": "Consult the Constitution of the Republic of Astoria, its preamble, titles and articles.",
+    "structure": {
+      "article": "Article",
+      "title": "Title",
+      "chapter": "Chapter",
+      "section": "Section",
+      "articlesFromTo": "Articles {first} to {last}"
+    },
     "hero": {
       "kicker": "The Republic",
       "title": "Constitution of the Republic of Astoria",
@@ -1535,7 +1542,9 @@
     },
     "info": {
       "kicker": "The text",
-      "title": "The Constitution",
+      "title": "About this text",
+      "nature": "Type",
+      "natureValue": "Constitution",
       "adoptedAt": "Adopted on",
       "promulgatedAt": "Promulgated on",
       "effectiveAt": "In force since",
@@ -1548,16 +1557,48 @@
       "kicker": "Preamble",
       "title": "Preamble"
     },
+    "document": {
+      "langNotice": "The constitutional text below is the official version published on the portal. No official translation is available in this language yet."
+    },
+    "toolbar": {
+      "ariaLabel": "Actions on the document",
+      "print": "Print this page",
+      "copyText": "Copy the text",
+      "textCopied": "Text copied",
+      "versions": "View versions",
+      "share": "Share"
+    },
+    "versions": {
+      "title": "Versions of the Constitution",
+      "lead": "The Constitution is published on the portal in its version currently in force. The revision history of the text appears below the document.",
+      "current": "Current version",
+      "empty": "No earlier version of the text is published yet.",
+      "emptyTitle": "No earlier version"
+    },
+    "explanation": {
+      "linkLabel": "Understand this article"
+    },
     "tableOfContents": {
       "kicker": "Contents",
       "title": "Contents of the Constitution",
-      "lead": "Structure of the constitutional text. Each title and each article is directly accessible."
+      "lead": "Structure of the constitutional text. Each title and each article is directly accessible.",
+      "sideTitle": "Contents",
+      "openLabel": "Open the contents",
+      "expandAll": "Expand all",
+      "collapseAll": "Collapse all",
+      "expandGroup": "Expand",
+      "collapseGroup": "Collapse"
     },
     "search": {
       "kicker": "Search",
       "title": "Search in the Constitution",
       "placeholder": "Search for an article, a term, a title…",
-      "ariaLabel": "Search in the constitutional text"
+      "ariaLabel": "Search in the constitutional text",
+      "buttonLabel": "Search",
+      "clearLabel": "Clear the search",
+      "countLabel": "{count, plural, one {# result} other {# results}}",
+      "noResultsTitle": "No results found",
+      "noResultsText": "No provision of the Constitution matches “{query}”. Check the spelling or try another term."
     },
     "pending": {
       "title": "The constitutional text will be published shortly",
@@ -1567,7 +1608,9 @@
       "previous": "Previous article",
       "next": "Next article",
       "share": "Link to this article",
-      "copied": "Link copied"
+      "copied": "Link copied",
+      "copy": "Copy link",
+      "navLabel": "Navigation between articles"
     },
     "related": {
       "kicker": "Understanding",
@@ -1596,6 +1639,44 @@
       "title": "Constitutional history",
       "lead": "Any revisions to the Constitution and their dates of entry into force.",
       "empty": "No revision is currently published."
+    }
+  },
+  "constitutionArticle": {
+    "readMore": "Find out more",
+    "breadcrumb": {
+      "constitution": "Constitution"
+    },
+    "backToText": "Back to the full text",
+    "official": {
+      "kicker": "Constitutional text",
+      "title": "The official text",
+      "langNotice": "The text below is the official version published on the portal. No official translation of the Constitution is available in this language yet."
+    },
+    "understand": {
+      "kicker": "Understanding",
+      "summaryTitle": "Understanding this article",
+      "contentTitle": "What this article provides",
+      "keyPointsTitle": "Key points",
+      "relatedTitle": "Related articles"
+    },
+    "explanationEmpty": {
+      "title": "Explanation in preparation",
+      "text": "Explanatory information about this provision is not available yet. Only the published official text is authoritative."
+    },
+    "textMeta": {
+      "title": "About this text",
+      "source": "Source",
+      "sourceName": "info.gouv.aor — The official portal of the Republic of Astoria"
+    },
+    "references": {
+      "kicker": "References"
+    },
+    "further": {
+      "title": "Further reading"
+    },
+    "pending": {
+      "title": "The Constitution will be published shortly",
+      "text": "The provisions of the Constitution and their explanatory fiche will be available here as soon as the official text is published on the portal."
     }
   },
   "organisation": {

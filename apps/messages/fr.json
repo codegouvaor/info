@@ -1530,6 +1530,13 @@
     "readMore": "En savoir plus",
     "title": "Constitution",
     "description": "Consultez la Constitution de la République d'Astoria, son préambule, ses titres et ses articles.",
+    "structure": {
+      "article": "Article",
+      "title": "Titre",
+      "chapter": "Chapitre",
+      "section": "Section",
+      "articlesFromTo": "Articles {first} à {last}"
+    },
     "hero": {
       "kicker": "La République",
       "title": "Constitution de la République d'Astoria",
@@ -1538,7 +1545,9 @@
     },
     "info": {
       "kicker": "Le texte",
-      "title": "La Constitution",
+      "title": "Informations sur le texte",
+      "nature": "Nature",
+      "natureValue": "Constitution",
       "adoptedAt": "Adoptée le",
       "promulgatedAt": "Promulguée le",
       "effectiveAt": "Entrée en vigueur",
@@ -1551,16 +1560,48 @@
       "kicker": "Préambule",
       "title": "Préambule"
     },
+    "document": {
+      "langNotice": "Le texte constitutionnel est reproduit ci-dessous dans sa version officielle publiée sur le portail. Aucune traduction officielle n'est disponible à ce jour."
+    },
+    "toolbar": {
+      "ariaLabel": "Actions sur le document",
+      "print": "Imprimer la page",
+      "copyText": "Copier le texte",
+      "textCopied": "Texte copié",
+      "versions": "Voir les versions",
+      "share": "Partager"
+    },
+    "versions": {
+      "title": "Versions de la Constitution",
+      "lead": "La Constitution est publiée sur le portail dans sa version actuellement en vigueur. L'historique des révisions du texte figure sous le document.",
+      "current": "Version actuelle",
+      "empty": "Aucune version antérieure du texte n'est publiée à ce jour.",
+      "emptyTitle": "Aucune version antérieure"
+    },
+    "explanation": {
+      "linkLabel": "Comprendre cet article"
+    },
     "tableOfContents": {
       "kicker": "Sommaire",
       "title": "Sommaire de la Constitution",
-      "lead": "Structure du texte constitutionnel. Chaque titre et chaque article sont directement accessibles."
+      "lead": "Structure du texte constitutionnel. Chaque titre et chaque article sont directement accessibles.",
+      "sideTitle": "Sommaire",
+      "openLabel": "Ouvrir le sommaire",
+      "expandAll": "Tout déplier",
+      "collapseAll": "Tout replier",
+      "expandGroup": "Déplier",
+      "collapseGroup": "Replier"
     },
     "search": {
       "kicker": "Recherche",
       "title": "Rechercher dans la Constitution",
       "placeholder": "Rechercher un article, un terme, un titre…",
-      "ariaLabel": "Rechercher dans le texte constitutionnel"
+      "ariaLabel": "Rechercher dans le texte constitutionnel",
+      "buttonLabel": "Rechercher",
+      "clearLabel": "Effacer la recherche",
+      "countLabel": "{count, plural, one {# résultat trouvé} other {# résultats trouvés}}",
+      "noResultsTitle": "Aucun résultat trouvé",
+      "noResultsText": "Aucune disposition de la Constitution ne correspond à « {query} ». Vérifiez l'orthographe ou essayez un autre terme."
     },
     "pending": {
       "title": "Le texte constitutionnel sera prochainement publié",
@@ -1570,7 +1611,9 @@
       "previous": "Article précédent",
       "next": "Article suivant",
       "share": "Lien vers cet article",
-      "copied": "Lien copié"
+      "copied": "Lien copié",
+      "copy": "Copier le lien",
+      "navLabel": "Navigation entre les articles"
     },
     "related": {
       "kicker": "Comprendre",
@@ -1599,6 +1642,44 @@
       "title": "Historique constitutionnel",
       "lead": "Les révisions éventuelles de la Constitution et leurs dates d'entrée en vigueur.",
       "empty": "Aucune révision n'est actuellement publiée."
+    }
+  },
+  "constitutionArticle": {
+    "readMore": "En savoir plus",
+    "breadcrumb": {
+      "constitution": "Constitution"
+    },
+    "backToText": "Retour au texte intégral",
+    "official": {
+      "kicker": "Texte constitutionnel",
+      "title": "Le texte officiel",
+      "langNotice": "Le texte ci-dessous est reproduit dans sa version officielle publiée sur le portail. Aucune traduction officielle de la Constitution n'est disponible à ce jour."
+    },
+    "understand": {
+      "kicker": "Comprendre",
+      "summaryTitle": "Comprendre cet article",
+      "contentTitle": "Ce que prévoit cet article",
+      "keyPointsTitle": "À retenir",
+      "relatedTitle": "Articles associés"
+    },
+    "explanationEmpty": {
+      "title": "Explication en préparation",
+      "text": "Les informations explicatives relatives à cette disposition ne sont pas encore disponibles. Le texte officiel publié fait foi."
+    },
+    "textMeta": {
+      "title": "Informations sur le texte",
+      "source": "Source",
+      "sourceName": "info.gouv.aor — Le portail officiel de la République d'Astoria"
+    },
+    "references": {
+      "kicker": "Références"
+    },
+    "further": {
+      "title": "Pour aller plus loin"
+    },
+    "pending": {
+      "title": "La Constitution sera prochainement publiée",
+      "text": "Les dispositions de la Constitution et leurs fiches explicatives seront consultables ici dès la publication du texte officiel sur le portail."
     }
   },
   "organisation": {
