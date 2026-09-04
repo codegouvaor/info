@@ -20,6 +20,7 @@ export type SectionPageKind =
   | "preventionDesRisques"
   | "suiviDesEngagements"
   | "liensUtiles"
+  | "participation"
   | "accessibility"
   | "privacy"
   | "terms"

@@ -32,6 +32,18 @@ export function NoticeCallout({
   );
 }
 
+/**
+ * Clickable ADS tag used for the hero's popular searches: an accessible
+ * in-page link that stays consistent with the DSFR tag styling.
+ */
+export function SearchSuggestionTag({ label, href }: { label: string; href: string }) {
+  return (
+    <Tag as="a" small linkProps={{ href }}>
+      {label}
+    </Tag>
+  );
+}
+
 export type LinkTileProps = {
   title: string;
   desc?: string;
@@ -64,6 +76,10 @@ export function LinkTile({ title, desc, href, small, grey, horizontal, iconId }:
  * The whole card links to `href`; the optional `tag` renders as an ADS `Tag`
  * above the title and `date` as the card detail line, following the DSFR news
  * card pattern.
+ *
+ * No `iconId` is passed to the Card: the DSFR stylesheet draws the enlarge-link
+ * arrow itself (bottom-right, same as the tiles) and adding an `fr-icon-*`
+ * class on the card root would paint a second, stray arrow at the top.
  */
 export type ArticleCardProps = {
   title: string;
@@ -93,7 +109,6 @@ export function ArticleCard({
     <Card
       enlargeLink
       linkProps={{ href }}
-      iconId="fr-icon-arrow-right-line"
       title={title}
       titleAs={titleAs}
       desc={desc}

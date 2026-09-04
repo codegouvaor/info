@@ -13,99 +13,160 @@
   "nav": {
     "main": "Navigation principale",
     "primary": {
-      "aLaUne": "À la une",
-      "decryptages": "Décryptages",
-      "etatEtMoi": "L'État et moi",
-      "preventionDesRisques": "Prévention des risques",
       "gouvernement": "Le Gouvernement",
-      "suiviDesEngagements": "Suivi des engagements",
-      "liensUtiles": "Liens utiles"
+      "actionPublique": "L'action publique",
+      "servicesPublics": "Services publics",
+      "actualites": "Actualités",
+      "republique": "La République",
+      "informationsUtiles": "Informations utiles"
     },
     "panel": {
-      "aLaUneTitle": "À la une",
-      "aLaUneText": "Les actualités et informations essentielles du Gouvernement de la République d'Astoria.",
       "homeLink": "Accueil",
       "allNews": "Toute l'actualité",
-      "actualiteCategory": "L'actualité",
+      "actualitesTitle": "Actualités",
+      "actualitesText": "L'actualité du Gouvernement : décisions, communiqués, décryptages et médias officiels.",
+      "actualitesAllLink": "Toutes les actualités",
+      "actualitesUneCategory": "À la une",
+      "actualitesCategory": "Actualités",
+      "conferencesPresse": "Conférences de presse",
+      "thematiquesNewsCategory": "Thématiques",
+      "thematiqueSociete": "Société",
+      "decryptages": "Décryptages",
+      "lireLaUne": "Lire l'actualité à la une",
+      "lireLaUneTitle": "Ce qui change en septembre 2026",
+      "lireLaUneText": "Retraites, rentrée scolaire, mobilités, santé… Tour d'horizon des mesures qui entrent en vigueur ce mois-ci.",
       "ceQuiChange": "Ce qui change",
       "vosQuestions": "Vos questions, nos réponses",
-      "actualitePremierMinistre": "Actualité du Premier ministre",
-      "mediasCategory": "Médias",
+      "actualitePremierMinistre": "Actualité du Président",
       "podcasts": "Podcasts",
-      "articlesAudio": "Articles audio",
-      "newsletters": "Newsletters",
       "videos": "Vidéos",
-      "thematiquesCategory": "Thématiques",
       "budget": "Budget",
-      "harcelement": "Harcèlement à l'école",
+      "sante": "Santé",
       "laicite": "Laïcité",
       "narcotrafic": "Narcotrafic",
-      "sante": "Santé",
-      "handicap": "Handicap",
-      "rechercheInnovation": "Recherche et innovation",
       "intelligenceArtificielle": "Intelligence artificielle",
-      "grandsDossiersCategory": "Grands dossiers",
+      "rentreeScolaire": "Rentrée scolaire",
+      "franceNationVerte": "Astoria Nation verte",
+      "grandsDossiers": "Grands dossiers",
+      "gouvernementTitle": "Le Gouvernement",
+      "gouvernementText": "Découvrez la composition, l'organisation et l'action du Gouvernement.",
+      "gouvernementAllLink": "Tout le Gouvernement",
+      "gouvernementCategory": "Le Gouvernement",
+      "gouvernementComposition": "Composition",
+      "gouvernementMembres": "Membres",
+      "gouvernementBiographies": "Biographies",
+      "gouvernementOrganisation": "Organisation",
+      "gouvernementSecretariats": "Secrétariats",
+      "administrationsRattachees": "Administrations rattachées",
+      "ministeres": "Ministères",
+      "politiquesPubliques": "Politiques publiques",
+      "actionPubliqueTitle": "L'action publique",
+      "actionPubliqueText": "Les politiques publiques de la République : priorités, réformes et résultats.",
+      "actionPubliqueAllLink": "Toutes les politiques publiques",
+      "actionPubliquePolitiquesCategory": "Politiques publiques",
+      "prioritesGouvernement": "Priorités du Gouvernement",
+      "reformes": "Réformes",
+      "actionPubliqueComprendreCategory": "Comprendre l'action publique",
+      "resultatsActionPublique": "Résultats de l'action publique",
+      "evaluationPolitiquesPubliques": "Évaluation des politiques publiques",
+      "actionPubliqueRessourcesCategory": "Ressources",
+      "publications": "Publications",
+      "rapports": "Rapports",
+      "politiqueEconomie": "Économie",
+      "politiqueEducation": "Éducation",
+      "politiqueSante": "Santé",
+      "politiqueSecurite": "Sécurité",
+      "politiqueNumerique": "Numérique",
+      "politiqueEnvironnement": "Environnement",
+      "politiqueMobilite": "Mobilités",
+      "politiqueCulture": "Culture",
+      "gouvernementAgendaCategory": "Agenda & travaux",
+      "agenda": "Agenda",
+      "decisions": "Décisions",
+      "discours": "Discours",
+      "communiques": "Communiqués",
+      "servicesTitle": "Services publics",
+      "servicesText": "Toutes les démarches et tous les services de l'État, selon votre situation.",
+      "servicesRechercheLink": "Rechercher une démarche",
+      "toutesLesDemarches": "Toutes les démarches",
+      "demarcheIdentite": "Identité et documents",
+      "demarcheFiscalite": "Fiscalité",
+      "demarcheLogement": "Logement",
+      "demarcheTransport": "Transport",
+      "demarcheEducation": "Éducation",
+      "demarcheSante": "Santé",
+      "servicesSituationsCategory": "Par situation",
+      "situationCitoyen": "Citoyen",
+      "situationEtudiant": "Étudiant",
+      "situationProfessionnel": "Professionnel",
+      "situationEntreprise": "Entreprise",
+      "situationAssociation": "Association",
+      "situationEtranger": "Étranger",
+      "servicesServicesCategory": "Services",
+      "administrations": "Administrations",
+      "servicesEnLigne": "Services en ligne",
+      "premierMinistre": "Président",
+      "conseilMinistres": "Conseil des ministres",
+      "republiqueTitle": "La République",
+      "republiqueText": "Comprendre les institutions, le fonctionnement de l'État et la République ouverte.",
+      "republiqueDiscoverLink": "Découvrir la République",
+      "institutionsRepublic": "Les institutions de la République",
+      "constitution": "Constitution",
+      "organisationEtat": "Organisation de l'État",
+      "autoritesPubliques": "Autorités publiques",
+      "territoiresCollectivites": "Territoires et collectivités",
+      "republiqueFonctionnementCategory": "Fonctionnement",
+      "fonctionnementInstitutions": "Fonctionnement des institutions",
+      "relationsInstitutions": "Relations entre institutions",
+      "servicePublicLink": "Le service public",
+      "republiqueOuverteCategory": "République ouverte",
+      "transparence": "Transparence",
+      "donneesOuvertes": "Données ouvertes",
+      "openSource": "Open Source",
+      "participationCitoyenne": "Participation citoyenne",
+      "devenirVolontaire": "Devenir volontaire",
+      "accessibilite": "Accessibilité",
+      "informationsUtilesTitle": "Informations utiles",
+      "infosUtilesTitle": "Informations utiles",
+      "infosUtilesText": "Prévention, alertes, contacts et informations pratiques du portail.",
+      "infosUtilesAllLink": "Toutes les informations utiles",
+      "infosPreventionCategory": "Prévention & sécurité",
+      "risquesMajeurs": "Risques majeurs",
+      "prevention": "Prévention",
+      "sePreparerUrgenceTitle": "Se préparer à une situation d'urgence",
+      "risquesNaturels": "Risques naturels et technologiques",
+      "menaceTerroriste": "Menace terroriste",
+      "menaceCyber": "Menace cyber",
+      "infosPratiquesCategory": "Informations pratiques",
+      "contacts": "Contacts",
+      "numerosUtiles": "Numéros utiles",
+      "questionsFrequentes": "Questions fréquentes",
+      "infosPortailCategory": "Le portail",
+      "planDuSite": "Plan du site",
+      "espacePresse": "Espace presse",
+      "informationsLegales": "Informations légales",
+      "suiviEngagementsFooter": "Suivi des engagements du Gouvernement",
+      "portailAccessibilite": "Portail de l'accessibilité",
+      "marqueEtat": "Marque de l'État",
+      "devenirPartenaireEtat": "Devenir partenaire de l'État",
+      "liensUtilesDemarches": "Liens utiles et démarches",
+      "liensUtiles": "Liens utiles",
+      "risquesEpidemiques": "Risques épidémiques",
+      "lettresInfo": "Lettres d'info",
+      "articlesAudio": "Articles audio",
       "parlonsSanteMentale": "Parlons santé mentale !",
+      "toutesEtTousEgaux": "Toutes et tous égaux",
       "relanceLogement": "Relance logement",
       "franceGrandAngle": "La République en grand angle",
       "france2030": "Astoria 2030",
-      "toutesEtTousEgaux": "Toutes et tous égaux",
-      "franceNationVerte": "Astoria Nation verte",
       "maisonsFranceServices": "Maisons France services",
       "tousLesGrandsDossiers": "Tous les grands dossiers",
-      "decryptagesTitle": "Décryptages",
-      "decryptagesText": "Analyses, décodages et regards sur l'action du Gouvernement.",
-      "decryptagesDiscover": "Découvrir les décryptages",
-      "decryptagesCategory": "Actualités",
-      "etatEtMoiMissionsTitle": "Les 6 missions essentielles de l'État",
-      "etatEtMoiMissionsText": "Découvrir ses missions, son rôle quotidien, ses acteurs et son impact sur la vie des citoyens.",
-      "etatEtMoiDiscover": "Découvrir",
-      "etatEtMoiCategory": "Les missions de l'État",
       "etatOrganisateur": "L'État organisateur",
       "etatProtecteur": "L'État protecteur",
       "etatFacilitateur": "L'État facilitateur",
       "etatMoteur": "L'État moteur",
       "etatPromoteur": "L'État promoteur",
-      "etatInfluent": "L'État influent",
-      "gouvernementCategory": "Le Gouvernement",
-      "gouvernementLink": "Le Gouvernement",
-      "gouvernementComposition": "Composition du Gouvernement",
-      "prevenirLesRisquesCategory": "Prévenir les risques",
-      "risquesAccueil": "Accueil : les risques en France",
-      "risquesNaturels": "Risques naturels et technologiques",
-      "cybercriminalite": "Cybercriminalité",
-      "menaceTerroriste": "Menace terroriste",
-      "infectionsRespiratoires": "Infections respiratoires",
-      "kitUrgence": "Kit d'urgence",
-      "devenirVolontaire": "Devenir volontaire",
-      "caniculeCategory": "Canicule et vagues de chaleur",
-      "caniculeLink": "Canicule et vagues de chaleur",
-      "sePreparerUrgenceTitle": "Se préparer à une situation d'urgence",
-      "sePreparerUrgenceText": "Apprenez à faire face aux risques majeurs : guide complet pour se préparer, protéger ses proches, constituer un kit et adopter les bons réflexes.",
-      "preventionDiscover": "Découvrir",
-      "gouvernementTitle": "Le Gouvernement de la République d'Astoria",
-      "gouvernementText": "Découvrez l'organisation du Gouvernement, sa composition et comment le contacter.",
-      "gouvernementDiscover": "Découvrir le Gouvernement",
-      "contactCategory": "Nous contacter",
-      "contactLink": "Contact",
-      "suiviTitle": "Suivi des engagements",
-      "suiviText": "Suivre la mise en œuvre des engagements du Gouvernement.",
-      "suiviDiscover": "Découvrir le suivi des engagements",
-      "liensTitle": "Liens utiles",
-      "liensText": "Les sites officiels et les services utiles au quotidien.",
-      "liensDiscover": "Découvrir les liens utiles",
-      "liensSitesCategory": "Sites officiels",
-      "servicesLink": "Démarches et services",
-      "sitemapLink": "Plan du site",
-      "liensPortalCategory": "Le portail",
-      "searchLink": "Rechercher",
-      "lettresInfo": "Lettres d'info",
-      "risquesEpidemiques": "Risques épidémiques",
-      "menaceCyber": "Menace cyber",
-      "portailAccessibilite": "Portail de l'accessibilité",
-      "marqueEtat": "Marque de l'État",
-      "devenirPartenaireEtat": "Devenir partenaire de l'État",
-      "liensUtilesDemarches": "Liens utiles et démarches"
+      "etatInfluent": "L'État influent"
     }
   },
   "common": {
@@ -159,47 +220,101 @@
     "metaTitle": "Accueil — info.gouv.aor, le portail officiel du Gouvernement d'Astoria",
     "hero": {
       "kicker": "République d'Astoria",
-      "title": "L'information officielle du Gouvernement d'Astoria",
-      "lead": "Le portail officiel du Gouvernement de la République d'Astoria : actualités, action du Gouvernement, institutions, services publics et démarches.",
+      "title": "La République d'Astoria, simplement.",
+      "lead": "Comprenez les décisions publiques, trouvez les services de l'État et suivez l'action du Gouvernement.",
       "searchLabel": "Rechercher sur le portail",
-      "searchPlaceholder": "Rechercher une actualité, un service, une démarche…",
+      "searchPlaceholder": "Rechercher une démarche, une actualité, une politique publique…",
+      "popularSearchesLabel": "Recherches populaires",
+      "popularSearches": {
+        "retraites": "Retraites",
+        "rentreeScolaire": "Rentrée scolaire",
+        "logement": "Logement",
+        "budget": "Budget",
+        "sante": "Santé"
+      },
       "trust": "Un site officiel du Gouvernement de la République d'Astoria"
     },
     "quickAccess": {
       "title": "Que recherchez-vous ?",
       "items": {
-        "news": {
-          "title": "Actualités",
-          "desc": "L'actualité institutionnelle et les communications officielles."
+        "demarche": {
+          "title": "Faire une démarche",
+          "desc": "Identité, logement, travail : les démarches en ligne et leurs modalités."
         },
-        "government": {
-          "title": "Le Gouvernement",
-          "desc": "La composition, l'organisation et l'action du Gouvernement."
+        "service": {
+          "title": "Trouver un service public",
+          "desc": "Les services publics et leurs points de contact."
         },
-        "institutions": {
-          "title": "Institutions",
-          "desc": "La présidence, le conseil des ministres et les administrations."
+        "decision": {
+          "title": "Comprendre une décision",
+          "desc": "Analyses et décryptages des décisions du Gouvernement."
         },
-        "policies": {
-          "title": "Politiques publiques",
-          "desc": "Les grandes politiques publiques et le suivi des engagements."
+        "contact": {
+          "title": "Contacter l'État",
+          "desc": "Les canaux officiels pour contacter les services du Gouvernement."
         },
-        "services": {
-          "title": "Services publics",
-          "desc": "Les services publics et les démarches en ligne."
+        "gouvernement": {
+          "title": "Voir le Gouvernement",
+          "desc": "Composition, organisation et missions du Gouvernement."
         },
-        "prevention": {
-          "title": "Prévention des risques",
-          "desc": "Se préparer et réagir face aux risques majeurs."
-        },
-        "etatEtMoi": {
-          "title": "L'État et moi",
-          "desc": "Comprendre les missions de l'État au quotidien."
+        "actualites": {
+          "title": "Consulter les actualités",
+          "desc": "Les communications et annonces officielles du Gouvernement."
         }
       }
     },
-    "aLaUne": {
-      "title": "À la une",
+    "changes": {
+      "kicker": "Ce qui change",
+      "title": "Ce qui change",
+      "lead": "Les nouvelles mesures et décisions qui peuvent avoir un impact sur votre quotidien.",
+      "link": "Voir tout ce qui change",
+      "items": {
+        "fiscalite": {
+          "tag": "Fiscalité",
+          "title": "Le barème de l'impôt revalorisé",
+          "desc": "Le barème de l'impôt sur le revenu est indexé sur l'inflation : les contribuables dont les revenus n'ont pas progressé voient leur impôt baisser.",
+          "date": "1ᵉʳ septembre 2026",
+          "effectiveDate": "Entrée en vigueur : 1ᵉʳ janvier 2027"
+        },
+        "logement": {
+          "tag": "Logement",
+          "title": "Les aides au logement renforcées",
+          "desc": "Les aides personnelles au logement sont revalorisées et le prêt à taux zéro est élargi aux primo-accédants.",
+          "date": "1ᵉʳ septembre 2026",
+          "effectiveDate": "Entrée en vigueur : 1ᵉʳ octobre 2026"
+        },
+        "transport": {
+          "tag": "Transport",
+          "title": "Des mobilités plus abordables",
+          "desc": "De nouvelles aides à l'achat de vélos et au covoiturage entrent en vigueur pour réduire le coût des mobilités du quotidien.",
+          "date": "1ᵉʳ septembre 2026",
+          "effectiveDate": "Entrée en vigueur : 1ᵉʳ novembre 2026"
+        },
+        "education": {
+          "tag": "Éducation",
+          "title": "Rentrée scolaire : les nouveautés",
+          "desc": "Groupes de niveau, nouvelles épreuves et bourses revalorisées : ce qui change pour les élèves et leurs familles.",
+          "date": "1ᵉʳ septembre 2026",
+          "effectiveDate": "Entrée en vigueur : 2 septembre 2026"
+        },
+        "sante": {
+          "tag": "Santé",
+          "title": "La prévention élargie à de nouveaux âges",
+          "desc": "Les rendez-vous de prévention sont généralisés à de nouveaux âges de la vie, pris en charge sans avance de frais.",
+          "date": "1ᵉʳ septembre 2026",
+          "effectiveDate": "Entrée en vigueur : 1ᵉʳ janvier 2027"
+        },
+        "travail": {
+          "tag": "Travail",
+          "title": "De nouveaux droits pour les parents retraités",
+          "desc": "Les trimestres liés à la parentalité sont mieux pris en compte dans le calcul des retraites.",
+          "date": "28 août 2026",
+          "effectiveDate": "Entrée en vigueur : 1ᵉʳ septembre 2026"
+        }
+      }
+    },
+    "news": {
+      "title": "Actualités du Gouvernement",
       "lead": "Les informations essentielles du Gouvernement de la République d'Astoria.",
       "link": "Voir toute l'actualité",
       "featured": {
@@ -227,9 +342,9 @@
       }
     },
     "policies": {
-      "kicker": "L'action du Gouvernement",
-      "title": "Comprendre l'action concrète du Gouvernement",
-      "lead": "Économie, éducation, numérique, environnement, santé, sécurité… Le portail documente les grandes politiques publiques, leur avancement et ce qu'elles changent pour vous.",
+      "kicker": "Politiques publiques",
+      "title": "L'action publique",
+      "lead": "Découvrez les priorités de la République et les mesures mises en œuvre par le Gouvernement.",
       "link": "Découvrir les politiques publiques",
       "items": {
         "economie": {
@@ -266,6 +381,43 @@
         }
       }
     },
+    "audiences": {
+      "kicker": "Pour vous",
+      "title": "Les services de l'État pour vous",
+      "lead": "Selon votre profil, retrouvez les services, les aides et les démarches qui vous concernent.",
+      "notice": "Ce portail vous informe et vous oriente. Les démarches elles-mêmes sont effectuées sur les plateformes officielles des services publics.",
+      "link": "Découvrir les services et démarches",
+      "items": {
+        "citoyen": {
+          "title": "Citoyen",
+          "desc": "État civil, impôts, logement, famille : vos démarches du quotidien."
+        },
+        "etudiant": {
+          "title": "Étudiant",
+          "desc": "Bourses, logement étudiant, orientation et vie de campus."
+        },
+        "professionnel": {
+          "title": "Professionnel",
+          "desc": "Emploi, formation et droits des salariés."
+        },
+        "entreprise": {
+          "title": "Entreprise",
+          "desc": "Création, obligations, aides et fiscalité des entreprises."
+        },
+        "association": {
+          "title": "Association",
+          "desc": "Création, subventions et obligations des associations."
+        },
+        "etranger": {
+          "title": "Étranger",
+          "desc": "Titres de séjour, nationalité et accueil en Astoria."
+        },
+        "administration": {
+          "title": "Administration",
+          "desc": "Les services et outils destinés aux agents publics."
+        }
+      }
+    },
     "institutions": {
       "kicker": "Gouvernement & institutions",
       "title": "Les institutions de la République",
@@ -289,46 +441,9 @@
         }
       }
     },
-    "services": {
-      "kicker": "Services & démarches",
-      "title": "Besoin d'effectuer une démarche ?",
-      "lead": "Le portail informe et oriente : retrouvez les services publics et les démarches en ligne de la République d'Astoria.",
-      "notice": "Ce portail vous informe et vous oriente. Les démarches elles-mêmes sont effectuées sur les plateformes officielles des services publics.",
-      "link": "Découvrir les services et démarches",
-      "items": {
-        "identite": {
-          "title": "Identité",
-          "desc": "Titres d'identité, passeport et carte nationale d'identité."
-        },
-        "fiscalite": {
-          "title": "Fiscalité",
-          "desc": "Impôts, taxes et déclarations."
-        },
-        "entreprises": {
-          "title": "Entreprises",
-          "desc": "Création, obligations et aides aux entreprises."
-        },
-        "transport": {
-          "title": "Transport",
-          "desc": "Permis de conduire, immatriculation et mobilités."
-        },
-        "education": {
-          "title": "Éducation",
-          "desc": "Scolarité, bourses et orientation."
-        },
-        "logement": {
-          "title": "Logement",
-          "desc": "Aides au logement et droits des locataires."
-        },
-        "sante": {
-          "title": "Santé",
-          "desc": "Assurance maladie, remboursements et prévention."
-        }
-      }
-    },
     "events": {
       "kicker": "En ce moment",
-      "title": "L'agenda du Gouvernement",
+      "title": "Agenda du Gouvernement",
       "lead": "Les prochaines communications, les publications importantes et les événements institutionnels.",
       "link": "Suivre l'actualité du Gouvernement",
       "items": {
@@ -382,6 +497,10 @@
         "publications": {
           "title": "Publications officielles",
           "desc": "Les publications officielles de la République d'Astoria."
+        },
+        "participation": {
+          "title": "Participation citoyenne",
+          "desc": "Les consultations et initiatives qui associent les citoyennes et citoyens à l'action publique."
         }
       }
     }
@@ -464,31 +583,21 @@
       "title": "Prévention des risques",
       "description": "Se préparer et réagir face aux risques majeurs.",
       "kicker": "Sécurité",
-      "lead": "De l'incident à la catastrophe majeure, les risques naturels, technologiques et sanitaires peuvent toucher la population.",
+      "lead": "De l'incident à la catastrophe majeure, les risques naturels, technologiques et sanitaires peuvent toucher la population française et ses territoires.",
       "paragraphs": {
         "p1": "Cette section présentera les bons réflexes et les dispositifs de l'État pour se préparer et réagir face aux risques majeurs."
       },
       "notice": "Les contenus de prévention des risques seront publiés dans une prochaine version."
     },
-    "suiviDesEngagements": {
-      "title": "Suivi des engagements",
-      "description": "Suivre la mise en œuvre des engagements du Gouvernement.",
-      "kicker": "Transparence",
-      "lead": "Le Gouvernement rend compte de la mise en œuvre de ses engagements.",
+    "participation": {
+      "title": "Participation citoyenne",
+      "description": "Les consultations, débats et initiatives qui associent les citoyennes et citoyens à l'action publique.",
+      "kicker": "Participation",
+      "lead": "Le Gouvernement associe les citoyennes et les citoyens à la construction des politiques publiques.",
       "paragraphs": {
-        "p1": "Cette section présentera l'avancement des engagements du Gouvernement et les résultats des politiques publiques."
+        "p1": "Cette section présentera les consultations publiques, les débats et les initiatives citoyennes portés par les institutions de la République d'Astoria."
       },
-      "notice": "Le tableau de suivi des engagements sera publié dans une prochaine version."
-    },
-    "liensUtiles": {
-      "title": "Liens utiles",
-      "description": "Les sites officiels et les services utiles au quotidien.",
-      "kicker": "Ressources",
-      "lead": "Retrouvez les sites officiels et les services utiles au quotidien.",
-      "paragraphs": {
-        "p1": "Cette section centralisera les liens vers les sites officiels et les services en ligne de la République d'Astoria."
-      },
-      "notice": "La liste des liens utiles sera publiée dans une prochaine version."
+      "notice": "Les premiers dispositifs de participation citoyenne seront publiés dans une prochaine version."
     },
     "search": {
       "title": "Recherche",

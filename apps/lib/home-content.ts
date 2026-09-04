@@ -28,20 +28,61 @@ export type HomeLinkItem = {
   iconId: FrIconClassName;
 };
 
-/** 02 — Accès rapides : the main destinations of the portal. */
-export const quickAccessItems: ReadonlyArray<HomeLinkItem> = [
-  { key: "news", href: "/news", iconId: "fr-icon-newspaper-line" },
-  { key: "government", href: "/government", iconId: "fr-icon-government-line" },
-  { key: "institutions", href: sectionPaths.composition, iconId: "fr-icon-building-line" },
-  { key: "policies", href: sectionPaths.suiviDesEngagements, iconId: "fr-icon-line-chart-line" },
-  { key: "services", href: "/services", iconId: "fr-icon-tools-line" },
-  { key: "prevention", href: sectionPaths.preventionDesRisques, iconId: "fr-icon-shield-line" },
-  { key: "etatEtMoi", href: sectionPaths.lEtatEtMoi, iconId: "fr-icon-user-heart-line" },
+/** 01 — Hero : popular searches pointing to real portal content. */
+export type HomePopularSearch = {
+  /** Message key prefix under `home.hero.popularSearches.<key>`. */
+  key: string;
+  /** Locale-agnostic href, localized by the next-intl Link renderer. */
+  href: string;
+};
+
+export const heroPopularSearches: ReadonlyArray<HomePopularSearch> = [
+  { key: "retraites", href: "/news/retraites" },
+  { key: "rentreeScolaire", href: "/news/rentree-scolaire" },
+  { key: "logement", href: "/news/relance-logement" },
+  { key: "budget", href: "/news/budget" },
+  { key: "sante", href: "/news/sante" },
 ];
 
-/** 03 — À la une : the article feed, addressable by stable keys. */
+/** 02 — Accès rapides : the user intentions served by the portal. */
+export const quickAccessItems: ReadonlyArray<HomeLinkItem> = [
+  { key: "demarche", href: "/services", iconId: "fr-icon-edit-line" },
+  { key: "service", href: "/services", iconId: "fr-icon-search-line" },
+  { key: "decision", href: sectionPaths.decryptages, iconId: "fr-icon-lightbulb-line" },
+  { key: "contact", href: "/contact", iconId: "fr-icon-mail-line" },
+  { key: "gouvernement", href: "/government", iconId: "fr-icon-government-line" },
+  { key: "actualites", href: "/news", iconId: "fr-icon-newspaper-line" },
+];
+
+/**
+ * 03 — Ce qui change : measures with a concrete impact, addressable by stable
+ * keys. Each entry carries machine-readable dates so the cards can later be
+ * rendered by a CMS without changing the layout (publication date, category,
+ * title, summary, entry-into-force date and detail link).
+ */
+export type HomeChange = {
+  /** Message key prefix under `home.changes.items.<key>` (tag/title/desc/date). */
+  key: string;
+  /** Detail page of the measure. */
+  href: string;
+  /** Publication date, machine-readable for `<time dateTime>`. */
+  isoDate: string;
+  /** Entry-into-force date, machine-readable for `<time dateTime>`. */
+  isoEffectiveDate: string;
+};
+
+export const changesItems: ReadonlyArray<HomeChange> = [
+  { key: "fiscalite", href: "/news/budget", isoDate: "2026-09-01", isoEffectiveDate: "2027-01-01" },
+  { key: "logement", href: "/news/relance-logement", isoDate: "2026-09-01", isoEffectiveDate: "2026-10-01" },
+  { key: "transport", href: "/news/ce-qui-change", isoDate: "2026-09-01", isoEffectiveDate: "2026-11-01" },
+  { key: "education", href: "/news/rentree-scolaire", isoDate: "2026-09-01", isoEffectiveDate: "2026-09-02" },
+  { key: "sante", href: "/news/sante", isoDate: "2026-09-01", isoEffectiveDate: "2027-01-01" },
+  { key: "travail", href: "/news/retraites", isoDate: "2026-08-28", isoEffectiveDate: "2026-09-01" },
+];
+
+/** 04 — Actualités du Gouvernement : the article feed, addressable by stable keys. */
 export type HomeArticle = {
-  /** Message key prefix under `home.aLaUne.*` (tag/title/text/date). */
+  /** Message key prefix under `home.news.*` (tag/title/text/date). */
   key: string;
   href: string;
 };
@@ -59,19 +100,30 @@ export const secondaryArticles: ReadonlyArray<HomeArticle> = [
   { key: "retraites", href: "/news/retraites" },
 ];
 
-/** 04 — L'action du Gouvernement : the major public policies. */
+/** 05 — L'action publique : the major public policy areas. */
 export const policyItems: ReadonlyArray<HomeLinkItem> = [
   { key: "economie", href: sectionPaths.suiviDesEngagements, iconId: "fr-icon-money-euro-circle-line" },
   { key: "education", href: sectionPaths.lEtatEtMoi, iconId: "fr-icon-school-line" },
-  { key: "numerique", href: sectionPaths.decryptages, iconId: "fr-icon-cpu-line" },
-  { key: "environnement", href: sectionPaths.preventionDesRisques, iconId: "fr-icon-leaf-line" },
   { key: "sante", href: "/services", iconId: "fr-icon-stethoscope-line" },
   { key: "securite", href: sectionPaths.lEtatEtMoi, iconId: "fr-icon-shield-line" },
+  { key: "numerique", href: sectionPaths.decryptages, iconId: "fr-icon-cpu-line" },
+  { key: "environnement", href: sectionPaths.preventionDesRisques, iconId: "fr-icon-leaf-line" },
   { key: "mobilite", href: "/services", iconId: "fr-icon-car-line" },
   { key: "culture", href: "/news", iconId: "fr-icon-palette-line" },
 ];
 
-/** 05 — Gouvernement & institutions. */
+/** 06 — Pour moi : orientation by user profile towards services & procedures. */
+export const audienceItems: ReadonlyArray<HomeLinkItem> = [
+  { key: "citoyen", href: "/services", iconId: "fr-icon-user-line" },
+  { key: "etudiant", href: "/services", iconId: "fr-icon-book-2-line" },
+  { key: "professionnel", href: "/services", iconId: "fr-icon-briefcase-line" },
+  { key: "entreprise", href: "/services", iconId: "fr-icon-building-line" },
+  { key: "association", href: "/services", iconId: "fr-icon-group-line" },
+  { key: "etranger", href: "/services", iconId: "fr-icon-earth-line" },
+  { key: "administration", href: sectionPaths.lEtatEtMoi, iconId: "fr-icon-community-line" },
+];
+
+/** 07 — Gouvernement & institutions. */
 export const institutionItems: ReadonlyArray<HomeLinkItem> = [
   { key: "government", href: "/government", iconId: "fr-icon-government-line" },
   { key: "composition", href: sectionPaths.composition, iconId: "fr-icon-team-line" },
@@ -79,37 +131,34 @@ export const institutionItems: ReadonlyArray<HomeLinkItem> = [
   { key: "organismes", href: sectionPaths.liensUtiles, iconId: "fr-icon-group-line" },
 ];
 
-/** 06 — Services & démarches : orientation towards public services. */
-export const serviceItems: ReadonlyArray<HomeLinkItem> = [
-  { key: "identite", href: "/services", iconId: "fr-icon-user-line" },
-  { key: "fiscalite", href: "/services", iconId: "fr-icon-money-euro-circle-line" },
-  { key: "entreprises", href: "/services", iconId: "fr-icon-briefcase-line" },
-  { key: "transport", href: "/services", iconId: "fr-icon-car-line" },
-  { key: "education", href: "/services", iconId: "fr-icon-school-line" },
-  { key: "logement", href: "/services", iconId: "fr-icon-home-4-line" },
-  { key: "sante", href: "/services", iconId: "fr-icon-heart-line" },
-];
-
-/** 07 — En ce moment : the government agenda (editorial list, no page yet). */
+/**
+ * 08 — Agenda du Gouvernement (editorial list). Each event carries the
+ * destination where its coverage (compte rendu, publication) will appear.
+ * Later, a past event can evolve into a documented content page: agenda,
+ * documents, summary, decisions and media.
+ */
 export type HomeEvent = {
   /** Message key prefix under `home.events.items.<key>` (tag/title/text/date). */
   key: string;
   /** Machine-readable date for the `<time dateTime>` attribute. */
   isoDate: string;
+  /** Where the event coverage is (or will be) published. */
+  href: string;
 };
 
 export const homeEvents: ReadonlyArray<HomeEvent> = [
-  { key: "conseilMinistres", isoDate: "2026-09-03" },
-  { key: "budget", isoDate: "2026-09-05" },
-  { key: "pointPresse", isoDate: "2026-09-08" },
-  { key: "egalite", isoDate: "2026-09-10" },
+  { key: "conseilMinistres", isoDate: "2026-09-03", href: "/news" },
+  { key: "budget", isoDate: "2026-09-05", href: "/news/budget" },
+  { key: "pointPresse", isoDate: "2026-09-08", href: "/news" },
+  { key: "egalite", isoDate: "2026-09-10", href: "/news" },
 ];
 
-/** 08 — Une République ouverte. */
+/** 09 — Une République ouverte. */
 export const openRepublicItems: ReadonlyArray<HomeLinkItem> = [
   { key: "transparence", href: sectionPaths.suiviDesEngagements, iconId: "fr-icon-eye-line" },
   { key: "donnees", href: sectionPaths.liensUtiles, iconId: "fr-icon-database-line" },
   { key: "openSource", href: sectionPaths.liensUtiles, iconId: "fr-icon-code-line" },
-  { key: "accessibilite", href: legalPaths.accessibility, iconId: "fr-icon-wheelchair-line" },
   { key: "publications", href: sectionPaths.liensUtiles, iconId: "fr-icon-file-text-line" },
+  { key: "accessibilite", href: legalPaths.accessibility, iconId: "fr-icon-wheelchair-line" },
+  { key: "participation", href: sectionPaths.participation, iconId: "fr-icon-chat-3-line" },
 ];

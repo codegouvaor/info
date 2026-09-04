@@ -9,13 +9,12 @@
 export const PORTAL_HOME = "/";
 
 export type PrimaryNavKey =
-  | "aLaUne"
-  | "decryptages"
-  | "etatEtMoi"
-  | "preventionDesRisques"
   | "gouvernement"
-  | "suiviDesEngagements"
-  | "liensUtiles";
+  | "actionPublique"
+  | "servicesPublics"
+  | "actualites"
+  | "republique"
+  | "informationsUtiles";
 
 /** A link inside a mega-menu panel; its label is a `nav.panel` message key. */
 export type PrimaryNavLink = {
@@ -23,17 +22,36 @@ export type PrimaryNavLink = {
   href: string;
 };
 
-export type MegaMenuCategory = {
-  /** Message key (`nav.panel`) of the category heading. */
-  titleKey: string;
-  links: ReadonlyArray<PrimaryNavLink>;
-};
+/**
+ * One column of a mega-menu panel. The heading is either plain text
+ * (`titleKey`) or, when the column heading is itself the main destination of
+ * the group, a link (`mainLink`) — rendered by the ADS `MegaMenu` as
+ * `categoryMainText` / `categoryMainLink`.
+ */
+export type MegaMenuCategory =
+  | {
+      /** Message key (`nav.panel`) of the category heading. */
+      titleKey: string;
+      mainLink?: never;
+      links: ReadonlyArray<PrimaryNavLink>;
+    }
+  | {
+      titleKey?: never;
+      /** Heading rendered as a link (e.g. “Toutes les démarches”). */
+      mainLink: PrimaryNavLink;
+      links: ReadonlyArray<PrimaryNavLink>;
+    };
 
 /**
- * One top-level entry of the Government Header navigation, modelled after
- * info.gouv.fr: every section opens a mega-menu panel (leader + optional
- * categories). Some sections point to placeholder pages whose content is
- * published in an upcoming version.
+ * One top-level entry of the Government Header navigation.
+ *
+ * Navigation principle (info.gouv.fr-inspired, adapted to Astoria): every
+ * section opens a mega-menu panel composed of
+ *  - a leader band: the section name, a one-line description and the main
+ *    section action (e.g. “→ Tout le Gouvernement”),
+ *  - an optional featured zone (used by Actualités for “À la une”),
+ *  - a small number of link columns — the mega-menu is not the sitemap of the
+ *    portal: only the destinations that matter to the user journey.
  *
  * Top-level labels resolve under `nav.primary` (`labelKey`), panel content
  * under `nav.panel` (`titleKey`, `paragraphKey` and nested `labelKey`s).
@@ -48,11 +66,21 @@ export type PrimaryNavItem =
       type: "megaMenu";
       labelKey: string;
       href: string;
+      /** Leader band shown on top of the panel. */
       leader: {
         titleKey: string;
         paragraphKey: string;
-        /** Prominent panel link, like info.gouv.fr's “Discover” call-to-action. */
-        link?: PrimaryNavLink;
+        link: PrimaryNavLink;
+      };
+      /**
+       * Optional featured zone rendered as the first column of the panel
+       * (e.g. “À la une” in Actualités), meant to be fed dynamically later.
+       * The link label is NOT stored here: the header reads the shared
+       * `home.news.featured` messages so the headline has a single source.
+       */
+      featuredLink?: {
+        titleKey: string;
+        href: string;
       };
       categories?: ReadonlyArray<MegaMenuCategory>;
     };
@@ -70,6 +98,12 @@ export const sectionPaths = {
   preventionDesRisques: "/prevention-des-risques",
   suiviDesEngagements: "/suivi-des-engagements",
   liensUtiles: "/liens-utiles",
+  /** Citizen participation: provisional section being published. */
+  participation: "/participation",
+  /** Priority policies (former “Politiques prioritaires” navigation entry). */
+  politiquesPrioritaires: "/politiques-prioritaires",
+  /** Public policies hub — main destination of “L'action publique”. */
+  politiquesPubliques: "/politiques-publiques",
 } as const;
 
 export const legalPaths = {
@@ -151,6 +185,9 @@ export const footerNavigation: ReadonlyArray<FooterColumn> = [
       { labelKey: "marqueEtat", href: "/marque-de-letat" },
       { labelKey: "devenirPartenaireEtat", href: "/devenir-partenaire-de-letat" },
       { labelKey: "liensUtilesDemarches", href: sectionPaths.liensUtiles },
+      // Kept reachable from the footer after leaving the main navigation
+      // (info.gouv.fr keeps its bar to 6 items).
+      { labelKey: "suiviEngagementsFooter", href: sectionPaths.suiviDesEngagements },
     ],
   },
   {
@@ -168,146 +205,26 @@ export const footerNavigation: ReadonlyArray<FooterColumn> = [
 ];
 
 /**
- * Main navigation of the Government Header, mirroring info.gouv.fr:
- * À la une, Décryptages, L'État et moi, Prévention des risques,
- * Le Gouvernement, Suivi des engagements, Liens utiles — each opening a
- * mega-menu panel.
+ * Main navigation of the Government Header — the permanent architecture of
+ * the portal, in six entries. Each entry answers one user intention:
+ *
+ *   Le Gouvernement      → Qui gouverne et comment fonctionne le Gouvernement ?
+ *   L'action publique    → Que fait la République ?
+ *   Services publics     → Que puis-je faire avec l'État ?
+ *   Actualités           → Que se passe-t-il actuellement ?
+ *   La République        → Comment fonctionne l'État ?
+ *   Informations utiles  → Où trouver une information pratique ou importante ?
+ *
+ * The former entries are repositioned, not deleted (their URLs stay alive):
+ * À la une / Décryptages → Actualités, Politiques prioritaires →
+ * L'action publique, L'État et moi → Services publics, Prévention des
+ * risques / Liens utiles → Informations utiles.
+ *
+ * Hrefs follow the URL plan already used across the portal; a few point to
+ * pages being published (e.g. /politiques-publiques/<slug>, /republique/…)
+ * and will resolve as soon as those sections ship.
  */
 export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
-  {
-    type: "megaMenu",
-    labelKey: "aLaUne",
-    href: "/",
-    leader: {
-      titleKey: "aLaUneTitle",
-      paragraphKey: "aLaUneText",
-      link: { labelKey: "homeLink", href: "/" },
-    },
-    categories: [
-      {
-        titleKey: "actualiteCategory",
-        links: [
-          { labelKey: "ceQuiChange", href: "/news/ce-qui-change" },
-          { labelKey: "vosQuestions", href: "/news/vos-questions-nos-reponses" },
-          { labelKey: "actualitePremierMinistre", href: "/news/actualite-du-premier-ministre" },
-          { labelKey: "allNews", href: "/news" },
-        ],
-      },
-      {
-        titleKey: "mediasCategory",
-        links: [
-          { labelKey: "podcasts", href: "/news/podcasts" },
-          { labelKey: "articlesAudio", href: "/news/articles-audio" },
-          { labelKey: "newsletters", href: "/news/newsletters" },
-          { labelKey: "videos", href: "/news/videos" },
-        ],
-      },
-      {
-        titleKey: "thematiquesCategory",
-        links: [
-          { labelKey: "budget", href: "/news/budget" },
-          { labelKey: "harcelement", href: "/news/harcelement-a-lecole" },
-          { labelKey: "laicite", href: "/news/laicite" },
-          { labelKey: "narcotrafic", href: "/news/narcotrafic" },
-          { labelKey: "sante", href: "/news/sante" },
-          { labelKey: "handicap", href: "/news/handicap" },
-          { labelKey: "rechercheInnovation", href: "/news/recherche-et-innovation" },
-          { labelKey: "intelligenceArtificielle", href: "/news/intelligence-artificielle" },
-        ],
-      },
-      {
-        titleKey: "grandsDossiersCategory",
-        links: [
-          { labelKey: "parlonsSanteMentale", href: "/news/parlons-sante-mentale" },
-          { labelKey: "relanceLogement", href: "/news/relance-logement" },
-          { labelKey: "franceGrandAngle", href: "/news/la-france-en-grand-angle" },
-          { labelKey: "france2030", href: "/news/france-2030" },
-          { labelKey: "toutesEtTousEgaux", href: "/news/toutes-et-tous-egaux" },
-          { labelKey: "franceNationVerte", href: "/news/france-nation-verte" },
-          { labelKey: "maisonsFranceServices", href: "/news/maisons-france-services" },
-          { labelKey: "tousLesGrandsDossiers", href: "/news/grands-dossiers" },
-        ],
-      },
-    ],
-  },
-  {
-    type: "megaMenu",
-    labelKey: "decryptages",
-    href: sectionPaths.decryptages,
-    leader: {
-      titleKey: "decryptagesTitle",
-      paragraphKey: "decryptagesText",
-      link: { labelKey: "decryptagesDiscover", href: sectionPaths.decryptages },
-    },
-    categories: [
-      {
-        titleKey: "decryptagesCategory",
-        links: [{ labelKey: "allNews", href: "/news" }],
-      },
-    ],
-  },
-  {
-    type: "megaMenu",
-    labelKey: "etatEtMoi",
-    href: sectionPaths.lEtatEtMoi,
-    leader: {
-      titleKey: "etatEtMoiMissionsTitle",
-      paragraphKey: "etatEtMoiMissionsText",
-      link: { labelKey: "etatEtMoiDiscover", href: sectionPaths.lEtatEtMoi },
-    },
-    categories: [
-      {
-        titleKey: "etatEtMoiCategory",
-        links: [
-          { labelKey: "etatOrganisateur", href: "/l-etat-et-moi/etat-organisateur" },
-          { labelKey: "etatProtecteur", href: "/l-etat-et-moi/etat-protecteur" },
-          { labelKey: "etatFacilitateur", href: "/l-etat-et-moi/etat-facilitateur" },
-          { labelKey: "etatMoteur", href: "/l-etat-et-moi/etat-moteur" },
-          { labelKey: "etatPromoteur", href: "/l-etat-et-moi/etat-promoteur" },
-          { labelKey: "etatInfluent", href: "/l-etat-et-moi/etat-influent" },
-        ],
-      },
-    ],
-  },
-  {
-    type: "megaMenu",
-    labelKey: "preventionDesRisques",
-    href: sectionPaths.preventionDesRisques,
-    leader: {
-      titleKey: "sePreparerUrgenceTitle",
-      paragraphKey: "sePreparerUrgenceText",
-      link: {
-        labelKey: "preventionDiscover",
-        href: "/prevention-des-risques/se-preparer-a-une-situation-durgence",
-      },
-    },
-    categories: [
-      {
-        titleKey: "prevenirLesRisquesCategory",
-        links: [
-          { labelKey: "risquesAccueil", href: sectionPaths.preventionDesRisques },
-          {
-            labelKey: "risquesNaturels",
-            href: "/prevention-des-risques/risques-naturels-et-technologiques",
-          },
-          { labelKey: "cybercriminalite", href: "/prevention-des-risques/cybercriminalite" },
-          { labelKey: "menaceTerroriste", href: "/prevention-des-risques/menace-terroriste" },
-          {
-            labelKey: "infectionsRespiratoires",
-            href: "/prevention-des-risques/infections-respiratoires",
-          },
-          { labelKey: "kitUrgence", href: "/prevention-des-risques/kit-d-urgence" },
-          { labelKey: "devenirVolontaire", href: "/prevention-des-risques/devenir-volontaire" },
-        ],
-      },
-      {
-        titleKey: "caniculeCategory",
-        links: [
-          { labelKey: "caniculeLink", href: "/prevention-des-risques/canicule-et-vagues-de-chaleur" },
-        ],
-      },
-    ],
-  },
   {
     type: "megaMenu",
     labelKey: "gouvernement",
@@ -315,60 +232,288 @@ export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
     leader: {
       titleKey: "gouvernementTitle",
       paragraphKey: "gouvernementText",
-      link: { labelKey: "gouvernementDiscover", href: "/government" },
+      link: { labelKey: "gouvernementAllLink", href: "/government" },
     },
     categories: [
       {
-        titleKey: "gouvernementCategory",
-        links: [{ labelKey: "gouvernementComposition", href: sectionPaths.composition }],
-      },
-      {
-        titleKey: "contactCategory",
-        links: [{ labelKey: "contactLink", href: "/contact" }],
-      },
-    ],
-  },
-  {
-    type: "megaMenu",
-    labelKey: "suiviDesEngagements",
-    href: sectionPaths.suiviDesEngagements,
-    leader: {
-      titleKey: "suiviTitle",
-      paragraphKey: "suiviText",
-      link: { labelKey: "suiviDiscover", href: sectionPaths.suiviDesEngagements },
-    },
-    categories: [
-      {
-        titleKey: "gouvernementCategory",
+        // LE GOUVERNEMENT
+        mainLink: { labelKey: "gouvernementCategory", href: "/government" },
         links: [
-          { labelKey: "gouvernementLink", href: "/government" },
-          { labelKey: "gouvernementComposition", href: sectionPaths.composition },
+          { labelKey: "gouvernementComposition", href: "/composition-du-gouvernement" },
+          { labelKey: "gouvernementMembres", href: "/composition-du-gouvernement/membres" },
+          { labelKey: "premierMinistre", href: "/personnalite/sebastien-lecornu" },
+          { labelKey: "gouvernementBiographies", href: "/composition-du-gouvernement/biographies" },
+        ],
+      },
+      {
+        // ORGANISATION
+        mainLink: { labelKey: "gouvernementOrganisation", href: "/organisation" },
+        links: [
+          { labelKey: "conseilMinistres", href: "/conseil-des-ministres" },
+          { labelKey: "ministeres", href: "/ministere" },
+          { labelKey: "gouvernementSecretariats", href: "/organisation/secretariats" },
+          {
+            labelKey: "administrationsRattachees",
+            href: "/organisation/administrations-rattachees",
+          },
+        ],
+      },
+      {
+        // ACTION DU GOUVERNEMENT
+        mainLink: { labelKey: "politiquesPubliques", href: sectionPaths.politiquesPubliques },
+        links: [
+          { labelKey: "prioritesGouvernement", href: sectionPaths.politiquesPrioritaires },
+          { labelKey: "grandsDossiers", href: "/news/grands-dossiers" },
+          { labelKey: "reformes", href: "/reformes" },
+          { labelKey: "ceQuiChange", href: "/news/ce-qui-change" },
+          { labelKey: "resultatsActionPublique", href: sectionPaths.suiviDesEngagements },
+        ],
+      },
+      {
+        // AGENDA & TRAVAUX
+        mainLink: { labelKey: "agenda", href: "/agenda" },
+        links: [
+          { labelKey: "decisions", href: "/decisions" },
+          { labelKey: "discours", href: "/discours-et-rapports" },
+          { labelKey: "communiques", href: "/communiques" },
+          { labelKey: "publications", href: "/publications-officielles" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "liensUtiles",
+    labelKey: "actionPublique",
+    href: sectionPaths.politiquesPubliques,
+    leader: {
+      titleKey: "actionPubliqueTitle",
+      paragraphKey: "actionPubliqueText",
+      link: { labelKey: "actionPubliqueAllLink", href: sectionPaths.politiquesPubliques },
+    },
+    categories: [
+      {
+        // POLITIQUES PUBLIQUES — the permanent policy areas
+        mainLink: { labelKey: "actionPubliquePolitiquesCategory", href: sectionPaths.politiquesPubliques },
+        links: [
+          { labelKey: "politiqueEconomie", href: "/politiques-publiques/economie" },
+          { labelKey: "politiqueEducation", href: "/politiques-publiques/education" },
+          { labelKey: "politiqueSante", href: "/politiques-publiques/sante" },
+          { labelKey: "politiqueSecurite", href: "/politiques-publiques/securite" },
+          { labelKey: "politiqueNumerique", href: "/politiques-publiques/numerique" },
+          { labelKey: "politiqueEnvironnement", href: "/politiques-publiques/environnement" },
+          { labelKey: "politiqueMobilite", href: "/politiques-publiques/mobilite" },
+          { labelKey: "politiqueCulture", href: "/politiques-publiques/culture" },
+        ],
+      },
+      {
+        // PRIORITÉS
+        mainLink: { labelKey: "prioritesGouvernement", href: sectionPaths.politiquesPrioritaires },
+        links: [
+          { labelKey: "grandsDossiers", href: "/news/grands-dossiers" },
+          { labelKey: "reformes", href: "/reformes" },
+        ],
+      },
+      {
+        // COMPRENDRE L'ACTION PUBLIQUE
+        titleKey: "actionPubliqueComprendreCategory",
+        links: [
+          { labelKey: "ceQuiChange", href: "/news/ce-qui-change" },
+          { labelKey: "resultatsActionPublique", href: sectionPaths.suiviDesEngagements },
+          { labelKey: "evaluationPolitiquesPubliques", href: "/politiques-publiques/evaluation" },
+        ],
+      },
+      {
+        // RESSOURCES
+        titleKey: "actionPubliqueRessourcesCategory",
+        links: [
+          { labelKey: "publications", href: "/publications-officielles" },
+          { labelKey: "rapports", href: "/discours-et-rapports" },
+          { labelKey: "donneesOuvertes", href: "https://data.gouv.aor/" },
+        ],
+      },
+    ],
+  },
+  {
+    type: "megaMenu",
+    labelKey: "servicesPublics",
+    href: "/services",
+    leader: {
+      titleKey: "servicesTitle",
+      paragraphKey: "servicesText",
+      // The services hub is the entry point to search for a “démarche”.
+      link: { labelKey: "servicesRechercheLink", href: "/services" },
+    },
+    categories: [
+      {
+        // DÉMARCHES
+        mainLink: { labelKey: "toutesLesDemarches", href: "/services" },
+        links: [
+          { labelKey: "demarcheIdentite", href: "/services/demarches/identite" },
+          { labelKey: "demarcheFiscalite", href: "/services/demarches/fiscalite" },
+          { labelKey: "demarcheLogement", href: "/services/demarches/logement" },
+          { labelKey: "demarcheTransport", href: "/services/demarches/transport" },
+          { labelKey: "demarcheEducation", href: "/services/demarches/education" },
+          { labelKey: "demarcheSante", href: "/services/demarches/sante" },
+        ],
+      },
+      {
+        // PAR SITUATION
+        titleKey: "servicesSituationsCategory",
+        links: [
+          { labelKey: "situationCitoyen", href: "/services/citoyen" },
+          { labelKey: "situationEtudiant", href: "/services/etudiant" },
+          { labelKey: "situationProfessionnel", href: "/services/professionnel" },
+          { labelKey: "situationEntreprise", href: "/services/entreprise" },
+          { labelKey: "situationAssociation", href: "/services/association" },
+          { labelKey: "situationEtranger", href: "/services/etranger" },
+        ],
+      },
+      {
+        // SERVICES
+        titleKey: "servicesServicesCategory",
+        links: [
+          { labelKey: "administrations", href: "/organisation/administrations" },
+          { labelKey: "servicesEnLigne", href: "/services/services-en-ligne" },
+        ],
+      },
+    ],
+  },
+  {
+    type: "megaMenu",
+    labelKey: "actualites",
+    href: "/news",
+    leader: {
+      titleKey: "actualitesTitle",
+      paragraphKey: "actualitesText",
+      link: { labelKey: "actualitesAllLink", href: "/news" },
+    },
+    // “À la une” — the featured news zone, first column of the panel.
+    // Keep in sync with `featuredArticle` in `lib/home-content.ts`; feed it
+    // from the editorial API when it becomes available.
+    featuredLink: {
+      titleKey: "actualitesUneCategory",
+      // Keep in sync with `featuredArticle` (lib/home-content.ts).
+      href: "/news/ce-qui-change",
+    },
+    categories: [
+      {
+        // ACTUALITÉS
+        titleKey: "actualitesCategory",
+        links: [
+          { labelKey: "allNews", href: "/news" },
+          { labelKey: "decryptages", href: sectionPaths.decryptages },
+          { labelKey: "communiques", href: "/communiques" },
+          { labelKey: "discours", href: "/discours-et-rapports" },
+          { labelKey: "conferencesPresse", href: "/actualites/conferences-de-presse" },
+          { labelKey: "videos", href: "/news/videos" },
+        ],
+      },
+      {
+        // THÉMATIQUES
+        titleKey: "thematiquesNewsCategory",
+        links: [
+          { labelKey: "politiqueEconomie", href: "/news/budget" },
+          { labelKey: "politiqueEducation", href: "/news/rentree-scolaire" },
+          { labelKey: "politiqueSante", href: "/news/sante" },
+          { labelKey: "politiqueSecurite", href: "/news/narcotrafic" },
+          { labelKey: "politiqueNumerique", href: "/news/intelligence-artificielle" },
+          { labelKey: "politiqueEnvironnement", href: "/news/france-nation-verte" },
+          { labelKey: "thematiqueSociete", href: "/news/laicite" },
+        ],
+      },
+    ],
+  },
+  {
+    type: "megaMenu",
+    labelKey: "republique",
+    href: "/republique",
+    leader: {
+      titleKey: "republiqueTitle",
+      paragraphKey: "republiqueText",
+      link: { labelKey: "republiqueDiscoverLink", href: "/republique" },
+    },
+    categories: [
+      {
+        // INSTITUTIONS
+        mainLink: { labelKey: "institutionsRepublic", href: "/government" },
+        links: [
+          { labelKey: "constitution", href: "/republique/constitution" },
+          { labelKey: "organisationEtat", href: "/organisation" },
+          { labelKey: "administrations", href: "/organisation/administrations" },
+          { labelKey: "autoritesPubliques", href: "/republique/autorites-publiques" },
+          { labelKey: "territoiresCollectivites", href: "/republique/territoires" },
+        ],
+      },
+      {
+        // FONCTIONNEMENT
+        titleKey: "republiqueFonctionnementCategory",
+        links: [
+          { labelKey: "fonctionnementInstitutions", href: "/republique/fonctionnement" },
+          { labelKey: "relationsInstitutions", href: "/republique/relations-entre-institutions" },
+          { labelKey: "servicePublicLink", href: "/services" },
+        ],
+      },
+      {
+        // RÉPUBLIQUE OUVERTE
+        titleKey: "republiqueOuverteCategory",
+        links: [
+          { labelKey: "transparence", href: "/republique/transparence" },
+          { labelKey: "donneesOuvertes", href: "https://data.gouv.aor/" },
+          { labelKey: "publications", href: "/publications-officielles" },
+          { labelKey: "openSource", href: "/republique/open-source" },
+          { labelKey: "participationCitoyenne", href: sectionPaths.participation },
+          { labelKey: "devenirVolontaire", href: "/risques/devenir-volontaire" },
+          { labelKey: "accessibilite", href: legalPaths.accessibility },
+        ],
+      },
+    ],
+  },
+  {
+    type: "megaMenu",
+    labelKey: "informationsUtiles",
     href: sectionPaths.liensUtiles,
     leader: {
-      titleKey: "liensTitle",
-      paragraphKey: "liensText",
-      link: { labelKey: "liensDiscover", href: sectionPaths.liensUtiles },
+      titleKey: "infosUtilesTitle",
+      paragraphKey: "infosUtilesText",
+      link: { labelKey: "infosUtilesAllLink", href: sectionPaths.liensUtiles },
     },
     categories: [
       {
-        titleKey: "liensSitesCategory",
+        // PRÉVENTION & SÉCURITÉ
+        titleKey: "infosPreventionCategory",
         links: [
-          { labelKey: "servicesLink", href: "/services" },
-          { labelKey: "sitemapLink", href: legalPaths.sitemap },
+          { labelKey: "risquesMajeurs", href: sectionPaths.preventionDesRisques },
+          {
+            labelKey: "sePreparerUrgenceTitle",
+            href: "/prevention-des-risques/se-preparer-a-une-situation-durgence",
+          },
+          {
+            labelKey: "risquesNaturels",
+            href: "/prevention-des-risques/risques-naturels-et-technologiques",
+          },
+          { labelKey: "menaceTerroriste", href: "/prevention-des-risques/menace-terroriste" },
+          { labelKey: "menaceCyber", href: "/prevention-des-risques/menace-cyber" },
         ],
       },
       {
-        titleKey: "liensPortalCategory",
+        // INFORMATIONS PRATIQUES
+        titleKey: "infosPratiquesCategory",
         links: [
-          { labelKey: "searchLink", href: searchPath },
-          { labelKey: "contactLink", href: "/contact" },
+          { labelKey: "contacts", href: "/contact" },
+          { labelKey: "numerosUtiles", href: "/liens-utiles/numeros-utiles" },
+          { labelKey: "accessibilite", href: legalPaths.accessibility },
+          { labelKey: "questionsFrequentes", href: "/liens-utiles/faq" },
+          // The official-sites directory stays reachable through its page.
+          { labelKey: "liensUtiles", href: sectionPaths.liensUtiles },
+        ],
+      },
+      {
+        // LE PORTAIL
+        titleKey: "infosPortailCategory",
+        links: [
+          { labelKey: "planDuSite", href: legalPaths.sitemap },
+          { labelKey: "espacePresse", href: pressPath },
+          { labelKey: "informationsLegales", href: legalPaths.terms },
         ],
       },
     ],

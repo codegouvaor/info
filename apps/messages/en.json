@@ -13,99 +13,160 @@
   "nav": {
     "main": "Main navigation",
     "primary": {
-      "aLaUne": "Headlines",
-      "decryptages": "Analysis",
-      "etatEtMoi": "The State and I",
-      "preventionDesRisques": "Risk prevention",
       "gouvernement": "The Government",
-      "suiviDesEngagements": "Commitment follow-up",
-      "liensUtiles": "Useful links"
+      "actionPublique": "Public action",
+      "servicesPublics": "Public services",
+      "actualites": "News",
+      "republique": "The Republic",
+      "informationsUtiles": "Useful information"
     },
     "panel": {
-      "aLaUneTitle": "Headlines",
-      "aLaUneText": "The essential news and information of the Government of the Republic of Astoria.",
       "homeLink": "Home",
       "allNews": "All the news",
-      "actualiteCategory": "Latest news",
+      "actualitesTitle": "News",
+      "actualitesText": "Government news: decisions, press releases, analysis and official media.",
+      "actualitesAllLink": "All the news",
+      "actualitesUneCategory": "Headlines",
+      "actualitesCategory": "News",
+      "conferencesPresse": "Press conferences",
+      "thematiquesNewsCategory": "Topics",
+      "thematiqueSociete": "Society",
+      "decryptages": "Analysis",
+      "lireLaUne": "Read the top story",
+      "lireLaUneTitle": "What's changing in September 2026",
+      "lireLaUneText": "Pensions, back-to-school, mobility, health… An overview of the measures coming into force this month.",
       "ceQuiChange": "What's changing",
       "vosQuestions": "Your questions, our answers",
-      "actualitePremierMinistre": "Prime Minister news",
-      "mediasCategory": "Media",
+      "actualitePremierMinistre": "President news",
       "podcasts": "Podcasts",
-      "articlesAudio": "Audio articles",
-      "newsletters": "Newsletters",
       "videos": "Videos",
-      "thematiquesCategory": "Topics",
       "budget": "Budget",
-      "harcelement": "Bullying at school",
+      "sante": "Health",
       "laicite": "Secularism",
       "narcotrafic": "Drug trafficking",
-      "sante": "Health",
-      "handicap": "Disability",
-      "rechercheInnovation": "Research and innovation",
       "intelligenceArtificielle": "Artificial intelligence",
-      "grandsDossiersCategory": "Major topics",
+      "rentreeScolaire": "Back-to-school",
+      "franceNationVerte": "Astoria Green Nation",
+      "grandsDossiers": "Major topics",
+      "gouvernementTitle": "The Government",
+      "gouvernementText": "Discover the composition, organisation and action of the Government.",
+      "gouvernementAllLink": "The whole Government",
+      "gouvernementCategory": "The Government",
+      "gouvernementComposition": "Composition",
+      "gouvernementMembres": "Members",
+      "gouvernementBiographies": "Biographies",
+      "gouvernementOrganisation": "Organisation",
+      "gouvernementSecretariats": "Secretariats",
+      "administrationsRattachees": "Attached administrations",
+      "ministeres": "Ministries",
+      "politiquesPubliques": "Public policies",
+      "actionPubliqueTitle": "Public action",
+      "actionPubliqueText": "The Republic's public policies: priorities, reforms and results.",
+      "actionPubliqueAllLink": "All public policies",
+      "actionPubliquePolitiquesCategory": "Public policies",
+      "prioritesGouvernement": "Government priorities",
+      "reformes": "Reforms",
+      "actionPubliqueComprendreCategory": "Understanding public action",
+      "resultatsActionPublique": "Results of public action",
+      "evaluationPolitiquesPubliques": "Evaluation of public policies",
+      "actionPubliqueRessourcesCategory": "Resources",
+      "publications": "Publications",
+      "rapports": "Reports",
+      "politiqueEconomie": "Economy",
+      "politiqueEducation": "Education",
+      "politiqueSante": "Health",
+      "politiqueSecurite": "Security",
+      "politiqueNumerique": "Digital",
+      "politiqueEnvironnement": "Environment",
+      "politiqueMobilite": "Mobility",
+      "politiqueCulture": "Culture",
+      "gouvernementAgendaCategory": "Agenda & works",
+      "agenda": "Agenda",
+      "decisions": "Decisions",
+      "discours": "Speeches",
+      "communiques": "Press releases",
+      "servicesTitle": "Public services",
+      "servicesText": "All the procedures and services of the State, according to your situation.",
+      "servicesRechercheLink": "Search for a procedure",
+      "toutesLesDemarches": "All procedures",
+      "demarcheIdentite": "Identity and documents",
+      "demarcheFiscalite": "Taxes",
+      "demarcheLogement": "Housing",
+      "demarcheTransport": "Transport",
+      "demarcheEducation": "Education",
+      "demarcheSante": "Health",
+      "servicesSituationsCategory": "By situation",
+      "situationCitoyen": "Citizen",
+      "situationEtudiant": "Student",
+      "situationProfessionnel": "Professional",
+      "situationEntreprise": "Business",
+      "situationAssociation": "Non-profit",
+      "situationEtranger": "Foreign national",
+      "servicesServicesCategory": "Services",
+      "administrations": "Administrations",
+      "servicesEnLigne": "Online services",
+      "premierMinistre": "President",
+      "conseilMinistres": "Council of ministers",
+      "republiqueTitle": "The Republic",
+      "republiqueText": "Understanding the institutions, how the State works and the open Republic.",
+      "republiqueDiscoverLink": "Discover the Republic",
+      "institutionsRepublic": "The institutions of the Republic",
+      "constitution": "Constitution",
+      "organisationEtat": "Organisation of the State",
+      "autoritesPubliques": "Public authorities",
+      "territoiresCollectivites": "Territories and local authorities",
+      "republiqueFonctionnementCategory": "How it works",
+      "fonctionnementInstitutions": "How the institutions work",
+      "relationsInstitutions": "Relations between institutions",
+      "servicePublicLink": "The public service",
+      "republiqueOuverteCategory": "Open Republic",
+      "transparence": "Transparency",
+      "donneesOuvertes": "Open data",
+      "openSource": "Open Source",
+      "participationCitoyenne": "Citizen participation",
+      "devenirVolontaire": "Become a volunteer",
+      "accessibilite": "Accessibility",
+      "informationsUtilesTitle": "Useful information",
+      "infosUtilesTitle": "Useful information",
+      "infosUtilesText": "Prevention, alerts, contacts and practical information of the portal.",
+      "infosUtilesAllLink": "All useful information",
+      "infosPreventionCategory": "Prevention & safety",
+      "risquesMajeurs": "Major risks",
+      "prevention": "Prevention",
+      "sePreparerUrgenceTitle": "Preparing for an emergency",
+      "risquesNaturels": "Natural and technological risks",
+      "menaceTerroriste": "Terrorist threat",
+      "menaceCyber": "Cyber threat",
+      "infosPratiquesCategory": "Practical information",
+      "contacts": "Contacts",
+      "numerosUtiles": "Useful numbers",
+      "questionsFrequentes": "Frequently asked questions",
+      "infosPortailCategory": "The portal",
+      "planDuSite": "Sitemap",
+      "espacePresse": "Press area",
+      "informationsLegales": "Legal information",
+      "suiviEngagementsFooter": "Government commitment follow-up",
+      "portailAccessibilite": "Accessibility portal",
+      "marqueEtat": "State brand",
+      "devenirPartenaireEtat": "Become a State partner",
+      "liensUtilesDemarches": "Useful links and procedures",
+      "liensUtiles": "Useful links",
+      "risquesEpidemiques": "Epidemic risks",
+      "lettresInfo": "Newsletters",
+      "articlesAudio": "Audio articles",
       "parlonsSanteMentale": "Let's talk mental health!",
+      "toutesEtTousEgaux": "All equal",
       "relanceLogement": "Housing recovery",
       "franceGrandAngle": "France in wide angle",
       "france2030": "France 2030",
-      "toutesEtTousEgaux": "All equal",
-      "franceNationVerte": "France Green Nation",
       "maisonsFranceServices": "France services centres",
       "tousLesGrandsDossiers": "All major topics",
-      "decryptagesTitle": "Analysis",
-      "decryptagesText": "Analysis, decoding and viewpoints on the Government's action.",
-      "decryptagesDiscover": "Discover the analysis",
-      "decryptagesCategory": "News",
-      "etatEtMoiMissionsTitle": "The 6 essential missions of the State",
-      "etatEtMoiMissionsText": "Discover its missions, its day-to-day role, its actors and its impact on citizens' lives.",
-      "etatEtMoiDiscover": "Discover",
-      "etatEtMoiCategory": "The missions of the State",
       "etatOrganisateur": "The organising State",
       "etatProtecteur": "The protecting State",
       "etatFacilitateur": "The facilitating State",
       "etatMoteur": "The driving State",
       "etatPromoteur": "The promoting State",
-      "etatInfluent": "The influential State",
-      "gouvernementCategory": "The Government",
-      "gouvernementLink": "The Government",
-      "gouvernementComposition": "Government composition",
-      "prevenirLesRisquesCategory": "Prevent risks",
-      "risquesAccueil": "Home: risks in France",
-      "risquesNaturels": "Natural and technological risks",
-      "cybercriminalite": "Cybercrime",
-      "menaceTerroriste": "Terrorist threat",
-      "infectionsRespiratoires": "Respiratory infections",
-      "kitUrgence": "Emergency kit",
-      "devenirVolontaire": "Become a volunteer",
-      "caniculeCategory": "Heatwaves",
-      "caniculeLink": "Heatwaves",
-      "sePreparerUrgenceTitle": "Preparing for an emergency",
-      "sePreparerUrgenceText": "Learn to deal with major risks: a complete guide to prepare, protect your loved ones, build an emergency kit and adopt the right reflexes.",
-      "preventionDiscover": "Discover",
-      "gouvernementTitle": "The Government of the Republic of Astoria",
-      "gouvernementText": "Discover the Government's organisation, composition and how to contact it.",
-      "gouvernementDiscover": "Discover the Government",
-      "contactCategory": "Contact us",
-      "contactLink": "Contact",
-      "suiviTitle": "Commitment follow-up",
-      "suiviText": "Tracking the implementation of the Government's commitments.",
-      "suiviDiscover": "Discover the commitment follow-up",
-      "liensTitle": "Useful links",
-      "liensText": "Official sites and services useful in everyday life.",
-      "liensDiscover": "Discover the useful links",
-      "liensSitesCategory": "Official sites",
-      "servicesLink": "Services and procedures",
-      "sitemapLink": "Sitemap",
-      "liensPortalCategory": "The portal",
-      "searchLink": "Search",
-      "lettresInfo": "Newsletters",
-      "risquesEpidemiques": "Epidemic risks",
-      "menaceCyber": "Cyber threat",
-      "portailAccessibilite": "Accessibility portal",
-      "marqueEtat": "State brand",
-      "devenirPartenaireEtat": "Become a State partner",
-      "liensUtilesDemarches": "Useful links and procedures"
+      "etatInfluent": "The influential State"
     }
   },
   "common": {
@@ -159,47 +220,101 @@
     "metaTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
     "hero": {
       "kicker": "Republic of Astoria",
-      "title": "The official information of the Government of Astoria",
-      "lead": "The official portal of the Government of the Republic of Astoria: news, government action, institutions, public services and procedures.",
+      "title": "The Republic of Astoria, simply.",
+      "lead": "Understand public decisions, find State services and follow the Government's action.",
       "searchLabel": "Search the portal",
-      "searchPlaceholder": "Search for news, a service or a procedure…",
+      "searchPlaceholder": "Search for a procedure, news or public policy…",
+      "popularSearchesLabel": "Popular searches",
+      "popularSearches": {
+        "retraites": "Pensions",
+        "rentreeScolaire": "Back to school",
+        "logement": "Housing",
+        "budget": "Budget",
+        "sante": "Health"
+      },
       "trust": "An official website of the Government of the Republic of Astoria"
     },
     "quickAccess": {
       "title": "What are you looking for?",
       "items": {
-        "news": {
-          "title": "News",
-          "desc": "Institutional news and official communications."
+        "demarche": {
+          "title": "Complete a procedure",
+          "desc": "Identity, housing, work: online procedures and how they work."
         },
-        "government": {
-          "title": "The Government",
-          "desc": "The composition, organisation and action of the Government."
+        "service": {
+          "title": "Find a public service",
+          "desc": "Public services and their contact points."
         },
-        "institutions": {
-          "title": "Institutions",
-          "desc": "The presidency, the council of ministers and the administrations."
+        "decision": {
+          "title": "Understand a decision",
+          "desc": "Analysis and decoding of Government decisions."
         },
-        "policies": {
-          "title": "Public policies",
-          "desc": "Major public policies and commitment follow-up."
+        "contact": {
+          "title": "Contact the State",
+          "desc": "The official channels to contact government services."
         },
-        "services": {
-          "title": "Public services",
-          "desc": "Public services and online procedures."
+        "gouvernement": {
+          "title": "See the Government",
+          "desc": "Composition, organisation and missions of the Government."
         },
-        "prevention": {
-          "title": "Risk prevention",
-          "desc": "Preparing and reacting to major risks."
-        },
-        "etatEtMoi": {
-          "title": "The State and I",
-          "desc": "Understanding the day-to-day missions of the State."
+        "actualites": {
+          "title": "Read the news",
+          "desc": "Official communications and announcements of the Government."
         }
       }
     },
-    "aLaUne": {
-      "title": "Headlines",
+    "changes": {
+      "kicker": "What's changing",
+      "title": "What's changing",
+      "lead": "New measures and decisions that may affect your everyday life.",
+      "link": "See everything that is changing",
+      "items": {
+        "fiscalite": {
+          "tag": "Taxes",
+          "title": "Income tax brackets adjusted",
+          "desc": "Income tax brackets are index-linked to inflation: taxpayers whose income has not increased will see their tax fall.",
+          "date": "1 September 2026",
+          "effectiveDate": "In force from: 1 January 2027"
+        },
+        "logement": {
+          "tag": "Housing",
+          "title": "Housing support strengthened",
+          "desc": "Personal housing support is increased and the interest-free loan is extended to first-time buyers.",
+          "date": "1 September 2026",
+          "effectiveDate": "In force from: 1 October 2026"
+        },
+        "transport": {
+          "tag": "Transport",
+          "title": "More affordable mobility",
+          "desc": "New support for buying bicycles and car-sharing comes into force to reduce the cost of everyday mobility.",
+          "date": "1 September 2026",
+          "effectiveDate": "In force from: 1 November 2026"
+        },
+        "education": {
+          "tag": "Education",
+          "title": "Back to school: what's new",
+          "desc": "Mixed-ability groups, new exam papers and higher grants: what changes for pupils and their families.",
+          "date": "1 September 2026",
+          "effectiveDate": "In force from: 2 September 2026"
+        },
+        "sante": {
+          "tag": "Health",
+          "title": "Prevention extended to new ages",
+          "desc": "Prevention check-ups are extended to new stages of life, covered with no upfront payment.",
+          "date": "1 September 2026",
+          "effectiveDate": "In force from: 1 January 2027"
+        },
+        "travail": {
+          "tag": "Work",
+          "title": "New rights for retired parents",
+          "desc": "Pension quarters linked to parenthood are better taken into account in retirement calculations.",
+          "date": "28 August 2026",
+          "effectiveDate": "In force from: 1 September 2026"
+        }
+      }
+    },
+    "news": {
+      "title": "Government news",
       "lead": "The essential information of the Government of the Republic of Astoria.",
       "link": "See all the news",
       "featured": {
@@ -227,9 +342,9 @@
       }
     },
     "policies": {
-      "kicker": "Government action",
-      "title": "Understanding the concrete action of the Government",
-      "lead": "Economy, education, digital, environment, health, security… The portal documents the major public policies, their progress and what they change for you.",
+      "kicker": "Public policies",
+      "title": "Public action",
+      "lead": "Discover the Republic's priorities and the measures implemented by the Government.",
       "link": "Discover the public policies",
       "items": {
         "economie": {
@@ -266,6 +381,43 @@
         }
       }
     },
+    "audiences": {
+      "kicker": "For you",
+      "title": "State services for you",
+      "lead": "Find the services, support and procedures that concern you, according to your profile.",
+      "notice": "This portal informs and guides you. The procedures themselves are completed on the official platforms of the public services.",
+      "link": "Discover the services and procedures",
+      "items": {
+        "citoyen": {
+          "title": "Citizen",
+          "desc": "Civil status, taxes, housing, family: your everyday procedures."
+        },
+        "etudiant": {
+          "title": "Student",
+          "desc": "Grants, student housing, guidance and campus life."
+        },
+        "professionnel": {
+          "title": "Professional",
+          "desc": "Employment, training and employees' rights."
+        },
+        "entreprise": {
+          "title": "Business",
+          "desc": "Starting a business, obligations, support and corporate tax."
+        },
+        "association": {
+          "title": "Association",
+          "desc": "Starting, funding and obligations of associations."
+        },
+        "etranger": {
+          "title": "Foreign national",
+          "desc": "Residence permits, nationality and settling in Astoria."
+        },
+        "administration": {
+          "title": "Administration",
+          "desc": "Services and tools for public servants."
+        }
+      }
+    },
     "institutions": {
       "kicker": "Government & institutions",
       "title": "The institutions of the Republic",
@@ -289,46 +441,9 @@
         }
       }
     },
-    "services": {
-      "kicker": "Services & procedures",
-      "title": "Need to complete a procedure?",
-      "lead": "The portal informs and guides: find the public services and online procedures of the Republic of Astoria.",
-      "notice": "This portal informs and guides you. The procedures themselves are completed on the official platforms of the public services.",
-      "link": "Discover the services and procedures",
-      "items": {
-        "identite": {
-          "title": "Identity",
-          "desc": "Identity documents, passport and national identity card."
-        },
-        "fiscalite": {
-          "title": "Taxes",
-          "desc": "Taxes, duties and declarations."
-        },
-        "entreprises": {
-          "title": "Businesses",
-          "desc": "Starting, obligations and support for businesses."
-        },
-        "transport": {
-          "title": "Transport",
-          "desc": "Driving licence, registration and mobility."
-        },
-        "education": {
-          "title": "Education",
-          "desc": "Schooling, grants and guidance."
-        },
-        "logement": {
-          "title": "Housing",
-          "desc": "Housing support and tenants' rights."
-        },
-        "sante": {
-          "title": "Health",
-          "desc": "Health insurance, reimbursements and prevention."
-        }
-      }
-    },
     "events": {
       "kicker": "What's happening",
-      "title": "The Government's agenda",
+      "title": "Government agenda",
       "lead": "Upcoming communications, important publications and institutional events.",
       "link": "Follow the Government's news",
       "items": {
@@ -382,6 +497,10 @@
         "publications": {
           "title": "Official publications",
           "desc": "The official publications of the Republic of Astoria."
+        },
+        "participation": {
+          "title": "Citizen participation",
+          "desc": "The consultations and initiatives that involve citizens in public action."
         }
       }
     }
@@ -490,36 +609,13 @@
       },
       "notice": "The list of useful links will be published in an upcoming version."
     },
-    "search": {
-      "title": "Search",
-      "description": "Search for information, a procedure or news on the Government of Astoria portal.",
-      "kicker": "Search",
-      "lead": "Search for information, a procedure or news published on the portal.",
-      "resultsTitle": "Search results",
-      "noQuery": "Enter one or more keywords to start a search.",
-      "noResults": "No results were found for \"{query}\". Check the spelling or try different keywords."
-    },
-    "sitemap": {
-      "title": "Sitemap",
-      "description": "The sitemap of info.gouv.aor, the official portal of the Government of Astoria.",
-      "kicker": "Navigation",
-      "lead": "All the pages of the info.gouv.aor portal.",
-      "groups": {
-        "primary": "Main navigation",
-        "sections": "Portal sections",
-        "legal": "Legal framework"
-      }
-    },
-    "legal": {
-      "accessibility": {
-        "title": "Accessibility",
-        "description": "The accessibility statement of the info.gouv.aor portal.",
-        "kicker": "Legal framework",
-        "lead": "The Government of Astoria is committed to making its portal accessible to everyone.",
-        "paragraphs": {
-          "p1": "This page is the accessibility statement of the official portal info.gouv.aor.",
-          "p2": "The foundation currently in preview is being audited for accessibility; the compliance level announced in the footer will be updated once this work is complete."
-        }
+    "participation": {
+      "title": "Citizen participation",
+      "description": "The consultations, debates and initiatives that involve citizens in public action.",
+      "kicker": "Participation",
+      "lead": "The Government involves citizens in shaping public policies.",
+      "paragraphs": {
+        "p1": "This section will present the public consultations, debates and citizen initiatives run by the institutions of the Republic of Astoria."
       },
       "privacy": {
         "title": "Privacy policy",
