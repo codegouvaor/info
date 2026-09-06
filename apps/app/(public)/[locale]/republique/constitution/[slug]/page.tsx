@@ -115,7 +115,7 @@ export default async function ConstitutionArticlePage({ params }: PageProps) {
   );
 
   const context = articleContextLabel(frames, {
-    titleNumber: location.title.number,
+    titleNumber: location.title?.number,
     chapterNumber: location.chapter?.number,
     sectionNumber: location.section?.number,
   });
@@ -146,7 +146,9 @@ export default async function ConstitutionArticlePage({ params }: PageProps) {
 
           {/* ── Document header: the provision ─────────────────────────── */}
           <header className="gov-constitution-doc__header">
-            <p className="gov-constitution-doc__context">{context}</p>
+            {context && (
+              <p className="gov-constitution-doc__context">{context}</p>
+            )}
             <div className="gov-constitution-doc__title-row">
               <h1 className="gov-constitution-doc__title">{articleLabel}</h1>
               <ConstitutionCopyLinkButton

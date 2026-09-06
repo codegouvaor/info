@@ -5,8 +5,8 @@
     "governmentName": "Gouvernement"
   },
   "header": {
-    "serviceTitle": "info.gouv.aor",
-    "serviceTagline": "Le portail officiel du Gouvernement de la République d'Astoria",
+    "serviceTitle": "Gouvernement de la République",
+    "serviceTagline": "Le site officiel du gouvernement",
     "homeTitle": "Site Officiel du Gouvernement de la République d'Astoria",
     "loginLink": "Se connecter",
     "accountLabel": "Mon compte",
@@ -168,7 +168,6 @@
       "relanceLogement": "Relance logement",
       "republiqueGrandAngle": "La République en grand angle",
       "astoria2030": "Astoria 2030",
-      "astoriaNationVerte": "Astoria Nation verte",
       "maisonsServicesPublics": "Maisons services publics",
       "tousLesGrandsDossiers": "Tous les grands dossiers",
       "etatOrganisateur": "L'État organisateur",

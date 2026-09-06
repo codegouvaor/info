@@ -82,10 +82,9 @@ export function GovernmentHeader() {
       ...(item.featuredLink
         ? [
             {
-              categoryMainLink: {
-                text: tNavPanel(item.featuredLink.titleKey),
-                linkProps: { href: item.featuredLink.href },
-              },
+              // Column heading — intentionally not a link: it labels the
+              // featured item below it rather than being a destination.
+              categoryMainText: tNavPanel(item.featuredLink.titleKey),
               links: [
                 {
                   text: t("home.news.featured.title"),
@@ -96,28 +95,20 @@ export function GovernmentHeader() {
             } satisfies MegaMenuProps.Category,
           ]
         : []),
-      ...(item.categories ?? []).map((category): MegaMenuProps.Category =>
-        category.mainLink
-          ? {
-              categoryMainLink: {
-                text: tNavPanel(category.mainLink.labelKey),
-                linkProps: { href: category.mainLink.href },
-              },
-              links: category.links.map((link) => ({
-                text: tNavPanel(link.labelKey),
-                linkProps: { href: link.href },
-                isActive: isNavItemActive(link.href, pathname),
-              })),
-            }
-          : {
-              categoryMainText: tNavPanel(category.titleKey),
-              links: category.links.map((link) => ({
-                text: tNavPanel(link.labelKey),
-                linkProps: { href: link.href },
-                isActive: isNavItemActive(link.href, pathname),
-              })),
-            }
-      ),
+      ...(item.categories ?? []).map((category): MegaMenuProps.Category => {
+        // Column headings are rendered as plain text (`categoryMainText`),
+        // never as links: they introduce the links beneath them and are not
+        // destinations themselves.
+        const headingKey = category.mainLink ? category.mainLink.labelKey : category.titleKey;
+        return {
+          categoryMainText: tNavPanel(headingKey),
+          links: category.links.map((link) => ({
+            text: tNavPanel(link.labelKey),
+            linkProps: { href: link.href },
+            isActive: isNavItemActive(link.href, pathname),
+          })),
+        };
+      }),
     ];
 
     return {

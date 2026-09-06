@@ -121,6 +121,16 @@ function buildTocItems(
     });
   }
 
+  // Provisions standing before the first title (e.g. Article 1er), read
+  // directly after the preamble — mirrors the document blocks.
+  for (const article of constitution.articles ?? []) {
+    items.push({
+      id: article.id,
+      label: partDisplayLabel(frames.article, article.number),
+      href: `#${article.id}`,
+    });
+  }
+
   for (const title of constitution.titles) {
     const childAccs: SommaireAcc[] = [];
 
@@ -379,7 +389,7 @@ export default async function ConstitutionPage({ params }: PageProps) {
                       location.article.number,
                     ),
                     context: articleContextLabel(frames, {
-                      titleNumber: location.title.number,
+                      titleNumber: location.title?.number,
                       chapterNumber: location.chapter?.number,
                       sectionNumber: location.section?.number,
                     }),

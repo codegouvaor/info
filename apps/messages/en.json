@@ -5,9 +5,9 @@
     "governmentName": "Government of Astoria"
   },
   "header": {
-    "serviceTitle": "Gouvernement",
-    "serviceTagline": "The official portal of the Government of the Republic of Astoria",
-    "homeTitle": "Home — info.gouv.aor, the official portal of the Government of Astoria",
+    "serviceTitle": "Government of the Republic",
+    "serviceTagline": "The government's official website",
+    "homeTitle": "Official Website of the Government of the Republic of Astoria",
     "loginLink": "Sign in",
     "accountLabel": "My account",
     "logoutLink": "Sign out",
@@ -195,7 +195,7 @@
   },
   "footer": {
     "contentDescription": "This site is managed by the Government Information Service (SIG) of the Republic of Astoria.",
-    "license": "Unless otherwise stated, all the content of this site is available under an <link>open licence</link>.",
+    "license": "Unless otherwise stated, all the content of this site is available under an <link>APSL License</link>.",
     "columns": {
       "actualites": { "title": "News" },
       "grandsDossiers": { "title": "Major topics" },
