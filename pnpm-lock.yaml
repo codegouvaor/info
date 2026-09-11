@@ -262,8 +262,8 @@ importers:
         specifier: 0.81.5
         version: 0.81.5(@babel/core@7.29.7)(@types/react@19.1.17)(react@19.1.0)
       react-native-gesture-handler:
-        specifier: ~2.28.0
-        version: 2.28.0(react-native@0.81.5)(react@19.1.0)
+        specifier: ~3.2.1
+        version: 3.2.1(react-native@0.81.5)(react@19.1.0)
       react-native-reanimated:
         specifier: 4.1.7
         version: 4.1.7(react-native-worklets@0.5.1)(react-native@0.81.5)(react@19.1.0)
@@ -284,7 +284,7 @@ importers:
         version: 4.12.3(react-dom@19.1.0)(react@19.1.0)
       recharts:
         specifier: 3.8.1
-        version: 3.8.1(@types/react@19.1.17)(react-dom@19.1.0)(react-is@19.2.8)(react@19.1.0)(redux@5.0.1)
+        version: 3.8.1(@types/react@19.1.17)(react-dom@19.1.0)(react-is@19.3.0)(react@19.1.0)(redux@5.0.1)
       rehype-raw:
         specifier: ^7.0.0
         version: 7.0.0
@@ -1170,13 +1170,6 @@ packages:
 
   /@date-fns/tz@1.5.0:
     resolution: {integrity: sha512-lwYN/vDPeNRULcepoE/LO2Pgx+7/RV+S9ARfbc9lr2DtGkOD7pAiruHvbR1RX3Qyf6ja47EWJDMsNK5vK08DJg==}
-    dev: false
-
-  /@egjs/hammerjs@2.0.17:
-    resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
-    engines: {node: '>=0.8.0'}
-    dependencies:
-      '@types/hammerjs': 2.0.46
     dev: false
 
   /@electric-sql/pglite-socket@0.1.1(@electric-sql/pglite@0.4.1):
@@ -2352,8 +2345,8 @@ packages:
       - supports-color
     dev: true
 
-  /@napi-rs/wasm-runtime@1.2.3(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
-    resolution: {integrity: sha512-UMduMbqO5s5zF2NkNacMT/yK5Y5QiKvWr2+50bzIIxFDwVJ2h49b+oyjaCGPhJxd2/gC2x39EHv/gHVuu36x2Q==}
+  /@napi-rs/wasm-runtime@1.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
+    resolution: {integrity: sha512-AJxoUD2/15ESHbvpcyjU274nsAPLuOtPHCk0vKJM5pj//Fg/B1FXNWjPnXTT9PymCYYiHo4zPj0ZomXBKhoy7g==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
     requiresBuild: true
     peerDependencies:
@@ -5625,10 +5618,6 @@ packages:
       '@types/node': 26.4.1
     dev: false
 
-  /@types/hammerjs@2.0.46:
-    resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
-    dev: false
-
   /@types/hast@3.0.5:
     resolution: {integrity: sha512-rp/ezSWaD1m44dPKICGhiskI13nVr7qTloFwDa/IYkhhf5nzwP+zIQcIJh3WIFSBOy/H1PzB40jPjMDksN4F+g==}
     dependencies:
@@ -5694,6 +5683,12 @@ packages:
       '@types/react': ^19.0.0
     dependencies:
       '@types/react': 19.1.17
+
+  /@types/react-test-renderer@19.3.0:
+    resolution: {integrity: sha512-TX4p2D4Z2oigM3SXU7+QyLSUnSR0vR1S1Pfxm/qFL9nHQ3jclgi6ioGoWQmlIr1DeKRVmPJrmNlhgM0JlWlLUg==}
+    dependencies:
+      '@types/react': 19.1.17
+    dev: false
 
   /@types/react@19.1.17:
     resolution: {integrity: sha512-Qec1E3mhALmaspIrhWt9jkQMNdw6bReVu64mjvhbhq2NFPftLPVr+l1SZgmw/66WwBNpDh7ao5AT6gF5v41PFA==}
@@ -6026,7 +6021,7 @@ packages:
     dependencies:
       '@emnapi/core': 1.10.0
       '@emnapi/runtime': 1.10.0
-      '@napi-rs/wasm-runtime': 1.2.3(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
+      '@napi-rs/wasm-runtime': 1.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
     dev: true
     optional: true
 
@@ -8799,12 +8794,6 @@ packages:
     resolution: {integrity: sha512-CW/pPvSOFIRsosbwxrYaE9ERmpTo5fbTqL7wCvuCFlqW1Bmb1K5fXsY7yiH95rmlr4rVuA7UXHbM/cIXQ6AXwg==}
     dev: false
 
-  /hoist-non-react-statics@3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
-    dependencies:
-      react-is: 16.13.1
-    dev: false
-
   /hono@4.12.10:
     resolution: {integrity: sha512-mx/p18PLy5og9ufies2GOSUqep98Td9q4i/EF6X7yJgAiIopxqdfIO3jbqsi3jRgTgw88jMDEzVKi+V2EF+27w==}
     engines: {node: '>=16.9.0'}
@@ -11523,13 +11512,14 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: true
 
   /react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: false
 
-  /react-is@19.2.8:
-    resolution: {integrity: sha512-s5un28nYxKJw5gvUHyW5PCC28CvBqLu9r3cWgzHT4Vo/5fqqkFcdRYsGcKf50WMPpjjFZS5d76fn3YCo2njKwQ==}
+  /react-is@19.3.0:
+    resolution: {integrity: sha512-UpMYezM4v5/18F28aC66AEsjXIgE02kyEMH6yLdgLXu/UTfa1Ntwck/nNLrbqJsEXW7gPb0coNO9FQse9WTovA==}
     dev: false
 
   /react-markdown@10.1.0(@types/react@19.1.17)(react@19.1.0):
@@ -11555,14 +11545,13 @@ packages:
       - supports-color
     dev: false
 
-  /react-native-gesture-handler@2.28.0(react-native@0.81.5)(react@19.1.0):
-    resolution: {integrity: sha512-0msfJ1vRxXKVgTgvL+1ZOoYw3/0z1R+Ked0+udoJhyplC2jbVKIJ8Z1bzWdpQRCV3QcQ87Op0zJVE5DhKK2A0A==}
+  /react-native-gesture-handler@3.2.1(react-native@0.81.5)(react@19.1.0):
+    resolution: {integrity: sha512-VEWscxUN29aeccbD2McF0LSXrwOhSdisaSRFiEWg0O/3WrVghNJp/tOtLrCgzb9gfcZ3xdA+K2Sp8F5G3iHx/Q==}
     peerDependencies:
       react: '*'
       react-native: '*'
     dependencies:
-      '@egjs/hammerjs': 2.0.17
-      hoist-non-react-statics: 3.3.2
+      '@types/react-test-renderer': 19.3.0
       invariant: 2.2.4
       react: 19.1.0
       react-native: 0.81.5(@babel/core@7.29.7)(@types/react@19.1.17)(react@19.1.0)
@@ -11846,7 +11835,7 @@ packages:
     engines: {node: '>= 12.13.0'}
     dev: false
 
-  /recharts@3.8.1(@types/react@19.1.17)(react-dom@19.1.0)(react-is@19.2.8)(react@19.1.0)(redux@5.0.1):
+  /recharts@3.8.1(@types/react@19.1.17)(react-dom@19.1.0)(react-is@19.3.0)(react@19.1.0)(redux@5.0.1):
     resolution: {integrity: sha512-mwzmO1s9sFL0TduUpwndxCUNoXsBw3u3E/0+A+cLcrSfQitSG62L32N69GhqUrrT5qKcAE3pCGVINC6pqkBBQg==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -11862,7 +11851,7 @@ packages:
       immer: 10.2.0
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
-      react-is: 19.2.8
+      react-is: 19.3.0
       react-redux: 9.3.0(@types/react@19.1.17)(react@19.1.0)(redux@5.0.1)
       reselect: 5.1.1
       tiny-invariant: 1.3.3
