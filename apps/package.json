@@ -59,7 +59,7 @@
     "hls.js": "^1.6.17",
     "input-otp": "1.4.2",
     "loglayer": "^9.1.0",
-    "lucide-react": "^1.17.0",
+    "lucide-react": "^1.79.0",
     "meilisearch": "^0.60.0",
     "next": "^16.2.4",
     "next-intl": "^4.8.3",
